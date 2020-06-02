@@ -1,0 +1,1233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="cc1eb556-f18e-47d5-b1f0-9606a8e7b41a" name="Default Changelist" comment="" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="1575143943">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.27" value="1" />
+          <entry key="project.open.time.34" value="1" />
+          <entry key="project.open.time.37" value="1" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.opened" value="4" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="java" value="61" />
+          <entry key="xml" value="2" />
+          <entry key="yml" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="61" />
+          <entry key="XML" value="2" />
+          <entry key="YAML" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="dummy" value="7" />
+          <entry key="java" value="207" />
+          <entry key="xml" value="106" />
+          <entry key="yml" value="9" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="207" />
+          <entry key="PLAIN_TEXT" value="7" />
+          <entry key="SQL" value="36" />
+          <entry key="XML" value="70" />
+          <entry key="YAML" value="9" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="yundian-guanwang" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/utils/steam/SteamLoginUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="31" column="79" selection-start-line="31" selection-start-column="79" selection-end-line="31" selection-end-column="79" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/utils/SQSendMailUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="124">
+              <caret line="32" column="50" selection-start-line="32" selection-start-column="50" selection-end-line="32" selection-end-column="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>yundian-guanwang</find>
+    </findStrings>
+    <dirStrings>
+      <dir>D:\worke\yundian-guanwang</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="D:/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/resources/application-dev.yml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/itsq/pojo/entity/User.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/itsq/pojo/entity/Manager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/itsq/pojo/dto/UserOrderPageDto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/itsq/pojo/entity/UserOrder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/itsq/pojo/dto/MemberPageDto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/itsq/controller/resources/MemberController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/itsq/pojo/entity/Member.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/itsq/service/resources/MemberService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/itsq/service/resources/impl/MemberServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/UserOrderMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/itsq/mapper/UserOrderMapper.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/itsq/utils/SQSendMailUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/itsq/utils/steam/StringUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/itsq/utils/steam/SteamOpenIDManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/itsq/utils/steam/SteamLoginUtil.java" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\repository" />
+        <option name="mavenHome" value="D:/apache-maven-3.5.4" />
+        <option name="userSettingsFile" value="D:\apache-maven-3.5.4\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand />
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="22" />
+    <option name="width" value="1386" />
+    <option name="height" value="788" />
+  </component>
+  <component name="ProjectId" id="1bleQ4mlBv4mmgG4eqEhk0pTMX2" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="yundian-guanwang" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yundian-guanwang" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="yundian-guanwang" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yundian-guanwang" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="yundian-guanwang" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yundian-guanwang" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="yundian-guanwang" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yundian-guanwang" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="yundian-guanwang" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yundian-guanwang" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="itsq" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="yundian-guanwang" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yundian-guanwang" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="itsq" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="yundian-guanwang" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yundian-guanwang" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="itsq" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="yundian-guanwang" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yundian-guanwang" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="itsq" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="steam" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1590999652908" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15404929" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.annotationProcessors" />
+  </component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\IDEAworkspaces\druid-demo\src\main\resources" />
+      <recent name="F:\IDEAworkspaces\druid-demo\src\main\resources\templates" />
+      <recent name="F:\IDEAworkspaces\druid-demo\src\main\resources\templates\user" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.itsq.pojo.dto" />
+      <recent name="com.itsq.service.mail" />
+      <recent name="com.itsq.mapper" />
+      <recent name="com.itsq.enums" />
+      <recent name="com.itsq.pojo.entity" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\13660\Desktop\项目架构\可以显示目录\new官网\code\yundian-guanwang\src\main\resources\mapper" />
+      <recent name="C:\Users\13660\Desktop\项目架构\可以显示目录\new官网\code\yundian-guanwang\src\main\java\com\itsq\pojo\dto" />
+      <recent name="C:\Users\13660\Desktop\项目架构\可以显示目录\new官网\code\yundian-guanwang\src\main\java\com\itsq\controller\mail" />
+      <recent name="C:\Users\13660\Desktop\项目架构\可以显示目录\new官网\code\yundian-guanwang\src\main\resources\static" />
+      <recent name="C:\Users\13660\Desktop\项目架构\可以显示目录\new官网\code\yundian-guanwang\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+    <option name="contentProportion" value="0.0927357" />
+  </component>
+  <component name="RunManager" selected="Application.SteamLoginUtil">
+    <configuration name="CheckBank" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.itsq.utils.checkbank.CheckBank" />
+      <module name="chenyou" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.itsq.utils.checkbank.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CodeGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.itsq.CodeGenerator" />
+      <module name="chenyou" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.itsq.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SQSendMailUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.itsq.utils.SQSendMailUtil" />
+      <module name="chenyou" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.itsq.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SteamLoginUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.itsq.utils.steam.SteamLoginUtil" />
+      <module name="chenyou" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.itsq.utils.steam.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <module name="yundian-cms" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+      <module name="yundian-cms" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ChenYouApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="chenyou" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.itsq.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.itsq.ChenYouApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="druidDemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="chenyou" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.itsq.ChenYouApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Spring Boot.druidDemoApplication" />
+      <item itemvalue="Application.CheckBank" />
+      <item itemvalue="Application.CodeGenerator" />
+      <item itemvalue="Spring Boot.ChenYouApplication" />
+      <item itemvalue="Application.SQSendMailUtil" />
+      <item itemvalue="Application.SteamLoginUtil" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.SteamLoginUtil" />
+        <item itemvalue="Application.SQSendMailUtil" />
+        <item itemvalue="Spring Boot.ChenYouApplication" />
+        <item itemvalue="Application.CodeGenerator" />
+        <item itemvalue="Application.CheckBank" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <option name="contentProportion" value="0.08116883" />
+          <treeState>
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="com.intellij.execution.dashboard.RunDashboardServiceViewContributor@78c5570c" type="d2cb1801:ServiceModel$ContributorNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="com.intellij.execution.dashboard.RunDashboardServiceViewContributor@78c5570c" type="d2cb1801:ServiceModel$ContributorNode" />
+                <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="com.intellij.execution.dashboard.RunDashboardServiceViewContributor@78c5570c" type="d2cb1801:ServiceModel$ContributorNode" />
+                <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+            </expand>
+            <select />
+          </treeState>
+          <option name="groupByContributor" value="true" />
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cc1eb556-f18e-47d5-b1f0-9606a8e7b41a" name="Default Changelist" comment="" />
+      <created>1582183494367</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1582183494367</updated>
+      <workItem from="1582183497578" duration="5377000" />
+      <workItem from="1582188898682" duration="4276000" />
+      <workItem from="1582207822839" duration="5664000" />
+      <workItem from="1582261351824" duration="16747000" />
+      <workItem from="1582287141233" duration="8083000" />
+      <workItem from="1582351125059" duration="2677000" />
+      <workItem from="1582357883115" duration="703000" />
+      <workItem from="1582360213517" duration="2526000" />
+      <workItem from="1582374187419" duration="1094000" />
+      <workItem from="1582452512584" duration="10877000" />
+      <workItem from="1582590423774" duration="23587000" />
+      <workItem from="1582676482345" duration="3301000" />
+      <workItem from="1582762488533" duration="7049000" />
+      <workItem from="1582774781811" duration="17588000" />
+      <workItem from="1582849239543" duration="5380000" />
+      <workItem from="1582860197877" duration="10585000" />
+      <workItem from="1582873283601" duration="1115000" />
+      <workItem from="1582875634095" duration="5703000" />
+      <workItem from="1582942932489" duration="6486000" />
+      <workItem from="1583040824393" duration="4081000" />
+      <workItem from="1583109228119" duration="6922000" />
+      <workItem from="1583132318084" duration="694000" />
+      <workItem from="1583195037289" duration="7966000" />
+      <workItem from="1583290690282" duration="6039000" />
+      <workItem from="1583367476246" duration="12820000" />
+      <workItem from="1583454464060" duration="6355000" />
+      <workItem from="1583634061656" duration="2248000" />
+      <workItem from="1583643822963" duration="7704000" />
+      <workItem from="1583713929655" duration="3938000" />
+      <workItem from="1583799761543" duration="4452000" />
+      <workItem from="1583886364811" duration="6875000" />
+      <workItem from="1583973144134" duration="8624000" />
+      <workItem from="1584490479556" duration="2341000" />
+      <workItem from="1584492901124" duration="19000" />
+      <workItem from="1584493075921" duration="94000" />
+      <workItem from="1584493838322" duration="34000" />
+      <workItem from="1584509268213" duration="8109000" />
+      <workItem from="1584518803256" duration="1241000" />
+      <workItem from="1584577601395" duration="4315000" />
+      <workItem from="1584664661953" duration="2213000" />
+      <workItem from="1584687334114" duration="11068000" />
+      <workItem from="1584799079124" duration="574000" />
+      <workItem from="1584799714933" duration="405000" />
+      <workItem from="1584800172838" duration="398000" />
+      <workItem from="1584923405338" duration="9891000" />
+      <workItem from="1584944044280" duration="1401000" />
+      <workItem from="1584956116620" duration="278000" />
+      <workItem from="1584956427967" duration="72000" />
+      <workItem from="1586223579529" duration="21012000" />
+      <workItem from="1586253692639" duration="2785000" />
+      <workItem from="1586305411003" duration="25723000" />
+      <workItem from="1586341180333" duration="2653000" />
+      <workItem from="1586495257625" duration="2508000" />
+      <workItem from="1586500290298" duration="147000" />
+      <workItem from="1586500543108" duration="523000" />
+      <workItem from="1586585709145" duration="4035000" />
+      <workItem from="1586595728101" duration="1526000" />
+      <workItem from="1586674539640" duration="13056000" />
+      <workItem from="1586736949063" duration="22434000" />
+      <workItem from="1586826599889" duration="7451000" />
+      <workItem from="1586856644608" duration="684000" />
+      <workItem from="1586910970848" duration="24641000" />
+      <workItem from="1586996852649" duration="7392000" />
+      <workItem from="1587004297476" duration="12210000" />
+      <workItem from="1588916282910" duration="33000" />
+      <workItem from="1589200403824" duration="592000" />
+      <workItem from="1589202632027" duration="1440000" />
+      <workItem from="1589207333288" duration="411000" />
+      <workItem from="1589211091257" duration="2715000" />
+      <workItem from="1589283981746" duration="4236000" />
+      <workItem from="1589543101259" duration="8795000" />
+      <workItem from="1589801716177" duration="4793000" />
+      <workItem from="1590150337270" duration="7242000" />
+      <workItem from="1590413387602" duration="9000" />
+      <workItem from="1590453822564" duration="3691000" />
+      <workItem from="1590626315269" duration="5926000" />
+      <workItem from="1590712970717" duration="2577000" />
+      <workItem from="1590978458267" duration="8554000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="Date_test - 2020.03.05 at 09h 50m 42s.xml">
+      <configuration name="Date.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Date_test - 2020.03.05 at 09h 53m 46s.xml">
+      <configuration name="Date.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Date_test - 2020.03.05 at 09h 54m 20s.xml">
+      <configuration name="Date.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Date_test - 2020.03.05 at 09h 54m 55s.xml">
+      <configuration name="Date.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Date_test - 2020.03.05 at 09h 55m 15s.xml">
+      <configuration name="Date.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Date_test - 2020.03.05 at 09h 57m 26s.xml">
+      <configuration name="Date.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Test01_show - 2020.03.06 at 15h 41m 43s.xml">
+      <configuration name="Test01.show" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Test01_show - 2020.03.06 at 15h 42m 15s.xml">
+      <configuration name="Test01.show" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Test01_show - 2020.03.06 at 15h 44m 27s.xml">
+      <configuration name="Test01.show" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Test01_show - 2020.03.08 at 11h 25m 04s.xml">
+      <configuration name="Test01.show" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="20748000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.9064748" visible="true" weight="0.30484116" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info id="Web" order="7" sideWeight="0.09352518" side_tool="true" weight="0.30484116" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.43862522" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Spring" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.3289689" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.3289689" />
+      <window_info anchor="bottom" id="Problems" order="11" />
+      <window_info anchor="bottom" id="Java Enterprise" order="12" />
+      <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="14" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run Dashboard" order="15" weight="0.0" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Maven Projects" order="5" weight="0.31543118" />
+      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="right" id="Bean Validation" order="9" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.9064748" visible="true" weight="0.30484116" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info id="Web" order="7" sideWeight="0.09352518" side_tool="true" visible="true" weight="0.30484116" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.090016365" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Spring" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.3289689" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.3289689" />
+      <window_info anchor="bottom" id="Problems" order="11" />
+      <window_info anchor="bottom" id="Java Enterprise" order="12" />
+      <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="14" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run Dashboard" order="15" weight="0.0" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Maven Projects" order="5" weight="0.31543118" />
+      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="right" id="Bean Validation" order="9" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="D:/.." />
+    </ignored-roots>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="780" y="240" key="#com.intellij.ide.util.MemberChooser" timestamp="1590151906492">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="780" y="240" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1590151906492" />
+    <state x="755" y="305" key="FileChooserDialogImpl" timestamp="1589285198653">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="755" y="305" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1589285198653" />
+    <state width="1860" height="425" key="GridCell.Tab.0.bottom" timestamp="1590157690280">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1860" height="425" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1590157690280" />
+    <state width="1860" height="425" key="GridCell.Tab.0.center" timestamp="1590157690280">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1860" height="425" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1590157690280" />
+    <state width="1860" height="425" key="GridCell.Tab.0.left" timestamp="1590157690280">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1860" height="425" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1590157690280" />
+    <state width="1860" height="425" key="GridCell.Tab.0.right" timestamp="1590157690280">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1860" height="425" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1590157690280" />
+    <state width="1681" height="426" key="GridCell.Tab.1.bottom" timestamp="1590157690277">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1681" height="426" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1590157690277" />
+    <state width="1681" height="426" key="GridCell.Tab.1.center" timestamp="1590157690277">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1681" height="426" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1590157690277" />
+    <state width="1681" height="426" key="GridCell.Tab.1.left" timestamp="1590157690277">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1681" height="426" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1590157690277" />
+    <state width="1681" height="426" key="GridCell.Tab.1.right" timestamp="1590157690277">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1681" height="426" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1590157690277" />
+    <state width="1681" height="426" key="GridCell.Tab.2.bottom" timestamp="1590157690277">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1681" height="426" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1590157690277" />
+    <state width="1681" height="426" key="GridCell.Tab.2.center" timestamp="1590157690277">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1681" height="426" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1590157690277" />
+    <state width="1681" height="426" key="GridCell.Tab.2.left" timestamp="1590157690277">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1681" height="426" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1590157690277" />
+    <state width="1681" height="426" key="GridCell.Tab.2.right" timestamp="1590157690277">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1681" height="426" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1590157690277" />
+    <state x="461" y="162" key="SettingsEditor" timestamp="1589211542322">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1589211542322" />
+    <state x="640" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1590413390590">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="640" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1590413390590" />
+    <state x="647" y="152" width="626" height="735" key="find.popup" timestamp="1589212892165">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="647" y="152" width="626" height="735" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1589212892165" />
+    <state x="638" y="256" width="672" height="678" key="search.everywhere.popup" timestamp="1590150724463">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="638" y="256" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1590150724463" />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/druid_demo$druidDemoApplication.ic" NAME="druidDemoApplication Coverage Results" MODIFIED="1584578398945" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application-dev.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/pojo/entity/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="128" selection-start-line="128" selection-end-line="129" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/pojo/entity/Manager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="118" lean-forward="true" selection-start-line="118" selection-end-line="118" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/service/resources/impl/UserOrderServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="29" column="52" lean-forward="true" selection-start-line="29" selection-start-column="52" selection-end-line="29" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/pojo/dto/UserOrderPageDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-55">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/service/resources/ManagerService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/controller/resources/UserOrderController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="36" column="68" lean-forward="true" selection-start-line="36" selection-start-column="68" selection-end-line="36" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/controller/resources/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-288">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/pojo/dto/MemberPageDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="28" column="26" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/controller/resources/ManagerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-922">
+          <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/pojo/entity/UserOrder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-20">
+          <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/pojo/entity/Member.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1160">
+          <caret line="68" column="39" selection-start-line="68" selection-start-column="39" selection-end-line="68" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/controller/resources/MemberController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="45" column="56" selection-start-line="45" selection-start-column="56" selection-end-line="45" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/service/resources/UserOrderService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/service/resources/MemberService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="19" column="7" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/service/resources/impl/MemberServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/UserOrderMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="23" column="25" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/utils/checkbank/CheckBank.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/utils/checkbank/CheckBankName.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-62">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/mapper/UserOrderMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/utils/CardNumVerify.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/utils/CastUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/utils/CommonUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/utils/Constant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-382">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/utils/DateUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/utils/DateUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/utils/DateWhere.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/utils/DecompressionUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/utils/DigestUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/utils/EmptyUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/utils/ExpressUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/utils/FileUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/utils/HttpUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/utils/IDGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/utils/IpAddressUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/utils/JsonUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/utils/ListQuChongUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/utils/MD5.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/utils/PasswordCrypt.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/utils/RandomUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/utils/RandUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/utils/RegexUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1906">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/utils/RSAUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/utils/SnowflakeIdWorker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="7" column="59" selection-start-line="7" selection-start-column="59" selection-end-line="7" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/ChenYouApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/utils/steam/SteamOpenIDManager.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/utils/steam/StringUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-237">
+          <caret line="133" column="25" selection-start-line="133" selection-start-column="25" selection-end-line="133" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/utils/steam/SteamLoginUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="31" column="79" selection-start-line="31" selection-start-column="79" selection-end-line="31" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/utils/SQSendMailUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="32" column="50" selection-start-line="32" selection-start-column="50" selection-end-line="32" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArquillianSettingsConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.39425287" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>yundian-guanwang</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+  <component name="mavenExecuteGoalHistory">
+    <option value="" />
+  </component>
+</project>
