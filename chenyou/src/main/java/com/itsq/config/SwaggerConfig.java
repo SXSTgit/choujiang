@@ -60,11 +60,11 @@ public class SwaggerConfig {
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 // 设置页面标题
-                .title("江苏")
+                .title("徐州辰友科技")
                 // 设置联系人
                 .contact(new Contact("史先帅", "", "1085432162@qq.com"))
                 // 描述
-                .description("官网信息接口API1.0")
+                .description("信息接口API1.0")
                 // 定义版本号
                 .version("1.0").build();
     }

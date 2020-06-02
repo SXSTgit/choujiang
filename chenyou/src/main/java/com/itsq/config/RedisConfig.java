@@ -7,9 +7,9 @@ import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 /**
- * 
+ *
  * @param null
- * @return 
+ * @return
  * @author sq
  * @creed: redis配置文件
  * @date 2020/2/25 10:30

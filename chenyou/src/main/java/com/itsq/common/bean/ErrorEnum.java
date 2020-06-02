@@ -20,7 +20,7 @@ public enum ErrorEnum {
     USER_IDENTITY(100015,"该身份证已存在"),
     USER_IDENTITYNOT(100014,"身份证格式不正确"),
     USER_ISNULL(100081,"收件人信息为空"),
-
+   PLAYER_PHONE(100017,"该账号已存在"),
     ;
 
 

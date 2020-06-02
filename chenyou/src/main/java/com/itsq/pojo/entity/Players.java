@@ -1,12 +1,10 @@
 package com.itsq.pojo.entity;
 
 import java.math.BigDecimal;
-import com.baomidou.mybatisplus.annotation.TableName;
-import com.baomidou.mybatisplus.annotation.IdType;
+
+import com.baomidou.mybatisplus.annotation.*;
+
 import java.util.Date;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableLogic;
-import com.baomidou.mybatisplus.annotation.TableField;
 import java.io.Serializable;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -63,7 +61,7 @@ public class Players implements Serializable {
     @TableField("is_status")
     private Integer isStatus;
 
-    @TableField("cr_data")
+    @TableField(value = "cr_date",fill = FieldFill.INSERT)
     private Date crData;
 
     @TableField("state")

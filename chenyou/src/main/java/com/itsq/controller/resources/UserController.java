@@ -27,11 +27,11 @@ import java.util.List;
  * @author sunqi
  * @since 2020-04-07
  */
-@RestController
-@RequestMapping("/user")
-@AllArgsConstructor
-@CrossOrigin
-@Api(tags = "用户模块")
+//@RestController
+//@RequestMapping("/user")
+//@AllArgsConstructor
+//@CrossOrigin
+//@Api(tags = "用户模块")
 public class UserController extends BaseController {
 
     private UserService userService;

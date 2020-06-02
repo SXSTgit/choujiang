@@ -25,11 +25,11 @@ import org.springframework.web.bind.annotation.*;
  * @author 史先帅
  * @since 2020-05-12
  */
-@RestController
-@RequestMapping("/member")
-@AllArgsConstructor
-@CrossOrigin
-@Api(tags = "会员模块")
+//@RestController
+//@RequestMapping("/member")
+//@AllArgsConstructor
+//@CrossOrigin
+//@Api(tags = "会员模块")
 public class MemberController extends BaseController {
 
     @Autowired

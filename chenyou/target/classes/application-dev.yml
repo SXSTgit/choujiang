@@ -53,8 +53,8 @@ spring:
       max-request-size: 30MB
   #发送邮箱配置
   mail:
-    username: 1366033452@qq.com
-    password: plpkwvncwwkjifhd
+    username: 1085432162@qq.com
+    password: bjzfrimcvbgdfggd
     host: smtp.qq.com
     properties:
       mail:

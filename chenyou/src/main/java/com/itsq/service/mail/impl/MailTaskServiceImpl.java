@@ -42,8 +42,8 @@ public class MailTaskServiceImpl implements MailTaskService {
         SimpleMailMessage message = new SimpleMailMessage();
         message.setSubject("主题");
         message.setText("文本内容");
-        message.setTo("1366033452@qq.com");//发送给谁
-        message.setFrom("1366033452@qq.com");//谁发送
+        message.setTo("1085432162@qq.com");//发送给谁
+        message.setFrom("1085432162@qq.com");//谁发送
         javaMailSender.send(message);
     }
 
