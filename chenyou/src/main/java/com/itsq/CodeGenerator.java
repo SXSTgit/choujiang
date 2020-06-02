@@ -79,10 +79,10 @@ public class CodeGenerator {
         dc.setDbQuery(new MySqlQuery()); // 数据库信息查询 //默认mysql
         dc.setDbType(DbType.MYSQL);// 数据库类型
         dc.setTypeConvert(new MySqlTypeConvert()); //类型转换 默认mysql
-        dc.setUrl("jdbc:mysql://127.0.0.1:3306/sq?serverTimezone=CTT&useUnicode=true&characterEncoding=utf-8&useSSL=false");
+        dc.setUrl("jdbc:mysql://127.0.0.1:3306/choujiang?serverTimezone=CTT&useUnicode=true&characterEncoding=utf-8&useSSL=false");
         dc.setDriverName("com.mysql.cj.jdbc.Driver");
         dc.setUsername("root");
-        dc.setPassword("1234");
+        dc.setPassword("ok");
         generator.setDataSource(dc);
         dc.setTypeConvert(new MySqlTypeConvert() {
             @Override
