@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>管理员列表</title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta http-equiv="Access-Control-Allow-Origin" content="*">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="format-detection" content="telephone=no">
+		<link href="../../lib/layui-v2.5.4/css/layui.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../css/layuimini.css" media="all">
+		<link rel="stylesheet" href="../../css/public.css" media="all">
+		<link rel="stylesheet" href="../../lib/font-awesome-4.7.0/css/font-awesome.min.css" media="all">
+		<style>
+			.searchLeft{
+				float: left;
+			}
+			.searchTable{
+				text-align: right;
+			    margin-right: 10px;
+			}
+			.searchTable .layui-form-select {
+			    width: 174px;
+			    display: inline-block;
+			    text-align: left;
+			}
+			.layui-input-block{
+				margin-left: 0px;
+				border-width: 1px;
+			    border-style: solid;
+			    border-color: rgb(230, 230, 230);
+			    border-image: initial;
+			    width: 61%;
+			}
+			
+			/*.laytable-cell-1-0-1,.laytable-cell-1-0-9  {
+			    width: 150px;
+			    height: 100px;
+			    line-height: 100px;
+			}*/
+			.layui-table img {
+			    max-width: 100%;
+    			height: 100%;
+			}
+			
+			
+			
+			.layui-table-cell{
+				height: 50px;
+				line-height: 50px;
+			}
+			
+			.layuimini-container {
+				border-width: 0px;
+			}
+			.layui-form-label {
+			    float: left;
+			    display: block;
+			    padding: 9px 0px;
+			    width: 80px;
+			    font-weight: 400;
+			    line-height: 20px;
+			    text-align: right;
+			    background: inset 0 0 10px #1aa09457;
+			    text-align: center;
+			    background-color: #009688a6;
+			    color: #fff;
+			}
+			input:hover{
+			    box-shadow:0 0 10px 2px #1aa09445;;
+			}
+			.layui-form-item {
+			    margin-bottom: 15px;
+			    width: 29%;
+			    display: inline-flex;
+			}
+			.search1{
+				padding-left: 2em;
+    			padding-top: 1em;
+			}
+			.topcon{
+				height: 33px;
+			    background-color: #f2f2f2;
+			    margin-bottom: -7px;
+			    line-height: 33px;
+			    text-align: right;
+			    padding-right: 20px;
+			}
+		</style>
+	</head>
+	<body>
+
+		
+		<div class="layuimini-container">
+			<fieldset class="layui-elem-field layui-field-title" style="margin-bottom: 0px;">
+			  <legend><!--当前账号是否为超级管理员:-->会员设置<b></b></legend>
+			</fieldset>
+			
+			<div class="layuimini-container">
+				<div class="layui-col-lg12">
+					<div class="layui-form">
+			        	<div class="layui-col-lg11 search1">
+			        		<div class="layui-form-item">
+			        			<label class="layui-form-label">会员名</label>
+							    <div class="layui-input-inline">
+							      <input type="text" name="userName" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+							    </div>
+			        		</div>
+
+
+			        		<div class="layui-form-item">
+			        			<label class="layui-form-label">手机号</label>
+							    <div class="layui-input-inline">
+							      <input type="text" name="phone" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+							    </div>
+			        		</div>
+
+
+
+
+			        		<div class="layui-form-item">
+			        			<button class="layui-btn layui-btn-normal" lay-filter="search" style="background-color: #59bbb2;">搜索</button>
+			        			<button class="layui-btn layui-btn-normal" lay-filter="addAdmin">添加会员</button>
+			        		</div>
+			        	</div>
+			        	<div class="layui-col-lg1" style="padding-left: 6%;">
+			        		<!--<button class="layui-btn layui-btn-normal" lay-filter="addAdmin">添加管理员</button>-->
+			        		&nbsp;
+			        	</div>
+				        
+				    </div>
+				</div>
+			    
+			</div>
+			<div style="clear: both;"></div>
+			<div class="layuimini-container topcon">
+				<b></b>
+			</div>
+			<table id="table1" lay-filter="table1">
+
+			</table>
+			<div id="page" style="text-align: right;margin-right: 20px;"></div>
+		</div>
+		
+		<script src="../../lib/layui-v2.5.4/layui.js"></script>
+		<script src="../../lib/jquery-3.4.1/jquery-3.4.1.min.js"></script>
+		<script src="../../lib/jquery-3.4.1/cookie.js"></script>
+		<script src="../../js/common.js"></script>
+		<script src="js/index.js"></script>
+	</body>
+</html>

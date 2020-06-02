@@ -1,7 +1,631 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cc1eb556-f18e-47d5-b1f0-9606a8e7b41a" name="Default Changelist" comment="" />
+    <list default="true" id="cc1eb556-f18e-47d5-b1f0-9606a8e7b41a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chenyou-cms.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/.idea/yundian-templates.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/.project" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/api/clear.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/api/init.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/api/menus.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/api/table.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/api/tableSelect.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/api/upload.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/css/admin.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/css/layuimini.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/css/public.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/font/demo.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/font/demo_index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/font/iconfont.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/font/iconfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/font/iconfont.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/font/iconfont.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/font/iconfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/font/iconfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/font/iconfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/font/iconfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/images/1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/images/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/images/2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/images/3f76c2e58d0d749eafaefef83c297d9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/images/bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/images/captcha.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/images/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/images/home.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/images/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/images/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/images/queshengtu1.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/images/wushuji.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/img/headericon.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/img/rarimg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/js/common.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/js/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/js/login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/js/verificationCode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/echarts/echarts-theme.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/echarts/echarts.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/fastscan/index.bench.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/fastscan/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/fastscan/index.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/font-awesome-4.7.0/HELP-US-OUT.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/font-awesome-4.7.0/css/font-awesome.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/font-awesome-4.7.0/css/font-awesome.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/font-awesome-4.7.0/fonts/FontAwesome.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/font-awesome-4.7.0/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/font-awesome-4.7.0/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/font-awesome-4.7.0/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/font-awesome-4.7.0/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/font-awesome-4.7.0/less/animated.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/font-awesome-4.7.0/less/bordered-pulled.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/font-awesome-4.7.0/less/core.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/font-awesome-4.7.0/less/fixed-width.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/font-awesome-4.7.0/less/font-awesome.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/font-awesome-4.7.0/less/icons.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/font-awesome-4.7.0/less/larger.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/font-awesome-4.7.0/less/list.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/font-awesome-4.7.0/less/mixins.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/font-awesome-4.7.0/less/path.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/font-awesome-4.7.0/less/rotated-flipped.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/font-awesome-4.7.0/less/screen-reader.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/font-awesome-4.7.0/less/stacked.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/font-awesome-4.7.0/less/variables.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/font-awesome-4.7.0/scss/_animated.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/font-awesome-4.7.0/scss/_bordered-pulled.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/font-awesome-4.7.0/scss/_core.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/font-awesome-4.7.0/scss/_fixed-width.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/font-awesome-4.7.0/scss/_icons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/font-awesome-4.7.0/scss/_larger.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/font-awesome-4.7.0/scss/_list.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/font-awesome-4.7.0/scss/_mixins.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/font-awesome-4.7.0/scss/_path.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/font-awesome-4.7.0/scss/_rotated-flipped.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/font-awesome-4.7.0/scss/_screen-reader.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/font-awesome-4.7.0/scss/_stacked.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/font-awesome-4.7.0/scss/_variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/font-awesome-4.7.0/scss/font-awesome.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/html5/html5.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/jq-module/jquery.particleground.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/jq-module/paigusu.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/jq-module/zyupload/zyupload-1.0.0.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/jq-module/zyupload/zyupload-1.0.0.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/jquery-3.4.1/cookie.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/jquery-3.4.1/jquery-3.4.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/jqueryBiaoqian/css/layui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/jqueryBiaoqian/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/jqueryBiaoqian/jquery插件库.url" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/jqueryBiaoqian/js/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/jqueryBiaoqian/js/layer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/jqueryBiaoqian/js/mobile/layer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/jqueryBiaoqian/js/mobile/need/layer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/jqueryBiaoqian/js/theme/default/icon-ext.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/jqueryBiaoqian/js/theme/default/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/jqueryBiaoqian/js/theme/default/layer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/jqueryBiaoqian/js/theme/default/loading-0.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/jqueryBiaoqian/js/theme/default/loading-1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/jqueryBiaoqian/js/theme/default/loading-2.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/jqueryBiaoqian/www.jq22.com.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/lay-module/iconPicker/iconPickerFa.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/lay-module/step-lay/step.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/lay-module/step-lay/step.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/lay-module/tableSelect/tableSelect.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/lay-module/treetable-lay/treetable.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/lay-module/treetable-lay/treetable.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/css/layui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/css/modules/code.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/css/modules/laydate/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/css/modules/laydate/laydate.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/css/modules/layer/default/icon-ext.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/css/modules/layer/default/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/css/modules/layer/default/layer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/css/modules/layer/default/loading-0.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/css/modules/layer/default/loading-1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/css/modules/layer/default/loading-2.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/font/iconfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/font/iconfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/font/iconfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/font/iconfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/0.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/10.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/11.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/12.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/13.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/14.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/15.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/16.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/17.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/18.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/19.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/2.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/20.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/21.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/22.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/23.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/24.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/25.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/26.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/27.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/28.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/29.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/3.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/30.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/31.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/32.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/33.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/34.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/35.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/36.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/37.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/38.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/39.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/4.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/40.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/41.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/42.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/43.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/44.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/45.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/46.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/47.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/48.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/49.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/5.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/50.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/51.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/52.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/53.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/54.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/55.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/56.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/57.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/58.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/59.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/6.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/60.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/61.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/62.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/63.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/64.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/65.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/66.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/67.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/68.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/69.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/7.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/70.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/71.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/8.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/images/face/9.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/lay/dest/layui.all.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/lay/dest/layui.mod.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/lay/lib/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/lay/modules/code.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/lay/modules/element.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/lay/modules/flow.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/lay/modules/form.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/lay/modules/laydate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/lay/modules/layedit.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/lay/modules/layer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/lay/modules/laypage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/lay/modules/laytpl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/lay/modules/tree.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/lay/modules/upload.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/lay/modules/util.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/layui/layui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/文档与演示/Git仓库.url" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/文档与演示/在线演示.url" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/文档与演示/快速上手.url" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v1.0.4/更新日志.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/css/layui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/css/layui.mobile.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/css/modules/code.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/css/modules/laydate/default/laydate.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/css/modules/layer/default/icon-ext.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/css/modules/layer/default/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/css/modules/layer/default/layer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/css/modules/layer/default/loading-0.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/css/modules/layer/default/loading-1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/css/modules/layer/default/loading-2.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/font/iconfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/font/iconfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/font/iconfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/font/iconfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/font/iconfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/0.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/10.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/11.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/12.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/13.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/14.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/15.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/16.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/17.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/18.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/19.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/2.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/20.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/21.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/22.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/23.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/24.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/25.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/26.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/27.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/28.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/29.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/3.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/30.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/31.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/32.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/33.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/34.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/35.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/36.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/37.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/38.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/39.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/4.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/40.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/41.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/42.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/43.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/44.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/45.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/46.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/47.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/48.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/49.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/5.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/50.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/51.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/52.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/53.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/54.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/55.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/56.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/57.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/58.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/59.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/6.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/60.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/61.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/62.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/63.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/64.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/65.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/66.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/67.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/68.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/69.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/7.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/70.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/71.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/8.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/face/9.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/queshengtu1.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/images/wushuji.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/lay/modules/carousel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/lay/modules/code.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/lay/modules/colorpicker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/lay/modules/element.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/lay/modules/flow.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/lay/modules/form.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/lay/modules/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/lay/modules/laydate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/lay/modules/layedit.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/lay/modules/layer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/lay/modules/laypage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/lay/modules/laytpl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/lay/modules/mobile.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/lay/modules/rate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/lay/modules/slider.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/lay/modules/table.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/lay/modules/transfer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/lay/modules/tree.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/lay/modules/upload.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/lay/modules/util.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/lay/my_modules/dtree/dtree.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/lay/my_modules/dtree/dtree.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/lay/my_modules/dtree/font/dtreefont.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/lay/my_modules/dtree/font/dtreefont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/lay/my_modules/dtree/font/dtreefont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/lay/my_modules/dtree/font/dtreefont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/lay/my_modules/dtree/font/dtreefont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/lay/my_modules/dtree/font/icons.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/lay/my_modules/dtree/开发者日志.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/lay/my_modules/formSelects/formSelects-v4.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/lay/my_modules/formSelects/formSelects-v4.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/lay/my_modules/formSelects/formSelects-v4.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/lay/my_modules/iconPicker/iconPickerFa.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/lay/my_modules/layuimini.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/lay/my_modules/step-lay/step.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/lay/my_modules/step-lay/step.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/lay/my_modules/tableSelect/tableSelect.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/lay/my_modules/treeTable/treeTable.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/lay/my_modules/treeTable/treeTable.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/lay/my_modules/treetable-lay/treeTable.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/layui.all.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/layui-v2.5.4/layui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/md5/md5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/mock/mock.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/respond/respond.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/treeTable/treeTable.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/treeTable/treeTable.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/.eslintignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/.eslintrc.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/.npmignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/ISSUE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/docs/dev/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/docs/usage/01-getstart/01-demo.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/docs/usage/01-getstart/02-use-module.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/docs/usage/01-getstart/03-sperate.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/docs/usage/01-getstart/04-multi.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/docs/usage/02-content/01-set-content.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/docs/usage/02-content/02-get-content.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/docs/usage/02-content/03-use-textarea.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/docs/usage/02-content/04-get-json.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/docs/usage/03-config/01-menu.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/docs/usage/03-config/02-debug.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/docs/usage/03-config/03-onchange.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/docs/usage/03-config/04-z-index.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/docs/usage/03-config/05-lang.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/docs/usage/03-config/06-paste.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/docs/usage/03-config/07-linkImgCallback.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/docs/usage/03-config/08-linkCheck.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/docs/usage/03-config/09-onfocus.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/docs/usage/03-config/10-onblur.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/docs/usage/03-config/11-linkImgCheck.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/docs/usage/03-config/12-colors.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/docs/usage/03-config/13-emot.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/docs/usage/03-config/14-font-name.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/docs/usage/04-uploadimg/01-show-tab.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/docs/usage/04-uploadimg/02-base64.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/docs/usage/04-uploadimg/03-upload-config.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/docs/usage/04-uploadimg/04-qiniu.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/docs/usage/05-other/01-全屏-预览-查看源码.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/docs/usage/05-other/02-上传附件.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/docs/usage/05-other/03-markdown.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/docs/usage/05-other/04-xss.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/docs/usage/05-other/05-react.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/docs/usage/05-other/06-vue.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/docs/usage/05-other/07-ng.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/docs/usage/05-other/08-api.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/docs/usage/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/demo/in-react/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/demo/in-react/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/demo/in-react/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/demo/in-react/public/manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/demo/in-react/src/App.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/demo/in-react/src/App.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/demo/in-react/src/App.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/demo/in-react/src/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/demo/in-react/src/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/demo/in-react/src/logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/demo/in-react/src/registerServiceWorker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/demo/in-vue/.babelrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/demo/in-vue/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/demo/in-vue/.postcssrc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/demo/in-vue/build/build.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/demo/in-vue/build/check-versions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/demo/in-vue/build/dev-client.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/demo/in-vue/build/dev-server.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/demo/in-vue/build/utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/demo/in-vue/build/vue-loader.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/demo/in-vue/build/webpack.base.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/demo/in-vue/build/webpack.dev.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/demo/in-vue/build/webpack.prod.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/demo/in-vue/config/dev.env.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/demo/in-vue/config/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/demo/in-vue/config/prod.env.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/demo/in-vue/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/demo/in-vue/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/demo/in-vue/src/App.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/demo/in-vue/src/assets/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/demo/in-vue/src/components/Editor.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/demo/in-vue/src/components/Hello.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/demo/in-vue/src/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/demo/in-vue/static/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/demo/test-amd-main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/demo/test-amd.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/demo/test-css-reset.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/demo/test-emot.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/demo/test-fullscreen.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/demo/test-get-content.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/demo/test-getJSON.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/demo/test-lang.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/demo/test-menus.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/demo/test-mult.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/demo/test-onblur.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/demo/test-onchange.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/demo/test-onfocus.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/demo/test-paste.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/demo/test-set-content.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/demo/test-sperate.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/demo/test-textarea.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/demo/test-uploadimg.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/icomoon/Read Me.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/icomoon/demo-files/demo.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/icomoon/demo-files/demo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/icomoon/demo.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/icomoon/fonts/icomoon.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/icomoon/fonts/icomoon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/icomoon/fonts/icomoon.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/icomoon/fonts/icomoon.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/icomoon/selection.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/icomoon/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/pay.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/server/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/server/util.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/fonts/w-e-icon.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/gulpfile.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/release/fonts/w-e-icon.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/release/wangEditor.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/release/wangEditor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/release/wangEditor.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/release/wangEditor.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/release/wangEditor.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/src/fonts/w-e-icon.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/src/js/.babelrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/src/js/command/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/src/js/config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/src/js/editor/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/src/js/editor/upload/progress.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/src/js/editor/upload/upload-img.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/src/js/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/src/js/menus/backColor/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/src/js/menus/bold/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/src/js/menus/code/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/src/js/menus/droplist.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/src/js/menus/emoticon/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/src/js/menus/fontName/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/src/js/menus/fontSize/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/src/js/menus/foreColor/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/src/js/menus/head/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/src/js/menus/img/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/src/js/menus/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/src/js/menus/italic/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/src/js/menus/justify/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/src/js/menus/link/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/src/js/menus/list/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/src/js/menus/menu-list.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/src/js/menus/panel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/src/js/menus/quote/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/src/js/menus/redo/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/src/js/menus/strikethrough/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/src/js/menus/table/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/src/js/menus/underline/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/src/js/menus/undo/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/src/js/menus/video/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/src/js/selection/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/src/js/text/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/src/js/util/dom-core.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/src/js/util/paste-handle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/src/js/util/poly-fill.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/src/js/util/replace-lang.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/src/js/util/util.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/src/less/common.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/src/less/droplist.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/src/less/icon.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/src/less/menus.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/src/less/panel.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/src/less/text.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/wangEditor.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/wangEditor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/wangEditor.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/wangEditor.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/wangEditor.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/logist-flow-plugin-master/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/logist-flow-plugin-master/css/flowplugin-改后.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/logist-flow-plugin-master/css/flowplugin.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/logist-flow-plugin-master/flow-2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/logist-flow-plugin-master/flow-3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/logist-flow-plugin-master/flow.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/logist-flow-plugin-master/img/f1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/logist-flow-plugin-master/img/f2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/logist-flow-plugin-master/img/f3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/logist-flow-plugin-master/js/flowplugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/logist-flow-plugin-master/js/flowplugin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/page/404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/page/button.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/page/color-select.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/page/editor.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/page/form-step.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/page/form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/page/icon-picker.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/page/icon.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/page/layer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/page/login-1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/page/login-2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/page/menu.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/page/setting.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/page/table-select.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/page/table.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/page/upload.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/page/user-password.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/page/user-setting.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/page/welcome-1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/page/welcome-2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/pages/adminsManage/add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/pages/adminsManage/detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/pages/adminsManage/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/pages/adminsManage/js/add.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/pages/adminsManage/js/detail.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/pages/adminsManage/js/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/pages/adminsManage/js/quanxian1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/pages/adminsManage/js/update.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/pages/adminsManage/quanxian.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/pages/adminsManage/update.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/pages/cashoutManage/cashoutExamine.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/pages/cashoutManage/cashoutRecord.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/pages/cashoutManage/js/cashoutExamine.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/pages/cashoutManage/js/cashoutRecord.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/pages/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/pages/home2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/pages/img/q.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/pages/img/rarimg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/pages/libi/dingdan.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/pages/libi/js/dingdan.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/pages/memberManager/add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/pages/memberManager/detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/pages/memberManager/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/pages/memberManager/js/add.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/pages/memberManager/js/detail.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/pages/memberManager/js/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/pages/memberManager/js/quanxian1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/pages/memberManager/js/update.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/pages/memberManager/quanxian.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/pages/memberManager/update.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/pages/navigationbar/icon/chooseIcon.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/pages/navigationbar/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/pages/navigationbar/js/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/pages/recharOptManage/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/pages/recharOptManage/js/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/pages/systemMonitor/onlineCoIndex.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/pages/systemMonitor/sqlMonitorIndex.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/pages/systemMonitor/swaggerIndex.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/pages/userManage/add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/pages/userManage/css/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/pages/userManage/detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/pages/userManage/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/pages/userManage/js/add.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/pages/userManage/js/area.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/pages/userManage/js/detail.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/pages/userManage/js/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/pages/userManage/js/selectMore.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/pages/userManage/js/userFeedback.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/pages/userManage/js/userProtocol.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/pages/userManage/js/userjiaocheng.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/pages/userManage/userFeedback.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/pages/userManage/userProtocol.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/pages/userManage/userjiaocheng.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/user-password.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/模块说明.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/yundian-guanwang.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/chenyou-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/chenyou-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/chenyou-1.0-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/chenyou-1.0-SNAPSHOT.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yundian-cms.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/chengyou-guanwang.iml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -73,26 +697,39 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="1692361050">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.15" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="iml" value="1" />
+          <entry key="java" value="1" />
+          <entry key="yml" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="IDEA_MODULE" value="1" />
+          <entry key="JAVA" value="1" />
+          <entry key="YAML" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FavoritesManager">
     <favorites_list name="yundian-guanwang" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/utils/steam/SteamLoginUtil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="31" column="79" selection-start-line="31" selection-start-column="79" selection-end-line="31" selection-end-column="79" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/utils/SQSendMailUtil.java">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/application-dev.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
-              <caret line="32" column="50" selection-start-line="32" selection-start-column="50" selection-end-line="32" selection-end-column="50" />
+            <state relative-caret-position="100">
+              <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -117,7 +754,7 @@
     </dirStrings>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="D:/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -164,9 +801,21 @@
   </component>
   <component name="MavenProjectNavigator">
     <treeState>
-      <expand />
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="chenyou" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+      </expand>
       <select />
     </treeState>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/demo/in-react/package.json" />
+      <path value="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/example/demo/in-vue/package.json" />
+      <path value="$PROJECT_DIR$/src/main/resources/templates/yundian-templates/lib/wangEditor-3.1.1/package.json" />
+    </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="22" />
@@ -180,73 +829,37 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="yundian-guanwang" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yundian-guanwang" type="462c0819:PsiDirectoryNode" />
+              <item name="chenyou" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chenyou" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="yundian-guanwang" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yundian-guanwang" type="462c0819:PsiDirectoryNode" />
+              <item name="chenyou" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chenyou" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="yundian-guanwang" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yundian-guanwang" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yundian-guanwang" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yundian-guanwang" type="462c0819:PsiDirectoryNode" />
+              <item name="chenyou" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chenyou" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="yundian-guanwang" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yundian-guanwang" type="462c0819:PsiDirectoryNode" />
+              <item name="chenyou" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chenyou" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="itsq" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yundian-guanwang" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yundian-guanwang" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="itsq" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yundian-guanwang" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yundian-guanwang" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="itsq" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yundian-guanwang" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yundian-guanwang" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="itsq" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-              <item name="steam" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="ProjectViewState">
@@ -262,7 +875,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1590999652908" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1591074382132" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -277,16 +890,18 @@
     <property name="project.structure.proportion" value="0.15404929" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.annotationProcessors" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\IDEAworkspaces\druid-demo\src\main\resources" />
-      <recent name="F:\IDEAworkspaces\druid-demo\src\main\resources\templates" />
-      <recent name="F:\IDEAworkspaces\druid-demo\src\main\resources\templates\user" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\13660\Desktop\项目架构\可以显示目录\new官网\code\yundian-guanwang\src\main\resources\mapper" />
+      <recent name="C:\Users\13660\Desktop\项目架构\可以显示目录\new官网\code\yundian-guanwang\src\main\java\com\itsq\pojo\dto" />
+      <recent name="C:\Users\13660\Desktop\项目架构\可以显示目录\new官网\code\yundian-guanwang\src\main\java\com\itsq\controller\mail" />
+      <recent name="C:\Users\13660\Desktop\项目架构\可以显示目录\new官网\code\yundian-guanwang\src\main\resources\static" />
+      <recent name="C:\Users\13660\Desktop\项目架构\可以显示目录\new官网\code\yundian-guanwang\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.itsq.pojo.dto" />
@@ -295,12 +910,10 @@
       <recent name="com.itsq.enums" />
       <recent name="com.itsq.pojo.entity" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\13660\Desktop\项目架构\可以显示目录\new官网\code\yundian-guanwang\src\main\resources\mapper" />
-      <recent name="C:\Users\13660\Desktop\项目架构\可以显示目录\new官网\code\yundian-guanwang\src\main\java\com\itsq\pojo\dto" />
-      <recent name="C:\Users\13660\Desktop\项目架构\可以显示目录\new官网\code\yundian-guanwang\src\main\java\com\itsq\controller\mail" />
-      <recent name="C:\Users\13660\Desktop\项目架构\可以显示目录\new官网\code\yundian-guanwang\src\main\resources\static" />
-      <recent name="C:\Users\13660\Desktop\项目架构\可以显示目录\new官网\code\yundian-guanwang\src\main\resources" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\IDEAworkspaces\druid-demo\src\main\resources" />
+      <recent name="F:\IDEAworkspaces\druid-demo\src\main\resources\templates" />
+      <recent name="F:\IDEAworkspaces\druid-demo\src\main\resources\templates\user" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -321,7 +934,7 @@
     </option>
     <option name="contentProportion" value="0.0927357" />
   </component>
-  <component name="RunManager" selected="Application.SteamLoginUtil">
+  <component name="RunManager" selected="Spring Boot.ChenYouApplication">
     <configuration name="CheckBank" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.itsq.utils.checkbank.CheckBank" />
       <module name="chenyou" />
@@ -451,9 +1064,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.ChenYouApplication" />
         <item itemvalue="Application.SteamLoginUtil" />
         <item itemvalue="Application.SQSendMailUtil" />
-        <item itemvalue="Spring Boot.ChenYouApplication" />
         <item itemvalue="Application.CodeGenerator" />
         <item itemvalue="Application.CheckBank" />
       </list>
@@ -577,6 +1190,7 @@
       <workItem from="1590626315269" duration="5926000" />
       <workItem from="1590712970717" duration="2577000" />
       <workItem from="1590978458267" duration="8554000" />
+      <workItem from="1591067980252" duration="3048000" />
     </task>
     <servers />
   </component>
@@ -613,12 +1227,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20748000" />
+    <option name="totallyTimeSpent" value="23796000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.9064748" visible="true" weight="0.30484116" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.9064748" visible="true" weight="0.30937973" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -628,7 +1243,7 @@
       <window_info id="Web" order="7" sideWeight="0.09352518" side_tool="true" weight="0.30484116" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.43862522" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.43770492" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -636,18 +1251,18 @@
       <window_info anchor="bottom" id="Spring" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.3289689" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.3289689" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32786885" />
       <window_info anchor="bottom" id="Problems" order="11" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
       <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="14" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run Dashboard" order="15" weight="0.0" />
+      <window_info anchor="bottom" id="Run Dashboard" order="15" weight="0.53934425" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Maven Projects" order="5" weight="0.31543118" />
+      <window_info anchor="right" id="Maven Projects" order="5" visible="true" weight="0.2965204" />
       <window_info anchor="right" id="Database" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
@@ -783,13 +1398,6 @@
     <SUITE FILE_PATH="coverage/druid_demo$druidDemoApplication.ic" NAME="druidDemoApplication Coverage Results" MODIFIED="1584578398945" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application-dev.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/pojo/entity/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -1098,20 +1706,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/ChenYouApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/utils/steam/SteamOpenIDManager.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/utils/steam/SteamOpenIDManager.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/utils/steam/StringUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-237">
           <caret line="133" column="25" selection-start-line="133" selection-start-column="25" selection-end-line="133" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/utils/SQSendMailUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="32" column="50" selection-start-line="32" selection-start-column="50" selection-end-line="32" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chenyou-cms.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/ChenYouApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
         </state>
       </provider>
     </entry>
@@ -1122,10 +1738,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/utils/SQSendMailUtil.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application-dev.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="32" column="50" selection-start-line="32" selection-start-column="50" selection-end-line="32" selection-end-column="50" />
+        <state relative-caret-position="100">
+          <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
         </state>
       </provider>
     </entry>
