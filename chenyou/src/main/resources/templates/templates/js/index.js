@@ -15,7 +15,7 @@ layui.config({
         layuimini.initHome({
             "title": "首页",
             "icon": "fa fa-home",
-            "href": "pages/memberManager/index.html"
+            "href": "pages/adminsManage/index.html"
         });
          // 初始化网站logo
 //      layuimini.initLogo({
