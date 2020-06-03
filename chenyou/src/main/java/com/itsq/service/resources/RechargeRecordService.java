@@ -1,5 +1,7 @@
 package com.itsq.service.resources;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.itsq.pojo.dto.RechargeRecordDto;
 import com.itsq.pojo.entity.RechargeRecord;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -12,5 +14,12 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @since 2020-06-02
  */
 public interface RechargeRecordService extends IService<RechargeRecord> {
+
+
+
+
+    int  addRechargeRecord(RechargeRecord rechargeRecord);
+
+    Page<RechargeRecord> selectRechargeRecordDtoPage(RechargeRecordDto rechargeRecordDto);
 
 }

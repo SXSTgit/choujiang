@@ -37,6 +37,12 @@ public class RechargeRecord implements Serializable {
     @TableField("players_id")
     private Integer playersId;
 
+
+    @ApiModelProperty(value = "订单号")
+    @TableField("tradeNo")
+    private String tradeNo;
+
+
     @ApiModelProperty(value = "充值金额")
     @TableField("amount")
     private BigDecimal amount;
@@ -54,7 +60,7 @@ public class RechargeRecord implements Serializable {
     public static final String PLAYERS_ID = "players_id";
 
     public static final String AMOUNT = "amount";
-
+    public static final String TRADENO = "tradeNo";
     public static final String TYPE = "type";
 
     public static final String CR_DATE = "cr_date";

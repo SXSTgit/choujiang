@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>5秒后跳转4102到另一1653个页面</title>
+</head>
+<script>
+    var t = 5;
+    var s = '.';
+    timeID=setInterval("countDown()",1000);
+    function countDown(){
+        time.innerHTML= t +"秒后跳转"+s;
+        t--;
+        s+='.';
+        if (t==0) {
+            location.href="http://www.baidu.com/"; //【这边是内要跳转的目标地址】
+            clearInterval(timeID);
+        }
+    }
+</script>
+<body>
+<div><font ID="time" face="impact" color="#272822" size="7">即将跳转</font>
+</div>
+</body>
+</html>
