@@ -33,7 +33,7 @@ spring:
   redis.password: 123456
   #模板引擎配置
   thymeleaf:
-    prefix: classpath:/templates/
+    prefix: classpath:/templates/**
     suffix: .html
     mode: HTML
     encoding: UTF-8
