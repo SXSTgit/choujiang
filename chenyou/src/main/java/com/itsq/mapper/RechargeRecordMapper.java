@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * </p>
  *
  * @author 史先帅
- * @since 2020-06-02
+ * @since 2020-06-04
  */
 public interface RechargeRecordMapper extends BaseMapper<RechargeRecord> {
 

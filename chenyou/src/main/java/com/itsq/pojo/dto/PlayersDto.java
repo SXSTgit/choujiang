@@ -22,16 +22,13 @@ import java.util.Date;
 @Data
 public class PlayersDto implements Serializable {
 
-    @ApiModelProperty(value = "邮箱")
-    @TableField("number")
+
     private String number;
 
-    @ApiModelProperty(value = "密码")
-    @TableField("pwd")
+
     private String pwd;
 
-    @ApiModelProperty(value = "验证码")
-    @TableField("code")
+
     private String code;
 
 }
