@@ -38,8 +38,8 @@ public class Arms implements Serializable {
     private String name;
 
     @ApiModelProperty(value = "主图")
-    @TableField("image")
-    private String image;
+    @TableField("imageUrl")
+    private String imageUrl;
 
     @ApiModelProperty(value = "价格")
     @TableField("price")
@@ -65,7 +65,7 @@ public class Arms implements Serializable {
 
     public static final String NAME = "name";
 
-    public static final String IMAGE = "image";
+    public static final String IMAGE = "imageUrl";
 
     public static final String PRICE = "price";
 

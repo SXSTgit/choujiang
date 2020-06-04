@@ -49,6 +49,14 @@ public class Box implements Serializable {
     @TableField("is_status")
     private Integer isStatus;
 
+    @ApiModelProperty(value = "库存")
+    @TableField("count")
+    private Integer count;
+
+    @ApiModelProperty(value = "类型")
+    @TableField("type")
+    private Integer type;
+
     @TableField(value = "cr_date",fill = FieldFill.INSERT)
     private Date crDate;
 
@@ -64,5 +72,9 @@ public class Box implements Serializable {
     public static final String IS_STATUS = "is_status";
 
     public static final String CR_DATE = "cr_date";
+
+    public static final String COUNT = "count";
+
+    public static final String TYPE = "type";
 
 }
