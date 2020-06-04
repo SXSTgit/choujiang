@@ -18,7 +18,7 @@ import lombok.experimental.Accessors;
  * </p>
  *
  * @author 史先帅
- * @since 2020-06-02
+ * @since 2020-06-04
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -30,18 +30,16 @@ public class RechargeRecord implements Serializable {
     private static final long serialVersionUID=1L;
 
     @ApiModelProperty(value = "充值记录")
-    @TableField("id")
+      @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
 
     @ApiModelProperty(value = "用户id")
     @TableField("players_id")
     private Integer playersId;
 
-
     @ApiModelProperty(value = "订单号")
-    @TableField("tradeNo")
+    @TableField("trade_no")
     private String tradeNo;
-
 
     @ApiModelProperty(value = "充值金额")
     @TableField("amount")
@@ -51,18 +49,23 @@ public class RechargeRecord implements Serializable {
     @TableField("type")
     private Integer type;
 
-    @TableField(value = "cr_date",fill = FieldFill.INSERT)
-    private Date crDate;
+    @ApiModelProperty(value = "创建时间")
+    @TableField(value = "cre_date",fill = FieldFill.INSERT)
+    private Date creDate;
 
-
+    @ApiModelProperty(value = "支付状态")
+    @TableField("trade_status")
+    private String tradeStatus;
     public static final String ID = "id";
 
     public static final String PLAYERS_ID = "players_id";
 
+    public static final String TRADE_NO = "trade_no";
+
     public static final String AMOUNT = "amount";
-    public static final String TRADENO = "tradeNo";
+
     public static final String TYPE = "type";
 
-    public static final String CR_DATE = "cr_date";
-
+    public static final String CRE_DATE = "cre_date";
+    public static final String TRADE_STATUS = "trade_status";
 }

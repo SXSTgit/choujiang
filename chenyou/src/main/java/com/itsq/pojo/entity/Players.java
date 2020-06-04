@@ -61,8 +61,9 @@ public class Players implements Serializable {
     @TableField("is_status")
     private Integer isStatus;
 
-    @TableField(value = "cr_date",fill = FieldFill.INSERT)
-    private Date crData;
+    @ApiModelProperty(value = "创建时间")
+    @TableField(value = "cre_date",fill = FieldFill.INSERT)
+    private Date creDate;
 
     @TableField("state")
     @TableLogic
@@ -85,7 +86,7 @@ public class Players implements Serializable {
 
     public static final String IS_STATUS = "is_status";
 
-    public static final String CR_DATA = "cr_data";
+    public static final String CRE_DATA = "cre_data";
 
     public static final String STATE = "state";
 

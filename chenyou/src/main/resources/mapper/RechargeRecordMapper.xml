@@ -4,16 +4,19 @@
 
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.itsq.pojo.entity.RechargeRecord">
-        <result column="id" property="id" />
-        <result column="players_id" property="playersId" />
-        <result column="amount" property="amount" />
-        <result column="type" property="type" />
-        <result column="cr_date" property="crDate" />
+        <id column="id" property="id"/>
+        <result column="players_id" property="playersId"/>
+        <result column="trade_no" property="tradeNo"/>
+        <result column="amount" property="amount"/>
+        <result column="type" property="type"/>
+        <result column="cr_date" property="crDate"/>
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, players_id, amount, type, cr_date
+        id, players_id, trade_no, amount, type, cr_date
     </sql>
+
+
 
 </mapper>

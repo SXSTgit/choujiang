@@ -65,7 +65,7 @@ public class Arms implements Serializable {
 
     public static final String NAME = "name";
 
-    public static final String IMAGE = "imageUrl";
+    public static final String IMAGEUTRL = "imageUrl";
 
     public static final String PRICE = "price";
 

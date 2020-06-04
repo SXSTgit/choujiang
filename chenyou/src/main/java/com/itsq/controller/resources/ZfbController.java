@@ -10,11 +10,16 @@ import com.alipay.api.request.AlipayTradePrecreateRequest;
 import com.alipay.api.response.AlipayTradePrecreateResponse;
 import com.itsq.common.base.BaseController;
 import com.itsq.config.AlipayConfig;
+
+import com.itsq.pojo.entity.RechargeRecord;
+import com.itsq.service.resources.RechargeRecordService;
 import com.itsq.utils.StringUtils;
+import com.itsq.utils.wx.QRCodeGenerator;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -22,6 +27,8 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -38,25 +45,34 @@ import java.util.Map;
 @CrossOrigin
 @Api(tags = "支付宝模块")
 public class ZfbController extends BaseController {
+
+
+
+    @Autowired
+    private RechargeRecordService rechargeRecordService;
+
+
     /**
      * 当面付——扫码支付
+     *
      * @param model
      * @return
      * @throws Exception
      */
     @PostMapping(value = "/alipay")
     @ApiOperation(value = "扫码支付", notes = "", httpMethod = "POST")
-    public String dopay( Model model) throws Exception {
+    public String dopay(Model model, Integer amount,Integer playerId) throws Exception {
         AlipayClient alipayClient = new DefaultAlipayClient(AlipayConfig.gatewayUrl, AlipayConfig.app_id, AlipayConfig.private_key, "json", AlipayConfig.input_charset, AlipayConfig.alipay_public_key, "RSA2");
         AlipayTradePrecreateRequest request = new AlipayTradePrecreateRequest();//创建API对应的request类
         //设置模型参数
         AlipayTradeAppPayModel PayModel = new AlipayTradeAppPayModel();
         /*商户订单号(必填)*/
-        PayModel.setOutTradeNo(StringUtils.getOutTradeNo());
+        String outTradeNo = StringUtils.getOutTradeNo();
+        PayModel.setOutTradeNo(outTradeNo);
         /*订单总金额(单位元 必填)*/
-        PayModel.setTotalAmount("1");
+        PayModel.setTotalAmount(amount+"");
         /*订单标题 (必填)*/
-        PayModel.setSubject("测试DEMO");
+        PayModel.setSubject("游戏");
         /*订单允许的最晚付款时间 (选填)*/
         PayModel.setTimeoutExpress("90m");
         //将参数对手打包到请求中
@@ -65,17 +81,28 @@ public class ZfbController extends BaseController {
         request.setNotifyUrl(AlipayConfig.notify_url);
         AlipayTradePrecreateResponse response = alipayClient.execute(request);
         //JSONObject jsonObject = JSON.parseObject(response.getBody()).getJSONObject("alipay_trade_precreate_response");
-       // String qr_code = (String) jsonObject.get("qr_code");
+        // String qr_code = (String) jsonObject.get("qr_code");
         System.out.println(response.getQrCode());
         model.addAttribute("code_url", response.getQrCode());
-        return "pay";
+        RechargeRecord rechargeRecord=new RechargeRecord();
+
+        rechargeRecord.setTradeNo(outTradeNo);
+        rechargeRecord.setAmount(new BigDecimal(amount));
+        rechargeRecord.setType(2);
+        rechargeRecord.setPlayersId(playerId);
+        rechargeRecordService.addRechargeRecord(rechargeRecord);
+
+        QRCodeGenerator.generateQRCodeImage(response.getQrCode(),350,350,"C:/img/ewm/"+outTradeNo+".png");
+
+        return "C:/img/ewm/"+outTradeNo+".png";
     }
 
     /**
      * 异步回调
      * *注意：此方法会被调用两次
-     *       一次是扫码的时候
-     *       一次是支付成功的时候
+     * 一次是扫码的时候
+     * 一次是支付成功的时候
+     *
      * @param request
      * @return
      */
@@ -86,18 +113,32 @@ public class ZfbController extends BaseController {
         try {
             // 获取支付宝POST过来反馈信息
             Map<String, String> params = StringUtils.toMap(request);
+
             //校验签名
             if (!AlipaySignature.rsaCheckV1(params, AlipayConfig.alipay_public_key, "UTF-8", "RSA2")) {
                 log.error("【支付宝支付异步通知】签名验证失败, response={}", params);
                 throw new RuntimeException("【支付宝支付异步通知】签名验证失败");
             }
             //交易状态
+
+            String order = params.get("out_trade_no");
             String tradeStatus = params.get("trade_status");
+            if(tradeStatus.equals("TRADE_SUCCESS")){
+                RechargeRecord rechargeRecord = rechargeRecordService.selectRechargeRecord(order);
+                rechargeRecord.setTradeStatus(tradeStatus);
+                rechargeRecordService.updateRechargeRecord(rechargeRecord);
+            }
+            System.out.println(order + tradeStatus);
+
             if (!tradeStatus.equals("TRADE_FINISHED") &&
                     !tradeStatus.equals("TRADE_SUCCESS")) {
                 throw new RuntimeException("【支付宝支付异步通知】发起支付, trade_status != SUCCESS | FINISHED");
             }
             log.info("【支付成功】");
+
+
+
+
             //TODO 相应订单业务处理
         } catch (Exception e) {
             e.printStackTrace();
@@ -131,8 +172,6 @@ public class ZfbController extends BaseController {
         }
 
     }
-
-
 
 
     /**
