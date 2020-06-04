@@ -152,7 +152,10 @@ layui.config({
             type: "POST",
             url: baseURL + "steam/login",
             dataType: "json",
-            success: function () {
+            success: function (res) {
+                if(res.data!=null){
+                    window.open(res.data);
+                }
             }
         });
     });
