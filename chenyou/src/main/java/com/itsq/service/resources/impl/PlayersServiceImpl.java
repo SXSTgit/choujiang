@@ -1,8 +1,10 @@
 package com.itsq.service.resources.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.itsq.common.bean.ErrorEnum;
 import com.itsq.common.constant.APIException;
+import com.itsq.pojo.dto.PlayersDtoPage;
 import com.itsq.pojo.entity.Manager;
 import com.itsq.pojo.entity.Players;
 import com.itsq.mapper.PlayersMapper;
@@ -47,7 +49,16 @@ PlayersServiceImpl extends ServiceImpl<PlayersMapper, Players> implements Player
     }
 
     @Override
+    public Players selectPlayersById(Integer id) {
+        return super.baseMapper.selectById(id);
+    }
+
+    @Override
     public int updatePlayersBuId(Players players) {
+       /* Players players1 = selectPlayersById(players.getId());
+
+        players.setBalance(players1.getBalance().add(players.getBalance()));*/
+
         return super.baseMapper.updateById(players);
     }
 
@@ -73,5 +84,14 @@ PlayersServiceImpl extends ServiceImpl<PlayersMapper, Players> implements Player
             return u.get();
         }
         throw new APIException(ErrorEnum.USER_NOT_EXITES);
+    }
+
+    @Override
+    public Page<Players> selectPlayersPage(PlayersDtoPage playersDtoPage) {
+
+        Page<Players>  page=new Page<>(playersDtoPage.getPageIndex(),playersDtoPage.getPageSize());
+        QueryWrapper queryWrapper=new QueryWrapper();
+
+        return super.baseMapper.selectPage(page,queryWrapper);
     }
 }

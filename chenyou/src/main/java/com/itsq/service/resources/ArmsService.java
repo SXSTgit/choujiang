@@ -14,5 +14,8 @@ import java.util.List;
  * @since 2020-06-02
  */
 public interface ArmsService extends IService<Arms> {
+    Arms selectArmsById(Integer armsId);
+
+    int addListArms(List<Arms> list);
 
 }

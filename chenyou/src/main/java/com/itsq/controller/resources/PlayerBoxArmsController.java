@@ -3,11 +3,15 @@ package com.itsq.controller.resources;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.itsq.common.base.BaseController;
+import com.itsq.common.bean.ErrorEnum;
 import com.itsq.common.bean.Response;
 import com.itsq.pojo.dto.PageParametersDto;
+import com.itsq.pojo.dto.PlayerBoxArmsDtoUpd;
 import com.itsq.pojo.dto.RechargeRecordDto;
+import com.itsq.pojo.entity.Member;
 import com.itsq.pojo.entity.PlayerBoxArms;
 import com.itsq.service.resources.PlayerBoxArmsService;
+import com.itsq.token.CurrentUser;
 import com.itsq.utils.PagesUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -41,5 +45,22 @@ public class PlayerBoxArmsController extends BaseController {
         }*/
         return Response.success( playerBoxArmsService.selectPlayerBoxArmsPage(pageParametersDto));
     }
+
+    @PostMapping("updatePlayerBoxArms")
+    @ApiOperation(value = "用户所属武器-修改", notes = "", httpMethod = "POST")
+    public Response updatePlayerBoxArms(@RequestBody PlayerBoxArmsDtoUpd playerBoxArmsDtoUpd){
+       /* CurrentUser currentUser = currentUser();
+        if(currentUser==null){
+            return Response.fail(ErrorEnum.SIGN_VERIFI_EXPIRE);
+        }*/
+
+        int i = playerBoxArmsService.updatePlayerBoxArms(playerBoxArmsDtoUpd);
+
+        if( i<=0){
+            return Response.fail("修改失败");
+        }
+        return Response.success();
+    }
+
 }
 

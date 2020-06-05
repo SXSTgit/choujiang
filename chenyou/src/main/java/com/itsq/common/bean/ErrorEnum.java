@@ -22,6 +22,8 @@ public enum ErrorEnum {
     USER_ISNULL(100081,"收件人信息为空"),
    PLAYER_PHONE(100017,"该账号已存在"),
     XIUGAI_YUE(100017,"修改余额失败!"),
+    YICHUSHOU_YUE(100017,"物品已出售!"),
+    DARUWUQI_SHB(100017,"导入武器失败!"),
     ;
 
 

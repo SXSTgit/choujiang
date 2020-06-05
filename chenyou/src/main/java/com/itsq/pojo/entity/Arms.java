@@ -57,8 +57,9 @@ public class Arms implements Serializable {
     @TableField("is_status")
     private Integer isStatus;
 
-    @TableField(value = "cr_date",fill = FieldFill.INSERT)
-    private Date crDate;
+    @ApiModelProperty(value = "创建时间")
+    @TableField(value = "cre_date",fill = FieldFill.INSERT)
+    private Date creDate;
 
 
     public static final String ID = "id";
@@ -75,6 +76,6 @@ public class Arms implements Serializable {
 
     public static final String IS_STATUS = "is_status";
 
-    public static final String CR_DATE = "cr_date";
+    public static final String CRE_DATE = "cre_date";
 
 }

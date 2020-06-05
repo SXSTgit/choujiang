@@ -70,7 +70,9 @@ public class RechargeRecordServiceImpl extends ServiceImpl<RechargeRecordMapper,
     public int updateRechargeRecord(RechargeRecord rechargeRecord) {
         Players players =new Players();
         players.setId(rechargeRecord.getPlayersId());
-        players.setBalance(rechargeRecord.getAmount());
+        Players players1 = playersService.selectPlayersById(rechargeRecord.getPlayersId());
+
+        players.setBalance(rechargeRecord.getAmount().add(players1.getBalance()));
         int i = playersService.updatePlayersBuId(players);
         if(1<=0){
             throw new APIException(ErrorEnum.XIUGAI_YUE);

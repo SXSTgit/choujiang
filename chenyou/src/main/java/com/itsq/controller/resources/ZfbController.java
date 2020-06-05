@@ -92,9 +92,9 @@ public class ZfbController extends BaseController {
         rechargeRecord.setPlayersId(playerId);
         rechargeRecordService.addRechargeRecord(rechargeRecord);
 
-        QRCodeGenerator.generateQRCodeImage(response.getQrCode(),350,350,"C:/img/ewm/"+outTradeNo+".png");
+      //  QRCodeGenerator.generateQRCodeImage(response.getQrCode(),350,350,"C:/img/ewm/"+outTradeNo+".png");
 
-        return "C:/img/ewm/"+outTradeNo+".png";
+        return response.getQrCode();
     }
 
     /**

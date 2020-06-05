@@ -46,10 +46,10 @@ public class BoxController extends BaseController {
     @RequestMapping(value = "getAllBox",method = RequestMethod.POST)
     @ApiOperation(value = "获取全部箱子", notes = "", httpMethod = "POST")
     public Response getAllBox(){
-        CurrentUser currentUser = currentUser();
+        /*CurrentUser currentUser = currentUser();
         if(currentUser==null){
             return Response.fail(ErrorEnum.SIGN_VERIFI_EXPIRE);
-        }
+        }*/
         QueryWrapper queryWrapper=new QueryWrapper();
         queryWrapper.orderByDesc("id");
         List list=boxService.list(queryWrapper);
