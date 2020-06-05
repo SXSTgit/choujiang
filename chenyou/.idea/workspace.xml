@@ -2,159 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc1eb556-f18e-47d5-b1f0-9606a8e7b41a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/itsq/pojo/dto/PlayerBoxArmsDtoUpd.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/itsq/pojo/dto/PlayersDtoPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/itsq/utils/http/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/itsq/pojo/dto/NormalBuyParamDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/erwei/060413383415912.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/erwei/060413404215912.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/erwei/060414380715912.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/erwei/anme.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itsq/common/bean/ErrorEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itsq/common/bean/ErrorEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itsq/controller/resources/ArmsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itsq/controller/resources/ArmsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itsq/controller/resources/BoxArmsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itsq/controller/resources/BoxArmsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itsq/controller/resources/BoxController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itsq/controller/resources/BoxController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itsq/controller/resources/PlayerBoxArmsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itsq/controller/resources/PlayerBoxArmsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itsq/controller/resources/PlayersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itsq/controller/resources/PlayersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itsq/controller/resources/UserOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itsq/controller/resources/UserOrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itsq/controller/resources/ZfbController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itsq/controller/resources/ZfbController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itsq/pojo/dto/PageParametersDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itsq/pojo/dto/PageParametersDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itsq/pojo/entity/Arms.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itsq/pojo/entity/Arms.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itsq/pojo/entity/PlayerBoxArms.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itsq/pojo/entity/PlayerBoxArms.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itsq/service/resources/ArmsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itsq/service/resources/ArmsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itsq/service/resources/PlayerBoxArmsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itsq/service/resources/PlayerBoxArmsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itsq/service/resources/PlayersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itsq/service/resources/PlayersService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itsq/service/resources/impl/ArmsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itsq/service/resources/impl/ArmsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itsq/service/resources/impl/PlayerBoxArmsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itsq/service/resources/impl/PlayerBoxArmsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itsq/service/resources/impl/PlayersServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itsq/service/resources/impl/PlayersServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itsq/service/resources/impl/RechargeRecordServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itsq/service/resources/impl/RechargeRecordServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/PlayerBoxArmsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/PlayerBoxArmsMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/templates/js/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/templates/js/common.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/templates/pages/memberManager/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/templates/pages/memberManager/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/templates/pages/memberManager/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/templates/pages/memberManager/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/ChenYouApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/ChenYouApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/CodeGenerator$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/CodeGenerator$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/CodeGenerator$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/CodeGenerator$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/CodeGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/CodeGenerator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/common/aspect/LogAopUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/common/aspect/LogAopUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/common/aspect/WebLogAspect.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/common/aspect/WebLogAspect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/common/base/orm/Operator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/common/base/orm/Operator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/common/bean/ErrorEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/common/bean/ErrorEnum.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/common/bean/Response.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/common/bean/Response.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/common/constant/APIException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/common/constant/APIException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/common/constant/ExceptionHandle.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/common/constant/ExceptionHandle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/common/json/CustomObjectMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/common/json/CustomObjectMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/common/redis/JedisPoolFactoryBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/common/redis/JedisPoolFactoryBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/common/redis/RedisManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/common/redis/RedisManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/common/redis/RedisUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/common/redis/RedisUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/common/web/HttpClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/common/web/HttpClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/common/web/HttpHeader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/common/web/HttpHeader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/common/web/WebContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/common/web/WebContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/common/web/WebContextFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/common/web/WebContextFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/config/AliyunOssConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/config/AliyunOssConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/config/CorsConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/config/CorsConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/config/MyMetaObjectHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/config/MyMetaObjectHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/config/RedisConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/config/RedisConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/config/WebMvcConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/config/WebMvcConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/controller/file/UploadController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/controller/file/UploadController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/controller/file/UploadService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/controller/file/UploadService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/controller/mail/MailTaskController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/controller/mail/MailTaskController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/controller/menu/AdminMenuRoleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/controller/menu/AdminMenuRoleController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/controller/menu/SysMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/controller/menu/SysMenuController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/controller/oss/AliyunOssController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/controller/oss/AliyunOssController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/controller/resources/ManagerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/controller/resources/ManagerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/controller/resources/MemberController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/controller/resources/MemberController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/controller/resources/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/controller/resources/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/controller/resources/UserOrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/controller/resources/UserOrderController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/enums/EmailSendStatusEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/enums/EmailSendStatusEnum.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/enums/EnumMenuType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/enums/EnumMenuType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/enums/EnumTokenType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/enums/EnumTokenType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/mapper/ManagerMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/mapper/ManagerMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/mapper/SysMenuMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/mapper/SysMenuMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/mapper/UserOrderMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/mapper/UserOrderMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/pojo/dto/AddManagerReqDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/pojo/dto/AddManagerReqDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/pojo/dto/AddMenuOneDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/pojo/dto/AddMenuOneDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/pojo/dto/AddMenuThreeDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/pojo/dto/AddMenuThreeDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/pojo/dto/AddMenuTwoDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/pojo/dto/AddMenuTwoDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/pojo/dto/AddUserDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/pojo/dto/AddUserDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/pojo/dto/FindPageManagerParmeters.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/pojo/dto/FindPageManagerParmeters.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/pojo/dto/LoginRespDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/pojo/dto/LoginRespDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/pojo/dto/ManagerLoginReqDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/pojo/dto/ManagerLoginReqDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/pojo/dto/MemberPageDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/pojo/dto/MemberPageDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/pojo/dto/PageParametersDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/pojo/dto/PageParametersDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/pojo/dto/PageResultDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/pojo/dto/PageResultDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/pojo/dto/UpdateMenuInfoDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/pojo/dto/UpdateMenuInfoDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/pojo/dto/UserOrderPageDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/pojo/dto/UserOrderPageDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/pojo/dto/updatePassWordDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/pojo/dto/updatePassWordDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/pojo/entity/AdminMenuRole.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/pojo/entity/AdminMenuRole.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/pojo/entity/Manager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/pojo/entity/Manager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/pojo/entity/Member.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/pojo/entity/Member.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/pojo/entity/SysMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/pojo/entity/SysMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/pojo/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/pojo/entity/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/pojo/entity/UserOrder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/pojo/entity/UserOrder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/service/mail/MailTaskService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/service/mail/MailTaskService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/service/menu/AdminMenuRoleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/service/menu/AdminMenuRoleService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/service/menu/SysMenuService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/service/menu/SysMenuService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/service/menu/impl/AdminMenuRoleServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/service/menu/impl/AdminMenuRoleServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/service/menu/impl/SysMenuServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/service/menu/impl/SysMenuServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/service/oss/AliyunOssResolve.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/service/oss/AliyunOssResolve.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/service/oss/OssResolve.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/service/oss/OssResolve.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/service/oss/OssService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/service/oss/OssService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/service/resources/ManagerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/service/resources/ManagerService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/service/resources/MemberService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/service/resources/MemberService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/service/resources/UserOrderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/service/resources/UserOrderService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/service/resources/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/service/resources/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/service/resources/impl/ManagerServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/service/resources/impl/ManagerServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/service/resources/impl/MemberServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/service/resources/impl/MemberServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/service/resources/impl/UserOrderServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/service/resources/impl/UserOrderServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/service/resources/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/service/resources/impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/token/AuthToken.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/token/AuthToken.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/token/CurrentUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/token/CurrentUser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/token/JWTTokenUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/token/JWTTokenUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/token/OperatorAware.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/token/OperatorAware.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/token/OperatorAwareInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/token/OperatorAwareInterceptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/utils/ArrayUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/utils/ArrayUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/utils/Base64Util.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/utils/Base64Util.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/utils/BeanUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/utils/BeanUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/utils/CardNumVerify.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/utils/CardNumVerify.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/utils/CastUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/utils/CastUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/utils/CommonUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/utils/CommonUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/utils/Constant$SysLogEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/utils/Constant$SysLogEnum.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/utils/DateUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/utils/DateUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/utils/DateUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/utils/DateUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/utils/DateWhere.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/utils/DateWhere.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/utils/DecompressionUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/utils/DecompressionUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/utils/DigestUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/utils/DigestUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/utils/EmptyUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/utils/EmptyUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/utils/ExpressUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/utils/ExpressUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/utils/FileUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/utils/FileUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/utils/HttpUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/utils/HttpUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/utils/IDGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/utils/IDGenerator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/utils/IpAddressUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/utils/IpAddressUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/utils/JsonUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/utils/JsonUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/utils/ListQuChongUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/utils/ListQuChongUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/utils/MD5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/utils/MD5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/utils/PasswordCrypt.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/utils/PasswordCrypt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/utils/RSAUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/utils/RSAUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/utils/RandUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/utils/RandUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/utils/RandomUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/utils/RandomUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/utils/RegexUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/utils/RegexUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/utils/SQSendMailUtil$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/utils/SQSendMailUtil$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/utils/SQSendMailUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/utils/SQSendMailUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/utils/SnowflakeIdWorker.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/utils/SnowflakeIdWorker.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/utils/StringUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/utils/StringUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/utils/ValidUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/utils/ValidUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/utils/WxHttpUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/utils/WxHttpUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/utils/checkbank/CheckBank.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/utils/checkbank/CheckBank.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/utils/checkbank/CheckBankName.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/utils/checkbank/CheckBankName.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/utils/excel/Encodes.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/utils/excel/Encodes.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/utils/excel/Reflections.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/utils/excel/Reflections.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/utils/steam/SteamLoginUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/utils/steam/SteamLoginUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/utils/steam/StringUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/utils/steam/StringUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itsq/utils/http/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itsq/utils/http/Client.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -230,12 +80,13 @@
     <session id="1692361050">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.15" value="1" />
+          <entry key="project.open.time.29" value="1" />
           <entry key="project.open.time.32" value="2" />
           <entry key="project.open.time.33" value="1" />
           <entry key="project.open.time.41" value="1" />
-          <entry key="project.opened" value="5" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -243,7 +94,7 @@
           <entry key="class" value="28" />
           <entry key="html" value="6" />
           <entry key="iml" value="2" />
-          <entry key="java" value="290" />
+          <entry key="java" value="295" />
           <entry key="js" value="1" />
           <entry key="md" value="1" />
           <entry key="png" value="4" />
@@ -258,7 +109,7 @@
           <entry key="HTML" value="6" />
           <entry key="IDEA_MODULE" value="2" />
           <entry key="Image" value="4" />
-          <entry key="JAVA" value="290" />
+          <entry key="JAVA" value="295" />
           <entry key="JavaScript" value="1" />
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="1" />
@@ -269,9 +120,9 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="html" value="45" />
-          <entry key="java" value="2832" />
+          <entry key="java" value="2878" />
           <entry key="js" value="14" />
-          <entry key="txt" value="21" />
+          <entry key="txt" value="25" />
           <entry key="xml" value="250" />
           <entry key="yml" value="68" />
         </counts>
@@ -279,9 +130,9 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="45" />
-          <entry key="JAVA" value="2832" />
+          <entry key="JAVA" value="2878" />
           <entry key="JavaScript" value="14" />
-          <entry key="PLAIN_TEXT" value="21" />
+          <entry key="PLAIN_TEXT" value="25" />
           <entry key="SQL" value="5" />
           <entry key="XML" value="245" />
           <entry key="YAML" value="68" />
@@ -294,24 +145,47 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/service/resources/impl/PlayerBoxArmsServiceImpl.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/utils/http/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="41" column="26" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="26" />
-              <folding>
-                <element signature="e#1483#1484#0" expanded="true" />
-                <element signature="e#1543#1544#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="250">
+              <caret line="63" column="60" selection-start-line="63" selection-start-column="60" selection-end-line="63" selection-end-column="60" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/utils/http/Client.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/pojo/dto/ManagerLoginReqDto.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="63" column="7" selection-start-line="63" selection-start-column="7" selection-end-line="63" selection-end-column="7" />
+            <state relative-caret-position="100">
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/pojo/dto/PlayerBoxArmsDtoUpd.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="400">
+              <caret line="31" column="23" selection-start-line="31" selection-start-column="3" selection-end-line="31" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/pojo/dto/PageResultDTO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/pojo/dto/MemberPageDto.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="22" column="28" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -322,8 +196,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -342,7 +216,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/itsq/controller/resources/WxPayController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/itsq/utils/wx/HttpUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/itsq/utils/wx/RestUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/itsq/utils/wx/DemoHbRunner.java" />
@@ -392,6 +265,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/itsq/pojo/entity/Arms.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application-dev.yml" />
         <option value="$PROJECT_DIR$/src/main/java/com/itsq/service/resources/impl/PlayerBoxArmsServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/itsq/pojo/dto/NormalBuyParamDTO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/itsq/utils/http/Client.java" />
       </list>
     </option>
@@ -468,7 +342,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -505,6 +378,33 @@
               <item name="chenyou" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="itsq" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="chenyou" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chenyou" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="itsq" type="462c0819:PsiDirectoryNode" />
+              <item name="pojo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="chenyou" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chenyou" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="itsq" type="462c0819:PsiDirectoryNode" />
+              <item name="pojo" type="462c0819:PsiDirectoryNode" />
+              <item name="dto" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="chenyou" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chenyou" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -516,6 +416,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="ProjectViewState">
@@ -531,7 +432,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1591350568737" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1591353903656" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -591,7 +492,7 @@
     </option>
     <option name="contentProportion" value="0.016393442" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.CodeGenerator">
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.itsq.utils.http.Client" />
       <module name="chenyou" />
@@ -713,15 +614,14 @@
     </configuration>
     <list>
       <item itemvalue="Spring Boot.druidDemoApplication" />
+      <item itemvalue="Application.Client" />
       <item itemvalue="Application.CodeGenerator" />
       <item itemvalue="Spring Boot.ChenYouApplication" />
       <item itemvalue="Application.QRCodeUtils" />
       <item itemvalue="Application.QRCodeGenerator" />
-      <item itemvalue="Application.HttpClient" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.HttpClient" />
         <item itemvalue="Spring Boot.ChenYouApplication" />
         <item itemvalue="Application.CodeGenerator" />
         <item itemvalue="Application.QRCodeGenerator" />
@@ -851,7 +751,8 @@
       <workItem from="1591146932381" duration="32590000" />
       <workItem from="1591237819975" duration="26051000" />
       <workItem from="1591272860527" duration="11687000" />
-      <workItem from="1591324956693" duration="22553000" />
+      <workItem from="1591324956693" duration="25322000" />
+      <workItem from="1591364432058" duration="592000" />
     </task>
     <task id="LOCAL-00001" summary="第一次提交">
       <created>1591075074544</created>
@@ -902,7 +803,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591264847605</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="第七次提交">
+      <created>1591350897398</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1591350897399</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -938,7 +846,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="140222000" />
+    <option name="totallyTimeSpent" value="143583000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -952,7 +860,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7724359" visible="true" weight="0.23071104" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7724359" visible="true" weight="0.21104388" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -962,7 +870,7 @@
       <window_info id="Web" order="7" sideWeight="0.09352518" side_tool="true" weight="0.30484116" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.5508197" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.36885247" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -974,7 +882,7 @@
       <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.3295082" />
       <window_info anchor="bottom" id="Problems" order="12" />
       <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="14" weight="0.19836065" />
+      <window_info anchor="bottom" id="Version Control" order="14" weight="0.5868853" />
       <window_info anchor="bottom" id="Run Dashboard" order="15" weight="0.4969419" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -1040,7 +948,8 @@
     <MESSAGE value="第四次提交" />
     <MESSAGE value="第五次提交" />
     <MESSAGE value="第六次提交" />
-    <option name="LAST_COMMIT_MESSAGE" value="第六次提交" />
+    <MESSAGE value="第七次提交" />
+    <option name="LAST_COMMIT_MESSAGE" value="第七次提交" />
   </component>
   <component name="WindowStateProjectService">
     <state x="780" y="240" key="#com.intellij.ide.util.MemberChooser" timestamp="1590151906492">
@@ -1156,34 +1065,6 @@
     <SUITE FILE_PATH="coverage/druid_demo$druidDemoApplication.ic" NAME="druidDemoApplication Coverage Results" MODIFIED="1584578398945" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/pojo/entity/Players.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="51" column="41" selection-start-line="51" selection-start-column="31" selection-end-line="51" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/controller/resources/PlayersController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="119" column="35" selection-start-line="119" selection-start-column="18" selection-end-line="119" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/controller/resources/ManagerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/service/oss/OssResolve.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-440">
-          <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/pojo/dto/PlayersDtoPage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
@@ -1299,13 +1180,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/pojo/dto/PlayerBoxArmsDtoUpd.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="25" column="32" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/controller/resources/PlayerBoxArmsController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -1324,12 +1198,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
           <caret line="59" column="78" selection-start-line="57" selection-start-column="7" selection-end-line="59" selection-end-column="78" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#updatePlayers#0;class#PlayersServiceImpl#0" />
-            <element signature="method#login#0;class#PlayersServiceImpl#0" />
-            <element signature="method#selectPlayersPage#0;class#PlayersServiceImpl#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1394,13 +1262,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/utils/http/JSONUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="940">
-          <caret line="50" selection-start-line="50" selection-end-line="50" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/utils/http/JSONUtil.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/java/lang/Object.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
@@ -1503,17 +1365,51 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
           <caret line="41" column="26" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/pojo/dto/NormalBuyParamDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="16" column="35" lean-forward="true" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
           <folding>
-            <element signature="e#1483#1484#0" expanded="true" />
-            <element signature="e#1543#1544#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/utils/http/Client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="63" column="7" selection-start-line="63" selection-start-column="7" selection-end-line="63" selection-end-column="7" />
+        <state relative-caret-position="250">
+          <caret line="63" column="60" selection-start-line="63" selection-start-column="60" selection-end-line="63" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/pojo/dto/ManagerLoginReqDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/pojo/dto/PlayerBoxArmsDtoUpd.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="31" column="23" selection-start-line="31" selection-start-column="3" selection-end-line="31" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/pojo/dto/PageResultDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/pojo/dto/MemberPageDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="22" column="28" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="28" />
         </state>
       </provider>
     </entry>

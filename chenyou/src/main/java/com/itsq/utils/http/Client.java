@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.google.gson.Gson;
+import com.itsq.pojo.dto.NormalBuyParamDTO;
 import com.itsq.utils.RandUtil;
 import com.itsq.utils.RandomUtil;
 import org.apache.http.HttpEntity;
@@ -41,7 +42,7 @@ public class  Client {
     private static final String DEFAULT_CHARSET = "UTF-8";
     public static void main(String[] args) {
 
-        Map<String,String> param=new HashMap<>();
+       Map<String,String> param=new HashMap<>();
        /* String s = httpGetWithJSon("https://app.zbt.com/open/product/v1/search", param);
       Object succesResponse = JSON.parse(s);    //先转换成Object
 
@@ -56,13 +57,14 @@ public class  Client {
 
         JSONObject jsonObject=new JSONObject();
 
-        param.put("app-key",appKey);
-        param.put("outTradeNo", RandomUtil.getRandom(32));
-        param.put("language",language);
-        param.put("productId","23592");
-        param.put("tradeUrl","https://steamcommunity.com/tradeoffer/new/?partner=484669140&token=WEhy_ZWD");
-     //   httpPostWithJSON("https://app.zbt.com/open/trade/v1/buy", param);
+        jsonObject.put("app-key",appKey);
 
+        jsonObject.put("language",language);
+        NormalBuyParamDTO normalBuyParamDTO=new NormalBuyParamDTO(RandomUtil.getRandom(32),"23592","https://steamcommunity.com/tradeoffer/new/?partner=484669140&token=WEhy_ZWD");
+        jsonObject.put("normalBuyParamDTO",normalBuyParamDTO);
+        System.out.println(jsonObject.toJSONString());
+        String json = httpPostWithJSON("https://app.zbt.com/open/trade/v1/buy", jsonObject);
+        System.out.println(json);
     }
 
 
