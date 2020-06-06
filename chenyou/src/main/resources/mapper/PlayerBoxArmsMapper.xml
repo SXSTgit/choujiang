@@ -22,6 +22,8 @@
             <result column="aname" property="name"/>
             <result column="imageUrl" property="imageUrl"/>
             <result column="aprice" property="price"/>
+            <result column="aprice" property="price"/>
+            <result column="atype" property="type"/>
         </association>
         <association property="players" javaType="Players">
             <id column="pid" property="id"/>
@@ -44,6 +46,7 @@ pba.id as id,
   b.`price` bprice,
   a.`id` as aid,
   a.`name` as aname,
+  a.`type` as atype,
   a.`imageUrl`,
   a.`price` as aprice,
   p.`name` as pname,

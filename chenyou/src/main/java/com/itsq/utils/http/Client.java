@@ -42,8 +42,8 @@ public class  Client {
     private static final String DEFAULT_CHARSET = "UTF-8";
     public static void main(String[] args) {
 
-       Map<String,String> param=new HashMap<>();
-       /* String s = httpGetWithJSon("https://app.zbt.com/open/product/v1/search", param);
+     /*  Map<String,String> param=new HashMap<>();
+        String s = httpGetWithJSon("https://app.zbt.com/open/product/v1/search", param);
       Object succesResponse = JSON.parse(s);    //先转换成Object
 
         Map map = (Map)succesResponse;         //Object强转换为Map
@@ -54,7 +54,6 @@ public class  Client {
         for (Object o : list) {
             System.out.println(o.toString());
         }*/
-
         JSONObject jsonObject=new JSONObject();
 
         jsonObject.put("app-key",appKey);

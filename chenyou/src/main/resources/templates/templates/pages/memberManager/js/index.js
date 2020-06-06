@@ -82,6 +82,20 @@ layui.config({
 						}
 					},
 					{
+						field: 'head',
+						title: '头像',
+						width: 150,
+						align: 'center',
+						templet: function(d) {
+							if(d.headImage==null){
+								return "<img src='../../images/logo.png'/>";
+							}else{
+								return "<img src='"  + d.image + "'/>";
+							}
+							
+						}
+					},
+					{
 						field: 'userName',
 						title: '昵称',
 						width: 100,

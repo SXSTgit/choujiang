@@ -14,6 +14,7 @@ import com.itsq.config.AlipayConfig;
 import com.itsq.pojo.entity.RechargeRecord;
 import com.itsq.service.resources.RechargeRecordService;
 import com.itsq.utils.StringUtils;
+import com.itsq.utils.http.MoneyChangeUtils;
 import com.itsq.utils.wx.QRCodeGenerator;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -50,7 +51,8 @@ public class ZfbController extends BaseController {
 
     @Autowired
     private RechargeRecordService rechargeRecordService;
-
+    @Autowired
+    private MoneyChangeUtils moneyChangeUtils;
 
     /**
      * 当面付——扫码支付
@@ -70,7 +72,7 @@ public class ZfbController extends BaseController {
         String outTradeNo = StringUtils.getOutTradeNo();
         PayModel.setOutTradeNo(outTradeNo);
         /*订单总金额(单位元 必填)*/
-        PayModel.setTotalAmount(amount+"");
+        PayModel.setTotalAmount((amount*100*Integer.valueOf(moneyChangeUtils.getRequest3()))+"");
         /*订单标题 (必填)*/
         PayModel.setSubject("游戏");
         /*订单允许的最晚付款时间 (选填)*/
