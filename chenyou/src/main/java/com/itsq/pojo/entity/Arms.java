@@ -61,6 +61,26 @@ public class Arms implements Serializable {
     @TableField(value = "cre_date",fill = FieldFill.INSERT)
     private Date creDate;
 
+    @ApiModelProperty(value = "类型")
+    @TableField("type")
+    private Integer type;
+
+    @ApiModelProperty(value = "关联开箱记录")
+    @TableField(exist = false)
+    private Integer pbaId;
+    @ApiModelProperty(value = "关联箱子id")
+    @TableField(exist = false)
+    private Integer boxId;
+    @ApiModelProperty(value = "0.开箱1.升级")
+    @TableField(exist = false)
+    private Integer pbType;
+    @ApiModelProperty(value = "状态  0.未出售1.已出售2.已取回")
+    @TableField(exist = false)
+    private Integer pbIs;
+
+    @ApiModelProperty(value = "状态  0.未出售1.已出售2.已取回")
+    @TableField(exist = false)
+    private Integer chance;
 
     public static final String ID = "id";
 
@@ -77,5 +97,7 @@ public class Arms implements Serializable {
     public static final String IS_STATUS = "is_status";
 
     public static final String CRE_DATE = "cre_date";
+
+    public static final String TYPE = "type";
 
 }

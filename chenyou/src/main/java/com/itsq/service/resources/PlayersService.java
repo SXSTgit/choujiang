@@ -1,10 +1,14 @@
 package com.itsq.service.resources;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.itsq.pojo.dto.PlayersDto;
 import com.itsq.pojo.dto.PlayersDtoPage;
+import com.itsq.pojo.entity.Arms;
 import com.itsq.pojo.entity.Players;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.itsq.pojo.entity.UserOrder;
+
+import java.util.List;
 
 /**
  * <p>
@@ -48,4 +52,7 @@ public interface PlayersService extends IService<Players> {
     Players login(String number, String pwd);
 
     Page<Players> selectPlayersPage(PlayersDtoPage playersDtoPage);
+
+
+    List<Arms> selectPlayerArms(PlayersDto playersDto);
 }

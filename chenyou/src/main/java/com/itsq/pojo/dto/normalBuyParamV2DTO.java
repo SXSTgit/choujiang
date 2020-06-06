@@ -4,15 +4,15 @@ import com.itsq.utils.RandomUtil;
 import lombok.Data;
 
 @Data
-public class NormalBuyParamDTO {
+public class normalBuyParamV2DTO {
     private String outTradeNo;
     private String productId;
     private String tradeUrl;
 
-    public NormalBuyParamDTO() {
+    public normalBuyParamV2DTO() {
     }
 
-    public NormalBuyParamDTO(String outTradeNo, String productId, String tradeUrl) {
+    public normalBuyParamV2DTO(String outTradeNo, String productId, String tradeUrl) {
         this.outTradeNo = outTradeNo;
         this.productId = productId;
         this.tradeUrl = tradeUrl;

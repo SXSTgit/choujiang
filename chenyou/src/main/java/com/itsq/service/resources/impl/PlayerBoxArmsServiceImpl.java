@@ -1,9 +1,11 @@
 package com.itsq.service.resources.impl;
 
+import com.alibaba.fastjson.JSONObject;
 import com.itsq.common.bean.ErrorEnum;
 import com.itsq.common.constant.APIException;
 import com.itsq.pojo.dto.PageParametersDto;
 import com.itsq.pojo.dto.PlayerBoxArmsDtoUpd;
+import com.itsq.pojo.dto.normalBuyParamV2DTO;
 import com.itsq.pojo.entity.Arms;
 import com.itsq.pojo.entity.PlayerBoxArms;
 import com.itsq.mapper.PlayerBoxArmsMapper;
@@ -15,6 +17,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.itsq.service.resources.PlayersService;
 import com.itsq.utils.BeanUtils;
 import com.itsq.utils.PagesUtil;
+import com.itsq.utils.RandomUtil;
 import com.itsq.utils.http.Client;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -54,12 +57,15 @@ public class PlayerBoxArmsServiceImpl extends ServiceImpl<PlayerBoxArmsMapper, P
     @Transactional
     public int updatePlayerBoxArms(PlayerBoxArmsDtoUpd playerBoxArmsDtoUpd) {
         PlayerBoxArms playerBoxArms = BeanUtils.copyProperties(playerBoxArmsDtoUpd, PlayerBoxArms.class);
+
+        Players players =null;
+        Arms arms =null;
         if (playerBoxArmsDtoUpd.getIsStatus() != null && playerBoxArmsDtoUpd.getIsStatus() == 1) {//出售武器
             PlayerBoxArms playerBoxArms1 = selectPlayerBoxArmsById(playerBoxArms.getId());
             //查询用户余额
-            Players players = playersService.selectPlayersById(playerBoxArms1.getPlayerId());
+             players = playersService.selectPlayersById(playerBoxArms1.getPlayerId());
             if (players.getIsStatus() != null && players.getIsStatus() == 0) {
-                Arms arms = armsService.selectArmsById(playerBoxArms1.getArmsId());
+                 arms = armsService.selectArmsById(playerBoxArms1.getArmsId());
                 players.setBalance(players.getBalance().add(arms.getPrice()));
                 //添加余额
                 playersService.updatePlayersBuId(players);
@@ -69,8 +75,13 @@ public class PlayerBoxArmsServiceImpl extends ServiceImpl<PlayerBoxArmsMapper, P
         }
         if (playerBoxArmsDtoUpd.getIsStatus() != null && playerBoxArmsDtoUpd.getIsStatus() == 2) {
 
+            JSONObject jsonObject=new JSONObject();
 
-
+            jsonObject.put("outTradeNo", RandomUtil.getRandom(32));
+            jsonObject.put("tradeUrl",players.getSteamUrl());
+            jsonObject.put("productId",arms.getProductId());
+            String json = client.httpPostWithJSON("https://app.zbt.com/open/trade/v2/buy?app-key=0b791fef5d1cc463edda79924704e8a7&language=zh_CN", jsonObject);
+            System.out.println(json);
         }
 
         int i = super.baseMapper.updateById(playerBoxArms);

@@ -4,7 +4,9 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.itsq.common.bean.ErrorEnum;
 import com.itsq.common.constant.APIException;
+import com.itsq.pojo.dto.PlayersDto;
 import com.itsq.pojo.dto.PlayersDtoPage;
+import com.itsq.pojo.entity.Arms;
 import com.itsq.pojo.entity.Manager;
 import com.itsq.pojo.entity.Players;
 import com.itsq.mapper.PlayersMapper;
@@ -14,6 +16,9 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.itsq.utils.MD5;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 /**
@@ -94,4 +99,18 @@ PlayersServiceImpl extends ServiceImpl<PlayersMapper, Players> implements Player
 
         return super.baseMapper.selectPage(page,queryWrapper);
     }
+
+    @Override
+    public List<Arms> selectPlayerArms(PlayersDto playersDto) {
+
+        Map<String, Object> params = new HashMap<>();
+
+        params.put("playerId",playersDto.getId());
+
+        List<Arms> armsList = super.baseMapper.selectPlayerBox(params);
+
+        return armsList;
+    }
+
+
 }
