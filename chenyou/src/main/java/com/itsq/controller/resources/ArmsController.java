@@ -106,8 +106,8 @@ public class ArmsController extends BaseController {
     }
 
 
-    @RequestMapping(value = "addListArms", method = RequestMethod.POST)
-    @ApiOperation(value = "导入武器", notes = "", httpMethod = "POST")
+    //@RequestMapping(value = "addListArms", method = RequestMethod.POST)
+    //@ApiOperation(value = "导入武器", notes = "", httpMethod = "POST")
     public Response addListArms() {
         /*CurrentUser currentUser = currentUser();
         if(currentUser==null){
@@ -125,7 +125,7 @@ public class ArmsController extends BaseController {
         Map map1 = (Map)succesResponse1;
         List amList=new ArrayList();
         List list= (List)map1.get("list");
-        for (Object o : list) {
+      /*  for (Object o : list) {
             Map map2 = (Map)o;
             Arms arms = new Arms();
             arms.setCount((Integer)map2.get("quantity"));
@@ -135,8 +135,8 @@ public class ArmsController extends BaseController {
             arms.setProductId((Integer)map2.get("itemId"));
             amList.add(arms);
         }
-        armsService.addListArms(amList);
-        return Response.success();
+        armsService.addListArms(amList);*/
+        return Response.success(list);
     }
 
 

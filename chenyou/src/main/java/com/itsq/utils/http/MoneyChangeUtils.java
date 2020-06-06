@@ -35,7 +35,9 @@ public class MoneyChangeUtils {
 
 
     public static void main(String[] args) {
-        System.out.println(getRequest3());
+
+
+        System.out.println(Double.valueOf(getRequest3())*100*2);
     }
    
    /**

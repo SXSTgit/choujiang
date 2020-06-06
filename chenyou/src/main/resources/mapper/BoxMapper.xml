@@ -10,6 +10,15 @@
         <result column="price" property="price" />
         <result column="is_status" property="isStatus" />
         <result column="cr_date" property="crDate" />
+        <result column="out_time" property="outTime" />
+        <collection property="armsList" ofType="Arms">
+            <id column="aid" property="id" />
+            <result column="aname" property="name" />
+            <result column="aimageUrl" property="imageUrl" />
+            <result column="aprice" property="price" />
+            <result column="atype" property="type" />
+            <result column="chance" property="chance" />
+        </collection>
     </resultMap>
 
     <!-- 通用查询结果列 -->
@@ -17,4 +26,27 @@
         id, name, image, price, is_status, cr_date
     </sql>
 
+
+
+    <select id="selectBoxArms" resultMap="BaseResultMap">
+        select
+ b.*,
+  a.id as aid,
+  a.`name` as aname,
+  a.imageUrl as aimageUrl,
+  a.price as aprice,
+  a.product_id as aproductId,
+  a.`type` as atype ,
+  ba.`chance`
+from  `box` b
+left join `box_arms`  ba
+on ba.`box_id`=b.`id`
+
+  left join `arms` a
+    on a.`id` = ba.`arms_id`
+where ba.is_status = 0
+  and b.`id` =#{boxId}
+   order by ba.`chance`
+
+    </select>
 </mapper>

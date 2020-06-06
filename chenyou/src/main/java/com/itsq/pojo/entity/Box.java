@@ -6,6 +6,8 @@ import com.baomidou.mybatisplus.annotation.*;
 
 import java.util.Date;
 import java.io.Serializable;
+import java.util.List;
+
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -60,6 +62,12 @@ public class Box implements Serializable {
     @TableField(value = "cr_date",fill = FieldFill.INSERT)
     private Date crDate;
 
+    @TableField(value = "out_time")
+    private Date outTime;
+
+    @TableField(exist = false)
+    private List<Arms> armsList;
+
 
     public static final String ID = "id";
 
@@ -77,4 +85,5 @@ public class Box implements Serializable {
 
     public static final String TYPE = "type";
 
+    public static final String OUT_TIME = "out_time";
 }

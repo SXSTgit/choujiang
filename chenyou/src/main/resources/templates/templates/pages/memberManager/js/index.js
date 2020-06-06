@@ -87,7 +87,7 @@ layui.config({
 						width: 150,
 						align: 'center',
 						templet: function(d) {
-							if(d.headImage==null){
+							if(d.image==null){
 								return "<img src='../../images/logo.png'/>";
 							}else{
 								return "<img src='"  + d.image + "'/>";

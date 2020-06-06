@@ -23,6 +23,8 @@ import java.util.Date;
 public class PlayersDto implements Serializable {
 
 
+    private Integer  id;
+
     private String number;
 
 
