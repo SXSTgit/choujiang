@@ -30,7 +30,7 @@ public class PlayersDto implements Serializable {
 
     private String pwd;
 
-
+    private Integer  isStatus;
     private String code;
 
 }

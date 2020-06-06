@@ -23,7 +23,7 @@ import java.util.Optional;
 
 /**
  * <p>
- *  服务实现类
+ * 服务实现类
  * </p>
  *
  * @author 史先帅
@@ -38,18 +38,18 @@ PlayersServiceImpl extends ServiceImpl<PlayersMapper, Players> implements Player
 
         Players players1 = selectPlayers(players.getNumber());
 
-        if(players1!=null){
+        if (players1 != null) {
             throw new APIException(ErrorEnum.PLAYER_PHONE);
         }
-        players.setPwd(MD5.getMd5(players.getPwd(),32));
+        players.setPwd(MD5.getMd5(players.getPwd(), 32));
         super.baseMapper.insert(players);
-        return  players;
+        return players;
     }
 
     @Override
     public Players selectPlayers(String number) {
-        QueryWrapper queryWrapper=new QueryWrapper();
-        queryWrapper.eq("number",number);
+        QueryWrapper queryWrapper = new QueryWrapper();
+        queryWrapper.eq("number", number);
         return super.baseMapper.selectOne(queryWrapper);
     }
 
@@ -68,23 +68,23 @@ PlayersServiceImpl extends ServiceImpl<PlayersMapper, Players> implements Player
     }
 
     @Override
-    public int updatePlayers(String number ,String pwd) {
-        Players players= selectPlayers(number);
+    public int updatePlayers(String number, String pwd) {
+        Players players = selectPlayers(number);
 
-        if(players==null){
+        if (players == null) {
             throw new APIException(ErrorEnum.USER_NOT_EXITES);
         }
-        QueryWrapper queryWrapper=new QueryWrapper();
-        players.setPwd(MD5.getMd5(pwd,32));
-        queryWrapper.eq("number",players.getNumber());
+        QueryWrapper queryWrapper = new QueryWrapper();
+        players.setPwd(MD5.getMd5(pwd, 32));
+        queryWrapper.eq("number", players.getNumber());
 
-        return  super.baseMapper.update(players,queryWrapper);
+        return super.baseMapper.update(players, queryWrapper);
     }
 
     @Override
     public Players login(String number, String pwd) {
 
-        Optional<Players> u = super.lambdaQuery().eq(Players::getNumber,number).eq(Players::getPwd,MD5.getMd5(pwd,32)).oneOpt();
+        Optional<Players> u = super.lambdaQuery().eq(Players::getNumber, number).eq(Players::getPwd, MD5.getMd5(pwd, 32)).oneOpt();
         if (u.isPresent()) {
             return u.get();
         }
@@ -94,10 +94,10 @@ PlayersServiceImpl extends ServiceImpl<PlayersMapper, Players> implements Player
     @Override
     public Page<Players> selectPlayersPage(PlayersDtoPage playersDtoPage) {
 
-        Page<Players>  page=new Page<>(playersDtoPage.getPageIndex(),playersDtoPage.getPageSize());
-        QueryWrapper queryWrapper=new QueryWrapper();
+        Page<Players> page = new Page<>(playersDtoPage.getPageIndex(), playersDtoPage.getPageSize());
+        QueryWrapper queryWrapper = new QueryWrapper();
 
-        return super.baseMapper.selectPage(page,queryWrapper);
+        return super.baseMapper.selectPage(page, queryWrapper);
     }
 
     @Override
@@ -105,8 +105,10 @@ PlayersServiceImpl extends ServiceImpl<PlayersMapper, Players> implements Player
 
         Map<String, Object> params = new HashMap<>();
 
-        params.put("playerId",playersDto.getId());
-
+        params.put("playerId", playersDto.getId());
+        if (playersDto.getIsStatus() != null) {
+            params.put("isStatus", playersDto.getIsStatus());
+        }
         List<Arms> armsList = super.baseMapper.selectPlayerBox(params);
 
         return armsList;
