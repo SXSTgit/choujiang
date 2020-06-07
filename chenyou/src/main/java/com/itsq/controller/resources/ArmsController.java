@@ -28,15 +28,13 @@ public class ArmsController  extends BaseController {
 
     private ArmsService armsService;
 
-
     @RequestMapping(value = "getAll",method = RequestMethod.POST)
     @ApiOperation(value = "获取全部武器", notes = "", httpMethod = "POST")
-    public Response getAllArms(){
-        CurrentUser currentUser = currentUser();
-        if(currentUser==null){
-            return Response.fail(ErrorEnum.SIGN_VERIFI_EXPIRE);
-        }
+    public Response getAllArms(@RequestBody Arms arms){
         QueryWrapper queryWrapper=new QueryWrapper();
+        if(arms.getName()!=null&&arms.getName().length()>0){
+            queryWrapper.like("name",arms.getName());
+        }
         queryWrapper.orderByDesc("id");
         List<Arms> list=armsService.list(queryWrapper);
         return Response.success(list);
@@ -49,7 +47,7 @@ public class ArmsController  extends BaseController {
         if(currentUser==null){
             return Response.fail(ErrorEnum.SIGN_VERIFI_EXPIRE);
         }
-        dto.setCrDate(new Date());
+        dto.setCreDate(new Date());
         Arms arms=BeanUtils.copyProperties(dto, Arms.class);
         if(!armsService.save(arms)){
             return Response.fail(ErrorEnum.ERROR_SERVER);

@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>武器列表</title>
+    <title>箱子列表</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta http-equiv="Access-Control-Allow-Origin" content="*">
@@ -133,7 +133,7 @@
 
 <div class="layuimini-container">
     <fieldset class="layui-elem-field layui-field-title" style="margin-bottom: 0px;">
-        <legend>武器管理</legend>
+        <legend>箱子管理</legend>
     </fieldset>
     <div class="layuimini-container">
         <div class="layui-form searchTable">
@@ -147,6 +147,9 @@
             </div>
             <button class="layui-btn layui-btn-normal" lay-filter="addSysmenu">添加箱子</button>
             <button class="layui-btn layui-btn-normal" lay-filter="toSteam">绑定Steam</button>
+            <button class="layui-btn layui-btn-normal" lay-filter="gouBox">点击购买箱子</button>
+            <button class="layui-btn layui-btn-normal" lay-filter="huoqbl">获取升级比例</button>
+            <button class="layui-btn layui-btn-normal" lay-filter="shengji">升级</button>
         </div>
         <table class="layui-table layui-form" id="table"></table>
     </div>
@@ -224,12 +227,31 @@
                         </div>
                     </div>
                 </div>
-                <div class="layui-form-item" style="display: inline-block;">
+            <!--    <div class="layui-form-item" style="display: inline-block;">
                     <label class="layui-form-label">箱子数量</label>
                     <div class="layui-input-block" style="border-style: none;display: inline-block;">
                         <div class="layui-inline" style="width: 225px;">
                             <input type="text" name="count" required lay-verify="required" placeholder="请输入箱子数量"
                                    autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                </div>-->
+                <div class="layui-form-item" style="display: inline-block;">
+                    <label class="layui-form-label">箱子总几率</label>
+                    <div class="layui-input-block" style="border-style: none;display: inline-block;">
+                        <div class="layui-inline" style="width: 225px;">
+                            <input type="text" name="zjlv" required lay-verify="required" placeholder="自动计算总几率"
+                                   autocomplete="off" class="layui-input" readonly>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="layui-form-item" style="display: inline-block;">
+                    <label class="layui-form-label">箱子过期时间</label>
+                    <div class="layui-input-block" style="border-style: none;display: inline-block;">
+                        <div class="layui-inline" style="width: 225px;">
+                            <input type="text" name="outTime" required lay-verify="required" placeholder="箱子过期时间"
+                                   autocomplete="off" class="layui-input" >
                         </div>
                     </div>
                 </div>

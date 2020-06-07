@@ -19,8 +19,12 @@ import com.itsq.utils.BeanUtils;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
+import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -45,15 +49,29 @@ public class BoxController extends BaseController {
 
     @RequestMapping(value = "getAllBox",method = RequestMethod.POST)
     @ApiOperation(value = "获取全部箱子", notes = "", httpMethod = "POST")
-    public Response getAllBox(){
-        CurrentUser currentUser = currentUser();
-        if(currentUser==null){
-            return Response.fail(ErrorEnum.SIGN_VERIFI_EXPIRE);
-        }
+    public Response getAllBox(@RequestBody Box box) throws ParseException {
         QueryWrapper queryWrapper=new QueryWrapper();
+
+        if(box.getName()!=null&&box.getName().length()>0){
+            queryWrapper.like("name",box.getName());
+        }
+        if(box.getType()!=null&&box.getType()!=-1){
+            queryWrapper.eq("type",box.getType());
+        }
         queryWrapper.orderByDesc("id");
-        List list=boxService.list(queryWrapper);
-        return Response.success(list);
+        queryWrapper.gt("out_time",new Date());
+        List<Box> list=boxService.list(queryWrapper);
+        List list1=new ArrayList();
+        for(Box box1:list){
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            long startDateTime = dateFormat.parse(dateFormat.format(new Date())).getTime();
+            long endDateTime = dateFormat.parse(dateFormat.format(box1.getOutTime())).getTime();
+            Integer day= (int) ((endDateTime - startDateTime) / (1000 * 3600 * 24));
+            AddBoxDto dto=BeanUtils.copyProperties(box1,AddBoxDto.class);
+            dto.setDays(day);
+            list1.add(dto);
+        }
+        return Response.success(list1);
     }
 
     @RequestMapping(value = "romveBox",method = RequestMethod.POST)

@@ -60,6 +60,8 @@ public class Box implements Serializable {
     @TableField(value = "cr_date",fill = FieldFill.INSERT)
     private Date crDate;
 
+    @TableField(value = "out_time",fill = FieldFill.INSERT)
+    private Date outTime;
 
     public static final String ID = "id";
 
@@ -72,6 +74,8 @@ public class Box implements Serializable {
     public static final String IS_STATUS = "is_status";
 
     public static final String CR_DATE = "cr_date";
+
+    public static final String OUT_TIME = "out_time";
 
     public static final String COUNT = "count";
 

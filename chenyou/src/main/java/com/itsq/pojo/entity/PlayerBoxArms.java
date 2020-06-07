@@ -44,6 +44,15 @@ public class PlayerBoxArms implements Serializable {
     @TableField("arms_id")
     private Integer armsId;
 
+    @ApiModelProperty(value = "状态")
+    @TableField("is_status")
+    private Integer isStatus;
+
+    @ApiModelProperty(value = "类型")
+    @TableField("type")
+    private Integer type;
+
+
     @ApiModelProperty(value = "创建时间")
     @TableField(value = "cre_date", fill = FieldFill.INSERT)
     private Date creDate;
@@ -65,5 +74,9 @@ public class PlayerBoxArms implements Serializable {
     public static final String ARMS_ID = "arms_id";
 
     public static final String CRE_DATE = "cre_date";
+
+    public static final String  IS_STATUS = "is_status";
+
+    public static final String TYPE = "type";
 
 }

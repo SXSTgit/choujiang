@@ -6,14 +6,24 @@ import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.itsq.common.base.BaseController;
 import com.itsq.common.bean.Response;
+import com.itsq.enums.EnumTokenType;
+import com.itsq.pojo.dto.LoginRespDto;
+import com.itsq.pojo.entity.Players;
+import com.itsq.pojo.entity.SteamOpenIDIdentity;
+import com.itsq.service.resources.PlayersService;
+import com.itsq.service.resources.UserService;
+import com.itsq.token.AuthToken;
+import com.itsq.utils.RegexUtils;
 import com.itsq.utils.StringUtils;
+import com.itsq.utils.ClientUtils;
+import com.itsq.utils.steam.SteamLoginUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
@@ -21,6 +31,7 @@ import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
@@ -28,13 +39,11 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.*;
 
-@RestController
+import javax.servlet.http.HttpServletRequest;
+
+@Controller
 @RequestMapping("/steam")
 @CrossOrigin
 @Api(tags = "steam相关接口")
@@ -42,12 +51,14 @@ import org.springframework.web.servlet.ModelAndView;
 public class SteamLoginUtil2 extends BaseController {
 
     final static String STEAM_LOGIN = "https://steamcommunity.com/openid/login";
+    private static String ApiKey = "F27A2B0367DD7FC1398522E878F6C769";
 
+    private PlayersService playersService;
     /**
      * 组装steam登录url
      *
      * @param returnTo
-     * @param request
+     * @param
      * @return
      * @throws UnsupportedEncodingException
      */
@@ -205,11 +216,14 @@ public class SteamLoginUtil2 extends BaseController {
         }
         return sb.toString();
     }
+
+
     @RequestMapping(value = "login",method = RequestMethod.POST)
     @ApiOperation(value = "绑定steam", notes = "", httpMethod = "POST")
+    @ResponseBody
     public Response loginSteam(){
         try {
-            String url=getUrl("http://www.yuanrise.cn");
+            String url=getUrl("http://yuanqiwl.natapp1.cc/steam/huidiao");
             return Response.success(url);
         }catch (Exception e){
             e.printStackTrace();
@@ -217,6 +231,160 @@ public class SteamLoginUtil2 extends BaseController {
         return null;
     }
 
+    @RequestMapping(value = "huidiao")
+    public String isShouQuan( HttpServletRequest request2)  throws ClientProtocolException, IOException{
+        String identity=request2.getParameter("openid.identity");
+        String response_nonce=request2.getParameter("openid.response_nonce");
+        String assoc_handle=request2.getParameter("openid.assoc_handle");
+        String signed2=request2.getParameter("openid.signed");
+        String sig=request2.getParameter("openid.sig");
+        String claimed_id=request2.getParameter("openid.claimed_id");
+        Map<String,String> request=new HashMap();
+        request.put("openid.identity",identity);
+        request.put("openid.response_nonce",response_nonce);
+        request.put("openid.assoc_handle",assoc_handle);
+        request.put("openid.signed",signed2);
+        request.put("openid.sig",sig);
+        request.put("openid.claimed_id",claimed_id);
+
+        //openid.signed这里面的参数用是“，”号隔开的，是提示你返回了哪些参数
+        Object signed = request.get("openid.signed");
+        //如果没有openid.signed，那肯定这个请求是不正确的直接跳出即可
+        if(signed ==null || "".equals(signed)){
+            return null;
+        }
+        //此处开始构造HttpClient对象，配置参数，设置访问方法，获取返回值等，进行一次完整访问
+        HttpClient httpclient = HttpClients.createDefault();
+        HttpPost httppost = new HttpPost(STEAM_LOGIN+"?"+SteamLoginUtil.getUrlParamsByMap(request));
+        List<NameValuePair> nvps = new ArrayList<NameValuePair>();
+
+        String[] signeds = signed.toString().split(",");
+        for(int i=0;i<signeds.length;i++){
+            String val = request.get("openid."+signeds[ i ]);
+            nvps.add(new BasicNameValuePair("openid."+signeds[ i ], val==null?"":val));
+        }
+        nvps.add(new BasicNameValuePair("openid.mode", "check_authentication"));
+        httppost.setEntity(new UrlEncodedFormEntity(nvps));
+        HttpResponse response = httpclient.execute(httppost);
+        HttpEntity entity = response.getEntity();
+        if (entity == null) {
+            return null;
+        }
+        InputStream instreams = entity.getContent();
+        String result = SteamLoginUtil.convertStreamToString(instreams);
+        //System.out.println("Do something");
+        System.out.println(result);
+        // Do not need the rest
+        httppost.abort();
+        //此处是为了将steamid截取出来
+        String steamid = "";
+        steamid = request.get("openid.claimed_id");
+        steamid = steamid.replace("//steamcommunity.com/openid/id/","");
+        //虽然steamid能从上一次请求参数中截取出来，我们还是要判断HttpClient返回来的消息是否授权了，判断方式是看字符串中是否含有“is_valid:true”，有就是授权成功了，如果没有，就是“is_valid:false”。
+        if(steamid==null||steamid==""){
+            return null;
+        }
+
+
+            String info=ClientUtils.httpGetWithJSon("http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=" + ApiKey + "&steamids=" + steamid,null);
+
+       /* {
+
+            identity = new SteamOpenIDIdentity();
+            identity.SteamId = Regex.Match(HttpUtility.UrlDecode(Request.Url.Query), "(?<=openid/id/)\\d+", RegexOptions.IgnoreCase).Value;
+
+            result = ClientUtils.DownloadString("http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=" + ApiKey + "&steamids=" + identity.SteamId);
+            identity.Avatar = Regex.Match(result, "(?<=\"avatarfull\":\\s*?\").+?(?=\")", RegexOptions.IgnoreCase).Value;
+            identity.Profile = Regex.Match(result, "(?<=\"profileurl\":\\s*?\").+?(?=\")", RegexOptions.IgnoreCase).Value;
+            identity.UserName = Regex.Match(result, "(?<=\"personaname\":\\s*?\").+?(?=\")", RegexOptions.IgnoreCase).Value;
+            identity.ReturnTo = new Uri(Request.QueryString["openid.return_to"]).PathAndQuery;
+        }*/
+        System.out.println(steamid);
+        JSONObject objInfo = JSONObject.parseObject(info);
+        JSONObject objInfo1=objInfo.getJSONObject("response");
+        JSONArray jsonArray=objInfo1.getJSONArray("players");
+
+        Players players=new Players();
+
+            JSONObject json=(JSONObject)jsonArray.get(0);
+            System.out.println(json);
+        QueryWrapper queryWrapper=new QueryWrapper();
+        queryWrapper.eq("steam_id",json.getString("steamid"));
+        List<Players> list=playersService.list(queryWrapper);
+        if(list.size()==0){
+            players.setSteamId(json.getString("steamid"));
+            players.setImage(json.getString("avatar"));
+            players.setName(json.getString("realname"));
+            players.setCreDate(new Date());
+            playersService.save(players);
+        }
+        if(list.size()>0){
+            Players players1=list.get(0);
+            String authToken = new AuthToken(players1.getId(),players1.getName()).token();
+            //return  "Response.success(new LoginRespDto<>(players1,authToken, EnumTokenType.BEARER.getCode()));
+        }
+        return "index";
+    }
+  /*  @RequestMapping(value = "huidiao")
+    public Response isShouQuan( HttpServletRequest request2) throws ClientProtocolException,IOException {
+        String identity=request2.getParameter("openid.identity");
+        String response_nonce=request2.getParameter("openid.response_nonce");
+        String assoc_handle=request2.getParameter("openid.assoc_handle");
+        String signed=request2.getParameter("openid.signed");
+        String sig=request2.getParameter("openid.sig");
+        if(RegexUtils.match("steamcommunity.com/openid/id/\\d+",identity)&&StringUtils.isNotEmpty(response_nonce)
+                && !StringUtils.isNotEmpty(assoc_handle)&&StringUtils.isNotEmpty(signed)&&StringUtils.isNotEmpty(sig)){
+                SteamOpenIDIdentity identity = null;
+            if(request2!=null){
+                StringBuffer url=request2.getRequestURL();
+
+                Pattern p = Pattern.compile(url.toString(), Pattern.CASE_INSENSITIVE);
+                Matcher m = p.matcher("(?<=openid.mode=).+?(?=\\&)");
+                String ret=m.replaceAll("check_authentication");
+                String delStr="";
+                for (int i = 0; i < ret.length(); i++) {
+                    if(ret.charAt(i) != '?'){
+                        delStr += ret.charAt(i);
+                    }
+                }
+
+
+                try {
+                    CloseableHttpClient client = null;
+                    CloseableHttpResponse response = null;
+                    try {
+                        ObjectMapper objectMapper = new ObjectMapper();
+                        Map<String, Object> data = new HashMap<String, Object>();
+
+                        HttpPost httpPost = new HttpPost(uri + "/test2");
+                        httpPost.setHeader(HTTP.CONTENT_TYPE, "application/json");
+                        httpPost.setEntity(new StringEntity(objectMapper.writeValueAsString(data),
+                                ContentType.create("text/json", "UTF-8")));
+
+                        client = HttpClients.createDefault();
+                        response = client.execute(httpPost);
+                        HttpEntity entity = response.getEntity();
+                        String result = EntityUtils.toString(entity);
+                        System.out.println(result);
+                    } finally {
+                        if (response != null) {
+                            response.close();
+                        }
+                        if (client != null) {
+                            client.close();
+                        }
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+
+
+            }
+
+        }
+        return Response.success();
+    }*/
 
   /*  public static void main(String[] args){
         try {

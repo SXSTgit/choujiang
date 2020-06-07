@@ -22,7 +22,10 @@ public enum ErrorEnum {
     USER_ISNULL(100081,"收件人信息为空"),
    PLAYER_PHONE(100017,"该账号已存在"),
     XIUGAI_YUE(100017,"修改余额失败!"),
-    ;
+    YUE_BU_ZU(600001,"账户余额不足"),
+    YI_HUO_DE(700000,"恭喜获得武器"),
+    WEI_HUODE(700001,"抱歉未获得武器！"),
+    NO_WUQI(700002,"您没有相关武器！");
 
 
     private Integer code;
