@@ -3,8 +3,8 @@ server:
 spring:
   datasource:
     username: root
-    password: ok
-    url: jdbc:mysql://localhost:3306/choujiang?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8
+    password: 1234
+    url: jdbc:mysql://121.36.199.219:3306/choujiang?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8
     driver-class-name: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
     #Spring Boot 默认是不注入这些属性值的，需要自己绑定

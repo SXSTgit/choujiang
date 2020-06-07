@@ -1,6 +1,7 @@
 package com.itsq.controller.resources;
 
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.itsq.common.base.BaseController;
 import com.itsq.common.bean.ErrorEnum;
 import com.itsq.common.bean.Response;
@@ -9,6 +10,8 @@ import com.itsq.enums.EnumTokenType;
 import com.itsq.pojo.dto.AddUserDto;
 import com.itsq.pojo.dto.LoginRespDto;
 import com.itsq.pojo.dto.PlayersDto;
+import com.itsq.pojo.dto.PlayersDtoPage;
+import com.itsq.pojo.entity.Arms;
 import com.itsq.pojo.entity.Players;
 import com.itsq.pojo.entity.User;
 import com.itsq.service.resources.PlayersService;
@@ -28,6 +31,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * <p>
@@ -115,7 +119,25 @@ public class PlayersController extends BaseController {
         return Response.success();
     }
 
+    @PostMapping("selectPlayersPage")
+    @ApiOperation(value = "会员-分页查询", notes = "", httpMethod = "POST")
+    public Response<Page> selectPlayersPage(@RequestBody PlayersDtoPage playersDtoPage){
+        /*CurrentUser currentUser = currentUser();
+        if(currentUser==null){
+            return Response.fail(ErrorEnum.SIGN_VERIFI_EXPIRE);
+        }*/
+        return Response.success( playersService.selectPlayersPage(playersDtoPage));
+    }
 
+    @PostMapping("selectPlayerArms")
+    @ApiOperation(value = "会员-背包", notes = "", httpMethod = "POST")
+    public Response<List<Arms>> selectPlayerArms(@RequestBody PlayersDto playersDto){
+        /*CurrentUser currentUser = currentUser();
+        if(currentUser==null){
+            return Response.fail(ErrorEnum.SIGN_VERIFI_EXPIRE);
+        }*/
+        return Response.success( playersService.selectPlayerArms(playersDto));
+    }
 
 }
 

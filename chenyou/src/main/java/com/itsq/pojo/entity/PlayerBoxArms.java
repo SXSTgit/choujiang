@@ -44,18 +44,18 @@ public class PlayerBoxArms implements Serializable {
     @TableField("arms_id")
     private Integer armsId;
 
-    @ApiModelProperty(value = "状态")
-    @TableField("is_status")
-    private Integer isStatus;
-
-    @ApiModelProperty(value = "类型")
-    @TableField("type")
-    private Integer type;
-
-
     @ApiModelProperty(value = "创建时间")
     @TableField(value = "cre_date", fill = FieldFill.INSERT)
     private Date creDate;
+
+    @ApiModelProperty(value = "状态  0.未出售1.已出售2.已取回")
+    @TableField("is_status")
+    private Integer isStatus;
+
+    @ApiModelProperty(value = "0.开箱1.升级")
+    @TableField("type")
+    private Integer type;
+
 
     @TableField(exist = false)
     private Box box;
@@ -75,7 +75,7 @@ public class PlayerBoxArms implements Serializable {
 
     public static final String CRE_DATE = "cre_date";
 
-    public static final String  IS_STATUS = "is_status";
+    public static final String IS_STATUS = "is_status";
 
     public static final String TYPE = "type";
 

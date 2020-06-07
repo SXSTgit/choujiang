@@ -82,8 +82,22 @@ layui.config({
 						}
 					},
 					{
+						field: 'head',
+						title: '头像',
+						width: 150,
+						align: 'center',
+						templet: function(d) {
+							if(d.image==null){
+								return "<img src='../../images/logo.png'/>";
+							}else{
+								return "<img src='"  + d.image + "'/>";
+							}
+							
+						}
+					},
+					{
 						field: 'userName',
-						title: '会员姓名',
+						title: '昵称',
 						width: 100,
 						align: 'center',
 						templet: function(d) {
@@ -92,11 +106,11 @@ layui.config({
 					},
 					{
 						field: 'phone',
-						title: '会员手机号',
+						title: '邮箱',
 						width: 120,
 						align: 'center',
 						templet: function(d) {
-							return d.phone;
+							return d.number;
 						}
 					},/*
 					{
@@ -118,26 +132,26 @@ layui.config({
 						width: 200,
 						align: 'center',
 						templet: function(d) {
-							if (d.amount == null) {
+							if (d.balance == null) {
 								return "略";
 							} else {
-								return d.amount;
+								return d.balance;
 							}
 						}
-					},/*
+					},
 					{
 						field: 'vxCode',
-						title: '微信号',
+						title: 'steam交易url',
 						width: 200,
 						align: 'center',
 						templet: function(d) {
-							if (d.vxCode == null) {
+							if (d.steamUrl == null) {
 								return "--";
 							} else {
-								return d.vxCode;
+								return d.steamUrl;
 							}
 						}
-					},*/
+					},
 					/*{
 						field: 'dongJie',
 						title: '状态',
@@ -159,7 +173,7 @@ layui.config({
 						templet: function(d) {
 							return d.creDate;
 						}
-					},
+					}/*
 					{
 						field: 'updDate',
 						title: '修改时间',
@@ -172,8 +186,8 @@ layui.config({
 								return d.upDate;
 							}
 						}
-					},
-					{
+					},*/
+					/*{
 						field: 'dongJie',
 						title: '操作',
 						width: 280,
@@ -181,12 +195,12 @@ layui.config({
 						align: 'center',
 						templet: function(d) {
 								return "<button class='layui-btn layui-btn-xs layui-btn-normal' lay-event='updateinfo'>编辑</button>"
-								      	/*"<button class='layui-btn layui-btn-xs layui-btn-normal' lay-event='xiangqing'>查看详情</button>"+
-								       "<button class='layui-btn layui-btn-xs layui-btn-warm' lay-event='chushi'>恢复初始密码</button>";*/
+								      	"<button class='layui-btn layui-btn-xs layui-btn-normal' lay-event='xiangqing'>查看详情</button>"+
+								       "<button class='layui-btn layui-btn-xs layui-btn-warm' lay-event='chushi'>恢复初始密码</button>";
 							
 							
 						}
-					}
+					}*/
 					
 				]
 			]
@@ -220,12 +234,12 @@ layui.config({
 
 	function show(userName,phone,managerId,pageIndex,pageSize) {
 		C.save("pageIndex",pageIndex);
-		findAjax("member/selectMemberPage", {
+		findAjax("players/selectPlayersPage", {
             "managerId": managerId,
 		    "pageIndex": pageIndex,
 		    "pageSize": pageSize,
-		    "phone": phone,
-		    "userName": userName
+		    "number": phone,
+		    "name": userName
 		}, function(res) {
 			if (res) {
 				initTable(res.body.records, pageSize);

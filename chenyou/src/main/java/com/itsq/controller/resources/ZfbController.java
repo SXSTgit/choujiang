@@ -1,6 +1,7 @@
 package com.itsq.controller.resources;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.alipay.api.AlipayClient;
 import com.alipay.api.DefaultAlipayClient;
 import com.alipay.api.domain.AlipayTradeAppPayModel;
@@ -9,21 +10,27 @@ import com.alipay.api.request.AlipayTradePagePayRequest;
 import com.alipay.api.request.AlipayTradePrecreateRequest;
 import com.alipay.api.response.AlipayTradePrecreateResponse;
 import com.itsq.common.base.BaseController;
+/*
 import com.itsq.config.AlipayConfig;
+*/
 
+import com.itsq.config.AlipayConfig;
 import com.itsq.pojo.entity.RechargeRecord;
 import com.itsq.service.resources.RechargeRecordService;
 import com.itsq.utils.StringUtils;
-import com.itsq.utils.wx.QRCodeGenerator;
+import com.itsq.utils.http.MoneyChangeUtils;
+
+
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -48,9 +55,10 @@ public class ZfbController extends BaseController {
 
 
 
-    @Autowired
+   @Autowired
     private RechargeRecordService rechargeRecordService;
-
+    @Autowired
+    private MoneyChangeUtils moneyChangeUtils;
 
     /**
      * 当面付——扫码支付
@@ -70,7 +78,9 @@ public class ZfbController extends BaseController {
         String outTradeNo = StringUtils.getOutTradeNo();
         PayModel.setOutTradeNo(outTradeNo);
         /*订单总金额(单位元 必填)*/
-        PayModel.setTotalAmount(amount+"");
+        BigDecimal bd = new BigDecimal(amount*Double.valueOf(moneyChangeUtils.getRequest3()));
+        bd = bd.setScale(2,BigDecimal.ROUND_HALF_UP);
+        PayModel.setTotalAmount(bd+"");
         /*订单标题 (必填)*/
         PayModel.setSubject("游戏");
         /*订单允许的最晚付款时间 (选填)*/
@@ -92,9 +102,10 @@ public class ZfbController extends BaseController {
         rechargeRecord.setPlayersId(playerId);
         rechargeRecordService.addRechargeRecord(rechargeRecord);
 
-        QRCodeGenerator.generateQRCodeImage(response.getQrCode(),350,350,"C:/img/ewm/"+outTradeNo+".png");
+      //  QRCodeGenerator.generateQRCodeImage(response.getQrCode(),350,350,"C:/img/ewm/"+outTradeNo+".png");
 
-        return "C:/img/ewm/"+outTradeNo+".png";
+
+        return response.getQrCode();
     }
 
     /**

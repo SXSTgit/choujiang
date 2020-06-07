@@ -82,5 +82,7 @@ public class Arms implements Serializable {
     public static final String IS_STATUS = "is_status";
 
     public static final String CR_DATE = "cre_date";
+    public static final String CRE_DATE = "cre_date";
+
 
 }

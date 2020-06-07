@@ -14,9 +14,13 @@
         <result column="cr_date" property="crDate" />
     </resultMap>
 
+
+
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
         id, name, image, price, count, product_id, is_status, cr_date
     </sql>
+
+
 
 </mapper>

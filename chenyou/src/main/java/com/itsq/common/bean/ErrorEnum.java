@@ -25,7 +25,10 @@ public enum ErrorEnum {
     YUE_BU_ZU(600001,"账户余额不足"),
     YI_HUO_DE(700000,"恭喜获得武器"),
     WEI_HUODE(700001,"抱歉未获得武器！"),
-    NO_WUQI(700002,"您没有相关武器！");
+    NO_WUQI(700002,"您没有相关武器！"),
+    YICHUSHOU_YUE(100017,"物品已出售!"),
+    DARUWUQI_SHB(100017,"导入武器失败!"),
+    ;
 
 
     private Integer code;

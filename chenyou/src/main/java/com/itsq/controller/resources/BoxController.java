@@ -9,6 +9,8 @@ import com.itsq.common.bean.ErrorEnum;
 import com.itsq.common.bean.Response;
 import com.itsq.pojo.dto.AddArmsDto;
 import com.itsq.pojo.dto.AddBoxDto;
+import com.itsq.pojo.dto.BoxArmsDto;
+import com.itsq.pojo.dto.PlayersDto;
 import com.itsq.pojo.entity.Arms;
 import com.itsq.pojo.entity.Box;
 import com.itsq.pojo.entity.BoxArms;
@@ -145,6 +147,17 @@ public class BoxController extends BaseController {
             boxArmsService.save(boxArms);
         }
         return Response.success(dto);
+    }
+
+
+    @PostMapping("selectBoxArms")
+    @ApiOperation(value = "箱子-详情", notes = "", httpMethod = "POST")
+    public Response<Box> selectBoxArms(@RequestBody BoxArms boxArms){
+        /*CurrentUser currentUser = currentUser();
+        if(currentUser==null){
+            return Response.fail(ErrorEnum.SIGN_VERIFI_EXPIRE);
+        }*/
+        return Response.success( boxService.selectBoxArms(boxArms));
     }
 }
 

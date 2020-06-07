@@ -22,11 +22,11 @@ import org.springframework.web.bind.annotation.*;
  * @author 史先帅
  * @since 2020-05-22
  */
-@RestController
-@RequestMapping("/userOrder")
-@AllArgsConstructor
-@CrossOrigin
-@Api(tags = "流水模块")
+//@RestController
+//@RequestMapping("/userOrder")
+//@AllArgsConstructor
+//@CrossOrigin
+//@Api(tags = "流水模块")
 public class UserOrderController extends BaseController {
     @Autowired
     private UserOrderService userOrderService;

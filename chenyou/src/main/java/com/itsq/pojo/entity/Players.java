@@ -6,6 +6,8 @@ import com.baomidou.mybatisplus.annotation.*;
 
 import java.util.Date;
 import java.io.Serializable;
+import java.util.List;
+
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -73,6 +75,9 @@ public class Players implements Serializable {
     @TableLogic
     private Integer state;
 
+
+    @TableField(exist = false)
+    private List<Arms> armsList;
 
     public static final String ID = "id";
 

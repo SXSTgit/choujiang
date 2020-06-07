@@ -7,6 +7,8 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
@@ -20,17 +22,17 @@ import java.util.Date;
  * @since 2020-06-02
  */
 @Data
-public class PlayersDto implements Serializable {
+public class PlayersDtoPage implements Serializable {
 
 
-    private Integer  id;
+    private String name;
 
     private String number;
 
+    protected Integer pageIndex;
 
-    private String pwd;
+    protected Integer pageSize;
 
-    private Integer  isStatus;
-    private String code;
+
 
 }

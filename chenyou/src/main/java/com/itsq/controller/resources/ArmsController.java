@@ -1,6 +1,7 @@
 package com.itsq.controller.resources;
 
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.itsq.common.base.BaseController;
@@ -11,13 +12,15 @@ import com.itsq.pojo.entity.Arms;
 import com.itsq.service.resources.ArmsService;
 import com.itsq.token.CurrentUser;
 import com.itsq.utils.BeanUtils;
+import com.itsq.utils.http.Client;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Date;
-import java.util.List;
+import java.math.BigDecimal;
+import java.util.*;
 
 @RestController
 @RequestMapping("/arms")
@@ -97,6 +100,40 @@ public class ArmsController  extends BaseController {
             return Response.fail(ErrorEnum.ERROR_SERVER);
         }
         return Response.success();
+    }
+
+
+    //@RequestMapping(value = "addListArms", method = RequestMethod.POST)
+    //@ApiOperation(value = "导入武器", notes = "", httpMethod = "POST")
+    public Response addListArms() {
+        /*CurrentUser currentUser = currentUser();
+        if(currentUser==null){
+            return Response.fail(ErrorEnum.SIGN_VERIFI_EXPIRE);
+        }*/
+        System.out.println("=======");
+        Map<String,String> param=new HashMap<>();
+        String json = client.httpGetWithJSon("https://app.zbt.com/open/product/v1/search", param);
+        System.out.println("=======");
+        Object succesResponse = JSON.parse(json);
+        System.out.println("=======");//先转换成Object
+        System.out.println(json);
+        Map map = (Map)succesResponse;         //Object强转换为Map
+        Object succesResponse1 = JSON.parse(map.get("data")+"");
+        Map map1 = (Map)succesResponse1;
+        List amList=new ArrayList();
+        List list= (List)map1.get("list");
+      /*  for (Object o : list) {
+            Map map2 = (Map)o;
+            Arms arms = new Arms();
+            arms.setCount((Integer)map2.get("quantity"));
+            arms.setImageUrl(map2.get("imageUrl")+"");
+            arms.setName(map2.get("itemName")+"");
+            arms.setPrice(new BigDecimal(map2.get("price")+""));
+            arms.setProductId((Integer)map2.get("itemId"));
+            amList.add(arms);
+        }
+        armsService.addListArms(amList);*/
+        return Response.success(list);
     }
 
 

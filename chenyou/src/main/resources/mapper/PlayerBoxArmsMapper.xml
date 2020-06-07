@@ -9,6 +9,8 @@
         <result column="box_id" property="boxId"/>
         <result column="arms_id" property="armsId"/>
         <result column="cr_date" property="crDate"/>
+        <result column="is_status" property="isStatus" />
+        <result column="type" property="type" />
         <association property="box" javaType="Box">
             <id column="bid" property="id"/>
             <result column="baname" property="name"/>
@@ -20,6 +22,8 @@
             <result column="aname" property="name"/>
             <result column="imageUrl" property="imageUrl"/>
             <result column="aprice" property="price"/>
+            <result column="aprice" property="price"/>
+            <result column="atype" property="type"/>
         </association>
         <association property="players" javaType="Players">
             <id column="pid" property="id"/>
@@ -42,6 +46,7 @@ pba.id as id,
   b.`price` bprice,
   a.`id` as aid,
   a.`name` as aname,
+  a.`type` as atype,
   a.`imageUrl`,
   a.`price` as aprice,
   p.`name` as pname,
@@ -56,7 +61,11 @@ from
   left join `players` p
     on pba.`player_id` = p.`id`
 where 1 = 1
-order by   pba.`cre_date` desc
+
+<if test="playerId!=null and playerId>0" >
+      and p.`id`=#{playerId}
+</if>
+order by   #{sort} desc
   limit #{pageIndex},#{pageSize}
     </select>
 
