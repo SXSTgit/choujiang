@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.itsq.common.base.BaseController;
+import com.itsq.common.bean.Response;
 import com.itsq.utils.StringUtils;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -33,7 +34,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
-@Controller
+@RestController
 @RequestMapping("/steam")
 @CrossOrigin
 @Api(tags = "steam相关接口")
@@ -206,9 +207,10 @@ public class SteamLoginUtil2 extends BaseController {
     }
     @RequestMapping(value = "login",method = RequestMethod.POST)
     @ApiOperation(value = "绑定steam", notes = "", httpMethod = "POST")
-    public ModelAndView loginSteam(){
+    public Response loginSteam(){
         try {
-//            return getUrl("http://www.yuanrise.cn");
+            String url=getUrl("http://www.yuanrise.cn");
+            return Response.success(url);
         }catch (Exception e){
             e.printStackTrace();
         }
