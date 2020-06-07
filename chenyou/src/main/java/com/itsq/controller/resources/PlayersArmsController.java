@@ -66,6 +66,7 @@ public class PlayersArmsController extends BaseController {
         Arms arms=null;
         if(boxArms.getArmsId()!=null){
             arms=armsService.getById(armsService.getById(boxArms.getArmsId()));
+            arms.setPbaId(boxArms.getId());
         }
         return  Response.success(arms);
     }

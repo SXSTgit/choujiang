@@ -112,6 +112,7 @@ public class UpgradingController  extends BaseController {
             boxArms1.setCreDate(new Date());
             playerBoxArmsService.save(boxArms1);
             Arms arms=armsService.selectArmsById(boxArms1.getArmsId());
+            arms.setPbaId(boxArms1.getId());
             return Response.success(arms);
         }else{
             return Response.fail(ErrorEnum.WEI_HUODE);

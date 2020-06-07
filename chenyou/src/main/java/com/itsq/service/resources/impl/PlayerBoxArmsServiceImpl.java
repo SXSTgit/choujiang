@@ -65,7 +65,7 @@ public class PlayerBoxArmsServiceImpl extends ServiceImpl<PlayerBoxArmsMapper, P
             PlayerBoxArms playerBoxArms1 = selectPlayerBoxArmsById(playerBoxArms.getId());
             //查询用户余额
              players = playersService.selectPlayersById(playerBoxArms1.getPlayerId());
-            if (players.getIsStatus() != null && players.getIsStatus() == 0) {
+            if (playerBoxArms1.getIsStatus() != null && playerBoxArms1.getIsStatus() == 0) {
                  arms = armsService.selectArmsById(playerBoxArms1.getArmsId());
                 players.setBalance(players.getBalance().add(arms.getPrice()));
                 //添加余额

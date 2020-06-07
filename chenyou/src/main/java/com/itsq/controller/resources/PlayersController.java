@@ -31,6 +31,8 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 /**
@@ -55,7 +57,7 @@ public class PlayersController extends BaseController {
     private RedisUtils redisUtil;
     @PostMapping("login")
     @ApiOperation(value = "用户-登录", notes = "", httpMethod = "POST")
-    public Response<LoginRespDto<Players>> login(@RequestBody PlayersDto playersDto){
+    public Response<LoginRespDto<Players>> login(@RequestBody PlayersDto playersDto, HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse){
 
 
         Players u = this.playersService.login(playersDto.getNumber(), playersDto.getPwd());

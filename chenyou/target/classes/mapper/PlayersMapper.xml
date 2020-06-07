@@ -9,6 +9,7 @@
         <result column="image" property="image" />
         <result column="number" property="number" />
         <result column="balance" property="balance" />
+        <result column="steam_url" property="steamUrl"/>
         <collection property="armsList" ofType="Arms">
             <id column="pbaId" property="id" />
             <result column="aname" property="name" />
@@ -66,6 +67,6 @@ where p.is_status = 0
   <if test="isStatus!=null">
       and pba.is_status=#{isStatus}
   </if>
-   order by pba.`cre_date`
+   order by pba.`cre_date` desc
     </select>
 </mapper>

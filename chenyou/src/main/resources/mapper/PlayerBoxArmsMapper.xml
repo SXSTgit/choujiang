@@ -29,6 +29,7 @@
             <id column="pid" property="id"/>
             <result column="pname" property="name"/>
             <result column="pimage" property="image"/>
+
         </association>
     </resultMap>
 
@@ -48,7 +49,9 @@ pba.id as id,
   a.`name` as aname,
   a.`type` as atype,
   a.`imageUrl`,
+
   a.`price` as aprice,
+
   p.`name` as pname,
   p.`image` as pimage,
   p.`id` as pid

@@ -2,62 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc1eb556-f18e-47d5-b1f0-9606a8e7b41a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/itsq/pojo/dto/PlayerBoxArmsDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/itsq/utils/http/SessionListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/itsq/controller/resources/IndexController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/itsq/utils/http/OnLineCount.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itsq/controller/resources/ArmsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itsq/controller/resources/ArmsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itsq/ChenYouApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itsq/ChenYouApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/itsq/controller/resources/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itsq/controller/resources/MemberController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itsq/controller/resources/PlayersArmsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itsq/controller/resources/PlayersArmsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/itsq/controller/resources/PlayersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itsq/controller/resources/PlayersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itsq/controller/resources/SteamLoginUtil2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itsq/controller/resources/SteamLoginUtil2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/itsq/controller/resources/UpgradingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itsq/controller/resources/UpgradingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itsq/mapper/PlayersMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itsq/mapper/PlayersMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itsq/pojo/entity/Arms.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itsq/pojo/entity/Arms.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itsq/service/resources/BoxService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itsq/service/resources/BoxService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itsq/service/resources/PlayerBoxArmsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itsq/service/resources/PlayerBoxArmsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itsq/service/resources/PlayersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itsq/service/resources/PlayersService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itsq/service/resources/impl/BoxServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itsq/service/resources/impl/BoxServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/itsq/service/resources/impl/PlayerBoxArmsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itsq/service/resources/impl/PlayerBoxArmsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itsq/service/resources/impl/PlayersServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itsq/service/resources/impl/PlayersServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/PlayerBoxArmsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/PlayerBoxArmsMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/PlayersMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/PlayersMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/chenyou-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/chenyou-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/chenyou-1.0-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/chenyou-1.0-SNAPSHOT.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/common/bean/ErrorEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/common/bean/ErrorEnum.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/controller/resources/ArmsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/controller/resources/ArmsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/controller/resources/BoxArmsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/controller/resources/BoxArmsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/controller/resources/BoxController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/controller/resources/BoxController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/ChenYouApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/ChenYouApplication.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/controller/resources/MemberController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/controller/resources/MemberController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/controller/resources/PlayersArmsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/controller/resources/PlayersArmsController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/controller/resources/PlayersController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/controller/resources/PlayersController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/controller/resources/SteamLoginUtil2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/controller/resources/SteamLoginUtil2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/controller/resources/ZfbController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/controller/resources/ZfbController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/mapper/PlayersMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/mapper/PlayersMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/pojo/dto/AddArmsDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/pojo/dto/AddArmsDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/pojo/dto/AddBoxDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/pojo/dto/AddBoxDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/pojo/entity/Arms.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/pojo/entity/Arms.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/pojo/entity/Players.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/pojo/entity/Players.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/service/resources/BoxService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/service/resources/BoxService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/service/resources/PlayerBoxArmsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/service/resources/PlayerBoxArmsService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/service/resources/PlayersArmsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/service/resources/PlayersArmsService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/service/resources/PlayersService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/service/resources/PlayersService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/service/resources/impl/BoxServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/service/resources/impl/BoxServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/controller/resources/UpgradingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/controller/resources/UpgradingController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/service/resources/impl/PlayerBoxArmsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/service/resources/impl/PlayerBoxArmsServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/service/resources/impl/PlayersArmsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/service/resources/impl/PlayersArmsServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/service/resources/impl/PlayersServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/service/resources/impl/PlayersServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/utils/RegexUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/utils/RegexUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/PlayerBoxArmsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/PlayerBoxArmsMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/mapper/PlayersMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/PlayersMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/templates/lib/layui-v2.5.4/layui.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/templates/lib/layui-v2.5.4/layui.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/templates/pages/armsManage/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/templates/pages/armsManage/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/templates/pages/armsManage/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/templates/pages/armsManage/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/templates/pages/boxManage/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/templates/pages/boxManage/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/templates/pages/boxManage/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/templates/pages/boxManage/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/templates/pages/memberManager/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/templates/pages/memberManager/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -336,7 +300,7 @@
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="com.intellij.execution.dashboard.RunDashboardServiceViewContributor@1d013886" type="d2cb1801:ServiceModel$ContributorNode" />
                 <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
@@ -568,7 +532,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591506393995</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="第八次提交">
+      <created>1591538407542</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1591538407542</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -617,7 +588,8 @@
     <MESSAGE value="第五次提交" />
     <MESSAGE value="第六次提交" />
     <MESSAGE value="第七次提交" />
-    <option name="LAST_COMMIT_MESSAGE" value="第七次提交" />
+    <MESSAGE value="第八次提交" />
+    <option name="LAST_COMMIT_MESSAGE" value="第八次提交" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="181" key="#Project_Structure" timestamp="1591536099735">
@@ -628,10 +600,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="780" y="240" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1591533150263" />
-    <state x="572" y="114" key="CommitChangelistDialog2" timestamp="1591506391273">
+    <state x="153" y="114" width="1751" height="812" key="CommitChangelistDialog2" timestamp="1591550883154">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="572" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1591506391273" />
+    <state x="153" y="114" width="1751" height="812" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1591550883154" />
     <state x="755" y="305" key="FileChooserDialogImpl" timestamp="1589285198653">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -640,38 +612,38 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="773" y="418" key="Github.CreateGistDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591537498859" />
-    <state width="1635" height="226" key="GridCell.Tab.0.bottom" timestamp="1591538315387">
+    <state width="1877" height="306" key="GridCell.Tab.0.bottom" timestamp="1591550883291">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1635" height="226" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591538315387" />
-    <state width="1635" height="226" key="GridCell.Tab.0.center" timestamp="1591538315387">
+    <state width="1877" height="306" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591550883291" />
+    <state width="1877" height="306" key="GridCell.Tab.0.center" timestamp="1591550883291">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1635" height="226" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591538315387" />
-    <state width="1635" height="226" key="GridCell.Tab.0.left" timestamp="1591538315387">
+    <state width="1877" height="306" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591550883291" />
+    <state width="1877" height="306" key="GridCell.Tab.0.left" timestamp="1591550883291">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1635" height="226" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591538315387" />
-    <state width="1635" height="226" key="GridCell.Tab.0.right" timestamp="1591538315387">
+    <state width="1877" height="306" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591550883291" />
+    <state width="1877" height="306" key="GridCell.Tab.0.right" timestamp="1591550883291">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1635" height="226" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591538315387" />
-    <state width="1635" height="226" key="GridCell.Tab.1.bottom" timestamp="1591538315387">
+    <state width="1877" height="306" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591550883291" />
+    <state width="1635" height="267" key="GridCell.Tab.1.bottom" timestamp="1591550421151">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1635" height="226" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591538315387" />
-    <state width="1635" height="226" key="GridCell.Tab.1.center" timestamp="1591538315387">
+    <state width="1635" height="267" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591550421151" />
+    <state width="1635" height="267" key="GridCell.Tab.1.center" timestamp="1591550421151">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1635" height="226" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591538315387" />
-    <state width="1635" height="226" key="GridCell.Tab.1.left" timestamp="1591538315387">
+    <state width="1635" height="267" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591550421151" />
+    <state width="1635" height="267" key="GridCell.Tab.1.left" timestamp="1591550421151">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1635" height="226" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591538315387" />
-    <state width="1635" height="226" key="GridCell.Tab.1.right" timestamp="1591538315387">
+    <state width="1635" height="267" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591550421151" />
+    <state width="1635" height="267" key="GridCell.Tab.1.right" timestamp="1591550421151">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1635" height="226" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591538315387" />
+    <state width="1635" height="267" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591550421151" />
     <state width="1681" height="426" key="GridCell.Tab.2.bottom" timestamp="1590157690277">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -696,6 +668,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1591506222111" />
+    <state x="552" y="256" key="Vcs.Push.Dialog.v2" timestamp="1591538490228">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1591538490228" />
     <state x="640" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1590413390590">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -708,10 +684,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="647" y="152" width="626" height="735" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1591538161164" />
-    <state x="674" y="322" key="git4idea.merge.GitPullDialog" timestamp="1591506404008">
+    <state x="674" y="322" key="git4idea.merge.GitPullDialog" timestamp="1591538417785">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="674" y="322" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591506404008" />
+    <state x="674" y="322" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591538417785" />
     <state x="638" y="256" width="672" height="678" key="search.everywhere.popup" timestamp="1591537961023">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -727,7 +703,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/itsq/controller/resources/PlayersController.java</url>
-          <line>75</line>
+          <line>70</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
