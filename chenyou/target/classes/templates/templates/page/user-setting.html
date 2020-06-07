@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>个人中心</title>
+		<meta name="renderer" content="webkit">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+	    <meta name="apple-mobile-web-app-capable" content="yes">
+	    <meta name="format-detection" content="telephone=no">
+	    <link href="../lib/layui-v2.5.4/css/layui.css" rel="stylesheet" />
+	    <link rel="stylesheet" href="../css/layuimini.css" media="all">
+		<link rel="stylesheet" href="../css/public.css" media="all">
+		<link rel="stylesheet" href="../lib/font-awesome-4.7.0/css/font-awesome.min.css" media="all">
+		<style>
+			.layui-upload-img {
+			    width: 150px;
+			    height: 150px;
+			    margin: 0 10px 10px 0;
+			}
+			.layui-upload-list {
+			    margin: 10px 109px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="layuimini-container">
+			<div class="layui-form" style="margin-top: 20px;">
+				<label class="layui-form-label">登录头像</label>
+				<div class="layui-upload">
+					<button type="button" class="layui-btn" id="test1">上传图片</button>
+					<div class="layui-upload-list">
+						<img class="layui-upload-img" id="demo1">
+						<p id="demoText"></p>
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">登录名</label>
+					<div class="layui-input-inline">
+						<input type="text" style="width: 350px;" name="userName" required lay-verify="required" placeholder="登录名" autocomplete="off" class="layui-input">
+					</div>
+					<div class="layui-form-mid layui-word-aux"></div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">手机号</label>
+					<div class="layui-input-inline">
+						<input type="text" style="width: 350px;" name="phone" required lay-verify="required" placeholder="手机号" autocomplete="off" class="layui-input">
+					</div>
+					<div class="layui-form-mid layui-word-aux"></div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">微信号</label>
+					<div class="layui-input-inline">
+						<input type="text" style="width: 350px;" name="vxCode" required lay-verify="required" placeholder="微信号" autocomplete="off" class="layui-input">
+					</div>
+					<div class="layui-form-mid layui-word-aux"></div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">住址</label>
+					<div class="layui-input-inline">
+						<input type="text" style="width: 350px;" name="address" required lay-verify="required" placeholder="住址" autocomplete="off" class="layui-input">
+					</div>
+					<div class="layui-form-mid layui-word-aux"></div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">身份证号码</label>
+					<div class="layui-input-inline">
+						<input type="text" style="width: 350px;" name="identity" required lay-verify="required" placeholder="身份证号码" autocomplete="off" class="layui-input">
+					</div>
+					<div class="layui-form-mid layui-word-aux"></div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">创建日期</label>
+					<div class="layui-input-inline">
+						<input type="text" name="creDate" readonly="readonly" lay-verify="required" placeholder="创建日期" autocomplete="off" class="layui-input">
+					</div>
+					<div class="layui-form-mid layui-word-aux"></div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">当前状态</label>
+					<div class="layui-input-inline">
+						<select class="layui-input-block" name="dongjie" disabled="disabled">
+							<option value="0">正常</option>
+							<option value="1">冻结</option>
+						</select>
+					</div>
+					<div class="layui-form-mid layui-word-aux"></div>
+				</div>
+				<input type="hidden" name="userId" />
+				<div class="layui-form-item">
+					<label class="layui-form-label"></label>
+					<button class="layui-btn submit">提交</button>
+				</div>
+			</div>
+		</div>
+
+		<script src="../lib/layui-v2.5.4/layui.js" charset="utf-8"></script>
+		<script src="../lib/jquery-3.4.1/jquery-3.4.1.min.js"></script>
+		<script src="../lib/jquery-3.4.1/cookie.js"></script>
+		<script src="../js/common.js"></script>
+		<script>
+			layui.config({
+				base: "{/}/templates/lib/layui-v2.5.4/lay/my_modules/"
+			}).extend({
+				layuimini: 'layuimini',
+				formSelects: 'formSelects/formSelects-v4',
+			}).use(['laypage', 'layer', 'form', 'table', 'laydate', 'element', 'layuimini', 'upload', 'carousel'], function() {
+				var laypage = layui.laypage,
+					layer = layui.layer,
+					form = layui.form,
+					table = layui.table,
+					element = layui.element,
+					laydate = layui.laydate,
+					layuimini = layui.layuimini,
+					carousel = layui.carousel,
+					upload = layui.upload;
+
+				function initData() {
+					var user = C.getCache('admin');
+					$.ajax({
+						url: baseURL + "manager/findManagerById",
+						data: {
+							id: user.id
+						},
+						async: true,
+						type: "post",
+						dataType: "JSON",
+						beforeSend: function(xhr) {
+							xhr.setRequestHeader("X-Token", C.find("X-Token"));
+						},
+						success: function(data) {
+							if(data.message == "success") {
+								userData = data.body;
+
+								$("[name='userName']").val(userData.userName);
+								$("[name='phone']").val(userData.phone);
+								$("[name='vxCode']").val(userData.vxCode);
+								$("[name='address']").val(userData.address);
+								$("[name='identity']").val(userData.identity);
+								$("[name='creDate']").val(userData.creDate);
+								$("[name='dongjie']").val(userData.isStatus);
+								$("[name='userId']").val(userData.id);
+								$("#demo1").attr("src", baseURL + userData.headImage);
+							}
+						}
+					});
+				}
+
+				initData();
+
+				var port = baseURL.substring(baseURL.lastIndexOf(":") + 1);
+				$(".submit").on('click', function(obj) {
+					var userName = $("[name='userName']").val();
+					var phone = $("[name='phone']").val();
+					var vxCode = $("[name='vxCode']").val();
+					var address = $("[name='address']").val();
+					var identity = $("[name='identity']").val();
+					var dongjie = $("[name='dongjie']").val();
+					var userId = $("[name='userId']").val();
+					var img = $("#demo1").attr("src");
+					var imgSrc = img.substring(img.indexOf(port) + port.length)
+
+					var data = {
+						"address": address,
+						"headImage": imgSrc,
+						"id": userId,
+						"identity": identity,
+						"isStatus": dongjie,
+						"phone": phone,
+						"userName": userName,
+						"vxCode": vxCode
+					};
+
+					$.ajax({
+						url: baseURL + "manager/updateManagerInfo",
+						data: JSON.stringify(data),
+						async: true,
+						type: "post",
+						dataType: "JSON",
+						contentType: "application/json",
+						beforeSend: function(xhr) {
+							xhr.setRequestHeader("X-Token", C.find("X-Token"));
+						},
+						success: function(data) {
+							if(data.message == "success") {
+								layer.msg("编辑成功", function(obj) {
+									location.replace("../pages/adminsManage/index.html");
+								});
+							} else {
+								layer.msg("编辑成功");
+								isClisk = true;
+							}
+						}
+					});
+
+				});
+
+				//普通图片上传
+				var uploadInst = upload.render({
+					elem: '#test1',
+					url: baseURL + 'api/file/upload' //改成您自己的上传接口
+						,
+					before: function(obj) {
+						//预读本地文件示例，不支持ie8
+						obj.preview(function(index, file, result) {
+							$('#demo1').attr('src', result); //图片链接（base64）
+						});
+					},
+					done: function(res) {
+						//如果上传失败
+						if(res.code > 0) {
+							return layer.msg('上传失败');
+						}
+						//上传成功
+						$('#demo1').attr('src', baseURL + res.body.filePathURL);
+					},
+					error: function() {
+						//演示失败状态，并实现重传
+						var demoText = $('#demoText');
+						demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-xs demo-reload">重试</a>');
+						demoText.find('.demo-reload').on('click', function() {
+							uploadInst.upload();
+						});
+					}
+				});
+
+			});
+		</script>
+	</body>
+
+</html>

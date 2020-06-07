@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<!-- saved from url=(0062)https://www.layui.com/admin/std/dist/views/home/homepage2.html -->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>layuiAdmin 主页示例模板二</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="../lib/layui-v2.5.4/css/layui.css" media="all">
+    <link rel="stylesheet" href="../css/admin.css" media="all">
+    <style>
+        body {
+            min-width: 1024px;
+        }
+
+        .textStatis:nth-child(1) > .layui-card {
+            border: 1px solid #55efc4;
+            box-shadow: 10px -10px 13px #55efc4;
+        }
+
+        .textStatis:nth-child(2) > .layui-card {
+            border: 1px solid #81ecec;
+            box-shadow: 10px -10px 13px #81ecec;
+        }
+
+        .textStatis:nth-child(3) > .layui-card {
+            border: 1px solid #74b9ff;
+            box-shadow: 10px -10px 13px #74b9ff;
+        }
+
+        .textStatis:nth-child(4) > .layui-card {
+            border: 1px solid #a29bfe;
+            box-shadow: 10px -10px 13px #a29bfe;
+        }
+
+        .textStatis:nth-child(5) > .layui-card {
+            border: 1px solid #ffeaa7;
+            box-shadow: 10px -10px 13px #ffeaa7;
+        }
+
+        .textStatis:nth-child(6) > .layui-card {
+            border: 1px solid #fab1a0;
+            box-shadow: 10px -10px 13px #fab1a0;
+        }
+
+        .textStatis:nth-child(7) > .layui-card {
+            border: 1px solid #ff7675;
+            box-shadow: 10px -10px 13px #ff7675;
+        }
+
+        .textStatis:nth-child(8) > .layui-card {
+            border: 1px solid #fd79a8;
+            box-shadow: 10px -10px 13px #fd79a8;
+        }
+
+        .masonry {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            width: calc((100% - 2px) / 3);
+            margin-top: 20px;
+        }
+
+        .column:nth-child(2) {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    </style>
+<body layadmin-themealias="default">
+<div class="layuimini-container">
+    <div class="layui-fluid">
+        <div class="layui-row layui-col-space30">
+
+            <!--文字统计 -->
+            <div class="layui-col-sm6 layui-col-md3 textStatis">
+                <div class="layui-card">
+                    <div class="layui-card-header">
+                        注册数量
+                        <span class="layui-badge layui-bg-blue layuiadmin-badge">日</span>
+                    </div>
+                    <div class="layui-card-body layuiadmin-card-list" id="userReg">
+                        <p class="layuiadmin-big-font">0</p>
+                        <p>周注册数量<span class="layuiadmin-span-color">0<i
+                                class="layui-inline layui-icon layui-icon-user"></i></span>
+                        </p>
+                        <p>月注册数量<span class="layuiadmin-span-color">0<i
+                                class="layui-inline layui-icon layui-icon-user"></i></span>
+                        </p>
+                        <p>年注册数量<span class="layuiadmin-span-color">0<i
+                                class="layui-inline layui-icon layui-icon-user"></i></span>
+                        </p>
+                        <p>总注册数量<span class="layuiadmin-span-color">0<i
+                                class="layui-inline layui-icon layui-icon-user"></i></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-sm6 layui-col-md3 textStatis">
+                <div class="layui-card">
+                    <div class="layui-card-header">
+                        访问数量
+                        <span class="layui-badge layui-bg-blue layuiadmin-badge">日</span>
+                    </div>
+                    <div class="layui-card-body layuiadmin-card-list" id="visits">
+                        <p class="layuiadmin-big-font">0</p>
+                        <p>周访问数量<span class="layuiadmin-span-color">0<i
+                                class="layui-inline layui-icon layui-icon-dialogue"></i></span>
+                        </p>
+                        <p>月访问数量<span class="layuiadmin-span-color">0<i
+                                class="layui-inline layui-icon layui-icon-dialogue"></i></span>
+                        </p>
+                        <p>年访问数量<span class="layuiadmin-span-color">0<i
+                                class="layui-inline layui-icon layui-icon-dialogue"></i></span>
+                        </p>
+                        <p>总访问数量<span class="layuiadmin-span-color">0<i
+                                class="layui-inline layui-icon layui-icon-dialogue"></i></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-sm6 layui-col-md3 textStatis">
+                <div class="layui-card">
+                    <div class="layui-card-header">
+                        文章发布数量
+                        <span class="layui-badge layui-bg-blue layuiadmin-badge">日</span>
+                    </div>
+                    <div class="layui-card-body layuiadmin-card-list" id="release">
+                        <p class="layuiadmin-big-font">0</p>
+                        <p>周发布数量<span class="layuiadmin-span-color">0<i
+                                class="layui-inline layui-icon layui-icon-read"></i></span>
+                        </p>
+                        <p>月发布数量<span class="layuiadmin-span-color">0<i
+                                class="layui-inline layui-icon layui-icon-read"></i></span>
+                        </p>
+                        <p>年发布数量<span class="layuiadmin-span-color">0<i
+                                class="layui-inline layui-icon layui-icon-read"></i></span>
+                        </p>
+                        <p>总发布数量<span class="layuiadmin-span-color">0<i
+                                class="layui-inline layui-icon layui-icon-read"></i></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-sm6 layui-col-md3 textStatis">
+                <div class="layui-card">
+                    <div class="layui-card-header">
+                        文章收藏数量
+                        <span class="layui-badge layui-bg-blue layuiadmin-badge">日</span>
+                    </div>
+                    <div class="layui-card-body layuiadmin-card-list" id="collection">
+                        <p class="layuiadmin-big-font">0</p>
+                        <p>周收藏数量<span class="layuiadmin-span-color">0<i
+                                class="layui-inline layui-icon layui-icon-read"></i></span>
+                        </p>
+                        <p>月收藏数量<span class="layuiadmin-span-color">0<i
+                                class="layui-inline layui-icon layui-icon-read"></i></span>
+                        </p>
+                        <p>年收藏数量<span class="layuiadmin-span-color">0<i
+                                class="layui-inline layui-icon layui-icon-read"></i></span>
+                        </p>
+                        <p>总收藏数量<span class="layuiadmin-span-color">0<i
+                                class="layui-inline layui-icon layui-icon-read"></i></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-sm6 layui-col-md3 textStatis">
+                <div class="layui-card">
+                    <div class="layui-card-header">
+                        评论数量
+                        <span class="layui-badge layui-bg-blue layuiadmin-badge">日</span>
+                    </div>
+                    <div class="layui-card-body layuiadmin-card-list" id="comment">
+                        <p class="layuiadmin-big-font">0</p>
+                        <p>周评论数量<span class="layuiadmin-span-color">0<i
+                                class="layui-inline layui-icon layui-icon-dialogue"></i></span>
+                        </p>
+                        <p>月评论数量<span class="layuiadmin-span-color">0<i
+                                class="layui-inline layui-icon layui-icon-dialogue"></i></span>
+                        </p>
+                        <p>年评论数量<span class="layuiadmin-span-color">0<i
+                                class="layui-inline layui-icon layui-icon-dialogue"></i></span>
+                        </p>
+                        <p>总评论数量<span class="layuiadmin-span-color">0<i
+                                class="layui-inline layui-icon layui-icon-dialogue"></i></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-sm6 layui-col-md3 textStatis">
+                <div class="layui-card">
+                    <div class="layui-card-header">
+                        模板发布数量
+                        <span class="layui-badge layui-bg-blue layuiadmin-badge">日</span>
+                    </div>
+                    <div class="layui-card-body layuiadmin-card-list" id="tplPubs">
+                        <p class="layuiadmin-big-font">0</p>
+                        <p>周发布数量<span class="layuiadmin-span-color">0<i
+                                class="layui-inline layui-icon layui-icon-templeate-1"></i></span>
+                        </p>
+                        <p>月发布数量<span class="layuiadmin-span-color">0<i
+                                class="layui-inline layui-icon layui-icon-templeate-1"></i></span>
+                        </p>
+                        <p>年发布数量<span class="layuiadmin-span-color">0<i
+                                class="layui-inline layui-icon layui-icon-templeate-1"></i></span>
+                        </p>
+                        <p>总发布数量<span class="layuiadmin-span-color">0<i
+                                class="layui-inline layui-icon layui-icon-templeate-1"></i></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-sm6 layui-col-md3 textStatis">
+                <div class="layui-card">
+                    <div class="layui-card-header">
+                        模板下载数量
+                        <span class="layui-badge layui-bg-blue layuiadmin-badge">日</span>
+                    </div>
+                    <div class="layui-card-body layuiadmin-card-list" id="tplDownload">
+                        <p class="layuiadmin-big-font">0</p>
+                        <p>周下载数量<span class="layuiadmin-span-color">0<i
+                                class="layui-inline layui-icon layui-icon-download-circle"></i></span>
+                        </p>
+                        <p>月下载数量<span class="layuiadmin-span-color">0<i
+                                class="layui-inline layui-icon layui-icon-download-circle"></i></span>
+                        </p>
+                        <p>年下载数量<span class="layuiadmin-span-color">0<i
+                                class="layui-inline layui-icon layui-icon-download-circle"></i></span>
+                        </p>
+                        <p>总下载数量<span class="layuiadmin-span-color">0<i
+                                class="layui-inline layui-icon layui-icon-download-circle"></i></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-sm6 layui-col-md3 textStatis">
+                <div class="layui-card">
+                    <div class="layui-card-header">
+                        模板收藏数量
+                        <span class="layui-badge layui-bg-blue layuiadmin-badge">日</span>
+                    </div>
+                    <div class="layui-card-body layuiadmin-card-list" id="tplCollection">
+                        <p class="layuiadmin-big-font">0</p>
+                        <p>周收藏数量<span class="layuiadmin-span-color">0<i
+                                class="layui-inline layui-icon layui-icon-rate"></i></span>
+                        </p>
+                        <p>月收藏数量<span class="layuiadmin-span-color">0<i
+                                class="layui-inline layui-icon layui-icon-rate"></i></span>
+                        </p>
+                        <p>年收藏数量<span class="layuiadmin-span-color">0<i
+                                class="layui-inline layui-icon layui-icon-rate"></i></span>
+                        </p>
+                        <p>总收藏数量<span class="layuiadmin-span-color">0<i
+                                class="layui-inline layui-icon layui-icon-rate"></i></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 排行统计 -->
+            <div class="masonry">
+                <div class="column row1">
+                    <div class="layui-card">
+                        <div class="layui-card-header">评论热度(城市)</div>
+                        <div class="layui-card-body">
+                            <table class="layui-table layuiadmin-page-table" lay-skin="line">
+                                <thead>
+                                <tr>
+                                    <th>城市名称(省)</th>
+                                    <th>评论次数</th>
+                                    <th>数据占比</th>
+                                </tr>
+                                </thead>
+
+                                <tbody id="commentCity">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="layui-card">
+                        <div class="layui-card-header">热门文章类型</div>
+                        <div class="layui-card-body">
+                            <table class="layui-table layuiadmin-page-table" lay-skin="line">
+                                <thead>
+                                <tr>
+                                    <th>文章类型</th>
+                                    <th>文章数量</th>
+                                    <th>文章占比</th>
+                                </tr>
+                                </thead>
+                                <tbody id="popTypes">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="column row2">
+                    <div class="layui-card">
+                        <div class="layui-card-header">访问热度(城市)</div>
+                        <div class="layui-card-body">
+                            <table class="layui-table layuiadmin-page-table" lay-skin="line">
+                                <thead>
+                                <tr>
+                                    <th>城市名称(省)</th>
+                                    <th>访问次数</th>
+                                    <th>数据占比</th>
+                                </tr>
+                                </thead>
+                                <tbody id="accessFever">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="layui-card">
+                        <div class="layui-card-header">访问热度(文章类型)</div>
+                        <div class="layui-card-body">
+                            <table class="layui-table layuiadmin-page-table" lay-skin="line">
+                                <thead>
+                                <tr>
+                                    <th>文章类型</th>
+                                    <th>访问次数</th>
+                                    <th>文章占比</th>
+                                </tr>
+                                </thead>
+                                <tbody id="popArtic">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="column row3">
+                    <div class="layui-card">
+                        <div class="layui-card-header">热门城市</div>
+                        <div class="layui-card-body">
+                            <table class="layui-table layuiadmin-page-table" lay-skin="line">
+                                <thead>
+                                <tr>
+                                    <th>城市名称(省)</th>
+                                    <th>注册人数</th>
+                                    <th>数据占比</th>
+                                </tr>
+                                </thead>
+                                <tbody id="regFever">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="layui-card">
+                        <div class="layui-card-header">下载热度(模板类型)</div>
+                        <div class="layui-card-body">
+                            <table class="layui-table layuiadmin-page-table" lay-skin="line">
+                                <thead>
+                                <tr>
+                                    <th>模板类型</th>
+                                    <th>下载次数</th>
+                                    <th>数据占比</th>
+                                </tr>
+                                </thead>
+                                <tbody id="downloadHeat">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-sm4">
+                <!--<div class="layui-card">-->
+                <!--<div class="layui-card-header">评论热度(城市)</div>-->
+                <!--<div class="layui-card-body">-->
+                <!--<table class="layui-table layuiadmin-page-table" lay-skin="line">-->
+                <!--<thead>-->
+                <!--<tr>-->
+                <!--<th>城市名称(省)</th>-->
+                <!--<th>评论次数</th>-->
+                <!--<th>数据占比</th>-->
+                <!--</tr>-->
+                <!--</thead>-->
+
+                <!--<tbody id="commentCity">-->
+
+                <!--</tbody>-->
+                <!--</table>-->
+                <!--</div>-->
+                <!--</div>-->
+            </div>
+            <div class="layui-col-sm4">
+                <!--<div class="layui-card">-->
+                <!--<div class="layui-card-header">访问热度(城市)</div>-->
+                <!--<div class="layui-card-body">-->
+                <!--<table class="layui-table layuiadmin-page-table" lay-skin="line">-->
+                <!--<thead>-->
+                <!--<tr>-->
+                <!--<th>城市名称(省)</th>-->
+                <!--<th>访问次数</th>-->
+                <!--<th>数据占比</th>-->
+                <!--</tr>-->
+                <!--</thead>-->
+                <!--<tbody id="accessFever">-->
+
+                <!--</tbody>-->
+                <!--</table>-->
+                <!--</div>-->
+                <!--</div>-->
+            </div>
+            <div class="layui-col-sm4">
+                <!--<div class="layui-card">-->
+                <!--<div class="layui-card-header">热门城市</div>-->
+                <!--<div class="layui-card-body">-->
+                <!--<table class="layui-table layuiadmin-page-table" lay-skin="line">-->
+                <!--<thead>-->
+                <!--<tr>-->
+                <!--<th>城市名称(省)</th>-->
+                <!--<th>注册人数</th>-->
+                <!--<th>数据占比</th>-->
+                <!--</tr>-->
+                <!--</thead>-->
+                <!--<tbody id="regFever">-->
+                <!--</tbody>-->
+                <!--</table>-->
+                <!--</div>-->
+                <!--</div>-->
+            </div>
+            <div class="layui-col-sm4">
+                <!--<div class="layui-card">-->
+                <!--<div class="layui-card-header">热门文章类型</div>-->
+                <!--<div class="layui-card-body">-->
+                <!--<table class="layui-table layuiadmin-page-table" lay-skin="line">-->
+                <!--<thead>-->
+                <!--<tr>-->
+                <!--<th>文章类型</th>-->
+                <!--<th>文章数量</th>-->
+                <!--<th>文章占比</th>-->
+                <!--</tr>-->
+                <!--</thead>-->
+                <!--<tbody id="popTypes">-->
+                <!--</tbody>-->
+                <!--</table>-->
+                <!--</div>-->
+                <!--</div>-->
+            </div>
+            <div class="layui-col-sm4">
+                <!--<div class="layui-card">-->
+                <!--<div class="layui-card-header">访问热度(文章类型)</div>-->
+                <!--<div class="layui-card-body">-->
+                <!--<table class="layui-table layuiadmin-page-table" lay-skin="line">-->
+                <!--<thead>-->
+                <!--<tr>-->
+                <!--<th>文章类型</th>-->
+                <!--<th>访问次数</th>-->
+                <!--<th>文章占比</th>-->
+                <!--</tr>-->
+                <!--</thead>-->
+                <!--<tbody id="popArtic">-->
+                <!--</tbody>-->
+                <!--</table>-->
+                <!--</div>-->
+                <!--</div>-->
+            </div>
+            <div class="layui-col-sm4">
+                <!--<div class="layui-card">-->
+                <!--<div class="layui-card-header">下载热度(模板类型)</div>-->
+                <!--<div class="layui-card-body">-->
+                <!--<table class="layui-table layuiadmin-page-table" lay-skin="line">-->
+                <!--<thead>-->
+                <!--<tr>-->
+                <!--<th>模板类型</th>-->
+                <!--<th>下载次数</th>-->
+                <!--<th>数据占比</th>-->
+                <!--</tr>-->
+                <!--</thead>-->
+                <!--<tbody id="downloadHeat">-->
+                <!--</tbody>-->
+                <!--</table>-->
+                <!--</div>-->
+                <!--</div>-->
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../lib/layui-v2.5.4/layui.js"></script>
+<script src="../lib/jquery-3.4.1/jquery-3.4.1.min.js"></script>
+<script src="../lib/jquery-3.4.1/cookie.js"></script>
+<script src="../js/common.js"></script>
+<script>
+    layui.config({
+        base: "{/}lib/layui-v2.5.4/lay/my_modules/"
+    }).extend({
+        layuimini: "layuimini"
+    }).use(["layer", "laytpl"], function () {
+
+        var layer = layui.layer, laytpl = layui.laytpl;
+        let findAjax = function (url, data, success) {
+            $.ajax({
+                type: "POST",
+                url: baseURL + url,
+                data: data,
+                dataType: "JSON",
+                async: false,
+                traditional: true, // 这里设置为true
+                success: function (result) {
+                    if (result.meta.success == true) {
+                        success(result);
+                        layer.closeAll('loading')
+                    } else {
+                        layer.msg(result.meta.message);
+                        layer.closeAll('loading')
+                    }
+
+                },
+                error: function (e) {
+                    layer.msg("系统错误");
+                    layer.closeAll('loading')
+                }
+            });
+        }
+        var initText = function () {
+            //用户注册
+            findAjax("statistic/count", {type: 3}, function (res) {
+                var userReg = res.data;
+                var view = document.getElementById('userReg');
+                laytpl('<p class="layuiadmin-big-font">{{d.day}}</p>' +
+                    '<p>周注册数量<span class="layuiadmin-span-color">{{d.week}}<i class="layui-inline layui-icon layui-icon-user"></i></span></p>' +
+                    '<p>月注册数量<span class="layuiadmin-span-color">{{d.month}}<i class="layui-inline layui-icon layui-icon-user"></i></span></p>' +
+                    '<p>年注册数量<span class="layuiadmin-span-color">{{d.year}}<i class="layui-inline layui-icon layui-icon-user"></i></span></p>\n' +
+                    '<p>总注册数量<span class="layuiadmin-span-color">{{d.total}}<i class="layui-inline layui-icon layui-icon-user"></i></span></p>' +
+                    '').render(userReg, function (html) {
+                    view.innerHTML = html;
+                });
+            })
+            //访问数量
+            findAjax("statistic/count", {type: 4}, function (res) {
+                var userReg = res.data;
+                var view = document.getElementById('visits');
+                laytpl('<p class="layuiadmin-big-font">{{d.day}}</p>' +
+                    '<p>周访问数量<span class="layuiadmin-span-color">{{d.week}}<i class="layui-inline layui-icon layui-icon-dialogue"></i></span></p>' +
+                    '<p>月访问数量<span class="layuiadmin-span-color">{{d.month}}<i class="layui-inline layui-icon layui-icon-dialogue"></i></span></p>' +
+                    '<p>年访问数量<span class="layuiadmin-span-color">{{d.year}}<i class="layui-inline layui-icon layui-icon-dialogue"></i></span></p>\n' +
+                    '<p>总访问数量<span class="layuiadmin-span-color">{{d.total}}<i class="layui-inline layui-icon layui-icon-dialogue"></i></span></p>' +
+                    '').render(userReg, function (html) {
+                    view.innerHTML = html;
+                });
+            })
+            //发布数量
+            findAjax("statistic/count", {type: 1}, function (res) {
+                var userReg = res.data;
+                var view = document.getElementById('release');
+                laytpl('<p class="layuiadmin-big-font">{{d.day}}</p>' +
+                    '<p>周发布数量<span class="layuiadmin-span-color">{{d.week}}<i class="layui-inline layui-icon layui-icon-read"></i></span></p>' +
+                    '<p>月发布数量<span class="layuiadmin-span-color">{{d.month}}<i class="layui-inline layui-icon layui-icon-read"></i></span></p>' +
+                    '<p>年发布数量<span class="layuiadmin-span-color">{{d.year}}<i class="layui-inline layui-icon layui-icon-read"></i></span></p>\n' +
+                    '<p>总发布数量<span class="layuiadmin-span-color">{{d.total}}<i class="layui-inline layui-icon layui-icon-read"></i></span></p>' +
+                    '').render(userReg, function (html) {
+                    view.innerHTML = html;
+                });
+            })
+            //收藏数量
+            findAjax("statistic/count", {type: 2}, function (res) {
+                var userReg = res.data;
+                var view = document.getElementById('collection');
+                laytpl('<p class="layuiadmin-big-font">{{d.day}}</p>' +
+                    '<p>周收藏数量<span class="layuiadmin-span-color">{{d.week}}<i class="layui-inline layui-icon layui-icon-read"></i></span></p>' +
+                    '<p>月收藏数量<span class="layuiadmin-span-color">{{d.month}}<i class="layui-inline layui-icon layui-icon-read"></i></span></p>' +
+                    '<p>年收藏数量<span class="layuiadmin-span-color">{{d.year}}<i class="layui-inline layui-icon layui-icon-read"></i></span></p>\n' +
+                    '<p>总收藏数量<span class="layuiadmin-span-color">{{d.total}}<i class="layui-inline layui-icon layui-icon-read"></i></span></p>' +
+                    '').render(userReg, function (html) {
+                    view.innerHTML = html;
+                });
+            })
+            //评论数量
+            findAjax("statistic/count", {type: 5}, function (res) {
+                var userReg = res.data;
+                var view = document.getElementById('comment');
+                laytpl('<p class="layuiadmin-big-font">{{d.day}}</p>' +
+                    '<p>周评论数量<span class="layuiadmin-span-color">{{d.week}}<i class="layui-inline layui-icon layui-icon-dialogue"></i></span></p>' +
+                    '<p>月评论数量<span class="layuiadmin-span-color">{{d.month}}<i class="layui-inline layui-icon layui-icon-dialogue"></i></span></p>' +
+                    '<p>年评论数量<span class="layuiadmin-span-color">{{d.year}}<i class="layui-inline layui-icon layui-icon-dialogue"></i></span></p>\n' +
+                    '<p>总评论数量<span class="layuiadmin-span-color">{{d.total}}<i class="layui-inline layui-icon layui-icon-dialogue"></i></span></p>' +
+                    '').render(userReg, function (html) {
+                    view.innerHTML = html;
+                });
+            })
+            //添加模板数量
+            findAjax("statistic/count", {type: 6}, function (res) {
+                var userReg = res.data;
+                var view = document.getElementById('tplPubs');
+                laytpl('<p class="layuiadmin-big-font">{{d.day}}</p>' +
+                    '<p>周发布数量<span class="layuiadmin-span-color">{{d.week}}<i class="layui-inline layui-icon layui-icon-templeate-1"></i></span></p>' +
+                    '<p>月发布数量<span class="layuiadmin-span-color">{{d.month}}<i class="layui-inline layui-icon layui-icon-templeate-1"></i></span></p>' +
+                    '<p>年发布数量<span class="layuiadmin-span-color">{{d.year}}<i class="layui-inline layui-icon layui-icon-templeate-1"></i></span></p>\n' +
+                    '<p>总发布数量<span class="layuiadmin-span-color">{{d.total}}<i class="layui-inline layui-icon layui-icon-templeate-1"></i></span></p>' +
+                    '').render(userReg, function (html) {
+                    view.innerHTML = html;
+                });
+            })
+            //下载模板数量
+            findAjax("statistic/count", {type: 7}, function (res) {
+                var userReg = res.data;
+                var view = document.getElementById('tplDownload');
+                laytpl('<p class="layuiadmin-big-font">{{d.day}}</p>' +
+                    '<p>周下载数量<span class="layuiadmin-span-color">{{d.week}}<i class="layui-inline layui-icon layui-icon-download-circle"></i></span></p>' +
+                    '<p>月下载数量<span class="layuiadmin-span-color">{{d.month}}<i class="layui-inline layui-icon layui-icon-download-circle"></i></span></p>' +
+                    '<p>年下载数量<span class="layuiadmin-span-color">{{d.year}}<i class="layui-inline layui-icon layui-icon-download-circle"></i></span></p>\n' +
+                    '<p>总下载数量<span class="layuiadmin-span-color">{{d.total}}<i class="layui-inline layui-icon layui-icon-download-circle"></i></span></p>' +
+                    '').render(userReg, function (html) {
+                    view.innerHTML = html;
+                });
+            })
+            //收藏模板数量
+            findAjax("statistic/count", {type: 8}, function (res) {
+                var userReg = res.data;
+                var view = document.getElementById('tplCollection');
+                laytpl('<p class="layuiadmin-big-font">{{d.day}}</p>' +
+                    '<p>周收藏数量<span class="layuiadmin-span-color">{{d.week}}<i class="layui-inline layui-icon layui-icon-rate"></i></span></p>' +
+                    '<p>月收藏数量<span class="layuiadmin-span-color">{{d.month}}<i class="layui-inline layui-icon layui-icon-rate"></i></span></p>' +
+                    '<p>年收藏数量<span class="layuiadmin-span-color">{{d.year}}<i class="layui-inline layui-icon layui-icon-rate"></i></span></p>\n' +
+                    '<p>总收藏数量<span class="layuiadmin-span-color">{{d.total}}<i class="layui-inline layui-icon layui-icon-rate"></i></span></p>' +
+                    '').render(userReg, function (html) {
+                    view.innerHTML = html;
+                });
+            })
+
+        }
+        var initRankingList = function () {
+            //评论热度
+            findAjax("statistic/TopTen", {type: 5}, function (res) {
+                var tplStr = "";
+                for (var i = 0; i < res.data.list.length; i++) {
+                    var percentage = (res.data.list[i].count / res.data.count * 100).toFixed(2);
+                    if (i == 0) {
+                        tplStr += '<tr>' +
+                            '<td><span class="first">' + res.data.list[i].provinces + '</span></td>\n' +
+                            '<td><i class="layui-icon ">' + res.data.list[i].count + '</i></td>\n' +
+                            '<td><span>' + percentage + '%</span></td>\n' +
+                            '</tr>';
+                    } else if (i == 1) {
+                        tplStr += '<tr>' +
+                            '<td><span class="second">' + res.data.list[i].provinces + '</span></td>\n' +
+                            '<td><i class="layui-icon ">' + res.data.list[i].count + '</i></td>\n' +
+                            '<td><span>' + percentage + '%</span></td>\n' +
+                            '</tr>';
+                    } else if (i == 2) {
+                        tplStr += '<tr>' +
+                            '<td><span class="third">' + res.data.list[i].provinces + '</span></td>\n' +
+                            '<td><i class="layui-icon ">' + res.data.list[i].count + '</i></td>\n' +
+                            '<td><span>' + percentage + '%</span></td>\n' +
+                            '</tr>';
+                    } else {
+                        tplStr += '<tr>' +
+                            '<td><span>' + res.data.list[i].provinces + '</span></td>\n' +
+                            '<td><i class="layui-icon ">' + res.data.list[i].count + '</i></td>\n' +
+                            '<td><span>' + percentage + '%</span></td>\n' +
+                            '</tr>';
+                    }
+                }
+                var view = document.getElementById('commentCity');
+                laytpl(tplStr).render({}, function (html) {
+                    view.innerHTML = html;
+                });
+            })
+            //访问热度
+            findAjax("statistic/TopTen", {type: 4}, function (res) {
+                var tplStr = "";
+                for (var i = 0; i < res.data.list.length; i++) {
+                    var percentage = (res.data.list[i].count / res.data.count * 100).toFixed(2);
+                    if (i == 0) {
+                        tplStr += '<tr>' +
+                            '<td><span class="first">' + res.data.list[i].area + '</span></td>\n' +
+                            '<td><i class="layui-icon ">' + res.data.list[i].count + '</i></td>\n' +
+                            '<td><span>' + percentage + '%</span></td>\n' +
+                            '</tr>';
+                    } else if (i == 1) {
+                        tplStr += '<tr>' +
+                            '<td><span class="second">' + res.data.list[i].area + '</span></td>\n' +
+                            '<td><i class="layui-icon ">' + res.data.list[i].count + '</i></td>\n' +
+                            '<td><span>' + percentage + '%</span></td>\n' +
+                            '</tr>';
+                    } else if (i == 2) {
+                        tplStr += '<tr>' +
+                            '<td><span class="third">' + res.data.list[i].area + '</span></td>\n' +
+                            '<td><i class="layui-icon ">' + res.data.list[i].count + '</i></td>\n' +
+                            '<td><span>' + percentage + '%</span></td>\n' +
+                            '</tr>';
+                    } else {
+                        tplStr += '<tr>' +
+                            '<td><span>' + res.data.list[i].area + '</span></td>\n' +
+                            '<td><i class="layui-icon ">' + res.data.list[i].count + '</i></td>\n' +
+                            '<td><span>' + percentage + '%</span></td>\n' +
+                            '</tr>';
+                    }
+                }
+                var view = document.getElementById('accessFever');
+                laytpl(tplStr).render({}, function (html) {
+                    view.innerHTML = html;
+                });
+            })
+            //访注册热度
+            findAjax("statistic/TopTen", {type: 2}, function (res) {
+                var tplStr = "";
+                for (var i = 0; i < res.data.list.length; i++) {
+                    var percentage = (res.data.list[i].count / res.data.count * 100).toFixed(2);
+                    if (i == 0) {
+                        tplStr += '<tr>' +
+                            '<td><span class="first">' + res.data.list[i].provinces + '</span></td>\n' +
+                            '<td><i class="layui-icon ">' + res.data.list[i].count + '</i></td>\n' +
+                            '<td><span>' + percentage + '%</span></td>\n' +
+                            '</tr>';
+                    } else if (i == 1) {
+                        tplStr += '<tr>' +
+                            '<td><span class="second">' + res.data.list[i].provinces + '</span></td>\n' +
+                            '<td><i class="layui-icon ">' + res.data.list[i].count + '</i></td>\n' +
+                            '<td><span>' + percentage + '%</span></td>\n' +
+                            '</tr>';
+                    } else if (i == 2) {
+                        tplStr += '<tr>' +
+                            '<td><span class="third">' + res.data.list[i].provinces + '</span></td>\n' +
+                            '<td><i class="layui-icon ">' + res.data.list[i].count + '</i></td>\n' +
+                            '<td><span>' + percentage + '%</span></td>\n' +
+                            '</tr>';
+                    } else {
+                        tplStr += '<tr>' +
+                            '<td><span>' + res.data.list[i].provinces + '</span></td>\n' +
+                            '<td><i class="layui-icon ">' + res.data.list[i].count + '</i></td>\n' +
+                            '<td><span>' + percentage + '%</span></td>\n' +
+                            '</tr>';
+                    }
+                }
+                var view = document.getElementById('regFever');
+                laytpl(tplStr).render({}, function (html) {
+                    view.innerHTML = html;
+                });
+            })
+            //访问文章类型热度
+            findAjax("statistic/TopTen", {type: 1}, function (res) {
+                var tplStr = "";
+                for (var i = 0; i < res.data.list.length; i++) {
+                    var percentage = (res.data.list[i].count / res.data.count * 100).toFixed(2);
+                    if (i == 0) {
+                        tplStr += '<tr>' +
+                            '<td><span class="first">' + res.data.list[i].name + '</span></td>\n' +
+                            '<td><i class="layui-icon ">' + res.data.list[i].count + '</i></td>\n' +
+                            '<td><span>' + percentage + '%</span></td>\n' +
+                            '</tr>';
+                    } else if (i == 1) {
+                        tplStr += '<tr>' +
+                            '<td><span class="second">' + res.data.list[i].name + '</span></td>\n' +
+                            '<td><i class="layui-icon ">' + res.data.list[i].count + '</i></td>\n' +
+                            '<td><span>' + percentage + '%</span></td>\n' +
+                            '</tr>';
+                    } else if (i == 2) {
+                        tplStr += '<tr>' +
+                            '<td><span class="third">' + res.data.list[i].name + '</span></td>\n' +
+                            '<td><i class="layui-icon ">' + res.data.list[i].count + '</i></td>\n' +
+                            '<td><span>' + percentage + '%</span></td>\n' +
+                            '</tr>';
+                    } else {
+                        tplStr += '<tr>' +
+                            '<td><span>' + res.data.list[i].name + '</span></td>\n' +
+                            '<td><i class="layui-icon ">' + res.data.list[i].count + '</i></td>\n' +
+                            '<td><span>' + percentage + '%</span></td>\n' +
+                            '</tr>';
+                    }
+                }
+                var view = document.getElementById('popTypes');
+                laytpl(tplStr).render({}, function (html) {
+                    view.innerHTML = html;
+                });
+            })
+            //文章类型热度
+            findAjax("statistic/TopTen", {type: 3}, function (res) {
+                var tplStr = "";
+                for (var i = 0; i < res.data.list.length; i++) {
+                    var percentage = (res.data.list[i].count / res.data.count * 100).toFixed(2);
+                    if (i == 0) {
+                        tplStr += '<tr>' +
+                            '<td><span class="first">' + res.data.list[i].name + '</span></td>\n' +
+                            '<td><i class="layui-icon ">' + res.data.list[i].count + '</i></td>\n' +
+                            '<td><span>' + percentage + '%</span></td>\n' +
+                            '</tr>';
+                    } else if (i == 1) {
+                        tplStr += '<tr>' +
+                            '<td><span class="second">' + res.data.list[i].name + '</span></td>\n' +
+                            '<td><i class="layui-icon ">' + res.data.list[i].count + '</i></td>\n' +
+                            '<td><span>' + percentage + '%</span></td>\n' +
+                            '</tr>';
+                    } else if (i == 2) {
+                        tplStr += '<tr>' +
+                            '<td><span class="third">' + res.data.list[i].name + '</span></td>\n' +
+                            '<td><i class="layui-icon ">' + res.data.list[i].count + '</i></td>\n' +
+                            '<td><span>' + percentage + '%</span></td>\n' +
+                            '</tr>';
+                    } else {
+                        tplStr += '<tr>' +
+                            '<td><span>' + res.data.list[i].name + '</span></td>\n' +
+                            '<td><i class="layui-icon ">' + res.data.list[i].count + '</i></td>\n' +
+                            '<td><span>' + percentage + '%</span></td>\n' +
+                            '</tr>';
+                    }
+                }
+                var view = document.getElementById('popArtic');
+                laytpl(tplStr).render({}, function (html) {
+                    view.innerHTML = html;
+                });
+            })
+            //模板下载热度
+            findAjax("statistic/TopTen", {type: 6}, function (res) {
+                var tplStr = "";
+                for (var i = 0; i < res.data.list.length; i++) {
+                    var percentage = (res.data.list[i].count / res.data.count * 100).toFixed(2);
+                    if (i == 0) {
+                        tplStr += '<tr>' +
+                            '<td><span class="first">' + res.data.list[i].name + '</span></td>\n' +
+                            '<td><i class="layui-icon ">' + res.data.list[i].count + '</i></td>\n' +
+                            '<td><span>' + percentage + '%</span></td>\n' +
+                            '</tr>';
+                    } else if (i == 1) {
+                        tplStr += '<tr>' +
+                            '<td><span class="second">' + res.data.list[i].name + '</span></td>\n' +
+                            '<td><i class="layui-icon ">' + res.data.list[i].count + '</i></td>\n' +
+                            '<td><span>' + percentage + '%</span></td>\n' +
+                            '</tr>';
+                    } else if (i == 2) {
+                        tplStr += '<tr>' +
+                            '<td><span class="third">' + res.data.list[i].name + '</span></td>\n' +
+                            '<td><i class="layui-icon ">' + res.data.list[i].count + '</i></td>\n' +
+                            '<td><span>' + percentage + '%</span></td>\n' +
+                            '</tr>';
+                    } else {
+                        tplStr += '<tr>' +
+                            '<td><span>' + res.data.list[i].name + '</span></td>\n' +
+                            '<td><i class="layui-icon ">' + res.data.list[i].count + '</i></td>\n' +
+                            '<td><span>' + percentage + '%</span></td>\n' +
+                            '</tr>';
+                    }
+                }
+                var view = document.getElementById('downloadHeat');
+                laytpl(tplStr).render({}, function (html) {
+                    view.innerHTML = html;
+                });
+            })
+        }
+        findAjax("journal/addJournal", {
+            deed: "访问后台首页"
+        }, function (res) {
+        })
+        initRankingList();
+        initText();
+    })
+</script>
+
+<style id="LAY_layadmin_theme">.layui-side-menu, .layadmin-pagetabs .layui-tab-title li:after, .layadmin-pagetabs .layui-tab-title li.layui-this:after, .layui-layer-admin .layui-layer-title, .layadmin-side-shrink .layui-side-menu .layui-nav > .layui-nav-item > .layui-nav-child {
+    background-color: #20222A !important;
+}
+
+.layui-nav-tree .layui-this, .layui-nav-tree .layui-this > a, .layui-nav-tree .layui-nav-child dd.layui-this, .layui-nav-tree .layui-nav-child dd.layui-this a {
+    background-color: #009688 !important;
+}
+
+.layui-layout-admin .layui-logo {
+    background-color: #20222A !important;
+}</style>
+</body>
+</html>

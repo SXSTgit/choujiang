@@ -1,0 +1,37 @@
+{
+  "id": "1744753",
+  "name": "tubiao",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "5532896",
+      "name": "清楚缓存",
+      "font_class": "qingchuhuancun",
+      "unicode": "e630",
+      "unicode_decimal": 58928
+    },
+    {
+      "icon_id": "433877",
+      "name": "qq",
+      "font_class": "qq",
+      "unicode": "e65d",
+      "unicode_decimal": 58973
+    },
+    {
+      "icon_id": "1206404",
+      "name": "微信",
+      "font_class": "weixin",
+      "unicode": "e62c",
+      "unicode_decimal": 58924
+    },
+    {
+      "icon_id": "9512711",
+      "name": "微博",
+      "font_class": "weibo-fill",
+      "unicode": "e645",
+      "unicode_decimal": 58949
+    }
+  ]
+}

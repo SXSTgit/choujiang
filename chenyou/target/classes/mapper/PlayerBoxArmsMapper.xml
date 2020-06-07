@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itsq.mapper.PlayerBoxArmsMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.itsq.pojo.entity.PlayerBoxArms">
+        <id column="id" property="id"/>
+        <result column="player_id" property="playerId"/>
+        <result column="box_id" property="boxId"/>
+        <result column="arms_id" property="armsId"/>
+        <result column="cr_date" property="crDate"/>
+        <result column="is_status" property="isStatus" />
+        <result column="type" property="type" />
+        <association property="box" javaType="Box">
+            <id column="bid" property="id"/>
+            <result column="baname" property="name"/>
+            <result column="bimage" property="image"/>
+            <result column="bprice" property="price"/>
+        </association>
+        <association property="arms" javaType="Arms">
+            <id column="aid" property="id"/>
+            <result column="aname" property="name"/>
+            <result column="imageUrl" property="imageUrl"/>
+            <result column="aprice" property="price"/>
+            <result column="aprice" property="price"/>
+            <result column="atype" property="type"/>
+        </association>
+        <association property="players" javaType="Players">
+            <id column="pid" property="id"/>
+            <result column="pname" property="name"/>
+            <result column="pimage" property="image"/>
+        </association>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, player_id, box_id, arms_id, cr_date
+    </sql>
+
+    <select id="selectPlayerBoxArms" resultMap="BaseResultMap">
+select
+pba.id as id,
+  b.`id`as bid,
+  b.`image` as bimage,
+  b.`name` as baname,
+  b.`price` bprice,
+  a.`id` as aid,
+  a.`name` as aname,
+  a.`type` as atype,
+  a.`imageUrl`,
+  a.`price` as aprice,
+  p.`name` as pname,
+  p.`image` as pimage,
+  p.`id` as pid
+from
+  `player_box_arms` pba
+  left join `box` b
+    on pba.`box_id` = b.`id`
+  left join `arms` a
+    on pba.`arms_id` = a.`id`
+  left join `players` p
+    on pba.`player_id` = p.`id`
+where 1 = 1
+
+<if test="playerId!=null and playerId>0" >
+      and p.`id`=#{playerId}
+</if>
+order by   #{sort} desc
+  limit #{pageIndex},#{pageSize}
+    </select>
+
+
+    <select id="selectPlayerBoxArmsCount" resultType="int">
+
+
+select
+  count(1)
+from
+  `player_box_arms` pba
+  left join `box` b
+    on pba.`box_id` = b.`id`
+  left join `arms` a
+    on pba.`arms_id` = a.`id`
+  left join `players` p
+    on pba.`player_id` = p.`id`
+where 1 = 1
+
+    </select>
+
+</mapper>
