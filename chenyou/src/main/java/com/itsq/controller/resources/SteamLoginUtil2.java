@@ -22,7 +22,7 @@ import com.itsq.service.resources.UserService;
 import com.itsq.token.AuthToken;
 import com.itsq.utils.RegexUtils;
 import com.itsq.utils.StringUtils;
-import com.itsq.utils.ClientUtils;
+import com.itsq.utils.http.ClientUtils;
 import com.itsq.utils.steam.SteamLoginUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -286,7 +286,7 @@ public class SteamLoginUtil2 extends BaseController {
         }
 
 
-            String info=ClientUtils.httpGetWithJSon("http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=" + ApiKey + "&steamids=" + steamid,null);
+            String info= ClientUtils.httpGetWithJSon("http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=" + ApiKey + "&steamids=" + steamid,null);
 
        /* {
 

@@ -112,16 +112,16 @@ public class ArmsController  extends BaseController {
         }*/
         System.out.println("=======");
         Map<String,String> param=new HashMap<>();
-        String json = client.httpGetWithJSon("https://app.zbt.com/open/product/v1/search", param);
+       // String json = client.httpGetWithJSon("https://app.zbt.com/open/product/v1/search", param);
         System.out.println("=======");
-        Object succesResponse = JSON.parse(json);
+      //  Object succesResponse = JSON.parse(json);
         System.out.println("=======");//先转换成Object
-        System.out.println(json);
-        Map map = (Map)succesResponse;         //Object强转换为Map
-        Object succesResponse1 = JSON.parse(map.get("data")+"");
-        Map map1 = (Map)succesResponse1;
+      //  System.out.println(json);
+     //   Map map = (Map)succesResponse;         //Object强转换为Map
+     //   Object succesResponse1 = JSON.parse(map.get("data")+"");
+      //  Map map1 = (Map)succesResponse1;
         List amList=new ArrayList();
-        List list= (List)map1.get("list");
+      //  List list= (List)map1.get("list");
       /*  for (Object o : list) {
             Map map2 = (Map)o;
             Arms arms = new Arms();
@@ -133,7 +133,7 @@ public class ArmsController  extends BaseController {
             amList.add(arms);
         }
         armsService.addListArms(amList);*/
-        return Response.success(list);
+        return Response.success(amList);
     }
 
 

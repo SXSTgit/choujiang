@@ -56,6 +56,8 @@ public class PlayersController extends BaseController {
     @PostMapping("login")
     @ApiOperation(value = "用户-登录", notes = "", httpMethod = "POST")
     public Response<LoginRespDto<Players>> login(@RequestBody PlayersDto playersDto){
+
+
         Players u = this.playersService.login(playersDto.getNumber(), playersDto.getPwd());
         String authToken = new AuthToken(u.getId(),u.getName()).token();
         return Response.success(new LoginRespDto<>(u,authToken, EnumTokenType.BEARER.getCode()));
@@ -131,7 +133,7 @@ public class PlayersController extends BaseController {
 
     @PostMapping("selectPlayerArms")
     @ApiOperation(value = "会员-背包", notes = "", httpMethod = "POST")
-    public Response<List<Arms>> selectPlayerArms(@RequestBody PlayersDto playersDto){
+    public Response<Players> selectPlayerArms(@RequestBody PlayersDto playersDto){
         /*CurrentUser currentUser = currentUser();
         if(currentUser==null){
             return Response.fail(ErrorEnum.SIGN_VERIFI_EXPIRE);

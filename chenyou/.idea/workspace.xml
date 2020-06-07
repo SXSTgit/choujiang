@@ -2,7 +2,62 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc1eb556-f18e-47d5-b1f0-9606a8e7b41a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/itsq/pojo/dto/PlayerBoxArmsDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/itsq/utils/http/SessionListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itsq/controller/resources/ArmsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itsq/controller/resources/ArmsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itsq/controller/resources/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itsq/controller/resources/MemberController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itsq/controller/resources/PlayersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itsq/controller/resources/PlayersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itsq/controller/resources/SteamLoginUtil2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itsq/controller/resources/SteamLoginUtil2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itsq/controller/resources/UpgradingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itsq/controller/resources/UpgradingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itsq/mapper/PlayersMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itsq/mapper/PlayersMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itsq/pojo/entity/Arms.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itsq/pojo/entity/Arms.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itsq/service/resources/BoxService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itsq/service/resources/BoxService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itsq/service/resources/PlayerBoxArmsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itsq/service/resources/PlayerBoxArmsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itsq/service/resources/PlayersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itsq/service/resources/PlayersService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itsq/service/resources/impl/BoxServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itsq/service/resources/impl/BoxServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itsq/service/resources/impl/PlayerBoxArmsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itsq/service/resources/impl/PlayerBoxArmsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itsq/service/resources/impl/PlayersServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itsq/service/resources/impl/PlayersServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/PlayersMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/PlayersMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/chenyou-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/chenyou-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/chenyou-1.0-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/chenyou-1.0-SNAPSHOT.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/common/bean/ErrorEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/common/bean/ErrorEnum.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/controller/resources/ArmsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/controller/resources/ArmsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/controller/resources/BoxArmsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/controller/resources/BoxArmsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/controller/resources/BoxController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/controller/resources/BoxController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/controller/resources/MemberController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/controller/resources/MemberController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/controller/resources/PlayersArmsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/controller/resources/PlayersArmsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/controller/resources/PlayersController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/controller/resources/PlayersController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/controller/resources/SteamLoginUtil2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/controller/resources/SteamLoginUtil2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/controller/resources/ZfbController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/controller/resources/ZfbController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/mapper/PlayersMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/mapper/PlayersMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/pojo/dto/AddArmsDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/pojo/dto/AddArmsDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/pojo/dto/AddBoxDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/pojo/dto/AddBoxDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/pojo/entity/Arms.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/pojo/entity/Arms.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/pojo/entity/Players.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/pojo/entity/Players.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/service/resources/BoxService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/service/resources/BoxService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/service/resources/PlayerBoxArmsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/service/resources/PlayerBoxArmsService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/service/resources/PlayersArmsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/service/resources/PlayersArmsService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/service/resources/PlayersService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/service/resources/PlayersService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/service/resources/impl/BoxServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/service/resources/impl/BoxServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/service/resources/impl/PlayerBoxArmsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/service/resources/impl/PlayerBoxArmsServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/service/resources/impl/PlayersArmsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/service/resources/impl/PlayersArmsServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/service/resources/impl/PlayersServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/service/resources/impl/PlayersServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itsq/utils/RegexUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsq/utils/RegexUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/PlayersMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/PlayersMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/templates/lib/layui-v2.5.4/layui.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/templates/lib/layui-v2.5.4/layui.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/templates/pages/armsManage/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/templates/pages/armsManage/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/templates/pages/armsManage/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/templates/pages/armsManage/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/templates/pages/boxManage/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/templates/pages/boxManage/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/templates/pages/boxManage/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/templates/pages/boxManage/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/templates/pages/memberManager/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/templates/pages/memberManager/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,22 +96,6 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>yundian-guanwang</find>
-      <find>RedisUtils</find>
-      <find>alipay.trade.precreate</find>
-      <find>ip</find>
-      <find>internalIp</find>
-    </findStrings>
-    <replaceStrings>
-      <replace />
-    </replaceStrings>
-    <dirStrings>
-      <dir>D:\worke\yundian-guanwang</dir>
-      <dir>D:\worke\chenyou\src\main\java\com\itsq\config</dir>
-    </dirStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
     <option name="UPDATE_TYPE" value="MERGE" />
@@ -75,12 +114,6 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="179" />
-    <option name="y" value="3" />
-    <option name="width" value="1248" />
-    <option name="height" value="788" />
-  </component>
   <component name="ProjectId" id="1bleQ4mlBv4mmgG4eqEhk0pTMX2" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -97,7 +130,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1591493757224" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/itsq/utils/http" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -117,12 +150,11 @@
     <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\worke\chenyou\src\main\java\com\itsq\utils\http" />
-      <recent name="D:\worke\chenyou\src\main\java\com\itsq\utils" />
-      <recent name="D:\worke\chenyou\src\main\java\com\itsq\controller\resources" />
-      <recent name="D:\worke\chenyou\src\main\java\com\itsq\config" />
-      <recent name="C:\Users\13660\Desktop\项目架构\可以显示目录\new官网\code\yundian-guanwang\src\main\resources\mapper" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\worke\chenyou\src\main\resources\templates" />
+      <recent name="F:\IDEAworkspaces\druid-demo\src\main\resources" />
+      <recent name="F:\IDEAworkspaces\druid-demo\src\main\resources\templates" />
+      <recent name="F:\IDEAworkspaces\druid-demo\src\main\resources\templates\user" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.itsq.pojo.dto" />
@@ -131,11 +163,12 @@
       <recent name="com.itsq.enums" />
       <recent name="com.itsq.pojo.entity" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\worke\chenyou\src\main\resources\templates" />
-      <recent name="F:\IDEAworkspaces\druid-demo\src\main\resources" />
-      <recent name="F:\IDEAworkspaces\druid-demo\src\main\resources\templates" />
-      <recent name="F:\IDEAworkspaces\druid-demo\src\main\resources\templates\user" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\myWork\choujiang\chenyou\chenyou\src\main\java\com\itsq\utils\http" />
+      <recent name="G:\myWork\choujiang\chenyou\chenyou\src\main\java\com\itsq\pojo\dto" />
+      <recent name="D:\worke\chenyou\src\main\java\com\itsq\utils\http" />
+      <recent name="D:\worke\chenyou\src\main\java\com\itsq\utils" />
+      <recent name="D:\worke\chenyou\src\main\java\com\itsq\controller\resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -287,7 +320,7 @@
     <option name="viewStates">
       <list>
         <serviceView>
-          <option name="contentProportion" value="0.08116883" />
+          <option name="contentProportion" value="0.114718616" />
           <treeState>
             <expand>
               <path>
@@ -303,7 +336,13 @@
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="com.intellij.execution.dashboard.RunDashboardServiceViewContributor@1d013886" type="d2cb1801:ServiceModel$ContributorNode" />
                 <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="com.intellij.execution.dashboard.RunDashboardServiceViewContributor@1d013886" type="d2cb1801:ServiceModel$ContributorNode" />
+                <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Not Started" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
             </expand>
             <select />
@@ -508,7 +547,28 @@
       <option name="project" value="LOCAL" />
       <updated>1591476767678</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="第七次提交">
+      <created>1591506242715</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1591506242715</updated>
+    </task>
+    <task id="LOCAL-00016" summary="第七次提交">
+      <created>1591506323687</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1591506323687</updated>
+    </task>
+    <task id="LOCAL-00017" summary="第七次提交">
+      <created>1591506393995</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1591506393995</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -543,15 +603,6 @@
       <configuration name="Test01.show" configurationId="JUnit" />
     </history-entry>
   </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
@@ -569,50 +620,58 @@
     <option name="LAST_COMMIT_MESSAGE" value="第七次提交" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="780" y="240" key="#com.intellij.ide.util.MemberChooser" timestamp="1590151906492">
+    <state x="552" y="181" key="#Project_Structure" timestamp="1591536099735">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="780" y="240" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1590151906492" />
-    <state x="572" y="114" key="CommitChangelistDialog2" timestamp="1591506322743">
+    <state x="552" y="181" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1591536099735" />
+    <state x="780" y="240" key="#com.intellij.ide.util.MemberChooser" timestamp="1591533150263">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="572" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1591506322743" />
+    <state x="780" y="240" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1591533150263" />
+    <state x="572" y="114" key="CommitChangelistDialog2" timestamp="1591506391273">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="572" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1591506391273" />
     <state x="755" y="305" key="FileChooserDialogImpl" timestamp="1589285198653">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="755" y="305" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1589285198653" />
-    <state width="1697" height="287" key="GridCell.Tab.0.bottom" timestamp="1591506166777">
+    <state x="773" y="418" key="Github.CreateGistDialog" timestamp="1591537498859">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1697" height="287" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591506166777" />
-    <state width="1697" height="287" key="GridCell.Tab.0.center" timestamp="1591506166777">
+    <state x="773" y="418" key="Github.CreateGistDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591537498859" />
+    <state width="1635" height="226" key="GridCell.Tab.0.bottom" timestamp="1591538315387">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1697" height="287" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591506166777" />
-    <state width="1697" height="287" key="GridCell.Tab.0.left" timestamp="1591506166777">
+    <state width="1635" height="226" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591538315387" />
+    <state width="1635" height="226" key="GridCell.Tab.0.center" timestamp="1591538315387">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1697" height="287" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591506166777" />
-    <state width="1697" height="287" key="GridCell.Tab.0.right" timestamp="1591506166777">
+    <state width="1635" height="226" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591538315387" />
+    <state width="1635" height="226" key="GridCell.Tab.0.left" timestamp="1591538315387">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1697" height="287" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591506166777" />
-    <state width="1697" height="287" key="GridCell.Tab.1.bottom" timestamp="1591506166777">
+    <state width="1635" height="226" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591538315387" />
+    <state width="1635" height="226" key="GridCell.Tab.0.right" timestamp="1591538315387">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1697" height="287" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591506166777" />
-    <state width="1697" height="287" key="GridCell.Tab.1.center" timestamp="1591506166777">
+    <state width="1635" height="226" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591538315387" />
+    <state width="1635" height="226" key="GridCell.Tab.1.bottom" timestamp="1591538315387">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1697" height="287" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591506166777" />
-    <state width="1697" height="287" key="GridCell.Tab.1.left" timestamp="1591506166777">
+    <state width="1635" height="226" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591538315387" />
+    <state width="1635" height="226" key="GridCell.Tab.1.center" timestamp="1591538315387">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1697" height="287" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591506166777" />
-    <state width="1697" height="287" key="GridCell.Tab.1.right" timestamp="1591506166777">
+    <state width="1635" height="226" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591538315387" />
+    <state width="1635" height="226" key="GridCell.Tab.1.left" timestamp="1591538315387">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1697" height="287" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591506166777" />
+    <state width="1635" height="226" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591538315387" />
+    <state width="1635" height="226" key="GridCell.Tab.1.right" timestamp="1591538315387">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1635" height="226" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591538315387" />
     <state width="1681" height="426" key="GridCell.Tab.2.bottom" timestamp="1590157690277">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -629,6 +688,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1681" height="426" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1590157690277" />
+    <state x="669" y="236" key="MultipleFileMergeDialog" timestamp="1591506415040">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="669" y="236" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591506415040" />
     <state x="461" y="162" key="SettingsEditor" timestamp="1591506222111">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -641,14 +704,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="754" y="438" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1591506327581" />
-    <state x="647" y="152" width="626" height="735" key="find.popup" timestamp="1589212892165">
+    <state x="647" y="152" width="626" height="735" key="find.popup" timestamp="1591538161164">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="647" y="152" width="626" height="735" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1589212892165" />
-    <state x="638" y="256" width="672" height="678" key="search.everywhere.popup" timestamp="1590150724463">
+    <state x="647" y="152" width="626" height="735" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1591538161164" />
+    <state x="674" y="322" key="git4idea.merge.GitPullDialog" timestamp="1591506404008">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="638" y="256" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1590150724463" />
+    <state x="674" y="322" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591506404008" />
+    <state x="638" y="256" width="672" height="678" key="search.everywhere.popup" timestamp="1591537961023">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="638" y="256" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1591537961023" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -660,7 +727,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/itsq/controller/resources/PlayersController.java</url>
-          <line>66</line>
+          <line>75</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
@@ -686,103 +753,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/druid_demo$druidDemoApplication.ic" NAME="druidDemoApplication Coverage Results" MODIFIED="1584578398945" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ArquillianSettingsConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.39425287" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>yundian-guanwang</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-                <option value="0.6" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectJDKs.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
   </component>
   <component name="mavenExecuteGoalHistory">
     <option value="" />

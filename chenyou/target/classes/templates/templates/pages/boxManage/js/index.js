@@ -97,11 +97,10 @@ layui.config({
                         ];
                         return strs[d.type];
                     }
-                }, {
-                    field: 'count',
-                    title: '库存',
+                },{
+                    field: 'outTime',
+                    title: '过期时间',
                     align: 'center',
-                    edit: 'text'
                 },
                 {
                     title: '状态',
@@ -153,14 +152,41 @@ layui.config({
             url: baseURL + "steam/login",
             dataType: "json",
             success: function (res) {
-                if(res.data!=null){
-                    window.open(res.data);
+                if(res.body!=null){
+                    window.open(res.body);
                 }
             }
         });
     });
 
-$('[lay-filter="addSysmenu"]').on('click', function (obj) {
+    $('[lay-filter="gouBox"]').on("click",function (obj) {
+        findAjax("playersArms/buybox", {
+            "boxId": 2,
+            "id": 1
+        }, function (res) {
+
+        })
+    })
+
+    $('[lay-filter="huoqbl"]').on("click",function (obj) {
+        findAjax("upgrading/huoqujl", {
+            "oldPrice": 13,
+            "newPrice": 14
+        }, function (res) {
+
+        })
+    })
+
+    $('[lay-filter="shengji"]').on("click",function (obj) {
+        findAjax("upgrading/shenji", {
+            "jilv": 2.00,
+            "newPrice": 14
+        }, function (res) {
+
+        })
+    })
+
+    $('[lay-filter="addSysmenu"]').on('click', function (obj) {
     layer.open({
         type: 1,
         title: "添加箱子",
@@ -168,6 +194,12 @@ $('[lay-filter="addSysmenu"]').on('click', function (obj) {
         area: ['90%', '90%'],
         content: $("#addBox").html(),
         success: function (layero, index) {
+            laydate.render({
+                elem: 'input[name="outTime"]',
+                type: 'date',
+                trigger: 'click'
+            });
+
             layui.use(['form', 'upload'], function () {
                 var $ = layui.jquery, upload = layui.upload;
                 //普通图片上传
@@ -204,9 +236,10 @@ $('[lay-filter="addSysmenu"]').on('click', function (obj) {
                 var name = $(" [name='name']").val();
                 var image = $(" #image").attr("src");
                 var price = $(" [name='price']").val();
-                var count = $(" [name='count']").val();
+        /*        var count = $(" [name='count']").val();*/
                 var isStatus = $(" [name='isStatus']").val();
                 var type = $("[name='type']").val();
+                var outTime = $("[name='outTime']").val();
                 var josn = new Array();
                 $("[name='glArmsId']").each(function (res) {
 
@@ -216,13 +249,18 @@ $('[lay-filter="addSysmenu"]').on('click', function (obj) {
                     var obj = {"chance": jl, "count": kc, "id": id};
                     josn.push(obj)
                 })
+                var zjlv=$("[name='zjlv']").val();
+                if(zjlv!="100"){
+                    alert("总几率需为100，请调整几率！");
+                }
                 findAjax("box/addInfo", {
                     "name": name,
                     "image": image,
                     "price": price,
-                    "count": count,
+                   /* "count": count,*/
                     "isStatus": isStatus,
                     "type": type,
+                    "outTime" : outTime,
                     "glId": JSON.stringify(josn)
                 }, function (res) {
                     if (res.message == 'success') {
@@ -320,7 +358,7 @@ treeTable.on('tool(demoTb1)', function (obj) {
                 "name": data.name,
                 "image": data.image,
                 "price": data.price,
-                "count": data.count,
+              /*  "count": data.count,*/
                 "productId": data.productId
             }, function (res) {
                 if (res.message == 'success') {
@@ -426,18 +464,21 @@ treeTable.on('tool(demoTb1)', function (obj) {
                     if (res.message == 'success') {
                         var data = res.body;
                         var infoHtml = "";
+                        var zjl=0;
                         for (var i = 0; i < data.length; i++) {
                             var info = data[i];
                             infoHtml += " <div class=\"layui-input-block\" style=\"border-style: none;display: inline-block;\">\n" +
                                 "                        <div class=\"layui-inline\" >\n" +
                                 "                            <input type='hidden' name='glArmsId' value='" + info.armsId + "'>" +
-                                "                            <img src=\"" + info.arms.image + "\" width=\"68\" height=\"68\" style=\"display: block;margin-bottom: 5px\"/>\n" +
-                                "                            <input type=\"text\" value='" + info.chance + "' style=\"width: 28px;\" name=\"chance\" placeholder=\"几率\" />\n" +
+                                "                            <img src=\"" + info.arms.imageUrl + "\" width=\"68\" height=\"68\" style=\"display: block;margin-bottom: 5px\"/>\n" +
+                                "                            <input type=\"text\" value='" + info.chance + "' onkeyup='jisuangJl(this)' style=\"width: 28px;\" name=\"chance\" placeholder=\"几率\" />\n" +
                                 "                            <input type=\"text\" value='" + info.count + "' style=\"width: 28px;\" name=\"count\" placeholder=\"库存\" />\n" +
                                 "                            <div style=\"text-align: center;\"><a onclick=\"delWq(this)\" href=\"javascript:void(0);\">删除</a></div>\n" +
                                 "                        </div>\n" +
-                                "                    </div>"
+                                "                    </div>";
+                            zjl+=parseFloat(info.chance);
                         }
+                        $("[name='zjlv']").val(zjl);
                         $("#glImg").html(infoHtml);
                     }
 
@@ -503,6 +544,15 @@ window.delWq = function (res) {
     $(res).parents(".layui-inline").remove();
 }
 
+window.jisuangJl = function(res){
+    var zjl=0;
+    $("[name='chance']").each(function (res) {
+        var jl=$(this).val();
+        zjl=(zjl*100+jl*100)/100
+    })
+    $("[name='zjlv']").val(zjl);
+}
+
 window.xzwqCheck = function (res) {
     var infoHtml = "";
     $("[name='armsInfo']:checked").each(function (res) {
@@ -511,8 +561,8 @@ window.xzwqCheck = function (res) {
         infoHtml += " <div class=\"layui-input-block\" style=\"border-style: none;display: inline-block;\">\n" +
             "                        <div class=\"layui-inline\" >\n" +
             "                            <input type='hidden' name='glArmsId' value='" + obj.id + "'>" +
-            "                            <img src=\"" + obj.image + "\" width=\"68\" height=\"68\" style=\"display: block;margin-bottom: 5px\"/>\n" +
-            "                            <input type=\"text\" style=\"width: 28px;\" name=\"chance\" placeholder=\"几率\" />\n" +
+            "                            <img src=\"" + obj.imageUrl + "\" width=\"68\" height=\"68\" style=\"display: block;margin-bottom: 5px\"/>\n" +
+            "                            <input type=\"text\" style=\"width: 28px;\" onkeyup='jisuangJl(this)' name=\"chance\" placeholder=\"几率\" />\n" +
             "                            <input type=\"text\" style=\"width: 28px;\" name=\"count\" placeholder=\"库存\" />\n" +
             "                            <div style=\"text-align: center;\"><a onclick=\"delWq(this)\" href=\"javascript:void(0);\">删除</a></div>\n" +
             "                        </div>\n" +
@@ -532,36 +582,30 @@ window.addWuqi = function (res) {
         content: $("#addArms").html(),
         success: function (layero, index) {
 
-            $.ajax({
-                type: "post",
-                url: baseURL + "arms/getAll",
-                beforeSend: function (xhr) {
-                    xhr.setRequestHeader("X-Token", C.find("X-Token"));
-                },
-                success: function (res) {
-                    if (res.message == 'success') {
-                        var htmlInfo = "";
-                        for (var i = 0; i < res.body.length; i++) {
-                            var info = res.body[i];
-                            if (info.isStatus == 0) {
-                                map.set(info.id + "", info);
-                                htmlInfo += "<div class=\"layui-form-item\" style=\"display: inline-block;\">\n" +
-                                    "                    <div class=\"layui-input-block\" style=\"border-style: none;display: inline-block;\">\n" +
-                                    "                        <div class=\"layui-inline\" style=\"width: 100px;\">\n" +
-                                    "                            <img src=\"" + info.image + "\" width=\"80\" height=\"80\" style=\"display: block;margin-bottom: 5px\"/>\n" +
-                                    "                            <p style='text-align: center;width: 80px;overflow: hidden;white-space: nowrap;text-overflow:ellipsis;'>" + info.name + "</p>\n" +
-                                    "                            <p style='text-align: center;width:80px;'>" + info.price + "</p>\n" +
-                                    "                            <input type=\"checkbox\" value='" + info.id + "' name=\"armsInfo\" title=\"选择\" class=\"layui-form-checkbox\" lay-skin=\"primary\">\n" +
-                                    "                        </div>\n" +
-                                    "                    </div>\n" +
-                                    "                </div>";
-                            }
+            findAjax("arms/getAll",{}, function (res) {
+                if (res.message == 'success') {
+                    var htmlInfo = "";
+                    for (var i = 0; i < res.body.length; i++) {
+                        var info = res.body[i];
+                        if (info.isStatus == 0) {
+                            map.set(info.id + "", info);
+                            htmlInfo += "<div class=\"layui-form-item\" style=\"display: inline-block;\">\n" +
+                                "                    <div class=\"layui-input-block\" style=\"border-style: none;display: inline-block;\">\n" +
+                                "                        <div class=\"layui-inline\" style=\"width: 100px;\">\n" +
+                                "                            <img src=\"" + info.imageUrl + "\" width=\"80\" height=\"80\" style=\"display: block;margin-bottom: 5px\"/>\n" +
+                                "                            <p style='text-align: center;width: 80px;overflow: hidden;white-space: nowrap;text-overflow:ellipsis;'>" + info.name + "</p>\n" +
+                                "                            <p style='text-align: center;width:80px;'>" + info.price + "</p>\n" +
+                                "                            <input type=\"checkbox\" value='" + info.id + "' name=\"armsInfo\" title=\"选择\" class=\"layui-form-checkbox\" lay-skin=\"primary\">\n" +
+                                "                        </div>\n" +
+                                "                    </div>\n" +
+                                "                </div>";
                         }
-                        $("#wqxzDiv").html(htmlInfo);
                     }
-                    form.render('checkbox');
+                    $("#wqxzDiv").html(htmlInfo);
                 }
+                form.render('checkbox');
             });
+
             $("#cancle2").on('click', function (obj) {
                 layer.close(index);
             });

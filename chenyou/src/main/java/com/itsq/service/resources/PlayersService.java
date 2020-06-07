@@ -54,5 +54,8 @@ public interface PlayersService extends IService<Players> {
     Page<Players> selectPlayersPage(PlayersDtoPage playersDtoPage);
 
 
-    List<Arms> selectPlayerArms(PlayersDto playersDto);
+    Players selectPlayerArms(PlayersDto playersDto);
+
+
+    int selectPlayerCount();
 }

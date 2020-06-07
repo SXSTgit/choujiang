@@ -8,13 +8,9 @@
         <result column="name" property="name" />
         <result column="image" property="image" />
         <result column="number" property="number" />
-        <result column="pwd" property="pwd" />
-        <result column="steam_url" property="steamUrl" />
         <result column="balance" property="balance" />
-        <result column="is_status" property="isStatus" />
-        <result column="cr_data" property="crData" />
         <collection property="armsList" ofType="Arms">
-            <id column="aid" property="id" />
+            <id column="pbaId" property="id" />
             <result column="aname" property="name" />
             <result column="aimageUrl" property="imageUrl" />
             <result column="aprice" property="price" />
@@ -23,7 +19,7 @@
             <result column="bid" property="boxId" />
             <result column="pbIs" property="pbIs" />
             <result column="pbType" property="pbType" />
-            <result column="pbaId" property="pbaId" />
+            <result column="aid" property="pbaId" />
         </collection>
     </resultMap>
 
@@ -45,10 +41,10 @@
         <result column="aid" property="pbaId" />
     </resultMap>
 
-    <select id="selectPlayerBox" resultMap="BaseResultMap1">
+    <select id="selectPlayerBox" resultMap="BaseResultMap">
 
 select
-
+p.*,
   a.id as aid,
   a.`name` as aname,
   a.imageUrl as aimageUrl,
@@ -58,7 +54,7 @@ select
    pba.`id`  as pbaId,
   pba.`box_id` as bid,
   pba.`is_status` as pbIs,
-  pba.`type` as pbType,
+  pba.`type` as pbType
 from
   `players` p
   left join `player_box_arms` pba

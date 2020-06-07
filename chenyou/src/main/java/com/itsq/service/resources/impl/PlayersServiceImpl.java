@@ -41,6 +41,7 @@ PlayersServiceImpl extends ServiceImpl<PlayersMapper, Players> implements Player
         if (players1 != null) {
             throw new APIException(ErrorEnum.PLAYER_PHONE);
         }
+        players.setName(players.getNumber());
         players.setPwd(MD5.getMd5(players.getPwd(), 32));
         super.baseMapper.insert(players);
         return players;
@@ -101,7 +102,7 @@ PlayersServiceImpl extends ServiceImpl<PlayersMapper, Players> implements Player
     }
 
     @Override
-    public List<Arms> selectPlayerArms(PlayersDto playersDto) {
+    public Players selectPlayerArms(PlayersDto playersDto) {
 
         Map<String, Object> params = new HashMap<>();
 
@@ -109,9 +110,15 @@ PlayersServiceImpl extends ServiceImpl<PlayersMapper, Players> implements Player
         if (playersDto.getIsStatus() != null) {
             params.put("isStatus", playersDto.getIsStatus());
         }
-        List<Arms> armsList = super.baseMapper.selectPlayerBox(params);
+        Players players = super.baseMapper.selectPlayerBox(params);
 
-        return armsList;
+        return players;
+    }
+
+    @Override
+    public int selectPlayerCount() {
+QueryWrapper queryWrapper=new QueryWrapper();
+        return super.baseMapper.selectCount(queryWrapper);
     }
 
 

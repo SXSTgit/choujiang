@@ -17,6 +17,6 @@ import java.util.Map;
  */
 public interface PlayersMapper extends BaseMapper<Players> {
 
-    List<Arms> selectPlayerBox(Map<String,Object> params);
+    Players selectPlayerBox(Map<String,Object> params);
 
 }
