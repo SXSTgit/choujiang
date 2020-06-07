@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="cc1eb556-f18e-47d5-b1f0-9606a8e7b41a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itsq/pojo/dto/PlayersDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itsq/pojo/dto/PlayersDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itsq/service/resources/impl/PlayersServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itsq/service/resources/impl/PlayersServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/PlayersMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/PlayersMapper.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -210,8 +208,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/service/resources/impl/PlayersServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="109" column="32" selection-start-line="109" selection-start-column="24" selection-end-line="109" selection-end-column="32" />
+            <state relative-caret-position="97">
+              <caret line="108" column="47" lean-forward="true" selection-start-line="108" selection-start-column="47" selection-end-line="108" selection-end-column="47" />
               <folding>
                 <element signature="method#addPlayers#0;class#PlayersServiceImpl#0" />
                 <element signature="method#selectPlayers#0;class#PlayersServiceImpl#0" />
@@ -227,8 +225,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/PlayersMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="953">
-              <caret line="75" lean-forward="true" selection-start-line="75" selection-end-line="75" />
+            <state relative-caret-position="123">
+              <caret line="60" column="22" lean-forward="true" selection-start-line="60" selection-start-column="22" selection-end-line="60" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -461,6 +459,11 @@
               <item name="service" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="chenyou" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chenyou" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -482,7 +485,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1591476033483" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1591493757224" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -542,7 +545,7 @@
     </option>
     <option name="contentProportion" value="0.016393442" />
   </component>
-  <component name="RunManager" selected="Spring Boot.druidDemoApplication">
+  <component name="RunManager" selected="Spring Boot.ChenYouApplication">
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.itsq.utils.http.Client" />
       <module name="chenyou" />
@@ -805,7 +808,7 @@
       <workItem from="1591324956693" duration="25322000" />
       <workItem from="1591364432058" duration="2063000" />
       <workItem from="1591404893019" duration="18656000" />
-      <workItem from="1591441481633" duration="27199000" />
+      <workItem from="1591441481633" duration="29426000" />
     </task>
     <task id="LOCAL-00001" summary="第一次提交">
       <created>1591075074544</created>
@@ -898,7 +901,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591473373123</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="第七次提交">
+      <created>1591476767678</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1591476767678</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -934,7 +944,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="190909000" />
+    <option name="totallyTimeSpent" value="193136000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -947,9 +957,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7724359" visible="true" weight="0.27609682" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7724359" visible="true" weight="0.27609682" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -959,7 +968,7 @@
       <window_info id="Web" order="7" sideWeight="0.09352518" side_tool="true" weight="0.30484116" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.5754098" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3114754" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.67540985" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.57377046" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -972,13 +981,13 @@
       <window_info anchor="bottom" id="Problems" order="12" weight="0.3295082" />
       <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="14" weight="0.5868853" />
-      <window_info anchor="bottom" id="Run Dashboard" order="15" weight="0.5672131" />
+      <window_info anchor="bottom" id="Run Dashboard" order="15" weight="0.6032787" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Maven Projects" order="5" weight="0.41452345" />
+      <window_info anchor="right" id="Maven Projects" order="5" visible="true" weight="0.41452345" />
       <window_info anchor="right" id="Database" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
@@ -1503,8 +1512,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/service/resources/impl/PlayersServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="109" column="32" selection-start-line="109" selection-start-column="24" selection-end-line="109" selection-end-column="32" />
+        <state relative-caret-position="97">
+          <caret line="108" column="47" lean-forward="true" selection-start-line="108" selection-start-column="47" selection-end-line="108" selection-end-column="47" />
           <folding>
             <element signature="method#addPlayers#0;class#PlayersServiceImpl#0" />
             <element signature="method#selectPlayers#0;class#PlayersServiceImpl#0" />
@@ -1518,8 +1527,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/PlayersMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="953">
-          <caret line="75" lean-forward="true" selection-start-line="75" selection-end-line="75" />
+        <state relative-caret-position="123">
+          <caret line="60" column="22" lean-forward="true" selection-start-line="60" selection-start-column="22" selection-end-line="60" selection-end-column="22" />
         </state>
       </provider>
     </entry>
