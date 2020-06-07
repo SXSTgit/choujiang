@@ -67,7 +67,25 @@ layui.config({
                     title: '武器名称',
                     edit: 'text',
                     align: 'center'
-                }, {
+                },
+                {
+                    title: '武器级别',
+                    align: 'center',
+                    templer: function (d) {
+                        var strs = [
+                            '<span></span>',
+                            '<span class="layui-badge layui-badge-green">消费级</span>',
+                            '<span class="layui-badge layui-badge-green">工业级</span>',
+                            '<span class="layui-badge layui-badge-green">军规级</span>',
+                            '<span class="layui-badge layui-badge-green">受限级</span>',
+                            '<span class="layui-badge layui-badge-green">保密级</span>',
+                            '<span class="layui-badge layui-badge-green">隐秘级</span>',
+                            '<span class="layui-badge layui-badge-green">特殊物品*</span>'
+                        ];
+                        return strs[d.type];
+                    }
+                }
+                ,{
                     field: 'imageUrl',
                     title: '武器主图',
                     align: 'center',
@@ -180,12 +198,14 @@ layui.config({
                     var count = $(" [name='count']").val();
                     var isStatus = $(" [name='isStatus']").val();
                     var productId=$("[name='productId']").val();
+                    var type=$("[name='type']").val();
                     findAjax("arms/addInfo", {
                         "name": name,
                         "imageUrl": imageUrl,
                         "price": price,
                         "count": count,
                         "isStatus": isStatus,
+                        "type" : type,
                         "productId":productId
                     }, function (res) {
                         if (res.message == 'success') {

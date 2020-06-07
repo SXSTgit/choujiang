@@ -55,6 +55,10 @@ public class Players implements Serializable {
     @TableField("steam_url")
     private String steamUrl;
 
+    @ApiModelProperty(value = "steamId")
+    @TableField("steam_Id")
+    private String steamId;
+
     @ApiModelProperty(value = "余额")
     @TableField("balance")
     private BigDecimal balance;
@@ -94,5 +98,7 @@ public class Players implements Serializable {
     public static final String CRE_DATA = "cre_data";
 
     public static final String STATE = "state";
+
+    public static final String STEAM_ID = "steam_id";
 
 }

@@ -41,10 +41,6 @@ public class BoxArmsController extends BaseController {
     @RequestMapping(value = "getAll",method = RequestMethod.POST)
     @ApiOperation(value = "获取全部武器", notes = "", httpMethod = "POST")
     public Response getAllInfo(@RequestBody BoxArms boxArms){
-        /*CurrentUser currentUser = currentUser();
-        if(currentUser==null){
-            return Response.fail(ErrorEnum.SIGN_VERIFI_EXPIRE);
-        }*/
         QueryWrapper queryWrapper=new QueryWrapper();
         if(boxArms.getBoxId()!=null) {
             queryWrapper.eq("box_id",boxArms.getBoxId());
