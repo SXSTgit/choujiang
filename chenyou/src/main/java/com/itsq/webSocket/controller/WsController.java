@@ -2,6 +2,7 @@ package com.itsq.webSocket.controller;
 
 import com.itsq.common.base.BaseController;
 import com.itsq.common.bean.Response;
+import com.itsq.common.redis.RedisUtils;
 import com.itsq.pojo.dto.PageParametersDto;
 import com.itsq.pojo.dto.PlayersDto;
 import com.itsq.service.resources.PlayerBoxArmsService;
@@ -19,6 +20,8 @@ import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.annotation.Resource;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.HashMap;
@@ -38,7 +41,8 @@ public class WsController extends BaseController {
 
     private final SimpMessagingTemplate messagingTemplate;
 
-
+    @Resource
+    private RedisUtils redisUtil;
     @Autowired
     private PlayersService playersService ;
     @Autowired
@@ -57,6 +61,14 @@ public class WsController extends BaseController {
         System.out.println(message.getName());
         return new ResponseMessage("welcome," + message.getName() + " !");
     }
+
+    @Scheduled(fixedRate = 1000*60*60*2)
+    public void getCount() {
+        Integer i=Integer.valueOf(redisUtil.get("count")+"");
+        if(i>0){
+            redisUtil.set("count",i-1+"");
+        }
+    };
 
     /**
      * 定时推送消息
@@ -94,7 +106,7 @@ public class WsController extends BaseController {
         int boxCount =   playerBoxArmsService.selectUpCount(0);
         int uPCount =    playerBoxArmsService.selectUpCount(1);
         Map<String ,Object > map=new HashMap<>();
-        map.put("login", RandomUtil.getRandom(2));
+        map.put("login", redisUtil.get("count"));
         map.put("playerCount",playerCount);
         map.put("boxCount",boxCount);
         map.put("uPCount",uPCount);
