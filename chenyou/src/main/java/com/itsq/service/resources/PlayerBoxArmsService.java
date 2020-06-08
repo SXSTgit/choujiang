@@ -25,4 +25,7 @@ public interface PlayerBoxArmsService extends IService<PlayerBoxArms> {
    int  updatePlayerBoxArms(PlayerBoxArmsDtoUpd playerBoxArmsDtoUpd);
 
     PagesUtil<PlayerBoxArms> selectPlayerBoxArmsPage(PageParametersDto pageParametersDto);
+
+    int selectUpCount(Integer type);
+
 }

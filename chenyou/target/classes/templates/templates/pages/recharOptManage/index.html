@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>充值配置</title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta http-equiv="Access-Control-Allow-Origin" content="*">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="format-detection" content="telephone=no">
+		<link href="../../lib/layui-v2.5.4/css/layui.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../css/layuimini.css" media="all">
+		<link rel="stylesheet" href="../../css/public.css" media="all">
+		<link rel="stylesheet" href="../../lib/font-awesome-4.7.0/css/font-awesome.min.css" media="all">
+		<link rel="stylesheet" href="../userManage/css/index.css" media="all" />
+		<link rel="stylesheet" href="../oilCardManage/css/index.css" media="all" />
+	</head>
+
+	<body>
+
+		<div class="layuimini-container">
+			<fieldset class="layui-elem-field layui-field-title" style="margin-bottom: 0px;">
+				<legend>充值配置管理<b></b></legend>
+			</fieldset>
+			<div class="layuimini-container">
+				<div class="layui-col-lg12">
+					<div class="layui-form">
+						<div class="layui-col-lg11 search1">
+
+							<div class="layui-form-item">
+								<label class="layui-form-label">是否推荐</label>
+								<div class="layui-input-inline">
+									<select class="layui-input-block" name="isCo" style="border-style: none;">
+										<option value=""></option>
+										<option value="1">是</option>
+										<option value="2">否</option>
+									</select>
+								</div>
+							</div>
+
+							<div class="layui-form-item" style="width: 10%;">
+								<button class="layui-btn layui-btn-normal" lay-filter="search" style="background-color: #59bbb2;">搜索</button>
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+
+				<div class="layui-col-lg12">
+					<div class="top_search">
+						<div class="search_left" style="margin-top: 0.5em;">
+							<i class="layui-icon layui-icon-refresh"></i>
+
+							<button class="layui-btn addbtn" lay-filter="addRecharOpt" style="margin-left: 0px;">
+								<i class="layui-icon layui-icon-addition"></i><span class="addRecharOptbtn1">添加</span>
+							</button>
+							<!--<button class="layui-btn addbtn" lay-filter="editRecharOpt" style="margin-left: 0px;background-color: #00968894;">
+								<i class="layui-icon layui-icon-edit"></i><span class="editRecharOptbtn1" data-type="getCheckData">编辑</span>
+							</button>-->
+							<button class="layui-btn addbtn" lay-filter="delRecharOpt" style="margin-left: 0px;background-color: red;">
+								<i class="layui-icon layui-icon-delete"></i><span class="delRecharOptbtn1" data-type="getCheckData">删除</span>
+							</button>
+							<!--<button class="layui-btn addbtn" lay-filter="more" style="margin-left: 0px;background-color: rgb(118,130,142);">
+								<i class="layui-icon layui-icon-set"></i><span class="morebtn1">更多</span>
+							</button>-->
+
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+			<div style="clear: both;"></div>
+			<table id="recharOpttable" lay-filter="recharOpttable">
+
+			</table>
+		</div>
+		
+		<script type="text/html" id="addRecharHtml">
+			<div class="layuimini-container" style="width: 800px; min-width: 800px;margin-top: 3em;">
+				<div class="layui-form addAgentInfo">
+					<div class="layui-form-item">
+						<label class="layui-form-label">充值金额</label>
+						<div class="layui-input-block">
+							<input type="text" name="amount" required lay-verify="required" placeholder="充值金额" autocomplete="off" class="layui-input">
+						</div>
+						<div class="layui-form-mid layui-word-aux"></div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">赠送油币</label>
+						<div class="layui-input-block">
+							<input type="text" name="deduction" required lay-verify="required" placeholder="赠送油币" autocomplete="off" class="layui-input">
+						</div>
+						<div class="layui-form-mid layui-word-aux"></div>
+					</div>
+					<!--<div class="layui-form-item">
+						<label class="layui-form-label">使用期限</label>
+						<div class="layui-input-block">
+							<input type="text" name="expiryDate" id="date11" autocomplete="off" class="layui-input">
+						</div>
+						<div class="layui-form-mid layui-word-aux"></div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">有效期</label>
+						<div class="layui-input-block">
+							<input type="text" name="validity" required lay-verify="required" placeholder="有效期" autocomplete="off" class="layui-input" readonly="readonly">
+						</div>
+						<div class="layui-form-mid layui-word-aux"></div>
+					</div>-->
+					<div class="layui-form-item">
+						<label class="layui-form-label">是否推荐</label>
+						<div class="layui-input-block">
+							<select class="layui-input-block" name="isComm" style="border-style: none;">
+								<option value="1">是</option>
+								<option value="2">否</option>
+							</select>
+						</div>
+						<div class="layui-form-mid layui-word-aux"></div>
+					</div>
+					<!--<div class="layui-form-item">
+						<label class="layui-form-label">是否显示</label>
+						<div class="layui-input-block">
+							<select class="layui-input-block" name="isShows" style="border-style: none;">
+								<option value="1">是</option>
+								<option value="2">否</option>
+							</select>
+						</div>
+						<div class="layui-form-mid layui-word-aux"></div>
+					</div>-->
+					<!--<div class="layui-form-item">
+						<label class="layui-form-label">权重</label>
+						<div class="layui-input-block">
+							<input type="text" name="amount" required lay-verify="required" placeholder="权重" autocomplete="off" class="layui-input">
+						</div>
+						<div class="layui-form-mid layui-word-aux"></div>
+					</div>-->
+					<div class="layui-form-item">
+						<label class="layui-form-label" style="background-color: #fff;"></label>
+						<button class="layui-btn addOptSubmit" style="width: 100px;">提交</button>
+						<button class="layui-btn reset layui-btn-normal" style="width: 100px;">关闭</button>
+						<div class="layui-form-mid layui-word-aux"></div>
+					</div>
+				</div>
+			</div>
+		</script>
+		
+		<script type="text/html" id="editRecharHtml">
+			<div class="layuimini-container" style="width: 800px; min-width: 800px;margin-top: 3em;">
+				<div class="layui-form addAgentInfo">
+					<div class="layui-form-item">
+						<label class="layui-form-label">充值金额</label>
+						<div class="layui-input-block">
+							<input type="text" name="amount" required lay-verify="required" placeholder="充值金额" autocomplete="off" class="layui-input">
+						</div>
+						<div class="layui-form-mid layui-word-aux"></div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">赠送油币</label>
+						<div class="layui-input-block">
+							<input type="text" name="deduction" required lay-verify="required" placeholder="赠送油币" autocomplete="off" class="layui-input">
+						</div>
+						<div class="layui-form-mid layui-word-aux"></div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">是否推荐</label>
+						<div class="layui-input-block">
+							<select class="layui-input-block" name="isComms" style="border-style: none;">
+								<option value="1">是</option>
+								<option value="2">否</option>
+							</select>
+						</div>
+						<div class="layui-form-mid layui-word-aux"></div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label" style="background-color: #fff;"></label>
+						<button class="layui-btn editOptSubmit" style="width: 100px;">提交</button>
+						<button class="layui-btn reset layui-btn-normal" style="width: 100px;">关闭</button>
+						<div class="layui-form-mid layui-word-aux"></div>
+					</div>
+				</div>
+			</div>
+		</script>
+
+
+		<script src="../../lib/layui-v2.5.4/layui.js"></script>
+		<script src="../../lib/jquery-3.4.1/jquery-3.4.1.min.js"></script>
+		<script src="../../lib/jquery-3.4.1/cookie.js"></script>
+		<script src="../../js/common.js"></script>
+		<script src="js/index.js"></script>
+	</body>
+
+</html>

@@ -80,7 +80,7 @@ public class SteamLoginUtil {
 				return "";
 			}
 			httpclient = HttpClients.createDefault();
-			httppost = new HttpPost(STEAM_LOGIN + "?" + SteamLoginUtil.getUrlParamsByMap(request));
+			httppost = new HttpPost(STEAM_LOGIN + "?" + getUrlParamsByMap(request));
 			httppost.setConfig(defaultRequestConfig);
 			List<NameValuePair> nvps = new ArrayList<NameValuePair>();
 

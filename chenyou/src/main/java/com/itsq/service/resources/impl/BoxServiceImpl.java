@@ -44,4 +44,10 @@ public class BoxServiceImpl extends ServiceImpl<BoxMapper, Box> implements BoxSe
     public int updateBoxUpdateById(Box box) {
         return super.baseMapper.updateById(box);
     }
+
+    @Override
+    public int selectBoxCount() {
+        QueryWrapper queryWrapper=new QueryWrapper();
+        return super.baseMapper.selectCount(queryWrapper);
+    }
 }

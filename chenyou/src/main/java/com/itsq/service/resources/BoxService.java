@@ -21,4 +21,6 @@ public interface BoxService extends IService<Box> {
     List<Box>  selectListBox();
 
     int updateBoxUpdateById(Box box);
+
+    int selectBoxCount();
 }

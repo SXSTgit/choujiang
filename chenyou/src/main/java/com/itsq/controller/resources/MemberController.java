@@ -8,14 +8,23 @@ import com.itsq.common.bean.Response;
 import com.itsq.pojo.dto.FindPageManagerParmeters;
 import com.itsq.pojo.dto.MemberPageDto;
 import com.itsq.pojo.entity.Member;
-import com.itsq.service.resources.ManagerService;
-import com.itsq.service.resources.MemberService;
+import com.itsq.pojo.entity.User;
+import com.itsq.service.resources.*;
 import com.itsq.token.CurrentUser;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import java.net.URLEncoder;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * <p>
@@ -25,85 +34,52 @@ import org.springframework.web.bind.annotation.*;
  * @author 史先帅
  * @since 2020-05-12
  */
-//@RestController
-//@RequestMapping("/member")
-//@AllArgsConstructor
-//@CrossOrigin
-//@Api(tags = "会员模块")
+@RestController
+@RequestMapping("/number")
+@AllArgsConstructor
+@CrossOrigin
+@Api(tags = "首页数据模块")
 public class MemberController extends BaseController {
 
     @Autowired
-    private MemberService memberService;
+    private PlayersService playersService ;
+    @Autowired
+    private PlayerBoxArmsService playerBoxArmsService;
 
-
-    @PostMapping("selectMemberPage")
-    @ApiOperation(value = "会员-分页查询", notes = "", httpMethod = "POST")
-    public Response<Page> selectMemberPage(@RequestBody  MemberPageDto memberPageDto){
-        CurrentUser currentUser = currentUser();
+    @PostMapping("getCount")
+    @ApiOperation(value = "首页数据", notes = "", httpMethod = "POST")
+    public Response<Map<String ,Integer >> findAllUser(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse){
+       /* CurrentUser currentUser = currentUser();
         if(currentUser==null){
             return Response.fail(ErrorEnum.SIGN_VERIFI_EXPIRE);
-        }
-        return Response.success( memberService.selectMemberPage(memberPageDto.getUserName(),memberPageDto.getPhone(),memberPageDto.getManagerId(),memberPageDto.getUserId(),memberPageDto.getPageIndex(), memberPageDto.getPageSize()));
-    }
+        }*/
 
-    @PostMapping("addMember")
-    @ApiOperation(value = "会员-添加", notes = "", httpMethod = "POST")
-    public Response addMember(@RequestBody Member member){
-       CurrentUser currentUser = currentUser();
-        if(currentUser==null){
-            return Response.fail(ErrorEnum.SIGN_VERIFI_EXPIRE);
-        }
-
-        int i = memberService.addMember(member);
-        if( i<=0){
-            return Response.fail("添加失败");
-        }
-        return Response.success();
-    }
-
-    @PostMapping("updateMemberById")
-    @ApiOperation(value = "会员-修改", notes = "", httpMethod = "POST")
-    public Response updateMemberById(@RequestBody Member member){
-       CurrentUser currentUser = currentUser();
-        if(currentUser==null){
-            return Response.fail(ErrorEnum.SIGN_VERIFI_EXPIRE);
-        }
-
-        int i = memberService.updateMemberById(member);
-
-        if( i<=0){
-            return Response.fail("修改失败");
-        }
-        return Response.success();
-    }
-
-    @PostMapping("selectById")
-    @ApiOperation(value = "会员-查询", notes = "", httpMethod = "POST")
-    public Response selectById(Integer id){
-        CurrentUser currentUser = currentUser();
-        if(currentUser==null){
-            return Response.fail(ErrorEnum.SIGN_VERIFI_EXPIRE);
+        try{  //把sessionId记录在浏览器
+            Cookie c = new Cookie("JSESSIONID", URLEncoder.encode(httpServletRequest.getSession().getId(), "utf-8"));
+            c.setPath("/");
+            //先设置cookie有效期为2天，不用担心，session不会保存2天
+            c.setMaxAge( 48*60 * 60);
+            httpServletResponse.addCookie(c);
+        }catch (Exception e){
+            e.printStackTrace();
         }
 
 
+        HttpSession session = httpServletRequest.getSession();
+        Object count=session.getServletContext().getAttribute("count");
 
-
-        return Response.success(memberService.selectById(id));
-    }
-
-
-    @PostMapping("removeById")
-    @ApiOperation(value = "会员-查询", notes = "", httpMethod = "POST")
-    public Response removeById(Integer id){
-       CurrentUser currentUser = currentUser();
-        if(currentUser==null){
-            return Response.fail(ErrorEnum.SIGN_VERIFI_EXPIRE);
+        if(count==null){
+            count=0;
         }
-
-
-        boolean b = memberService.removeById(id);
-
-        return Response.success(b);
+        int playerCount = playersService.selectPlayerCount();
+        int boxCount =   playerBoxArmsService.selectUpCount(0);
+        int uPCount =    playerBoxArmsService.selectUpCount(1);
+        Map<String ,Integer > map=new HashMap<>();
+        map.put("login",Integer.valueOf(count+""));
+       map.put("playerCount",playerCount);
+        map.put("boxCount",boxCount);
+        map.put("uPCount",uPCount);
+        return Response.success(map);
     }
 
 }

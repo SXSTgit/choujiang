@@ -1,6 +1,7 @@
 package com.itsq.service.resources.impl;
 
 import com.alibaba.fastjson.JSONObject;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.itsq.common.bean.ErrorEnum;
 import com.itsq.common.constant.APIException;
 import com.itsq.pojo.dto.PageParametersDto;
@@ -64,7 +65,7 @@ public class PlayerBoxArmsServiceImpl extends ServiceImpl<PlayerBoxArmsMapper, P
             PlayerBoxArms playerBoxArms1 = selectPlayerBoxArmsById(playerBoxArms.getId());
             //查询用户余额
              players = playersService.selectPlayersById(playerBoxArms1.getPlayerId());
-            if (players.getIsStatus() != null && players.getIsStatus() == 0) {
+            if (playerBoxArms1.getIsStatus() != null && playerBoxArms1.getIsStatus() == 0) {
                  arms = armsService.selectArmsById(playerBoxArms1.getArmsId());
                 players.setBalance(players.getBalance().add(arms.getPrice()));
                 //添加余额
@@ -110,5 +111,12 @@ public class PlayerBoxArmsServiceImpl extends ServiceImpl<PlayerBoxArmsMapper, P
         page.setTotalPages(vipPriceCount, pageParametersDto.getPageSize());
         page.setList(vipPriceList);
         return page;
+    }
+
+    @Override
+    public int selectUpCount(Integer type) {
+        QueryWrapper queryWrapper=new QueryWrapper();
+        queryWrapper.eq("type",type);
+        return super.baseMapper.selectCount(queryWrapper);
     }
 }

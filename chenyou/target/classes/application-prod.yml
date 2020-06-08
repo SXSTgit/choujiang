@@ -1,0 +1,99 @@
+server:
+  port: 8081
+spring:
+  #模板引擎配置
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML
+    encoding: UTF-8
+    cache: false
+    servlet:
+      content-type: text/html
+  #静态文件配置
+  resources:
+    static-locations: classpath:/static,classpath:/META-INF/resources,classpath:/templates/,classpath:/public
+  #redis配置
+  redis.host: 127.0.0.1
+  redis.port: 6379
+  redis.password: 123456
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/sq?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    druid:
+      #初始化大小,最小,最大
+      initialSize: 20
+      minIdle: 100
+      maxActive: 200
+      # 配置获取连接等待超时的时间(毫秒)
+      maxWait: 60000
+      # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+      timeBetweenEvictionRunsMillis: 60000
+      # 配置有一个连接在连接池中的最小生存时间，单位是毫秒
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: SELECT 1 FROM DUAL
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      # 打开PSCache，指定每个连接上PSCache的大小
+      poolPreparedStatements: true
+      maxPoolPreparedStatementPerConnectionSize: 20
+      # 配置监控统计拦截的filters，去掉后监控界面sql将无法统计，'wall'用于防火墙
+      filters: stat, wall, logback
+      # 通过connectProperties属性来打开mergeSql功能，慢SQL记录
+      connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+      useGlobalDataSourceStat: true
+
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 30MB
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  #发送邮箱配置
+  mail:
+    username: 1366033452@qq.com
+    password: plpkwvncwwkjifhd
+    host: smtp.qq.com
+    properties:
+      mail:
+        smtl:
+          ssl:
+            enable: true
+#开启加密验证
+#mybatis配置
+mybatis-plus:
+  #映射文件路径
+  mapper-locations: classpath:mapper/*.xml
+  #模型所在的包名
+  type-aliases-package: com.itsq.entity
+  global-config:
+    db-config:
+      logic-delete-value: 1 # 逻辑已删除值(默认为 1)
+      logic-not-delete-value: 0 # 逻辑未删除值(默认为 0)
+#sql日志 也可以查看druid的日志
+logging:
+  level:
+    root: info #日志配置DEBUG,INFO,WARN,ERROR
+    com:
+      itsq:
+        mapper: ERROR
+
+oss:
+  aliyun:
+    accessKey: LTAI0p4xEmr1LLm0
+    secretKey: bVnG7DUJHOWMJgYz035fcO3Ut74pzU
+    bucket: qy-outlet-001
+    endpoint: oss-cn-zhangjiakou.aliyuncs.com
+    host: http://qy-outlet-001.oss-cn-zhangjiakou.aliyuncs.com
+
+
+system:
+  adminPath: /api
+  defaultPwd: qhse1234
+  uploadBasePath:
+  path: file:/usr/img/
+  prefix: /usr/img

@@ -327,7 +327,12 @@
             <!--<artifactId>pay-spring-boot-starter</artifactId>-->
             <!--<version>0.0.4</version>-->
         <!--</dependency>-->
-
+        <!--统计实时人数-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-websocket</artifactId>
+            <version>1.5.10.RELEASE</version>
+        </dependency>
 
     </dependencies>
 
