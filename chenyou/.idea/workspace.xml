@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cc1eb556-f18e-47d5-b1f0-9606a8e7b41a" name="Default Changelist" comment="" />
+    <list default="true" id="cc1eb556-f18e-47d5-b1f0-9606a8e7b41a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -91,7 +93,7 @@
           <entry key="class" value="33" />
           <entry key="html" value="6" />
           <entry key="iml" value="2" />
-          <entry key="java" value="413" />
+          <entry key="java" value="414" />
           <entry key="js" value="1" />
           <entry key="md" value="1" />
           <entry key="png" value="5" />
@@ -106,7 +108,7 @@
           <entry key="HTML" value="6" />
           <entry key="IDEA_MODULE" value="2" />
           <entry key="Image" value="5" />
-          <entry key="JAVA" value="413" />
+          <entry key="JAVA" value="414" />
           <entry key="JavaScript" value="1" />
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="1" />
@@ -118,7 +120,7 @@
         <counts>
           <entry key="dummy" value="3" />
           <entry key="html" value="45" />
-          <entry key="java" value="3468" />
+          <entry key="java" value="3480" />
           <entry key="js" value="14" />
           <entry key="txt" value="25" />
           <entry key="xml" value="410" />
@@ -128,7 +130,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="45" />
-          <entry key="JAVA" value="3468" />
+          <entry key="JAVA" value="3480" />
           <entry key="JavaScript" value="14" />
           <entry key="PLAIN_TEXT" value="28" />
           <entry key="SQL" value="17" />
@@ -146,7 +148,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/controller/resources/ZfbController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
+            <state relative-caret-position="120">
               <caret line="6" column="31" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
             </state>
           </provider>
@@ -155,7 +157,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/pojo/entity/Arms.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
+            <state relative-caret-position="1440">
               <caret line="82" column="27" selection-start-line="63" selection-start-column="4" selection-end-line="82" selection-end-column="27" />
             </state>
           </provider>
@@ -164,17 +166,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/pojo/entity/PlayerBoxArms.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-347">
+            <state relative-caret-position="340">
               <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/controller/resources/PlayersArmsController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+            <state relative-caret-position="380">
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/common/aspect/LogAopUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="40">
+              <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -207,12 +218,12 @@
     </dirStrings>
   </component>
   <component name="Git.Settings">
+    <option name="UPDATE_CHANGES_POLICY" value="SHELVE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/itsq/pojo/dto/PageParametersDto.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/itsq/pojo/dto/PlayerBoxArmsDtoUpd.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/itsq/controller/resources/PlayerBoxArmsController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/itsq/service/resources/PlayerBoxArmsService.java" />
@@ -263,6 +274,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/itsq/pojo/dto/PlayersDto.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/itsq/service/resources/impl/PlayersServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/PlayersMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/itsq/common/aspect/LogAopUtil.java" />
       </list>
     </option>
   </component>
@@ -322,6 +334,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -362,6 +376,25 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="itsq" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="chenyou" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chenyou" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="itsq" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="aspect" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="chenyou" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chenyou" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="itsq" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -378,8 +411,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="ProjectViewState">
@@ -396,7 +427,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1591552556848" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1591581961961" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -411,7 +442,7 @@
     <property name="project.structure.proportion" value="0.15404929" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
@@ -862,7 +893,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="193259000" />
+    <option name="totallyTimeSpent" value="194441000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -876,7 +907,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7724359" visible="true" weight="0.27609682" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7724359" visible="true" weight="0.2806354" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -886,14 +917,14 @@
       <window_info id="Web" order="7" sideWeight="0.09352518" side_tool="true" weight="0.30484116" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.5754098" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.14590164" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.14590164" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.57377046" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3295082" />
       <window_info anchor="bottom" id="Spring" order="7" weight="0.3295082" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.3295082" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.452459" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" visible="true" weight="0.452459" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.33934426" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.3295082" />
       <window_info anchor="bottom" id="Problems" order="12" weight="0.3295082" />
@@ -1081,20 +1112,6 @@
     <SUITE FILE_PATH="coverage/druid_demo$druidDemoApplication.ic" NAME="druidDemoApplication Coverage Results" MODIFIED="1584578398945" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/mapper/BoxMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/pojo/dto/BoxArmsDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="15" column="29" lean-forward="true" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/pojo/entity/BoxArms.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="64">
@@ -1204,9 +1221,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
           <caret line="38" column="39" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="39" />
-          <folding>
-            <element signature="method#selectBoxArms#0;class#BoxServiceImpl#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1297,7 +1311,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/controller/resources/ZfbController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
+        <state relative-caret-position="120">
           <caret line="6" column="31" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
         </state>
       </provider>
@@ -1306,9 +1320,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="17" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="e#652#653#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1382,14 +1393,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="97">
           <caret line="108" column="47" lean-forward="true" selection-start-line="108" selection-start-column="47" selection-end-line="108" selection-end-column="47" />
-          <folding>
-            <element signature="method#addPlayers#0;class#PlayersServiceImpl#0" />
-            <element signature="method#selectPlayers#0;class#PlayersServiceImpl#0" />
-            <element signature="method#updatePlayersBuId#0;class#PlayersServiceImpl#0" />
-            <element signature="method#updatePlayers#0;class#PlayersServiceImpl#0" />
-            <element signature="method#login#0;class#PlayersServiceImpl#0" />
-            <element signature="method#selectPlayersPage#0;class#PlayersServiceImpl#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1397,6 +1400,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="123">
           <caret line="60" column="22" lean-forward="true" selection-start-line="60" selection-start-column="22" selection-end-line="60" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/controller/resources/PlayersArmsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/itsq/common/aspect/LogAopUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
         </state>
       </provider>
     </entry>
