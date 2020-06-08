@@ -78,23 +78,6 @@ public class WsController extends BaseController {
      */
     @Scheduled(fixedRate = 1000)
     public void callback() {
-      /*  // 发现消息
-        try{  //把sessionId记录在浏览器
-            Cookie c = new Cookie("JSESSIONID", URLEncoder.encode(httpServletRequest.getSession().getId(), "utf-8"));
-            c.setPath("/");
-            //先设置cookie有效期为2天，不用担心，session不会保存2天
-            c.setMaxAge( 48*60 * 60);
-            httpServletResponse.addCookie(c);
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-
-        HttpSession session = httpServletRequest.getSession();
-        Object count=session.getServletContext().getAttribute("count");
-
-        if(count==null){
-            count=0;
-        }*/
 
         PageParametersDto pageParametersDto = new PageParametersDto();
         pageParametersDto.setPageNum(1);
