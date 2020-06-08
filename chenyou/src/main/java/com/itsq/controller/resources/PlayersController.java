@@ -58,12 +58,7 @@ public class PlayersController extends BaseController {
     @PostMapping("login")
     @ApiOperation(value = "用户-登录", notes = "", httpMethod = "POST")
     public Response<LoginRespDto<Players>> login(@RequestBody PlayersDto playersDto, HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
-        if (!redisUtil.exist("count")) {
-            redisUtil.set("count","0");
-        }
-        Integer count = Integer.valueOf(redisUtil.get("count") + "");
-        redisUtil.set("count", count + 1 + "");
-        Players u = this.playersService.login(playersDto.getNumber(), playersDto.getPwd());
+               Players u = this.playersService.login(playersDto.getNumber(), playersDto.getPwd());
         String authToken = new AuthToken(u.getId(), u.getName()).token();
         return Response.success(new LoginRespDto<>(u, authToken, EnumTokenType.BEARER.getCode()));
     }
