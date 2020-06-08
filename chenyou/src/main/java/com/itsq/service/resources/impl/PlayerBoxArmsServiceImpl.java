@@ -100,7 +100,7 @@ public class PlayerBoxArmsServiceImpl extends ServiceImpl<PlayerBoxArmsMapper, P
         params.put("pageSize", pageParametersDto.getPageSize());
         params.put("playerId", pageParametersDto.getPlayerId());
 
-        if (pageParametersDto.getOrderByField() != null && pageParametersDto.getOrderByField().equals(1)) {
+        if (pageParametersDto.getOrderByField() != null && pageParametersDto.getOrderByField().equals("1")) {
             params.put("sort", "pba.cre_date");
         } else {
             params.put("sort", "a.`price`");
