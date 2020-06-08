@@ -28,6 +28,7 @@ import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -53,42 +54,46 @@ public class PlayersController extends BaseController {
 
     @Resource
     private RedisUtils redisUtil;
+
     @PostMapping("login")
     @ApiOperation(value = "用户-登录", notes = "", httpMethod = "POST")
-    public Response<LoginRespDto<Players>> login(@RequestBody PlayersDto playersDto, HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse){
-
-
+    public Response<LoginRespDto<Players>> login(@RequestBody PlayersDto playersDto, HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
+        if (!redisUtil.exist("count")) {
+            redisUtil.set("count","0");
+        }
+        Integer count = Integer.valueOf(redisUtil.get("count") + "");
+        redisUtil.set("count", count + 1 + "");
         Players u = this.playersService.login(playersDto.getNumber(), playersDto.getPwd());
-        String authToken = new AuthToken(u.getId(),u.getName()).token();
-        return Response.success(new LoginRespDto<>(u,authToken, EnumTokenType.BEARER.getCode()));
+        String authToken = new AuthToken(u.getId(), u.getName()).token();
+        return Response.success(new LoginRespDto<>(u, authToken, EnumTokenType.BEARER.getCode()));
     }
 
     @PostMapping("getCode")
     @ApiOperation(value = "获取验证码", notes = "", httpMethod = "POST")
-    public Response getCode(@RequestBody PlayersDto playersDto){
+    public Response getCode(@RequestBody PlayersDto playersDto) {
         String code = RandomUtil.getRandom(6);
         String myEmailAccount = "1085432162@qq.com";
         String myEmailPassword = "bjzfrimcvbgdfggd";
         String myEmailSMTPHost = "smtp.qq.com";
         String[] toMailAccountList = new String[]{playersDto.getNumber()};
-        SQSendMailUtil.sendMail(myEmailAccount, myEmailPassword, "", toMailAccountList, "注册", myEmailSMTPHost, "注册验证码", "亲爱的用户：您的本次操作的验证码为："+code+"为了您帐号的安全，千万不要告诉别人哦!");
+        SQSendMailUtil.sendMail(myEmailAccount, myEmailPassword, "", toMailAccountList, "注册", myEmailSMTPHost, "注册验证码", "亲爱的用户：您的本次操作的验证码为：" + code + "为了您帐号的安全，千万不要告诉别人哦!");
 
 
-        redisUtil.set(playersDto.getNumber(),60,code);
+        redisUtil.set(playersDto.getNumber(), 60, code);
         return Response.success();
     }
 
     @PostMapping("register")
     @ApiOperation(value = "用户-注册", notes = "", httpMethod = "POST")
-    public Response<Players> register(@RequestBody PlayersDto playersDto){
+    public Response<Players> register(@RequestBody PlayersDto playersDto) {
 
-        if(playersDto.getCode() ==null){
+        if (playersDto.getCode() == null) {
             return Response.fail("请输入验证码!");
         }
 
 
-        String code2=(String)redisUtil.get(playersDto.getNumber());
-        if(!playersDto.getCode().equals(code2)){
+        String code2 = (String) redisUtil.get(playersDto.getNumber());
+        if (!playersDto.getCode().equals(code2)) {
             return Response.fail("验证码错误!");
         }
 
@@ -102,43 +107,43 @@ public class PlayersController extends BaseController {
 
     @PostMapping("updatePlayers")
     @ApiOperation(value = "用户-忘记密码", notes = "", httpMethod = "POST")
-    public Response updatePlayers(@RequestBody PlayersDto playersDto){
-        if(playersDto.getCode() ==null){
+    public Response updatePlayers(@RequestBody PlayersDto playersDto) {
+        if (playersDto.getCode() == null) {
             return Response.fail("请输入验证码!");
         }
-        String code2=(String)redisUtil.get(playersDto.getNumber());
-        if(!playersDto.getCode().equals(code2)){
+        String code2 = (String) redisUtil.get(playersDto.getNumber());
+        if (!playersDto.getCode().equals(code2)) {
             return Response.fail("验证码错误!");
         }
-       this.playersService.updatePlayers(playersDto.getNumber(),playersDto.getPwd());
+        this.playersService.updatePlayers(playersDto.getNumber(), playersDto.getPwd());
         return Response.success();
     }
 
     @PostMapping("updatePlayersById")
     @ApiOperation(value = "用户-修改信息", notes = "", httpMethod = "POST")
-    public Response updatePlayersById(@RequestBody Players players){
+    public Response updatePlayersById(@RequestBody Players players) {
         this.playersService.updatePlayersBuId(players);
         return Response.success();
     }
 
     @PostMapping("selectPlayersPage")
     @ApiOperation(value = "会员-分页查询", notes = "", httpMethod = "POST")
-    public Response<Page> selectPlayersPage(@RequestBody PlayersDtoPage playersDtoPage){
+    public Response<Page> selectPlayersPage(@RequestBody PlayersDtoPage playersDtoPage) {
         /*CurrentUser currentUser = currentUser();
         if(currentUser==null){
             return Response.fail(ErrorEnum.SIGN_VERIFI_EXPIRE);
         }*/
-        return Response.success( playersService.selectPlayersPage(playersDtoPage));
+        return Response.success(playersService.selectPlayersPage(playersDtoPage));
     }
 
     @PostMapping("selectPlayerArms")
     @ApiOperation(value = "会员-背包", notes = "", httpMethod = "POST")
-    public Response<Players> selectPlayerArms(@RequestBody PlayersDto playersDto){
+    public Response<Players> selectPlayerArms(@RequestBody PlayersDto playersDto) {
         /*CurrentUser currentUser = currentUser();
         if(currentUser==null){
             return Response.fail(ErrorEnum.SIGN_VERIFI_EXPIRE);
         }*/
-        return Response.success( playersService.selectPlayerArms(playersDto));
+        return Response.success(playersService.selectPlayerArms(playersDto));
     }
 
 }
