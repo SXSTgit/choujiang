@@ -11,7 +11,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @SpringBootApplication
 @MapperScan("com.itsq.mapper")
 @EnableAsync//开启异步注解
-//@EnableScheduling//开启定时任务
+@EnableScheduling//开启定时任务
 @EnableSwagger2
 @ServletComponentScan
 public class ChenYouApplication {

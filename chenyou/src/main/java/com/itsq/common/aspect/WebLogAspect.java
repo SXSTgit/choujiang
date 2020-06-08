@@ -47,6 +47,9 @@ public class WebLogAspect {
         log.info("IP : " + request.getRemoteAddr());
         log.info("Class method:" + joinPoint.getSignature());
 
+
+
+
         Object[] args = joinPoint.getArgs();
         String classType = joinPoint.getTarget().getClass().getName();
         Class<?> clazz = Class.forName(classType);

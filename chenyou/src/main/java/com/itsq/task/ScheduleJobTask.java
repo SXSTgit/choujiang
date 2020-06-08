@@ -31,7 +31,7 @@ public class ScheduleJobTask {
         System.out.println("发送邮件");
     }
 
-    //@Scheduled(cron = "0 0 0 * * ? *")
+    @Scheduled(cron = "0 0 0 * * ? ")
   //  @Scheduled(cron = "0 0/1 * * * ? ")
     public void updateBoxDato(){
         List<Box> boxes = boxService.selectListBox();

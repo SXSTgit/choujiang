@@ -81,6 +81,12 @@ public class Arms implements Serializable {
     @ApiModelProperty(value = "状态  0.未出售1.已出售2.已取回")
     @TableField(exist = false)
     private Integer chance;
+
+    @TableField(exist = false)
+    private Integer pageIndex;
+    @TableField(exist = false)
+    private Integer pageSize;
+
     public static final String ID = "id";
 
     public static final String NAME = "name";
