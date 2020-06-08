@@ -38,6 +38,7 @@ public class LogAopUtil {
 			nameAndArgs.put(attr.variableName(i + pos), args[i]);// paramNames即参数名
 		}
 
+		//yuanrise
 		// nameAndArgs的两种类型，用实体类接收的类似这样：
 		// reqParams=com.whoareyou.fido.rest.User@616b9c0e
 		// 用Map<String,Object>接收的是这样：menuNo=56473283，遍历这个map区分两种不同，使用不同的取值方式。
