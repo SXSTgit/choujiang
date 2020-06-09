@@ -72,7 +72,6 @@ public class PlayersController extends BaseController {
             e.printStackTrace();
         }
 
-
         HttpSession session = httpServletRequest.getSession();
         Object count=session.getServletContext().getAttribute("count");
 
@@ -81,7 +80,7 @@ public class PlayersController extends BaseController {
         }
 
 
-               Players u = this.playersService.login(playersDto.getNumber(), playersDto.getPwd());
+        Players u = this.playersService.login(playersDto.getNumber(), playersDto.getPwd());
         String authToken = new AuthToken(u.getId(), u.getName()).token();
         return Response.success(new LoginRespDto<>(u, authToken, EnumTokenType.BEARER.getCode()));
     }
