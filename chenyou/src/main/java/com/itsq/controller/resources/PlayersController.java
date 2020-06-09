@@ -30,8 +30,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import java.net.URLEncoder;
 
 
 /**
@@ -58,6 +61,26 @@ public class PlayersController extends BaseController {
     @PostMapping("login")
     @ApiOperation(value = "用户-登录", notes = "", httpMethod = "POST")
     public Response<LoginRespDto<Players>> login(@RequestBody PlayersDto playersDto, HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
+
+        try{  //把sessionId记录在浏览器
+            Cookie c = new Cookie("JSESSIONID", URLEncoder.encode(httpServletRequest.getSession().getId(), "utf-8"));
+            c.setPath("/");
+            //先设置cookie有效期为2天，不用担心，session不会保存2天
+            c.setMaxAge( 48*60 * 60);
+            httpServletResponse.addCookie(c);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+
+        HttpSession session = httpServletRequest.getSession();
+        Object count=session.getServletContext().getAttribute("count");
+
+        if(count==null){
+            count=0;
+        }
+
+
                Players u = this.playersService.login(playersDto.getNumber(), playersDto.getPwd());
         String authToken = new AuthToken(u.getId(), u.getName()).token();
         return Response.success(new LoginRespDto<>(u, authToken, EnumTokenType.BEARER.getCode()));
