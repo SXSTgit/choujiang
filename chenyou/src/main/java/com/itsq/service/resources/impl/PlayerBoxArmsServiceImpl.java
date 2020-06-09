@@ -101,9 +101,9 @@ public class PlayerBoxArmsServiceImpl extends ServiceImpl<PlayerBoxArmsMapper, P
         params.put("playerId", pageParametersDto.getPlayerId());
 
         if (pageParametersDto.getOrderByField() != null && pageParametersDto.getOrderByField().equals("1")) {
-            params.put("sort", "pba.cre_date");
+            params.put("sort", "1");
         } else {
-            params.put("sort", "a.`price`");
+            params.put("sort", "2");
         }
         List<PlayerBoxArms> vipPriceList = this.baseMapper.selectPlayerBoxArms(params);
         int vipPriceCount = this.baseMapper.selectPlayerBoxArmsCount(params);
