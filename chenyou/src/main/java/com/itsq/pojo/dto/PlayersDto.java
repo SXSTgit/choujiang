@@ -21,7 +21,9 @@ import java.util.Date;
  */
 @Data
 public class PlayersDto implements Serializable {
+    protected Integer pageIndex;
 
+    protected Integer pageSize;
 
     private Integer  id;
 
