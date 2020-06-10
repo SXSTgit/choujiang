@@ -71,15 +71,12 @@ public class PlayersController extends BaseController {
         }catch (Exception e){
             e.printStackTrace();
         }
-
         HttpSession session = httpServletRequest.getSession();
         Object count=session.getServletContext().getAttribute("count");
 
         if(count==null){
             count=0;
         }
-
-
         Players u = this.playersService.login(playersDto.getNumber(), playersDto.getPwd());
         String authToken = new AuthToken(u.getId(), u.getName()).token();
         return Response.success(new LoginRespDto<>(u, authToken, EnumTokenType.BEARER.getCode()));

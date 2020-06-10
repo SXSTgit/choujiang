@@ -28,7 +28,8 @@ import java.util.*;
 @Api(tags = "获取武器相关接口")
 @AllArgsConstructor
 public class ArmsController  extends BaseController {
-
+    @Autowired
+    private Client client;
     private ArmsService armsService;
 
     @RequestMapping(value = "getAll",method = RequestMethod.POST)
@@ -103,36 +104,36 @@ public class ArmsController  extends BaseController {
     }
 
 
-    //@RequestMapping(value = "addListArms", method = RequestMethod.POST)
-    //@ApiOperation(value = "导入武器", notes = "", httpMethod = "POST")
-    public Response addListArms() {
+    @RequestMapping(value = "addListArms", method = RequestMethod.POST)
+    @ApiOperation(value = "导入武器", notes = "", httpMethod = "POST")
+    public Response addListArms( Double percentage ) {
         /*CurrentUser currentUser = currentUser();
         if(currentUser==null){
             return Response.fail(ErrorEnum.SIGN_VERIFI_EXPIRE);
         }*/
         System.out.println("=======");
         Map<String,String> param=new HashMap<>();
-       // String json = client.httpGetWithJSon("https://app.zbt.com/open/product/v1/search", param);
+        String json = client.httpGetWithJSon("https://app.zbt.com/open/product/v1/search", param);
         System.out.println("=======");
-      //  Object succesResponse = JSON.parse(json);
+       Object succesResponse = JSON.parse(json);
         System.out.println("=======");//先转换成Object
-      //  System.out.println(json);
-     //   Map map = (Map)succesResponse;         //Object强转换为Map
-     //   Object succesResponse1 = JSON.parse(map.get("data")+"");
-      //  Map map1 = (Map)succesResponse1;
+       System.out.println(json);
+        Map map = (Map)succesResponse;         //Object强转换为Map
+       Object succesResponse1 = JSON.parse(map.get("data")+"");
+        Map map1 = (Map)succesResponse1;
         List amList=new ArrayList();
-      //  List list= (List)map1.get("list");
-      /*  for (Object o : list) {
+        List list= (List)map1.get("list");
+        for (Object o : list) {
             Map map2 = (Map)o;
             Arms arms = new Arms();
             arms.setCount((Integer)map2.get("quantity"));
             arms.setImageUrl(map2.get("imageUrl")+"");
             arms.setName(map2.get("itemName")+"");
-            arms.setPrice(new BigDecimal(map2.get("price")+""));
+            arms.setPrice(new BigDecimal(map2.get("price")+"").multiply(new BigDecimal(1+percentage)));
             arms.setProductId((Integer)map2.get("itemId"));
             amList.add(arms);
         }
-        armsService.addListArms(amList);*/
+        armsService.addListArms(amList);
         return Response.success(amList);
     }
 

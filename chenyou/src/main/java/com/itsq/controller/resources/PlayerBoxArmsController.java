@@ -56,8 +56,8 @@ public class PlayerBoxArmsController extends BaseController {
 
         int i = playerBoxArmsService.updatePlayerBoxArms(playerBoxArmsDtoUpd);
 
-        if( i<=0){
-            return Response.fail("修改失败");
+        if( i==0){
+            return Response.fail("暂未获取到武器请稍后再试");
         }
         return Response.success();
     }

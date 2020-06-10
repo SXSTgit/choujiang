@@ -1,5 +1,6 @@
 package com.itsq.service.resources.impl;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.itsq.common.bean.ErrorEnum;
@@ -7,14 +8,12 @@ import com.itsq.common.constant.APIException;
 import com.itsq.pojo.dto.PageParametersDto;
 import com.itsq.pojo.dto.PlayerBoxArmsDtoUpd;
 import com.itsq.pojo.dto.normalBuyParamV2DTO;
-import com.itsq.pojo.entity.Arms;
-import com.itsq.pojo.entity.PlayerBoxArms;
+import com.itsq.pojo.entity.*;
 import com.itsq.mapper.PlayerBoxArmsMapper;
-import com.itsq.pojo.entity.Players;
-import com.itsq.pojo.entity.User;
 import com.itsq.service.resources.ArmsService;
 import com.itsq.service.resources.PlayerBoxArmsService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.itsq.service.resources.PlayerOrderService;
 import com.itsq.service.resources.PlayersService;
 import com.itsq.utils.BeanUtils;
 import com.itsq.utils.PagesUtil;
@@ -24,6 +23,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -43,6 +43,8 @@ public class PlayerBoxArmsServiceImpl extends ServiceImpl<PlayerBoxArmsMapper, P
     @Autowired
     private ArmsService armsService;
     @Autowired
+    private PlayerOrderService playerOrderService;
+    @Autowired
     private Client client;
     @Override
     public int addPlayerBoxArms(PlayerBoxArms playerBoxArms) {
@@ -58,15 +60,13 @@ public class PlayerBoxArmsServiceImpl extends ServiceImpl<PlayerBoxArmsMapper, P
     @Transactional
     public int updatePlayerBoxArms(PlayerBoxArmsDtoUpd playerBoxArmsDtoUpd) {
         PlayerBoxArms playerBoxArms = BeanUtils.copyProperties(playerBoxArmsDtoUpd, PlayerBoxArms.class);
+        PlayerBoxArms playerBoxArms1 = selectPlayerBoxArmsById(playerBoxArms.getId());
+        //查询用户余额
+        Players players  = playersService.selectPlayersById(playerBoxArms1.getPlayerId());
 
-        Players players =null;
-        Arms arms =null;
+        Arms  arms = armsService.selectArmsById(playerBoxArms1.getArmsId());
         if (playerBoxArmsDtoUpd.getIsStatus() != null && playerBoxArmsDtoUpd.getIsStatus() == 1) {//出售武器
-            PlayerBoxArms playerBoxArms1 = selectPlayerBoxArmsById(playerBoxArms.getId());
-            //查询用户余额
-             players = playersService.selectPlayersById(playerBoxArms1.getPlayerId());
             if (playerBoxArms1.getIsStatus() != null && playerBoxArms1.getIsStatus() == 0) {
-                 arms = armsService.selectArmsById(playerBoxArms1.getArmsId());
                 players.setBalance(players.getBalance().add(arms.getPrice()));
                 //添加余额
                 playersService.updatePlayersBuId(players);
@@ -74,21 +74,45 @@ public class PlayerBoxArmsServiceImpl extends ServiceImpl<PlayerBoxArmsMapper, P
                 throw new APIException(ErrorEnum.YICHUSHOU_YUE);
             }
         }
-        if (playerBoxArmsDtoUpd.getIsStatus() != null && playerBoxArmsDtoUpd.getIsStatus() == 2) {
+        if (playerBoxArmsDtoUpd.getIsStatus() != null && playerBoxArmsDtoUpd.getIsStatus() == 2) {//取回武器
 
             JSONObject jsonObject=new JSONObject();
-
-            jsonObject.put("outTradeNo", RandomUtil.getRandom(32));
-            jsonObject.put("tradeUrl",players.getSteamUrl());
-            jsonObject.put("productId",arms.getProductId());
-            String json = client.httpPostWithJSON("https://app.zbt.com/open/trade/v2/buy?app-key=0b791fef5d1cc463edda79924704e8a7&language=zh_CN", jsonObject);
+            Map<String,Object> param=new HashMap<>();
+            String number=RandomUtil.getRandom(32);
+            jsonObject.put("outTradeNo",number);
+            jsonObject.put("tradeUrl","https://steamcommunity.com/tradeoffer/new/?partner=484669140&token=WEhy_ZWD");
+            jsonObject.put("itemId",553467984);//arms.getProductId()
+            jsonObject.put("maxPrice",0.1);//可接受价格 arms.getPrice()
+            jsonObject.put("delivery",2);//自动发货
+            String json = client.httpPostWithJSON("https://app.zbt.com/open/trade/v2/quick-buy?app-key=0b791fef5d1cc463edda79924704e8a7&language=zh_CN", jsonObject);
             System.out.println(json);
+            Object succesResponse = JSON.parse(json);
+            Map map = (Map)succesResponse;
+            Object succesResponse1 = JSON.parse(map.get("data")+"");
+            Map map1 = (Map)succesResponse1;
+            PlayerOrder playerOrder=new PlayerOrder();
+            playerOrder.setArmsId(arms.getId());
+            playerOrder.setBuyPrice(new BigDecimal(map1.get("buyPrice")+""));
+            if((boolean)map.get("success")){
+                playerOrder.setIsStatus(0);
+                playerOrder.setNumber(map1.get("orderId")+"");
+                playerOrder.setPlayerId(players.getId());
+                playerOrderService.save(playerOrder);
+                int i = super.baseMapper.updateById(playerBoxArms);
+                if(i<=0){
+
+                    throw new APIException(ErrorEnum.YICHUSHOU_YUE);
+                }
+            }else{
+                playerOrder.setIsStatus(1);
+                playerOrder.setNumber(map1.get("orderId")+"");
+                playerOrder.setPlayerId(players.getId());
+                playerOrderService.save(playerOrder);
+                return 2;
+            }
         }
 
-        int i = super.baseMapper.updateById(playerBoxArms);
-        if(i<=0){
-            throw new APIException(ErrorEnum.YICHUSHOU_YUE);
-        }
+
         return 1;
     }
 

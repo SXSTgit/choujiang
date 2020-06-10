@@ -47,29 +47,13 @@ public class  Client {
         }*/
         JSONObject jsonObject=new JSONObject();
         Map<String,Object> param=new HashMap<>();
-        /*jsonObject.put("app-key",appKey);
-        jsonObject.put("language",language);*/
         jsonObject.put("outTradeNo",RandomUtil.getRandom(32));
         jsonObject.put("tradeUrl","https://steamcommunity.com/tradeoffer/new/?partner=484669140&token=WEhy_ZWD");
-        jsonObject.put("productId",777687055);
-        jsonObject.put("buyPrice",0.39);
-        System.out.println(jsonObject.toJSONString());
-        String json = httpPostWithJSON("https://app.zbt.com/open/trade/v2/buy?app-key=0b791fef5d1cc463edda79924704e8a7&language=zh_CN", jsonObject);
-        System.out.println(json);
+        jsonObject.put("itemId",553467984);
+        jsonObject.put("maxPrice",0.02);
+        jsonObject.put("delivery",2);
 
-     /*   Map<String,String> param=new HashMap<>();
-        //param.put("appId","730");
-        param.put("itemId","23592");
-        String s = httpGetWithJSon("https://app.zbt.com/open/product/v1/sell/list", param);
-        Object succesResponse = JSON.parse(s);    //先转换成Object
-        Map map = (Map)succesResponse;         //Object强转换为Map
-        Object succesResponse1 = JSON.parse(map.get("data")+"");
-        Map map1 = (Map)succesResponse1;
 
-        List list= (List)map1.get("list");
-        for (Object o : list) {
-            System.out.println(o.toString());
-        }*/
 
     }
 
@@ -89,6 +73,7 @@ public class  Client {
      * @return
      */
     public static String httpPostWithJSON(String url, JSONObject jsonObject) {
+
         // 返回body
         String body = null;
         // 获取连接客户端工具
@@ -139,7 +124,6 @@ public class  Client {
 
     public static String httpGetWithJSon(String url, Map<String,String> param) {
         param.put("app-key",appKey);
-
         param.put("language",language);
         CloseableHttpClient client = null;
         try {

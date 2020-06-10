@@ -2,19 +2,14 @@ package com.itsq.webSocket.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.itsq.common.base.BaseController;
-import com.itsq.common.bean.Response;
 import com.itsq.common.redis.RedisUtils;
 import com.itsq.pojo.dto.PageParametersDto;
-import com.itsq.pojo.dto.PlayersDto;
 import com.itsq.pojo.entity.PlayerBoxArms;
 import com.itsq.service.resources.PlayerBoxArmsService;
 import com.itsq.service.resources.PlayersService;
 import com.itsq.utils.PagesUtil;
-import com.itsq.utils.RandomUtil;
 import com.itsq.webSocket.model.RequestMessage;
 import com.itsq.webSocket.model.ResponseMessage;
-
-import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.MessageMapping;
@@ -27,8 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.HashMap;
-import java.util.Map;
+
 
 /**
  * WsController
@@ -76,7 +70,7 @@ public class WsController extends BaseController {
     /**
      * 定时推送消息
      */
-    @Scheduled(fixedRate = 1000)
+  //  @Scheduled(fixedRate = 1000)
     public void callback() {
 
         PageParametersDto pageParametersDto = new PageParametersDto();
