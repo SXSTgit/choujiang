@@ -6,14 +6,12 @@ import com.itsq.common.bean.ErrorEnum;
 import com.itsq.common.constant.APIException;
 import com.itsq.pojo.dto.PlayersDto;
 import com.itsq.pojo.dto.PlayersDtoPage;
-import com.itsq.pojo.entity.Arms;
-import com.itsq.pojo.entity.Manager;
-import com.itsq.pojo.entity.Players;
+import com.itsq.pojo.entity.*;
 import com.itsq.mapper.PlayersMapper;
-import com.itsq.pojo.entity.User;
 import com.itsq.service.resources.PlayersService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.itsq.utils.MD5;
+import com.itsq.utils.PagesUtil;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
@@ -104,7 +102,11 @@ PlayersServiceImpl extends ServiceImpl<PlayersMapper, Players> implements Player
     @Override
     public Players selectPlayerArms(PlayersDto playersDto) {
 
+
+        PagesUtil<PlayerBoxArms> page = new PagesUtil();
         Map<String, Object> params = new HashMap<>();
+        params.put("pageIndex", (playersDto.getPageIndex() - 1) * playersDto.getPageSize());
+        params.put("pageSize", playersDto.getPageSize());
 
         params.put("playerId", playersDto.getId());
         if (playersDto.getIsStatus() != null) {
