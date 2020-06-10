@@ -18,5 +18,5 @@ import java.util.Map;
 public interface PlayersMapper extends BaseMapper<Players> {
 
     Players selectPlayerBox(Map<String,Object> params);
-
+  int    selectPlayerBoxCount(Map<String,Object> params);
 }
