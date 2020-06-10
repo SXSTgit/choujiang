@@ -21,4 +21,7 @@ public interface RechargeRecordService extends IService<RechargeRecord> {
 
     RechargeRecord selectRechargeRecord(String order);
     int  updateRechargeRecord(RechargeRecord rechargeRecord);
+
+    int getCountRechargeRecord(String data);
+
 }

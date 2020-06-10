@@ -1,5 +1,6 @@
 package com.itsq.service.resources.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.itsq.common.bean.ErrorEnum;
 import com.itsq.common.constant.APIException;
 import com.itsq.pojo.entity.Arms;
@@ -11,6 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -42,5 +44,14 @@ public class ArmsServiceImpl extends ServiceImpl<ArmsMapper, Arms> implements Ar
             }
         }
         return 1;
+    }
+
+    @Override
+    public List<Arms>  allPrice(Integer pid) {
+
+
+
+
+        return null;
     }
 }

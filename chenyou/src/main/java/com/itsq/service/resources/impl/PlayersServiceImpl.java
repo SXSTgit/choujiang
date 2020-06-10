@@ -10,14 +10,12 @@ import com.itsq.pojo.entity.*;
 import com.itsq.mapper.PlayersMapper;
 import com.itsq.service.resources.PlayersService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.itsq.utils.DateWhere;
 import com.itsq.utils.MD5;
 import com.itsq.utils.PagesUtil;
 import org.springframework.stereotype.Service;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 /**
  * <p>
@@ -113,8 +111,27 @@ PlayersServiceImpl extends ServiceImpl<PlayersMapper, Players> implements Player
             params.put("isStatus", playersDto.getIsStatus());
         }
         Players players = super.baseMapper.selectPlayerBox(params);
-
+        int vipPriceCount = this.baseMapper.selectPlayerBoxCount(params);
+        page.setPageIndex(playersDto.getPageIndex());
+        page.setTotalPages(vipPriceCount, playersDto.getPageSize());
+        players.setTotalPages(page.getTotalPages());
         return players;
+    }
+
+    @Override
+    public int selectTodayAdd(String date) {
+
+        QueryWrapper queryWrapper = new QueryWrapper();
+
+        if (date != null && !"".equals(date)) {
+            Map<String, Object> where = DateWhere.where(date);
+            Object today = where.get("today");
+            Object tomorrow = where.get("tomorrow");
+            queryWrapper.gt("cre_date", today);
+            queryWrapper.lt("cre_date", tomorrow);
+        }
+
+        return super.baseMapper.selectCount(queryWrapper);
     }
 
     @Override

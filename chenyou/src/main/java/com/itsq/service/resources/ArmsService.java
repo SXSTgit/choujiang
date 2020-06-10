@@ -3,6 +3,7 @@ package com.itsq.service.resources;
 import com.itsq.pojo.entity.Arms;
 import com.baomidou.mybatisplus.extension.service.IService;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -18,4 +19,6 @@ public interface ArmsService extends IService<Arms> {
 
     int addListArms(List<Arms> list);
 
+
+    List<Arms>  allPrice(Integer pid);
 }

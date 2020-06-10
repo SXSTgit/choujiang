@@ -11,9 +11,12 @@ import com.itsq.mapper.RechargeRecordMapper;
 import com.itsq.service.resources.PlayersService;
 import com.itsq.service.resources.RechargeRecordService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.itsq.utils.DateWhere;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.Map;
 
 /**
  * <p>
@@ -82,6 +85,19 @@ public class RechargeRecordServiceImpl extends ServiceImpl<RechargeRecordMapper,
             throw new APIException(ErrorEnum.XIUGAI_YUE);
         }
         return 1;
+    }
+
+    @Override
+    public int getCountRechargeRecord(String data) {
+        QueryWrapper queryWrapper=new QueryWrapper();
+        if (data != null && !"".equals(data)) {
+            Map<String, Object> where = DateWhere.where(data);
+            Object today = where.get("today");
+            Object tomorrow = where.get("tomorrow");
+            queryWrapper.gt("cre_date", today);
+            queryWrapper.lt("cre_date", tomorrow);
+        }
+        return super.baseMapper.selectCount(queryWrapper);
     }
 
 

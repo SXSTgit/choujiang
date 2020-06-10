@@ -7,6 +7,7 @@ import com.itsq.common.bean.ErrorEnum;
 import com.itsq.common.constant.APIException;
 import com.itsq.pojo.dto.PageParametersDto;
 import com.itsq.pojo.dto.PlayerBoxArmsDtoUpd;
+import com.itsq.pojo.dto.PlayersSellDto;
 import com.itsq.pojo.dto.normalBuyParamV2DTO;
 import com.itsq.pojo.entity.*;
 import com.itsq.mapper.PlayerBoxArmsMapper;
@@ -16,6 +17,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.itsq.service.resources.PlayerOrderService;
 import com.itsq.service.resources.PlayersService;
 import com.itsq.utils.BeanUtils;
+import com.itsq.utils.DateWhere;
 import com.itsq.utils.PagesUtil;
 import com.itsq.utils.RandomUtil;
 import com.itsq.utils.http.Client;
@@ -137,9 +139,60 @@ public class PlayerBoxArmsServiceImpl extends ServiceImpl<PlayerBoxArmsMapper, P
         return page;
     }
 
+
+    public static void main(String[] args) {
+        BigDecimal bigDecimal=new BigDecimal("1.01");
+
+
+        System.out.println(bigDecimal.add(new BigDecimal("1.02")));
+    }
+    @Override
+    @Transactional
+    public int sellArms(PlayersSellDto playersSellDto) {
+
+
+
+
+
+
+        QueryWrapper queryWrapper=new QueryWrapper();
+        queryWrapper.eq("player_id",playersSellDto.getId());
+        queryWrapper.eq("is_status",0);
+
+        List<PlayerBoxArms> list = this.baseMapper.selectList(queryWrapper);
+        //查询用户余额
+        Players players  = playersService.selectPlayersById(playersSellDto.getId());
+        BigDecimal bigDecimal=new BigDecimal(0);
+
+        for (PlayerBoxArms o : list) {
+            Arms arms=armsService.selectArmsById(o.getArmsId());
+            bigDecimal=  bigDecimal.add(arms.getPrice());
+        }
+
+        players.setBalance(players.getBalance().add(bigDecimal));
+        //添加余额
+        int i = playersService.updatePlayersBuId(players);
+        return i ;
+    }
+
     @Override
     public int selectUpCount(Integer type) {
         QueryWrapper queryWrapper=new QueryWrapper();
+        queryWrapper.eq("type",type);
+        return super.baseMapper.selectCount(queryWrapper);
+    }
+
+    @Override
+    public int getUpCountData(String data ,Integer type) {
+
+        QueryWrapper queryWrapper=new QueryWrapper();
+        if (data != null && !"".equals(data)) {
+            Map<String, Object> where = DateWhere.where(data);
+            Object today = where.get("today");
+            Object tomorrow = where.get("tomorrow");
+            queryWrapper.gt("cre_date", today);
+            queryWrapper.lt("cre_date", tomorrow);
+        }
         queryWrapper.eq("type",type);
         return super.baseMapper.selectCount(queryWrapper);
     }

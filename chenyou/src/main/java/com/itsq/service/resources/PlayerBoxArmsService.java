@@ -2,9 +2,12 @@ package com.itsq.service.resources;
 
 import com.itsq.pojo.dto.PageParametersDto;
 import com.itsq.pojo.dto.PlayerBoxArmsDtoUpd;
+import com.itsq.pojo.dto.PlayersSellDto;
 import com.itsq.pojo.entity.PlayerBoxArms;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.itsq.utils.PagesUtil;
+
+import java.util.List;
 
 /**
  * <p>
@@ -26,6 +29,11 @@ public interface PlayerBoxArmsService extends IService<PlayerBoxArms> {
 
     PagesUtil<PlayerBoxArms> selectPlayerBoxArmsPage(PageParametersDto pageParametersDto);
 
+
+    int sellArms(PlayersSellDto playersSellDto);
+
     int selectUpCount(Integer type);
+
+    int getUpCountData(String data,Integer type);
 
 }

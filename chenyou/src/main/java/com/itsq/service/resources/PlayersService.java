@@ -8,6 +8,7 @@ import com.itsq.pojo.entity.Players;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.itsq.pojo.entity.UserOrder;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -56,6 +57,8 @@ public interface PlayersService extends IService<Players> {
 
     Players selectPlayerArms(PlayersDto playersDto);
 
+
+    int selectTodayAdd(String  date);
 
     int selectPlayerCount();
 }
