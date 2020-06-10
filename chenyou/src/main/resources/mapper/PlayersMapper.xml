@@ -74,17 +74,7 @@ where p.is_status = 0
 
     <select id="selectPlayerBoxCount" resultType="int">
         select
-        p.*,
-        a.id as aid,
-        a.`name` as aname,
-        a.imageUrl as aimageUrl,
-        a.price as aprice,
-        a.product_id as aproductId,
-        a.`type` as atype,
-        pba.`id`  as pbaId,
-        pba.`box_id` as bid,
-        pba.`is_status` as pbIs,
-        pba.`type` as pbType
+      count(1)
         from
         `players` p
         left join `player_box_arms` pba
