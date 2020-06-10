@@ -7,6 +7,7 @@ import com.itsq.common.bean.ErrorEnum;
 import com.itsq.common.bean.Response;
 import com.itsq.pojo.dto.PageParametersDto;
 import com.itsq.pojo.dto.PlayerBoxArmsDtoUpd;
+import com.itsq.pojo.dto.PlayersSellDto;
 import com.itsq.pojo.dto.RechargeRecordDto;
 import com.itsq.pojo.entity.Member;
 import com.itsq.pojo.entity.PlayerBoxArms;
@@ -58,6 +59,22 @@ public class PlayerBoxArmsController extends BaseController {
 
         if( i==0){
             return Response.fail("暂未获取到武器请稍后再试");
+        }
+        return Response.success();
+    }
+
+    @PostMapping("sellArms")
+    @ApiOperation(value = "用户-售出所有武器", notes = "", httpMethod = "POST")
+    public Response sellArms(@RequestBody PlayersSellDto playersSellDto){
+       /* CurrentUser currentUser = currentUser();
+        if(currentUser==null){
+            return Response.fail(ErrorEnum.SIGN_VERIFI_EXPIRE);
+        }*/
+
+        int i = playerBoxArmsService.sellArms(playersSellDto);
+
+        if( i==0){
+            return Response.fail("售出所有武器失敗");
         }
         return Response.success();
     }

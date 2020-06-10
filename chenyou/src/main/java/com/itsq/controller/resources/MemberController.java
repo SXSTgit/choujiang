@@ -22,9 +22,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.net.URLEncoder;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 /**
  * <p>
@@ -45,7 +44,8 @@ public class MemberController extends BaseController {
     private PlayersService playersService ;
     @Autowired
     private PlayerBoxArmsService playerBoxArmsService;
-
+    @Autowired
+    private  RechargeRecordService rechargeRecordService;
     @PostMapping("getCount")
     @ApiOperation(value = "首页数据", notes = "", httpMethod = "POST")
     public Response<Map<String ,Integer >> findAllUser(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse){
@@ -79,6 +79,42 @@ public class MemberController extends BaseController {
        map.put("playerCount",playerCount);
         map.put("boxCount",boxCount);
         map.put("uPCount",uPCount);
+        return Response.success(map);
+    }
+
+
+    @PostMapping("findAll")
+    @ApiOperation(value = "后台首页数据", notes = "", httpMethod = "POST")
+    public Response<Map<String ,Integer >> findAll(){
+       /* CurrentUser currentUser = currentUser();
+        if(currentUser==null){
+            return Response.fail(ErrorEnum.SIGN_VERIFI_EXPIRE);
+        }*/
+        SimpleDateFormat dateFormat = new SimpleDateFormat(" yyyy-MM-dd ");
+        String currentDate =   dateFormat.format( new Date() );
+
+
+        Date dNow = new Date();   //当前时间
+        Date dBefore = new Date();
+        Calendar calendar = Calendar.getInstance();  //得到日历
+        calendar.setTime(dNow);//把当前时间赋给日历
+        calendar.add(Calendar.DAY_OF_MONTH, -1);  //设置为前一天
+        dBefore = calendar.getTime();   //得到前一天的时间
+        String dBeforeDate =   dateFormat.format( dBefore );
+        int playerCount = playersService.selectTodayAdd(currentDate);
+        int playerCountz = playersService.selectTodayAdd(dBeforeDate);
+
+        int boxCount =playerBoxArmsService.getUpCountData(currentDate,1);
+        int boxCount2 =playerBoxArmsService.getUpCountData(currentDate,2);
+
+        rechargeRecordService.getCountRechargeRecord(currentDate);
+
+
+
+        Map<String ,Integer > map=new HashMap<>();
+        map.put("playerCount",playerCount);
+        map.put("boxCount",boxCount);
+       // map.put("uPCount",uPCount);
         return Response.success(map);
     }
 
