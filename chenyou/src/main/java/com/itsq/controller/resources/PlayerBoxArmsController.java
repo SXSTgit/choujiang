@@ -12,6 +12,7 @@ import com.itsq.pojo.dto.RechargeRecordDto;
 import com.itsq.pojo.entity.Member;
 import com.itsq.pojo.entity.OperationRecord;
 import com.itsq.pojo.entity.PlayerBoxArms;
+import com.itsq.pojo.vo.ArmsVo;
 import com.itsq.service.resources.OperationRecordService;
 import com.itsq.service.resources.PlayerBoxArmsService;
 import com.itsq.token.CurrentUser;
@@ -53,6 +54,16 @@ public class PlayerBoxArmsController extends BaseController {
             return Response.fail(ErrorEnum.SIGN_VERIFI_EXPIRE);
         }*/
         return Response.success( playerBoxArmsService.selectPlayerBoxArmsPage(pageParametersDto));
+    }
+
+    @PostMapping("selectUpRecord")
+    @ApiOperation(value = "升级记录-分页查询", notes = "", httpMethod = "POST")
+    public Response<PagesUtil<ArmsVo>> selectUpRecord(@RequestBody PageParametersDto pageParametersDto){
+        /*CurrentUser currentUser = currentUser();
+        if(currentUser==null){
+            return Response.fail(ErrorEnum.SIGN_VERIFI_EXPIRE);
+        }*/
+        return Response.success( playerBoxArmsService.selectUpRecord(pageParametersDto));
     }
 
     @PostMapping("updatePlayerBoxArms")
