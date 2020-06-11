@@ -161,10 +161,10 @@ p.`id`=#{playerId}
     </select>
 
 
-    <select id="getTodayAllPrice" resultType="Double">
 
+    <select id="getTodayAllPrice" resultType="BigDecimal">
 
-SELECT SUM(b.`price`)
+SELECT SUM(b.`price`) as allPrice
 FROM
 `players` p
 LEFT JOIN `player_box_arms` pba
