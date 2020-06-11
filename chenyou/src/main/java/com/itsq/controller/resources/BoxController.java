@@ -63,7 +63,7 @@ public class BoxController extends BaseController {
 
 
       if(!redisUtil.exist( request.getRemoteAddr())){
-          redisUtil.set( request.getRemoteAddr(),60*60,"1");
+          redisUtil.set( request.getRemoteAddr(),60,"1");
 
                   if(!redisUtil.exist("count")){
                       redisUtil.set("count","0");

@@ -59,7 +59,7 @@ public class WsController extends BaseController {
         return new ResponseMessage("welcome," + message.getName() + " !");
     }
 
-    @Scheduled(fixedRate = 1000*60*60)
+    @Scheduled(fixedRate = 1000*60*2)
     public void getCount() {
         Integer i=Integer.valueOf(redisUtil.get("count")+"");
         if(i>0){
