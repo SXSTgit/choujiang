@@ -8,7 +8,6 @@ import com.itsq.common.constant.APIException;
 import com.itsq.pojo.dto.PageParametersDto;
 import com.itsq.pojo.dto.PlayerBoxArmsDtoUpd;
 import com.itsq.pojo.dto.PlayersSellDto;
-import com.itsq.pojo.dto.normalBuyParamV2DTO;
 import com.itsq.pojo.entity.*;
 import com.itsq.mapper.PlayerBoxArmsMapper;
 import com.itsq.pojo.vo.ArmsVo;
@@ -220,11 +219,30 @@ public class PlayerBoxArmsServiceImpl extends ServiceImpl<PlayerBoxArmsMapper, P
     }
 
     @Override
-    public Double getTodayAllPrice(String date) {
+    public BigDecimal getTodayAllPrice(String date) {
 
-        Map<String, Object> params = new HashMap<>();
+        QueryWrapper queryWrapper=new QueryWrapper();
+
+        if (date != null && !"".equals(date)) {
+            Map<String, Object> where = DateWhere.where(date);
+            Object today = where.get("today");
+            Object tomorrow = where.get("tomorrow");
+            queryWrapper.gt("cre_date", today);
+            queryWrapper.lt("cre_date", tomorrow);
+        }
+
+        List<PlayerBoxArms> list = super.baseMapper.selectList(queryWrapper);
+
+        BigDecimal bigDecimal=new BigDecimal(0);
+        for (PlayerBoxArms o : list) {
+            Arms arms = armsService.selectArmsById(o.getArmsId());
+            bigDecimal=bigDecimal.add(arms.getPrice());
+        }
+
+        /*Map<String, Object> params = new HashMap<>();
         params.put("creDate",date);
-        Double v = this.baseMapper.getTodayAllPrice(params);
-        return v;
+        BigDecimal v =new BigDecimal(0);
+        BigDecimal v1 = this.baseMapper.getTodayAllPrice(params).add(v);*/
+        return bigDecimal;
     }
 }
