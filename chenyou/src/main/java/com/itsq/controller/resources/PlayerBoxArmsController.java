@@ -16,11 +16,14 @@ import com.itsq.service.resources.OperationRecordService;
 import com.itsq.service.resources.PlayerBoxArmsService;
 import com.itsq.token.CurrentUser;
 import com.itsq.utils.PagesUtil;
+import com.itsq.utils.http.Client;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * <p>
@@ -40,7 +43,8 @@ public class PlayerBoxArmsController extends BaseController {
     private PlayerBoxArmsService playerBoxArmsService;
     @Autowired
     private OperationRecordService operationRecordService;
-
+    @Autowired
+    private Client client;
     @PostMapping("selectRechargeRecordDtoPage")
     @ApiOperation(value = "开箱记录-分页查询", notes = "", httpMethod = "POST")
     public Response<PagesUtil<PlayerBoxArms>> selectPlayerBoxArmsPage(@RequestBody PageParametersDto pageParametersDto){
@@ -53,7 +57,7 @@ public class PlayerBoxArmsController extends BaseController {
 
     @PostMapping("updatePlayerBoxArms")
     @ApiOperation(value = "用户所属武器-修改", notes = "", httpMethod = "POST")
-    public Response updatePlayerBoxArms(@RequestBody PlayerBoxArmsDtoUpd playerBoxArmsDtoUpd){
+    public Response updatePlayerBoxArms(@RequestBody PlayerBoxArmsDtoUpd playerBoxArmsDtoUpd,  HttpServletRequest request){
        /* CurrentUser currentUser = currentUser();
         if(currentUser==null){
             return Response.fail(ErrorEnum.SIGN_VERIFI_EXPIRE);
@@ -71,12 +75,12 @@ public class PlayerBoxArmsController extends BaseController {
 
     @PostMapping("sellArms")
     @ApiOperation(value = "用户-售出所有武器", notes = "", httpMethod = "POST")
-    public Response sellArms(@RequestBody PlayersSellDto playersSellDto){
+    public Response sellArms(@RequestBody PlayersSellDto playersSellDto,  HttpServletRequest request){
        /* CurrentUser currentUser = currentUser();
         if(currentUser==null){
             return Response.fail(ErrorEnum.SIGN_VERIFI_EXPIRE);
         }*/
-        operationRecordService.addOperationRecord(new OperationRecord(playersSellDto.getId(),"出售武器","出售所有武器","/playerBoxArms/sellArms",1));
+        operationRecordService.addOperationRecord(new OperationRecord(playersSellDto.getId(),"出售武器","出售所有武器","/playerBoxArms/sellArms",1,client.getAddress(request.getRemoteAddr())));
 
         int i = playerBoxArmsService.sellArms(playersSellDto);
 

@@ -36,7 +36,8 @@ public class  Client {
       /* Map<String,String> param=new HashMap<>();
         String s = httpGetWithJSon("https://app.zbt.com/open/product/v1/search", param);
       Object succesResponse = JSON.parse(s);    //先转换成Object
-
+ param.put("app-key",appKey);
+        param.put("language",language);
         Map map = (Map)succesResponse;         //Object强转换为Map
         Object succesResponse1 = JSON.parse(map.get("data")+"");
         Map map1 = (Map)succesResponse1;
@@ -45,19 +46,28 @@ public class  Client {
         for (Object o : list) {
             System.out.println(o.toString());
         }*/
-        JSONObject jsonObject=new JSONObject();
+
+
+       /* JSONObject jsonObject=new JSONObject();
         Map<String,Object> param=new HashMap<>();
         jsonObject.put("outTradeNo",RandomUtil.getRandom(32));
         jsonObject.put("tradeUrl","https://steamcommunity.com/tradeoffer/new/?partner=484669140&token=WEhy_ZWD");
         jsonObject.put("itemId",553467984);
         jsonObject.put("maxPrice",0.02);
         jsonObject.put("delivery",2);
-
-
+*/
 
     }
 
 
+    public String getAddress(String ip){
+        Map<String,String> param=new HashMap<>();
+        param.put("ip",ip);
+        String s = httpGetWithJSon("http://ip.ws.126.net/ipquery", param);
+        String lo= s.split(";")[0].split(",")[0].split("=")[1].replace("\"", "");
+        String lc= s.split(";")[0].split(",")[1].split("=")[1].replace("\"", "");
+return lo+lc;
+    }
 
 
     /**
@@ -123,8 +133,7 @@ public class  Client {
      */
 
     public static String httpGetWithJSon(String url, Map<String,String> param) {
-        param.put("app-key",appKey);
-        param.put("language",language);
+
         CloseableHttpClient client = null;
         try {
             if (url == null || url.trim().length() == 0) {

@@ -23,6 +23,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.math.BigDecimal;
 import java.util.*;
 
@@ -54,12 +55,12 @@ public class ArmsController extends BaseController {
 
     @RequestMapping(value = "addInfo", method = RequestMethod.POST)
     @ApiOperation(value = "添加武器", notes = "", httpMethod = "POST")
-    public Response addInfo(@RequestBody AddArmsDto dto) {
+    public Response addInfo(@RequestBody AddArmsDto dto,  HttpServletRequest request) {
         CurrentUser currentUser = currentUser();
         if (currentUser == null) {
             return Response.fail(ErrorEnum.SIGN_VERIFI_EXPIRE);
         }
-        operationRecordService.addOperationRecord(new OperationRecord(dto.getMangerId(),"添加武器",dto.getName()+"武器","/arms/addInfo",0));
+        operationRecordService.addOperationRecord(new OperationRecord(dto.getMangerId(),"添加武器",dto.getName()+"武器","/arms/addInfo",0,client.getAddress(request.getRemoteAddr())));
         dto.setCreDate(new Date());
         Arms arms = BeanUtils.copyProperties(dto, Arms.class);
         if (!armsService.save(arms)) {
@@ -70,12 +71,12 @@ public class ArmsController extends BaseController {
 
     @RequestMapping(value = "romveArms", method = RequestMethod.POST)
     @ApiOperation(value = "删除武器", notes = "", httpMethod = "POST")
-    public Response romveArms(@RequestBody String id) {
+    public Response romveArms(@RequestBody String id,  HttpServletRequest request) {
         CurrentUser currentUser = currentUser();
         if (currentUser == null) {
             return Response.fail(ErrorEnum.SIGN_VERIFI_EXPIRE);
         }
-        operationRecordService.addOperationRecord(new OperationRecord(1,"删除武器","删除id为"+id+"的武器","/arms/romveArms",0));
+        operationRecordService.addOperationRecord(new OperationRecord(1,"删除武器","删除id为"+id+"的武器","/arms/romveArms",0,client.getAddress(request.getRemoteAddr())));
 
         JSONObject jsonObject = JSONObject.parseObject(id);
         if (!armsService.removeById(Long.parseLong(jsonObject.getString("id")))) {
@@ -86,13 +87,13 @@ public class ArmsController extends BaseController {
 
     @RequestMapping(value = "updateById", method = RequestMethod.POST)
     @ApiOperation(value = "修改武器信息", notes = "", httpMethod = "POST")
-    public Response updateById(@RequestBody AddArmsDto dto) {
+    public Response updateById(@RequestBody AddArmsDto dto,  HttpServletRequest request) {
         CurrentUser currentUser = currentUser();
         if (currentUser == null) {
             return Response.fail(ErrorEnum.SIGN_VERIFI_EXPIRE);
         }
 
-        operationRecordService.addOperationRecord(new OperationRecord(dto.getMangerId(),"修改武器",dto.getName()+"的武器","/arms/updateById",0));
+        operationRecordService.addOperationRecord(new OperationRecord(dto.getMangerId(),"修改武器",dto.getName()+"的武器","/arms/updateById",0,client.getAddress(request.getRemoteAddr())));
 
         Arms arms = BeanUtils.copyProperties(dto, Arms.class);
         if (!armsService.updateById(arms)) {
@@ -103,7 +104,7 @@ public class ArmsController extends BaseController {
 
     @RequestMapping(value = "updateAramStatus", method = RequestMethod.POST)
     @ApiOperation(value = "修改武器状态根据id", notes = "", httpMethod = "POST")
-    public Response updateAramStatus(String id, String isStatus) {
+    public Response updateAramStatus(String id, String isStatus,  HttpServletRequest request) {
         CurrentUser currentUser = currentUser();
         if (currentUser == null) {
             return Response.fail(ErrorEnum.SIGN_VERIFI_EXPIRE);

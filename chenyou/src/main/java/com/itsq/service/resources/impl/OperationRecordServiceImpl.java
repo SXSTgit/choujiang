@@ -48,7 +48,7 @@ public class OperationRecordServiceImpl extends ServiceImpl<OperationRecordMappe
             queryWrapper.lt("cre_date", tomorrow);
         }
         Page<OperationRecord> page = super.baseMapper.selectPage(operationRecordPage, queryWrapper);
-        if (operationRecordDto.getType() == 0) {
+       /* if (operationRecordDto.getType() == 0) {
             for (OperationRecord record : page.getRecords()) {
                 Optional<Manager> managerById = managerService.findManagerById(record.getMangerId());
                 record.setMangerName(managerById.get().getUserName());
@@ -60,7 +60,7 @@ public class OperationRecordServiceImpl extends ServiceImpl<OperationRecordMappe
                 record.setMangerName(players.getName());
             }
         }
-
+*/
         return page;
     }
 

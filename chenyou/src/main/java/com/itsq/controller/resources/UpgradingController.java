@@ -14,6 +14,7 @@ import com.itsq.service.resources.ArmsService;
 import com.itsq.service.resources.OperationRecordService;
 import com.itsq.service.resources.PlayerBoxArmsService;
 import com.itsq.utils.LotteryUtil;
+import com.itsq.utils.http.Client;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -38,7 +39,8 @@ public class UpgradingController  extends BaseController {
 
     @Autowired
     private OperationRecordService operationRecordService;
-
+    @Autowired
+    private Client client;
     @PostMapping("buybox")
     @ApiOperation(value = "根据选择的个人武器获取可升级武器", notes = "", httpMethod = "POST")
     public Response login(@RequestBody String info){
@@ -84,7 +86,7 @@ public class UpgradingController  extends BaseController {
 
         //String armsArray=boxArms.getOldArmss();
         //String[] armsArray2=armsArray.split(",");
-        operationRecordService.addOperationRecord(new OperationRecord(boxArms.getPlayerId(),"升级武器","用户升级武器","/upgrading/updatePlayersById",1));
+        operationRecordService.addOperationRecord(new OperationRecord(boxArms.getPlayerId(),"升级武器","用户升级武器","/upgrading/updatePlayersById",1,client.getAddress(request.getRemoteAddr())));
 
         int index = ll.randomColunmIndex();
 

@@ -54,6 +54,10 @@ public class OperationRecord implements Serializable {
     @TableField("type")
     private Integer type;
 
+    @ApiModelProperty(value = "所在地")
+    @TableField("address")
+    private String address;
+
     @TableField(value = "cre_date", fill = FieldFill.INSERT)
     private Date creDate;
 
@@ -71,16 +75,18 @@ public class OperationRecord implements Serializable {
     public static final String CONCAT = "concat";
     public static final String NODE =   "node";
     public static final String TYPE = "type";
+    public static final String ADDRESS = "address";
 
     public static final String CRE_DATE = "cre_date";
 
 
-    public OperationRecord( Integer mangerId, String operation, String concat, String node, Integer type) {
+    public OperationRecord( Integer mangerId, String operation, String concat, String node, Integer type,String address) {
         this.mangerId = mangerId;
         this.operation = operation;
         this.concat = concat;
         this.node = node;
         this.type = type;
+        this.address = address;
 
     }
 }

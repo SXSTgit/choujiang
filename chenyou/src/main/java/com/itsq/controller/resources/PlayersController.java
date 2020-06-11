@@ -23,6 +23,7 @@ import com.itsq.utils.BeanUtils;
 import com.itsq.utils.MD5;
 import com.itsq.utils.RandomUtil;
 import com.itsq.utils.SQSendMailUtil;
+import com.itsq.utils.http.Client;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
@@ -60,7 +61,8 @@ public class PlayersController extends BaseController {
     private OperationRecordService operationRecordService;
     @Resource
     private RedisUtils redisUtil;
-
+    @Autowired
+    private Client client;
     @PostMapping("login")
     @ApiOperation(value = "用户-登录", notes = "", httpMethod = "POST")
     public Response<LoginRespDto<Players>> login(@RequestBody PlayersDto playersDto, HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
@@ -82,7 +84,7 @@ public class PlayersController extends BaseController {
         }
         Players u = this.playersService.login(playersDto.getNumber(), playersDto.getPwd());
 
-        operationRecordService.addOperationRecord(new OperationRecord(u.getId(),"用户登录","登陆成功","/players/login",1));
+        operationRecordService.addOperationRecord(new OperationRecord(u.getId(),"用户登录","登陆成功","/players/login",1,client.getAddress(request.getRemoteAddr())));
 
         String authToken = new AuthToken(u.getId(), u.getName()).token();
         return Response.success(new LoginRespDto<>(u, authToken, EnumTokenType.BEARER.getCode()));
@@ -121,7 +123,7 @@ public class PlayersController extends BaseController {
 
 
         Players players1 = this.playersService.addPlayers(players);
-        operationRecordService.addOperationRecord(new OperationRecord(players1.getId(),"用户注册","注册成功","/players/register",1));
+        operationRecordService.addOperationRecord(new OperationRecord(players1.getId(),"用户注册","注册成功","/players/register",1,client.getAddress(request.getRemoteAddr())));
 
         return Response.success(players1);
     }
@@ -138,7 +140,7 @@ public class PlayersController extends BaseController {
             return Response.fail("验证码错误!");
         }
         this.playersService.updatePlayers(playersDto.getNumber(), playersDto.getPwd());
-        operationRecordService.addOperationRecord(new OperationRecord(playersDto.getId(),"用户修改密码","修改成功","/players/updatePlayers",1));
+        operationRecordService.addOperationRecord(new OperationRecord(playersDto.getId(),"用户修改密码","修改成功","/players/updatePlayers",1,client.getAddress(request.getRemoteAddr())));
 
         return Response.success();
     }
@@ -147,7 +149,7 @@ public class PlayersController extends BaseController {
     @ApiOperation(value = "用户-修改信息", notes = "", httpMethod = "POST")
     public Response updatePlayersById(@RequestBody Players players) {
         this.playersService.updatePlayersBuId(players);
-        operationRecordService.addOperationRecord(new OperationRecord(players.getId(),"用户修改个人信息","修改成功","/players/updatePlayersById",1));
+        operationRecordService.addOperationRecord(new OperationRecord(players.getId(),"用户修改个人信息","修改成功","/players/updatePlayersById",1,client.getAddress(request.getRemoteAddr())));
 
         return Response.success();
     }

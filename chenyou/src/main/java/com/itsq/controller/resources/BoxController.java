@@ -20,6 +20,7 @@ import com.itsq.service.resources.BoxService;
 import com.itsq.service.resources.OperationRecordService;
 import com.itsq.token.CurrentUser;
 import com.itsq.utils.BeanUtils;
+import com.itsq.utils.http.Client;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
@@ -27,6 +28,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -52,7 +54,8 @@ public class BoxController extends BaseController {
     private BoxArmsService boxArmsService;
     @Autowired
     private OperationRecordService operationRecordService;
-
+    @Autowired
+    private Client client;
     @RequestMapping(value = "getAllBox",method = RequestMethod.POST)
     @ApiOperation(value = "获取全部箱子", notes = "", httpMethod = "POST")
     public Response getAllBox(@RequestBody Box box) throws ParseException {
@@ -82,12 +85,12 @@ public class BoxController extends BaseController {
 
     @RequestMapping(value = "romveBox",method = RequestMethod.POST)
     @ApiOperation(value = "删除箱子", notes = "", httpMethod = "POST")
-    public Response romveBox(@RequestBody String id){
+    public Response romveBox(@RequestBody String id,  HttpServletRequest request){
         CurrentUser currentUser = currentUser();
         if(currentUser==null){
             return Response.fail(ErrorEnum.SIGN_VERIFI_EXPIRE);
         }
-        operationRecordService.addOperationRecord(new OperationRecord(1,"删除箱子","删除id为"+id+"的箱子","/box/romveBox",0));
+        operationRecordService.addOperationRecord(new OperationRecord(1,"删除箱子","删除id为"+id+"的箱子","/box/romveBox",0,client.getAddress(request.getRemoteAddr())));
 
         JSONObject jsonObject=JSONObject.parseObject(id);
         if(!boxService.removeById(Long.parseLong(jsonObject.getString("id")))){
@@ -98,12 +101,12 @@ public class BoxController extends BaseController {
 
     @RequestMapping(value = "addInfo",method = RequestMethod.POST)
     @ApiOperation(value = "添加箱子", notes = "", httpMethod = "POST")
-    public Response addInfo(@RequestBody AddBoxDto dto){
+    public Response addInfo(@RequestBody AddBoxDto dto,  HttpServletRequest request){
         CurrentUser currentUser = currentUser();
         if(currentUser==null){
             return Response.fail(ErrorEnum.SIGN_VERIFI_EXPIRE);
         }
-        operationRecordService.addOperationRecord(new OperationRecord(dto.getManagerId(),"添加箱子",dto.getName()+"箱子","/arms/addInfo",0));
+        operationRecordService.addOperationRecord(new OperationRecord(dto.getManagerId(),"添加箱子",dto.getName()+"箱子","/arms/addInfo",0,client.getAddress(request.getRemoteAddr())));
 
         dto.setCrDate(new Date());
         Box box= BeanUtils.copyProperties(dto, Box.class);
@@ -128,12 +131,12 @@ public class BoxController extends BaseController {
 
     @RequestMapping(value = "updateById",method = RequestMethod.POST)
     @ApiOperation(value = "修改箱子信息", notes = "", httpMethod = "POST")
-    public Response updateById(@RequestBody AddBoxDto dto){
+    public Response updateById(@RequestBody AddBoxDto dto,  HttpServletRequest request){
         CurrentUser currentUser = currentUser();
         if(currentUser==null){
             return Response.fail(ErrorEnum.SIGN_VERIFI_EXPIRE);
         }
-        operationRecordService.addOperationRecord(new OperationRecord(dto.getManagerId(),"修改箱子",dto.getName()+"箱子","/arms/updateById",0));
+        operationRecordService.addOperationRecord(new OperationRecord(dto.getManagerId(),"修改箱子",dto.getName()+"箱子","/arms/updateById",0,client.getAddress(request.getRemoteAddr())));
 
         Box box=BeanUtils.copyProperties(dto, Box.class);
         if(!boxService.updateById(box)){

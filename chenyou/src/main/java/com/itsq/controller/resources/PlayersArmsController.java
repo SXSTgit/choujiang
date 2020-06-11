@@ -14,6 +14,7 @@ import com.itsq.service.resources.*;
 import com.itsq.token.AuthToken;
 import com.itsq.token.CurrentUser;
 import com.itsq.utils.BeanUtils;
+import com.itsq.utils.http.Client;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,6 +23,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 import java.util.List;
 
@@ -40,24 +42,21 @@ public class PlayersArmsController extends BaseController {
     @Autowired
     private PlayersArmsService playersArmsService;
     @Autowired
-    private BoxArmsService boxArmsService;
-    @Autowired
-    private PlayerBoxArmsService playerBoxArmsService;
-    @Autowired
     private PlayersService playersService;
     @Autowired
     private BoxService boxService;
     @Autowired
     private ArmsService armsService;
-
+    @Autowired
+    private Client client;
     @Autowired
     private OperationRecordService operationRecordService;
     @PostMapping("buybox")
     @ApiOperation(value = "用户购买箱子", notes = "", httpMethod = "POST")
-    public Response login(@RequestBody PlayersArmsDto playersArmsDto){
+    public Response login(@RequestBody PlayersArmsDto playersArmsDto ,HttpServletRequest request){
 
 
-        operationRecordService.addOperationRecord(new OperationRecord(playersArmsDto.getId(),"购买箱子","购买"+playersArmsDto.getBoxId()+"箱子","/playersArms/buybox",1));
+        operationRecordService.addOperationRecord(new OperationRecord(playersArmsDto.getId(),"购买箱子","购买"+playersArmsDto.getBoxId()+"箱子","/playersArms/buybox",1,client.getAddress(request.getRemoteAddr())));
 
 
         //获得用户信息
