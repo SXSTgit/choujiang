@@ -144,6 +144,19 @@ public class PlayersController extends BaseController {
         return Response.success();
     }
 
+    @PostMapping("updateMoneyById")
+    @ApiOperation(value = "管理员-修改用余额", notes = "", httpMethod = "POST")
+    public Response updateMoneyById(@RequestBody PlayersDto playersDto,HttpServletRequest request) {
+        this.playersService.updateMoneyById(playersDto);
+        if(playersDto.getUsStatus()==1){
+            operationRecordService.addOperationRecord(new OperationRecord(playersDto.getManagrId(), "添加余额", "为用户"+playersDto.getId()+"加余额"+playersDto.getAmount(), "/players/updateMoneyById", 0, client.getAddress(request.getRemoteAddr())));
+        }else{
+            operationRecordService.addOperationRecord(new OperationRecord(playersDto.getManagrId(), "减余额", "为用户"+playersDto.getId()+"减余额"+playersDto.getAmount(), "/players/updateMoneyById", 0, client.getAddress(request.getRemoteAddr())));
+
+        }
+        return Response.success();
+    }
+
     @PostMapping("selectPlayersPage")
     @ApiOperation(value = "会员-分页查询", notes = "", httpMethod = "POST")
     public Response<Page> selectPlayersPage(@RequestBody PlayersDtoPage playersDtoPage) {

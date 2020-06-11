@@ -245,4 +245,14 @@ public class PlayerBoxArmsServiceImpl extends ServiceImpl<PlayerBoxArmsMapper, P
         BigDecimal v1 = this.baseMapper.getTodayAllPrice(params).add(v);*/
         return bigDecimal;
     }
+
+    @Override
+    public int getPlayersCount(Integer playerId, Integer type) {
+
+        QueryWrapper queryWrapper=new QueryWrapper();
+
+        queryWrapper.eq("player_id",playerId);
+        queryWrapper.eq("type",type);
+        return super.baseMapper.selectCount(queryWrapper);
+    }
 }

@@ -42,4 +42,7 @@ public interface PlayerBoxArmsService extends IService<PlayerBoxArms> {
 
 
     BigDecimal getTodayAllPrice(String date);
+
+
+    int  getPlayersCount(Integer playerId,Integer type);
 }

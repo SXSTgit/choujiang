@@ -35,4 +35,10 @@ public class PlayersDto implements Serializable {
     private Integer  isStatus;
     private String code;
 
+    private BigDecimal  amount;
+
+    private Integer usStatus;
+
+
+    private Integer managrId;
 }

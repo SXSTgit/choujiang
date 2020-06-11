@@ -61,4 +61,7 @@ public interface PlayersService extends IService<Players> {
     int selectTodayAdd(String  date);
 
     int selectPlayerCount();
+
+
+    int updateMoneyById(PlayersDto playersDto);
 }

@@ -8,11 +8,13 @@ import com.itsq.pojo.dto.PlayersDto;
 import com.itsq.pojo.dto.PlayersDtoPage;
 import com.itsq.pojo.entity.*;
 import com.itsq.mapper.PlayersMapper;
+import com.itsq.service.resources.PlayerBoxArmsService;
 import com.itsq.service.resources.PlayersService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.itsq.utils.DateWhere;
 import com.itsq.utils.MD5;
 import com.itsq.utils.PagesUtil;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -28,6 +30,8 @@ import java.util.*;
 @Service
 public class
 PlayersServiceImpl extends ServiceImpl<PlayersMapper, Players> implements PlayersService {
+@Autowired
+   private  PlayerBoxArmsService playerBoxArmsService;
 
     @Override
     public Players addPlayers(Players players) {
@@ -100,9 +104,8 @@ PlayersServiceImpl extends ServiceImpl<PlayersMapper, Players> implements Player
 
         for (Players record : records) {
 
-
-
-
+            record.setBoxCount(   playerBoxArmsService.getPlayersCount(record.getId(),0));
+            record.setUpCount( playerBoxArmsService.getPlayersCount(record.getId(),1));
         }
 
         return page1;
@@ -149,6 +152,19 @@ PlayersServiceImpl extends ServiceImpl<PlayersMapper, Players> implements Player
     public int selectPlayerCount() {
 QueryWrapper queryWrapper=new QueryWrapper();
         return super.baseMapper.selectCount(queryWrapper);
+    }
+
+    @Override
+    public int updateMoneyById(PlayersDto playersDto) {
+        Players p= selectPlayersById(playersDto.getId());
+if(playersDto.getUsStatus()==1){
+    p.setBalance(p.getBalance().add(playersDto.getAmount()));
+
+}else{
+    p.setBalance(p.getBalance().subtract(playersDto.getAmount()));
+}
+
+        return super.baseMapper.updateById(p);
     }
 
 
