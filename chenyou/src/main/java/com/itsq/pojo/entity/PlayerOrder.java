@@ -55,6 +55,8 @@ public class PlayerOrder implements Serializable {
     @TableField(value = "cre_date",fill = FieldFill.INSERT)
     private Date creDate;
 
+    @TableField(exist = false)
+    private Players players;
 
     public static final String ID = "id";
 

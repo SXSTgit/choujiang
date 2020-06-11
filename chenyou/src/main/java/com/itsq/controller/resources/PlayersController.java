@@ -7,37 +7,27 @@ import com.itsq.common.bean.Response;
 import com.itsq.common.redis.RedisUtils;
 
 import com.itsq.enums.EnumTokenType;
-import com.itsq.pojo.dto.AddUserDto;
 import com.itsq.pojo.dto.LoginRespDto;
 import com.itsq.pojo.dto.PlayersDto;
 import com.itsq.pojo.dto.PlayersDtoPage;
-import com.itsq.pojo.entity.Arms;
 import com.itsq.pojo.entity.OperationRecord;
 import com.itsq.pojo.entity.Players;
-import com.itsq.pojo.entity.User;
 import com.itsq.service.resources.OperationRecordService;
 import com.itsq.service.resources.PlayersService;
 import com.itsq.token.AuthToken;
-import com.itsq.token.CurrentUser;
 import com.itsq.utils.BeanUtils;
-import com.itsq.utils.MD5;
 import com.itsq.utils.RandomUtil;
 import com.itsq.utils.SQSendMailUtil;
 import com.itsq.utils.http.Client;
 import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import java.net.URLEncoder;
 
 
 /**
@@ -66,7 +56,7 @@ public class PlayersController extends BaseController {
     @PostMapping("login")
     @ApiOperation(value = "用户-登录", notes = "", httpMethod = "POST")
     public Response<LoginRespDto<Players>> login(@RequestBody PlayersDto playersDto, HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
-
+/*
         try{  //把sessionId记录在浏览器
             Cookie c = new Cookie("JSESSIONID", URLEncoder.encode(httpServletRequest.getSession().getId(), "utf-8"));
             c.setPath("/");
@@ -81,7 +71,7 @@ public class PlayersController extends BaseController {
 
         if(count==null){
             count=0;
-        }
+        }*/
         Players u = this.playersService.login(playersDto.getNumber(), playersDto.getPwd());
 
         operationRecordService.addOperationRecord(new OperationRecord(u.getId(),"用户登录","登陆成功","/players/login",1,client.getAddress(httpServletRequest.getRemoteAddr())));

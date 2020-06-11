@@ -1,13 +1,10 @@
 package com.itsq.service.resources.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.core.metadata.OrderItem;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.itsq.pojo.dto.OperationRecordDto;
-import com.itsq.pojo.entity.Manager;
-import com.itsq.pojo.entity.OperationRecord;
 import com.itsq.mapper.OperationRecordMapper;
-import com.itsq.pojo.entity.Players;
+import com.itsq.pojo.entity.OperationRecord;
 import com.itsq.service.resources.ManagerService;
 import com.itsq.service.resources.OperationRecordService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -17,7 +14,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;
-import java.util.Optional;
 
 /**
  * <p>
@@ -66,14 +62,14 @@ public class OperationRecordServiceImpl extends ServiceImpl<OperationRecordMappe
 
     @Override
     public int addOperationRecord(OperationRecord operationRecord) {
-        if (operationRecord.getMangerId() == 0) {
+       /* if (operationRecord.getMangerId() == 0) {
             Optional<Manager> managerById = managerService.findManagerById(operationRecord.getMangerId());
             operationRecord.setMangerName(managerById.get().getUserName());
         }
         if (operationRecord.getMangerId() == 1) {
             Players players = playersService.selectPlayersById(operationRecord.getMangerId());
             operationRecord.setMangerName(players.getName());
-        }
+        }*/
         return super.baseMapper.insert(operationRecord);
     }
 }

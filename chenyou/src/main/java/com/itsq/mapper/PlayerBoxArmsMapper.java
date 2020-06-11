@@ -2,7 +2,6 @@ package com.itsq.mapper;
 
 import com.itsq.pojo.entity.PlayerBoxArms;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.itsq.pojo.entity.Players;
 import com.itsq.pojo.vo.ArmsVo;
 
 import java.math.BigDecimal;
@@ -30,5 +29,5 @@ public interface PlayerBoxArmsMapper extends BaseMapper<PlayerBoxArms> {
 
   int selectUpStatusCount(Map<String,Object> params);
 
-  Double getTodayAllPrice(Map<String,Object> params);
+  BigDecimal getTodayAllPrice(Map<String,Object> params);
 }

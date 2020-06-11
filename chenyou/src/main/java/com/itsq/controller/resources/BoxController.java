@@ -7,11 +7,8 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.itsq.common.base.BaseController;
 import com.itsq.common.bean.ErrorEnum;
 import com.itsq.common.bean.Response;
-import com.itsq.pojo.dto.AddArmsDto;
+import com.itsq.common.redis.RedisUtils;
 import com.itsq.pojo.dto.AddBoxDto;
-import com.itsq.pojo.dto.BoxArmsDto;
-import com.itsq.pojo.dto.PlayersDto;
-import com.itsq.pojo.entity.Arms;
 import com.itsq.pojo.entity.Box;
 import com.itsq.pojo.entity.BoxArms;
 import com.itsq.pojo.entity.OperationRecord;
@@ -25,9 +22,9 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -54,11 +51,30 @@ public class BoxController extends BaseController {
     private BoxArmsService boxArmsService;
     @Autowired
     private OperationRecordService operationRecordService;
+
+    @Resource
+    private RedisUtils redisUtil;
     @Autowired
     private Client client;
     @RequestMapping(value = "getAllBox",method = RequestMethod.POST)
     @ApiOperation(value = "获取全部箱子", notes = "", httpMethod = "POST")
-    public Response getAllBox(@RequestBody Box box) throws ParseException {
+    public Response getAllBox(@RequestBody Box box,  HttpServletRequest request) throws ParseException {
+
+
+
+      if(!redisUtil.exist( request.getRemoteAddr())){
+          redisUtil.set( request.getRemoteAddr(),60*60,"1");
+
+                  if(!redisUtil.exist("count")){
+                      redisUtil.set("count","0");
+                  }
+          Integer count = Integer.valueOf(redisUtil.get("count") + "");
+          redisUtil.set("count",count+1+"");
+      }
+
+
+
+
         QueryWrapper queryWrapper=new QueryWrapper();
 
         if(box.getName()!=null&&box.getName().length()>0){

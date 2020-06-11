@@ -59,7 +59,7 @@ public class WsController extends BaseController {
         return new ResponseMessage("welcome," + message.getName() + " !");
     }
 
-    @Scheduled(fixedRate = 1000*60*60*2)
+    @Scheduled(fixedRate = 1000*60*60)
     public void getCount() {
         Integer i=Integer.valueOf(redisUtil.get("count")+"");
         if(i>0){
@@ -70,7 +70,7 @@ public class WsController extends BaseController {
     /**
      * 定时推送消息
      */
-  //  @Scheduled(fixedRate = 1000)
+    @Scheduled(fixedRate = 1000)
     public void callback() {
 
         PageParametersDto pageParametersDto = new PageParametersDto();

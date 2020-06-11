@@ -3,18 +3,13 @@ package com.itsq.controller.resources;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.itsq.common.base.BaseController;
-import com.itsq.common.bean.ErrorEnum;
 import com.itsq.common.bean.Response;
 import com.itsq.pojo.dto.BoxArmsDto;
 import com.itsq.pojo.entity.Arms;
-import com.itsq.pojo.entity.Box;
 import com.itsq.pojo.entity.BoxArms;
-import com.itsq.pojo.entity.OperationRecord;
 import com.itsq.service.resources.ArmsService;
 import com.itsq.service.resources.BoxArmsService;
 import com.itsq.service.resources.OperationRecordService;
-import com.itsq.token.CurrentUser;
-import com.itsq.utils.Base64Util;
 import com.itsq.utils.BeanUtils;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -46,9 +41,6 @@ public class BoxArmsController extends BaseController {
     @RequestMapping(value = "getAll",method = RequestMethod.POST)
     @ApiOperation(value = "获取全部武器", notes = "", httpMethod = "POST")
     public Response getAllInfo(@RequestBody BoxArms boxArms){
-
-
-
 
         QueryWrapper queryWrapper=new QueryWrapper();
         if(boxArms.getBoxId()!=null) {

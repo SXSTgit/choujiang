@@ -5,9 +5,14 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.itsq.pojo.dto.PlayerOrderDto;
 import com.itsq.pojo.entity.PlayerOrder;
 import com.itsq.mapper.PlayerOrderMapper;
+import com.itsq.pojo.entity.Players;
 import com.itsq.service.resources.PlayerOrderService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.itsq.service.resources.PlayersService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * <p>
@@ -19,6 +24,10 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class PlayerOrderServiceImpl extends ServiceImpl<PlayerOrderMapper, PlayerOrder> implements PlayerOrderService {
+
+
+    @Autowired
+    private PlayersService playersService;
 
     @Override
     public Page<PlayerOrder> selectPagePlayerOrder(PlayerOrderDto playerOrderDto) {
@@ -33,7 +42,16 @@ public class PlayerOrderServiceImpl extends ServiceImpl<PlayerOrderMapper, Playe
             queryWrapper.eq("is_status", playerOrderDto.getIsStatus());
         }
         queryWrapper.orderByDesc("cre_date");
-        return super.baseMapper.selectPage(playerOrderPage,queryWrapper);
+        Page<PlayerOrder> page = super.baseMapper.selectPage(playerOrderPage, queryWrapper);
+        List<PlayerOrder> records = page.getRecords();
+
+        for (PlayerOrder playerOrder : records) {
+            Players byId = playersService.getById(playerOrder.getPlayerId());
+            playerOrder.setPlayers(byId);
+
+        }
+
+        return page;
 
 
     }

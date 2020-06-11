@@ -1,7 +1,7 @@
 package com.itsq.mapper;
 
-import com.itsq.pojo.entity.OperationRecord;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.itsq.pojo.entity.OperationRecord;
 
 /**
  * <p>
