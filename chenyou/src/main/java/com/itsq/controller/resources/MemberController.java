@@ -1,20 +1,12 @@
 package com.itsq.controller.resources;
 
 
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.itsq.common.base.BaseController;
-import com.itsq.common.bean.ErrorEnum;
 import com.itsq.common.bean.Response;
-import com.itsq.pojo.dto.FindPageManagerParmeters;
-import com.itsq.pojo.dto.MemberPageDto;
-import com.itsq.pojo.entity.Member;
-import com.itsq.pojo.entity.User;
 import com.itsq.service.resources.*;
-import com.itsq.token.CurrentUser;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
-import org.bouncycastle.pqc.crypto.xmss.BDS;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -109,7 +101,7 @@ public class MemberController extends BaseController {
 
         int boxCount =playerBoxArmsService.getUpCountData(currentDate,0);
         int boxCount2 =playerBoxArmsService.getUpCountData(currentDate,1);
-        Double todayAllPrice = playerBoxArmsService.getTodayAllPrice(currentDate);
+        BigDecimal todayAllPrice = playerBoxArmsService.getTodayAllPrice(currentDate);
         int countRechargeRecord = rechargeRecordService.getCountRechargeRecord(currentDate);
 
 
@@ -118,7 +110,7 @@ public class MemberController extends BaseController {
         map.put("tomorrowzhuce",playerCountz);
         map.put("box",boxCount);
         map.put("upArms",boxCount2);
-        map.put("Allmoney",todayAllPrice);
+        map.put("allmoney",todayAllPrice);
         map.put("allRechargeRecord",countRechargeRecord);
         return Response.success(map);
     }

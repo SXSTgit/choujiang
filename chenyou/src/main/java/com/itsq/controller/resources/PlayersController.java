@@ -84,7 +84,7 @@ public class PlayersController extends BaseController {
         }
         Players u = this.playersService.login(playersDto.getNumber(), playersDto.getPwd());
 
-        operationRecordService.addOperationRecord(new OperationRecord(u.getId(),"用户登录","登陆成功","/players/login",1,client.getAddress(request.getRemoteAddr())));
+        operationRecordService.addOperationRecord(new OperationRecord(u.getId(),"用户登录","登陆成功","/players/login",1,client.getAddress(httpServletRequest.getRemoteAddr())));
 
         String authToken = new AuthToken(u.getId(), u.getName()).token();
         return Response.success(new LoginRespDto<>(u, authToken, EnumTokenType.BEARER.getCode()));
@@ -131,7 +131,7 @@ public class PlayersController extends BaseController {
 
     @PostMapping("updatePlayers")
     @ApiOperation(value = "用户-忘记密码", notes = "", httpMethod = "POST")
-    public Response updatePlayers(@RequestBody PlayersDto playersDto) {
+    public Response updatePlayers(@RequestBody PlayersDto playersDto,HttpServletRequest request) {
         if (playersDto.getCode() == null) {
             return Response.fail("请输入验证码!");
         }
@@ -147,7 +147,7 @@ public class PlayersController extends BaseController {
 
     @PostMapping("updatePlayersById")
     @ApiOperation(value = "用户-修改信息", notes = "", httpMethod = "POST")
-    public Response updatePlayersById(@RequestBody Players players) {
+    public Response updatePlayersById(@RequestBody Players players,HttpServletRequest request) {
         this.playersService.updatePlayersBuId(players);
         operationRecordService.addOperationRecord(new OperationRecord(players.getId(),"用户修改个人信息","修改成功","/players/updatePlayersById",1,client.getAddress(request.getRemoteAddr())));
 

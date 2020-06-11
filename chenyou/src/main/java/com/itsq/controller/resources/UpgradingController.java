@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -78,7 +79,7 @@ public class UpgradingController  extends BaseController {
 
     @PostMapping("shengji")
     @ApiOperation(value = "升级武器", notes = "", httpMethod = "POST")
-    public Response shenji(@RequestBody PlayerBoxArmsDto boxArms){
+    public Response shenji(@RequestBody PlayerBoxArmsDto boxArms, HttpServletRequest request){
         List<Double> list = new ArrayList<Double>();
         list.add(Double.parseDouble(boxArms.getJilv()));
         list.add(100-Double.parseDouble(boxArms.getJilv()));
