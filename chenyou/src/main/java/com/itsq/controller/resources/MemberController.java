@@ -14,6 +14,7 @@ import com.itsq.token.CurrentUser;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
+import org.bouncycastle.pqc.crypto.xmss.BDS;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,6 +22,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.math.BigDecimal;
 import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -85,7 +87,7 @@ public class MemberController extends BaseController {
 
     @PostMapping("findAll")
     @ApiOperation(value = "后台首页数据", notes = "", httpMethod = "POST")
-    public Response<Map<String ,Integer >> findAll(){
+    public Response<Map<String ,Object >> findAll(){
        /* CurrentUser currentUser = currentUser();
         if(currentUser==null){
             return Response.fail(ErrorEnum.SIGN_VERIFI_EXPIRE);
@@ -101,20 +103,23 @@ public class MemberController extends BaseController {
         calendar.add(Calendar.DAY_OF_MONTH, -1);  //设置为前一天
         dBefore = calendar.getTime();   //得到前一天的时间
         String dBeforeDate =   dateFormat.format( dBefore );
+
         int playerCount = playersService.selectTodayAdd(currentDate);
         int playerCountz = playersService.selectTodayAdd(dBeforeDate);
 
-        int boxCount =playerBoxArmsService.getUpCountData(currentDate,1);
-        int boxCount2 =playerBoxArmsService.getUpCountData(currentDate,2);
+        int boxCount =playerBoxArmsService.getUpCountData(currentDate,0);
+        int boxCount2 =playerBoxArmsService.getUpCountData(currentDate,1);
+        Double todayAllPrice = playerBoxArmsService.getTodayAllPrice(currentDate);
+        int countRechargeRecord = rechargeRecordService.getCountRechargeRecord(currentDate);
 
-        rechargeRecordService.getCountRechargeRecord(currentDate);
 
-
-
-        Map<String ,Integer > map=new HashMap<>();
-        map.put("playerCount",playerCount);
-        map.put("boxCount",boxCount);
-       // map.put("uPCount",uPCount);
+        Map<String ,Object > map=new HashMap<>();
+        map.put("todayzhuce",playerCount);
+        map.put("tomorrowzhuce",playerCountz);
+        map.put("box",boxCount);
+        map.put("upArms",boxCount2);
+        map.put("Allmoney",todayAllPrice);
+        map.put("allRechargeRecord",countRechargeRecord);
         return Response.success(map);
     }
 

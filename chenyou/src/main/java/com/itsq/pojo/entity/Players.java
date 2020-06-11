@@ -8,6 +8,7 @@ import java.util.Date;
 import java.io.Serializable;
 import java.util.List;
 
+import com.itsq.pojo.vo.ArmsVo;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -78,7 +79,8 @@ public class Players implements Serializable {
 
     @TableField(exist = false)
     private List<Arms> armsList;
-
+    @TableField(exist = false)
+    private List<ArmsVo> armsLists;
     @TableField(exist = false)
     private Integer  totalPages;
 

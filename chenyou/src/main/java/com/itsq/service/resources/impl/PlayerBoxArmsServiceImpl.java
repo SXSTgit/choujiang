@@ -218,4 +218,13 @@ public class PlayerBoxArmsServiceImpl extends ServiceImpl<PlayerBoxArmsMapper, P
         page.setList(vipPriceList);
         return page;
     }
+
+    @Override
+    public Double getTodayAllPrice(String date) {
+
+        Map<String, Object> params = new HashMap<>();
+        params.put("creDate",date);
+        Double v = this.baseMapper.getTodayAllPrice(params);
+        return v;
+    }
 }

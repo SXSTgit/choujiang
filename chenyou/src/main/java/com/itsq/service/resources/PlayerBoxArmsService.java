@@ -8,6 +8,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.itsq.pojo.vo.ArmsVo;
 import com.itsq.utils.PagesUtil;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -40,4 +41,6 @@ public interface PlayerBoxArmsService extends IService<PlayerBoxArms> {
 
     PagesUtil<ArmsVo> selectUpRecord(PageParametersDto pageParametersDto);
 
+
+    Double getTodayAllPrice(String date);
 }
