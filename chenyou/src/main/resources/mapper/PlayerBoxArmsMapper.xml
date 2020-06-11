@@ -159,4 +159,20 @@ WHERE
 p.`id`=#{playerId}
 
     </select>
+
+
+    <select id="getTodayAllPrice" resultType="Double">
+
+
+SELECT SUM(b.`price`)
+FROM
+`players` p
+LEFT JOIN `player_box_arms` pba
+ON p.`id`=pba.`player_id`
+LEFT JOIN `box` b
+ON b.id=pba.`box_id`
+WHERE
+        1=1
+    AND pba.`cre_date` LIKE concat("%",#{creDate},"%")
+    </select>
 </mapper>
