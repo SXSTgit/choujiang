@@ -9,14 +9,17 @@ import com.itsq.pojo.dto.BoxArmsDto;
 import com.itsq.pojo.entity.Arms;
 import com.itsq.pojo.entity.Box;
 import com.itsq.pojo.entity.BoxArms;
+import com.itsq.pojo.entity.OperationRecord;
 import com.itsq.service.resources.ArmsService;
 import com.itsq.service.resources.BoxArmsService;
+import com.itsq.service.resources.OperationRecordService;
 import com.itsq.token.CurrentUser;
 import com.itsq.utils.Base64Util;
 import com.itsq.utils.BeanUtils;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -38,9 +41,15 @@ import java.util.List;
 public class BoxArmsController extends BaseController {
     private BoxArmsService boxArmsService;
     private ArmsService armsService;
+    @Autowired
+    private OperationRecordService operationRecordService;
     @RequestMapping(value = "getAll",method = RequestMethod.POST)
     @ApiOperation(value = "获取全部武器", notes = "", httpMethod = "POST")
     public Response getAllInfo(@RequestBody BoxArms boxArms){
+
+
+
+
         QueryWrapper queryWrapper=new QueryWrapper();
         if(boxArms.getBoxId()!=null) {
             queryWrapper.eq("box_id",boxArms.getBoxId());

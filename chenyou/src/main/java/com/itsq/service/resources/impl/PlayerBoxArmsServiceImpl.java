@@ -124,8 +124,12 @@ public class PlayerBoxArmsServiceImpl extends ServiceImpl<PlayerBoxArmsMapper, P
         Map<String, Object> params = new HashMap<>();
         params.put("pageIndex", (pageParametersDto.getPageNum() - 1) * pageParametersDto.getPageSize());
         params.put("pageSize", pageParametersDto.getPageSize());
-        params.put("playerId", pageParametersDto.getPlayerId());
-
+       if(pageParametersDto.getPlayerId()!=null&&pageParametersDto.getPlayerId()>0){
+           params.put("playerId", pageParametersDto.getPlayerId());
+       }
+        if(pageParametersDto.getType()!=null){
+            params.put("type", pageParametersDto.getType());
+        }
         if (pageParametersDto.getOrderByField() != null && pageParametersDto.getOrderByField().equals("1")) {
             params.put("sort", "1");
         } else {

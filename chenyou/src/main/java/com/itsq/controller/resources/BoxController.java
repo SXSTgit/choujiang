@@ -14,13 +14,16 @@ import com.itsq.pojo.dto.PlayersDto;
 import com.itsq.pojo.entity.Arms;
 import com.itsq.pojo.entity.Box;
 import com.itsq.pojo.entity.BoxArms;
+import com.itsq.pojo.entity.OperationRecord;
 import com.itsq.service.resources.BoxArmsService;
 import com.itsq.service.resources.BoxService;
+import com.itsq.service.resources.OperationRecordService;
 import com.itsq.token.CurrentUser;
 import com.itsq.utils.BeanUtils;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.*;
 
@@ -47,7 +50,8 @@ public class BoxController extends BaseController {
 
     private BoxService boxService;
     private BoxArmsService boxArmsService;
-
+    @Autowired
+    private OperationRecordService operationRecordService;
 
     @RequestMapping(value = "getAllBox",method = RequestMethod.POST)
     @ApiOperation(value = "获取全部箱子", notes = "", httpMethod = "POST")
@@ -77,12 +81,14 @@ public class BoxController extends BaseController {
     }
 
     @RequestMapping(value = "romveBox",method = RequestMethod.POST)
-    @ApiOperation(value = "删除武器", notes = "", httpMethod = "POST")
+    @ApiOperation(value = "删除箱子", notes = "", httpMethod = "POST")
     public Response romveBox(@RequestBody String id){
         CurrentUser currentUser = currentUser();
         if(currentUser==null){
             return Response.fail(ErrorEnum.SIGN_VERIFI_EXPIRE);
         }
+        operationRecordService.addOperationRecord(new OperationRecord(1,"删除箱子","删除id为"+id+"的箱子","/box/romveBox",0));
+
         JSONObject jsonObject=JSONObject.parseObject(id);
         if(!boxService.removeById(Long.parseLong(jsonObject.getString("id")))){
             return Response.fail(ErrorEnum.ERROR_SERVER);
@@ -97,6 +103,8 @@ public class BoxController extends BaseController {
         if(currentUser==null){
             return Response.fail(ErrorEnum.SIGN_VERIFI_EXPIRE);
         }
+        operationRecordService.addOperationRecord(new OperationRecord(dto.getManagerId(),"添加箱子",dto.getName()+"箱子","/arms/addInfo",0));
+
         dto.setCrDate(new Date());
         Box box= BeanUtils.copyProperties(dto, Box.class);
         if(!boxService.save(box)){
@@ -125,6 +133,8 @@ public class BoxController extends BaseController {
         if(currentUser==null){
             return Response.fail(ErrorEnum.SIGN_VERIFI_EXPIRE);
         }
+        operationRecordService.addOperationRecord(new OperationRecord(dto.getManagerId(),"修改箱子",dto.getName()+"箱子","/arms/updateById",0));
+
         Box box=BeanUtils.copyProperties(dto, Box.class);
         if(!boxService.updateById(box)){
             return Response.fail(ErrorEnum.ERROR_SERVER);

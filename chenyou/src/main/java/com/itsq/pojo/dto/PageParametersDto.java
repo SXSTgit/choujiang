@@ -32,7 +32,7 @@ public class PageParametersDto {
     @ApiModelProperty("是否查询总条数")
     protected Boolean searchCount;
 
-
+    private  Integer type;
     private  Integer playerId;
 
 }

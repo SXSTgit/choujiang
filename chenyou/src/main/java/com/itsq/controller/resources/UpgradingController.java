@@ -8,8 +8,10 @@ import com.itsq.common.bean.Response;
 import com.itsq.pojo.dto.PlayerBoxArmsDto;
 import com.itsq.pojo.dto.PlayersArmsDto;
 import com.itsq.pojo.entity.Arms;
+import com.itsq.pojo.entity.OperationRecord;
 import com.itsq.pojo.entity.PlayerBoxArms;
 import com.itsq.service.resources.ArmsService;
+import com.itsq.service.resources.OperationRecordService;
 import com.itsq.service.resources.PlayerBoxArmsService;
 import com.itsq.utils.LotteryUtil;
 import io.swagger.annotations.ApiOperation;
@@ -33,6 +35,9 @@ public class UpgradingController  extends BaseController {
     private ArmsService armsService;
     @Autowired
     private PlayerBoxArmsService playerBoxArmsService;
+
+    @Autowired
+    private OperationRecordService operationRecordService;
 
     @PostMapping("buybox")
     @ApiOperation(value = "根据选择的个人武器获取可升级武器", notes = "", httpMethod = "POST")
@@ -79,6 +84,7 @@ public class UpgradingController  extends BaseController {
 
         //String armsArray=boxArms.getOldArmss();
         //String[] armsArray2=armsArray.split(",");
+        operationRecordService.addOperationRecord(new OperationRecord(boxArms.getPlayerId(),"升级武器","用户升级武器","/upgrading/updatePlayersById",1));
 
         int index = ll.randomColunmIndex();
 

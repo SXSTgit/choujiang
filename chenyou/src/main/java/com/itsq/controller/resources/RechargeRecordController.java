@@ -42,7 +42,7 @@ public class RechargeRecordController extends BaseController {
         return Response.success( rechargeRecordService.selectRechargeRecordDtoPage(rechargeRecordDto));
     }
     @PostMapping("addRechargeRecord")
-    @ApiOperation(value = "用户-注册", notes = "", httpMethod = "POST")
+    @ApiOperation(value = "添加充值记录", notes = "", httpMethod = "POST")
     public Response addRechargeRecord(@RequestBody RechargeRecord rechargeRecord){
 
         this.rechargeRecordService.addRechargeRecord(rechargeRecord);

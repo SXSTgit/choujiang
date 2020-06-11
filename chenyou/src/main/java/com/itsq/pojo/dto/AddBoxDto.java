@@ -21,4 +21,6 @@ public class AddBoxDto {
 
     private String glId;
 
+
+    private Integer managerId;
 }

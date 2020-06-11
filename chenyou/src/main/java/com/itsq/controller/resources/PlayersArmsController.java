@@ -49,9 +49,17 @@ public class PlayersArmsController extends BaseController {
     private BoxService boxService;
     @Autowired
     private ArmsService armsService;
+
+    @Autowired
+    private OperationRecordService operationRecordService;
     @PostMapping("buybox")
     @ApiOperation(value = "用户购买箱子", notes = "", httpMethod = "POST")
     public Response login(@RequestBody PlayersArmsDto playersArmsDto){
+
+
+        operationRecordService.addOperationRecord(new OperationRecord(playersArmsDto.getId(),"购买箱子","购买"+playersArmsDto.getBoxId()+"箱子","/playersArms/buybox",1));
+
+
         //获得用户信息
         Players players=playersService.getById(playersArmsDto.getId());
         //获得箱子信息

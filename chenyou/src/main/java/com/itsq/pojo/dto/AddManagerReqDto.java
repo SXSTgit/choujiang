@@ -7,6 +7,8 @@ import java.util.Date;
 @Data
 public class AddManagerReqDto {
 
+    private Integer mangerId;
+
     private String phone;
     private String userName;
     private Integer sex;

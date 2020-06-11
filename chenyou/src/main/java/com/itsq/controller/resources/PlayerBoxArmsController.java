@@ -10,7 +10,9 @@ import com.itsq.pojo.dto.PlayerBoxArmsDtoUpd;
 import com.itsq.pojo.dto.PlayersSellDto;
 import com.itsq.pojo.dto.RechargeRecordDto;
 import com.itsq.pojo.entity.Member;
+import com.itsq.pojo.entity.OperationRecord;
 import com.itsq.pojo.entity.PlayerBoxArms;
+import com.itsq.service.resources.OperationRecordService;
 import com.itsq.service.resources.PlayerBoxArmsService;
 import com.itsq.token.CurrentUser;
 import com.itsq.utils.PagesUtil;
@@ -36,6 +38,8 @@ import org.springframework.web.bind.annotation.*;
 public class PlayerBoxArmsController extends BaseController {
     @Autowired
     private PlayerBoxArmsService playerBoxArmsService;
+    @Autowired
+    private OperationRecordService operationRecordService;
 
     @PostMapping("selectRechargeRecordDtoPage")
     @ApiOperation(value = "开箱记录-分页查询", notes = "", httpMethod = "POST")
@@ -54,6 +58,8 @@ public class PlayerBoxArmsController extends BaseController {
         if(currentUser==null){
             return Response.fail(ErrorEnum.SIGN_VERIFI_EXPIRE);
         }*/
+       String concat="";
+
 
         int i = playerBoxArmsService.updatePlayerBoxArms(playerBoxArmsDtoUpd);
 
@@ -70,6 +76,7 @@ public class PlayerBoxArmsController extends BaseController {
         if(currentUser==null){
             return Response.fail(ErrorEnum.SIGN_VERIFI_EXPIRE);
         }*/
+        operationRecordService.addOperationRecord(new OperationRecord(playersSellDto.getId(),"出售武器","出售所有武器","/playerBoxArms/sellArms",1));
 
         int i = playerBoxArmsService.sellArms(playersSellDto);
 

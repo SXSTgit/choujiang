@@ -9,7 +9,11 @@ import com.itsq.common.bean.ErrorEnum;
 import com.itsq.common.bean.Response;
 import com.itsq.pojo.dto.AddArmsDto;
 import com.itsq.pojo.entity.Arms;
+import com.itsq.pojo.entity.OperationRecord;
 import com.itsq.service.resources.ArmsService;
+import com.itsq.service.resources.ManagerService;
+import com.itsq.service.resources.OperationRecordService;
+import com.itsq.service.resources.PlayersService;
 import com.itsq.token.CurrentUser;
 import com.itsq.utils.BeanUtils;
 import com.itsq.utils.http.Client;
@@ -27,77 +31,88 @@ import java.util.*;
 @CrossOrigin
 @Api(tags = "获取武器相关接口")
 @AllArgsConstructor
-public class ArmsController  extends BaseController {
+public class ArmsController extends BaseController {
     @Autowired
     private Client client;
     private ArmsService armsService;
 
-    @RequestMapping(value = "getAll",method = RequestMethod.POST)
+    @Autowired
+    private OperationRecordService operationRecordService;
+
+
+    @RequestMapping(value = "getAll", method = RequestMethod.POST)
     @ApiOperation(value = "获取全部武器", notes = "", httpMethod = "POST")
-    public Response getAllArms(@RequestBody Arms arms){
-        QueryWrapper queryWrapper=new QueryWrapper();
-        if(arms.getName()!=null&&arms.getName().length()>0){
-            queryWrapper.like("name",arms.getName());
+    public Response getAllArms(@RequestBody Arms arms) {
+        QueryWrapper queryWrapper = new QueryWrapper();
+        if (arms.getName() != null && arms.getName().length() > 0) {
+            queryWrapper.like("name", arms.getName());
         }
         queryWrapper.orderByDesc("id");
-        List<Arms> list=armsService.list(queryWrapper);
+        List<Arms> list = armsService.list(queryWrapper);
         return Response.success(list);
     }
 
-    @RequestMapping(value = "addInfo",method = RequestMethod.POST)
+    @RequestMapping(value = "addInfo", method = RequestMethod.POST)
     @ApiOperation(value = "添加武器", notes = "", httpMethod = "POST")
-    public Response addInfo(@RequestBody AddArmsDto dto){
+    public Response addInfo(@RequestBody AddArmsDto dto) {
         CurrentUser currentUser = currentUser();
-        if(currentUser==null){
+        if (currentUser == null) {
             return Response.fail(ErrorEnum.SIGN_VERIFI_EXPIRE);
         }
+        operationRecordService.addOperationRecord(new OperationRecord(dto.getMangerId(),"添加武器",dto.getName()+"武器","/arms/addInfo",0));
         dto.setCreDate(new Date());
-        Arms arms=BeanUtils.copyProperties(dto, Arms.class);
-        if(!armsService.save(arms)){
+        Arms arms = BeanUtils.copyProperties(dto, Arms.class);
+        if (!armsService.save(arms)) {
             return Response.fail(ErrorEnum.ERROR_SERVER);
         }
         return Response.success(arms);
     }
 
-    @RequestMapping(value = "romveArms",method = RequestMethod.POST)
+    @RequestMapping(value = "romveArms", method = RequestMethod.POST)
     @ApiOperation(value = "删除武器", notes = "", httpMethod = "POST")
-    public Response romveArms(@RequestBody String id){
+    public Response romveArms(@RequestBody String id) {
         CurrentUser currentUser = currentUser();
-        if(currentUser==null){
+        if (currentUser == null) {
             return Response.fail(ErrorEnum.SIGN_VERIFI_EXPIRE);
         }
-        JSONObject jsonObject=JSONObject.parseObject(id);
-        if(!armsService.removeById(Long.parseLong(jsonObject.getString("id")))){
+        operationRecordService.addOperationRecord(new OperationRecord(1,"删除武器","删除id为"+id+"的武器","/arms/romveArms",0));
+
+        JSONObject jsonObject = JSONObject.parseObject(id);
+        if (!armsService.removeById(Long.parseLong(jsonObject.getString("id")))) {
             return Response.fail(ErrorEnum.ERROR_SERVER);
         }
         return Response.success();
     }
 
-    @RequestMapping(value = "updateById",method = RequestMethod.POST)
+    @RequestMapping(value = "updateById", method = RequestMethod.POST)
     @ApiOperation(value = "修改武器信息", notes = "", httpMethod = "POST")
-    public Response updateById(@RequestBody AddArmsDto dto){
+    public Response updateById(@RequestBody AddArmsDto dto) {
         CurrentUser currentUser = currentUser();
-        if(currentUser==null){
+        if (currentUser == null) {
             return Response.fail(ErrorEnum.SIGN_VERIFI_EXPIRE);
         }
-        Arms arms=BeanUtils.copyProperties(dto, Arms.class);
-        if(!armsService.updateById(arms)){
+
+        operationRecordService.addOperationRecord(new OperationRecord(dto.getMangerId(),"修改武器",dto.getName()+"的武器","/arms/updateById",0));
+
+        Arms arms = BeanUtils.copyProperties(dto, Arms.class);
+        if (!armsService.updateById(arms)) {
             return Response.fail(ErrorEnum.ERROR_SERVER);
         }
         return Response.success(arms);
     }
 
-    @RequestMapping(value = "updateAramStatus",method = RequestMethod.POST)
+    @RequestMapping(value = "updateAramStatus", method = RequestMethod.POST)
     @ApiOperation(value = "修改武器状态根据id", notes = "", httpMethod = "POST")
-    public Response updateAramStatus(String id,String isStatus){
+    public Response updateAramStatus(String id, String isStatus) {
         CurrentUser currentUser = currentUser();
-        if(currentUser==null){
+        if (currentUser == null) {
             return Response.fail(ErrorEnum.SIGN_VERIFI_EXPIRE);
         }
-        Arms arms=new Arms();
+        Arms arms = new Arms();
+
         arms.setId(Integer.parseInt(id));
         arms.setIsStatus(Integer.parseInt(isStatus));
-        if(!armsService.updateById(arms)){
+        if (!armsService.updateById(arms)) {
             return Response.fail(ErrorEnum.ERROR_SERVER);
         }
         return Response.success();
@@ -106,31 +121,31 @@ public class ArmsController  extends BaseController {
 
     @RequestMapping(value = "addListArms", method = RequestMethod.POST)
     @ApiOperation(value = "导入武器", notes = "", httpMethod = "POST")
-    public Response addListArms( Double percentage ) {
+    public Response addListArms(Double percentage) {
         /*CurrentUser currentUser = currentUser();
         if(currentUser==null){
             return Response.fail(ErrorEnum.SIGN_VERIFI_EXPIRE);
         }*/
         System.out.println("=======");
-        Map<String,String> param=new HashMap<>();
+        Map<String, String> param = new HashMap<>();
         String json = client.httpGetWithJSon("https://app.zbt.com/open/product/v1/search", param);
         System.out.println("=======");
-       Object succesResponse = JSON.parse(json);
+        Object succesResponse = JSON.parse(json);
         System.out.println("=======");//先转换成Object
-       System.out.println(json);
-        Map map = (Map)succesResponse;         //Object强转换为Map
-       Object succesResponse1 = JSON.parse(map.get("data")+"");
-        Map map1 = (Map)succesResponse1;
-        List amList=new ArrayList();
-        List list= (List)map1.get("list");
+        System.out.println(json);
+        Map map = (Map) succesResponse;         //Object强转换为Map
+        Object succesResponse1 = JSON.parse(map.get("data") + "");
+        Map map1 = (Map) succesResponse1;
+        List amList = new ArrayList();
+        List list = (List) map1.get("list");
         for (Object o : list) {
-            Map map2 = (Map)o;
+            Map map2 = (Map) o;
             Arms arms = new Arms();
-            arms.setCount((Integer)map2.get("quantity"));
-            arms.setImageUrl(map2.get("imageUrl")+"");
-            arms.setName(map2.get("itemName")+"");
-            arms.setPrice(new BigDecimal(map2.get("price")+"").multiply(new BigDecimal(1+percentage)));
-            arms.setProductId((Integer)map2.get("itemId"));
+            arms.setCount((Integer) map2.get("quantity"));
+            arms.setImageUrl(map2.get("imageUrl") + "");
+            arms.setName(map2.get("itemName") + "");
+            arms.setPrice(new BigDecimal(map2.get("price") + "").multiply(new BigDecimal(1 + percentage)));
+            arms.setProductId((Integer) map2.get("itemId"));
             amList.add(arms);
         }
         armsService.addListArms(amList);

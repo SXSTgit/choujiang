@@ -16,6 +16,7 @@ import com.itsq.config.AlipayConfig;
 
 import com.itsq.config.AlipayConfig;
 import com.itsq.pojo.entity.RechargeRecord;
+import com.itsq.service.resources.OperationRecordService;
 import com.itsq.service.resources.RechargeRecordService;
 import com.itsq.utils.StringUtils;
 import com.itsq.utils.http.MoneyChangeUtils;
@@ -54,6 +55,8 @@ import java.util.Map;
 public class ZfbController extends BaseController {
 
 
+    @Autowired
+    private OperationRecordService operationRecordService;
 
    @Autowired
     private RechargeRecordService rechargeRecordService;

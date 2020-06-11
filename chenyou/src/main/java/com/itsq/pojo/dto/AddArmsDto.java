@@ -18,4 +18,6 @@ public class AddArmsDto {
     private Integer isStatus;
     private Date creDate;
 
+    private Integer mangerId;
+
 }

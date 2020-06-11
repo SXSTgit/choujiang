@@ -79,6 +79,9 @@ public class Players implements Serializable {
     @TableField(exist = false)
     private List<Arms> armsList;
 
+    @TableField(exist = false)
+    private Integer  totalPages;
+
     public static final String ID = "id";
 
     public static final String NAME = "name";
