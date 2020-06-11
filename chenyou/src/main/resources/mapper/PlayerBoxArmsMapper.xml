@@ -112,12 +112,19 @@ where 1 = 1
             <result column="arprice" property="prices" />
             <result column="artype" property="types" />
             <result column="is_status" property="isStatus" />
+        <result column="creDate" property="creDate" />
+        <result column="pname" property="pname" />
+        <result column="image" property="image" />
+        <result column="number" property="number" />
 
     </resultMap>
 
     <select id="selectUpStatus" resultMap="BaseResultMap2">
         SELECT
-        p.id as pid,
+        pba.id as pid,
+        p.`name` as pname,
+        p.`image` as image,
+        p.`number` as `number`,
 a.`name` as aname,
 a.`imageUrl` as aimageUrl,
 a.`price` as aprice,
@@ -126,7 +133,8 @@ ar.`type` as atype,
 ar.`imageUrl` as arimageUrl,
 ar.`price` as arprice,
 ar.`type` as artype,
-pba.`is_status`
+pba.`is_status` as is_status,
+        pba.cre_date as creDate
 
 FROM
 `players` p
