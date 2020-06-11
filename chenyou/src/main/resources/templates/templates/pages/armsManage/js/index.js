@@ -64,14 +64,14 @@ layui.config({
                     width: 150
                 }, {
                     field: 'name',
-                    title: '武器名称',
+                    title: '饰品名称',
                     edit: 'text',
                     align: 'center'
                 },
-                {
-                    title: '武器级别',
+                {   field: 'type',
+                    title: '饰品品质',
                     align: 'center',
-                    templer: function (d) {
+                    templet: function (d) {
                         var strs = [
                             '<span></span>',
                             '<span class="layui-badge layui-badge-green">消费级</span>',
@@ -80,17 +80,23 @@ layui.config({
                             '<span class="layui-badge layui-badge-green">受限级</span>',
                             '<span class="layui-badge layui-badge-green">保密级</span>',
                             '<span class="layui-badge layui-badge-green">隐秘级</span>',
-                            '<span class="layui-badge layui-badge-green">特殊物品*</span>'
+                            '<span class="layui-badge layui-badge-green">特殊物品*</span>',
                         ];
                         return strs[d.type];
                     }
                 }
                 ,{
                     field: 'imageUrl',
-                    title: '武器主图',
+                    title: '饰品主图',
                     align: 'center',
                     templet: function(d) {
-                        return "<img src='"+d.imageUrl+"' width='50'height='50'/>"
+                        var url="img/"+d.type+".png";
+                        var htmlInfo= '<span class="backImg" style="background-image: url(\''+url+'\');display: inline-block;\n' +
+                            '    background-repeat: no-repeat;\n' +
+                            '    background-size: contain;\n' +
+                            '    width: 100px;\n' +
+                            '    height: 100px;"><img ] src="'+d.imageUrl+'" width="50"height="50"/></span>'
+                        return htmlInfo;
                     }
                 }, {
                     field: 'price',
