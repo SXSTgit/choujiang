@@ -11,6 +11,7 @@ import com.itsq.pojo.dto.PlayersSellDto;
 import com.itsq.pojo.dto.normalBuyParamV2DTO;
 import com.itsq.pojo.entity.*;
 import com.itsq.mapper.PlayerBoxArmsMapper;
+import com.itsq.pojo.vo.ArmsVo;
 import com.itsq.service.resources.ArmsService;
 import com.itsq.service.resources.PlayerBoxArmsService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -199,5 +200,22 @@ public class PlayerBoxArmsServiceImpl extends ServiceImpl<PlayerBoxArmsMapper, P
         }
         queryWrapper.eq("type",type);
         return super.baseMapper.selectCount(queryWrapper);
+    }
+
+    @Override
+    public PagesUtil<ArmsVo> selectUpRecord(PageParametersDto pageParametersDto) {
+        PagesUtil<ArmsVo> page = new PagesUtil();
+        Map<String, Object> params = new HashMap<>();
+        params.put("pageIndex", (pageParametersDto.getPageNum() - 1) * pageParametersDto.getPageSize());
+        params.put("pageSize", pageParametersDto.getPageSize());
+        if(pageParametersDto.getPlayerId()!=null&&pageParametersDto.getPlayerId()>0){
+            params.put("playerId", pageParametersDto.getPlayerId());
+        }
+        List<ArmsVo> vipPriceList = this.baseMapper.selectUpStatus(params);
+        int vipPriceCount = this.baseMapper.selectUpStatusCount(params);
+        page.setPageIndex(pageParametersDto.getPageNum());
+        page.setTotalPages(vipPriceCount, pageParametersDto.getPageSize());
+        page.setList(vipPriceList);
+        return page;
     }
 }
