@@ -8,7 +8,7 @@
         <result column="player_id" property="playerId"/>
         <result column="box_id" property="boxId"/>
         <result column="arms_id" property="armsId"/>
-        <result column="cr_date" property="crDate"/>
+        <result column="cre_date" property="crDate"/>
         <result column="is_status" property="isStatus"/>
         <result column="type" property="type"/>
         <association property="box" javaType="Box">
