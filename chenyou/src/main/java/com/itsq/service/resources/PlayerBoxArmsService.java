@@ -5,6 +5,7 @@ import com.itsq.pojo.dto.PlayerBoxArmsDtoUpd;
 import com.itsq.pojo.dto.PlayersSellDto;
 import com.itsq.pojo.entity.PlayerBoxArms;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.itsq.pojo.vo.ArmsVo;
 import com.itsq.utils.PagesUtil;
 
 import java.util.List;
@@ -35,5 +36,8 @@ public interface PlayerBoxArmsService extends IService<PlayerBoxArms> {
     int selectUpCount(Integer type);
 
     int getUpCountData(String data,Integer type);
+
+
+    PagesUtil<ArmsVo> selectUpRecord(PageParametersDto pageParametersDto);
 
 }
