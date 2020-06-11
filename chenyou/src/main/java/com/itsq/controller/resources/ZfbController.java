@@ -2,6 +2,7 @@ package com.itsq.controller.resources;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.alipay.api.AlipayApiException;
 import com.alipay.api.AlipayClient;
 import com.alipay.api.DefaultAlipayClient;
 import com.alipay.api.domain.AlipayTradeAppPayModel;
@@ -14,11 +15,12 @@ import com.itsq.common.base.BaseController;
 import com.itsq.config.AlipayConfig;
 */
 
+import com.itsq.common.bean.Response;
 import com.itsq.config.AlipayConfig;
 import com.itsq.pojo.entity.RechargeRecord;
-import com.itsq.service.resources.OperationRecordService;
 import com.itsq.service.resources.RechargeRecordService;
 import com.itsq.utils.StringUtils;
+import com.itsq.utils.alipay.AlipayUtils;
 import com.itsq.utils.http.MoneyChangeUtils;
 
 
@@ -55,13 +57,89 @@ import java.util.Map;
 public class ZfbController extends BaseController {
 
 
-    @Autowired
-    private OperationRecordService operationRecordService;
 
    @Autowired
     private RechargeRecordService rechargeRecordService;
     @Autowired
     private MoneyChangeUtils moneyChangeUtils;
+
+    @RequestMapping("huidiao")
+    public String toHuidiao(HttpServletRequest request){
+        System.out.println("=========================================>");
+        try {
+            // 获取支付宝POST过来反馈信息
+            Map<String, String> params = StringUtils.toMap(request);
+
+            //校验签名
+            if (!AlipaySignature.rsaCheckV1(params, AlipayUtils.alipay_public_key, "UTF-8", "RSA2")) {
+                log.error("【支付宝支付异步通知】签名验证失败, response={}", params);
+                throw new RuntimeException("【支付宝支付异步通知】签名验证失败");
+            }
+            //交易状态
+
+            String order = params.get("out_trade_no");
+            String tradeStatus = params.get("trade_status");
+            if(tradeStatus.equals("TRADE_SUCCESS")){
+                RechargeRecord rechargeRecord = rechargeRecordService.selectRechargeRecord(order);
+                rechargeRecord.setTradeStatus(tradeStatus);
+                rechargeRecordService.updateRechargeRecord(rechargeRecord);
+            }
+            System.out.println(order + tradeStatus);
+
+            if (!tradeStatus.equals("TRADE_FINISHED") &&
+                    !tradeStatus.equals("TRADE_SUCCESS")) {
+                throw new RuntimeException("【支付宝支付异步通知】发起支付, trade_status != SUCCESS | FINISHED");
+            }
+            log.info("【支付成功】");
+
+
+
+
+            //TODO 相应订单业务处理
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "failure";
+        }
+
+
+    @PostMapping(value = "/pagePay")
+    @ApiOperation(value = "统一支付", notes = "", httpMethod = "POST")
+    public Response pagePay(Model model, Integer amount,Integer playerId) throws Exception {
+        AlipayClient alipayClient = new DefaultAlipayClient(AlipayUtils.gatewayUrl,AlipayUtils.app_id,AlipayUtils.private_key,"json",AlipayUtils.input_charset,AlipayUtils.alipay_public_key,"RSA2");
+        AlipayTradePagePayRequest request = new AlipayTradePagePayRequest();
+        request.setNotifyUrl("  http://yuanqiwl.natapp1.cc/zfb/huidiao");
+        String outTradeNo = StringUtils.getOutTradeNo();
+
+        BigDecimal bd = new BigDecimal(amount*Double.valueOf(moneyChangeUtils.getRequest3()));
+        bd = bd.setScale(2,BigDecimal.ROUND_HALF_UP);
+
+       /* JSONObject jsonObject = new JSONObject();
+        jsonObject.put("out_trade_no",);
+        jsonObject.put("product_code",outTradeNo);
+        jsonObject.put("total_amount",bd+"");
+        jsonObject.put("subject","网站充值");
+        jsonObject.put("timeout_express","90m");*/
+
+        request.setBizContent("{\"out_trade_no\":\""+ outTradeNo +"\","
+                + "\"total_amount\":\""+ bd +"\","
+                + "\"subject\":\"网站充值\","
+                + "\"body\":\""+ bd +"\","
+                + "\"product_code\":\"FAST_INSTANT_TRADE_PAY\"}");
+
+        //request.setBizContent(jsonObject.toJSONString());
+
+
+        String result=alipayClient.pageExecute(request).getBody();
+        RechargeRecord rechargeRecord=new RechargeRecord();
+
+        rechargeRecord.setTradeNo(outTradeNo);
+        rechargeRecord.setAmount(new BigDecimal(amount));
+        rechargeRecord.setType(2);
+        rechargeRecord.setPlayersId(playerId);
+        rechargeRecordService.addRechargeRecord(rechargeRecord);
+        return Response.success(result);
+    }
 
     /**
      * 当面付——扫码支付
