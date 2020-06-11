@@ -38,6 +38,8 @@
         id, player_id, box_id, arms_id, cr_date
     </sql>
 
+
+
     <select id="selectPlayerBoxArms" resultMap="BaseResultMap">
         select
         pba.id as id,
@@ -94,4 +96,67 @@ where 1 = 1
 
     </select>
 
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap2" type="com.itsq.pojo.vo.ArmsVo">
+        <id column="pid" property="id" />
+            <result column="aname" property="name" />
+            <result column="aimageUrl" property="imageUrl" />
+            <result column="aprice" property="price" />
+            <result column="atype" property="type" />
+            <result column="arname" property="names" />
+            <result column="arimageUrl" property="imageUrls" />
+            <result column="arprice" property="prices" />
+            <result column="artype" property="types" />
+            <result column="is_status" property="isStatus" />
+
+    </resultMap>
+
+    <select id="selectUpStatus" resultMap="BaseResultMap2">
+        SELECT
+        p.id as pid,
+a.`name` as aname,
+a.`imageUrl` as aimageUrl,
+a.`price` as aprice,
+ar.`name` as arname,
+ar.`type` as atype,
+ar.`imageUrl` as arimageUrl,
+ar.`price` as arprice,
+ar.`type` as artype,
+pba.`is_status`
+
+FROM
+`players` p
+LEFT JOIN `player_box_arms` pba
+ON p.`id`=pba.`player_id`
+LEFT JOIN `arms` a
+ON a.`id`=pba.`arms_id`
+ JOIN `arms` ar
+ON ar.`id` =pba.`mu_id`
+WHERE
+        1=1
+        <if test="playerId!=null and playerId>0">
+            and p.`id`=#{playerId}
+        </if>
+ order by pba.`cre_date` desc
+   limit #{pageIndex},#{pageSize}
+    </select>
+
+    <select id="selectUpStatusCount" resultType="int">
+        SELECT
+count(1)
+
+FROM
+
+`players` p
+
+LEFT JOIN `player_box_arms` pba
+ON p.`id`=pba.`player_id`
+LEFT JOIN `arms` a
+ON a.`id`=pba.`arms_id`
+ JOIN `arms` ar
+ON ar.`id` =pba.`mu_id`
+WHERE
+p.`id`=#{playerId}
+
+    </select>
 </mapper>
