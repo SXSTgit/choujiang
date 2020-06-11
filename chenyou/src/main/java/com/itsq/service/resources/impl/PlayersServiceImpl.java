@@ -94,7 +94,18 @@ PlayersServiceImpl extends ServiceImpl<PlayersMapper, Players> implements Player
         Page<Players> page = new Page<>(playersDtoPage.getPageIndex(), playersDtoPage.getPageSize());
         QueryWrapper queryWrapper = new QueryWrapper();
 
-        return super.baseMapper.selectPage(page, queryWrapper);
+
+        Page<Players>  page1 = super.baseMapper.selectPage(page, queryWrapper);
+        List<Players> records = page1.getRecords();
+
+        for (Players record : records) {
+
+
+
+
+        }
+
+        return page1;
     }
 
     @Override

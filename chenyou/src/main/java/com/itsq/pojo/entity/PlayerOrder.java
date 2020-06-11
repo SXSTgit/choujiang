@@ -58,6 +58,9 @@ public class PlayerOrder implements Serializable {
     @TableField(exist = false)
     private Players players;
 
+    @TableField(exist = false)
+    private Arms arms;
+
     public static final String ID = "id";
 
     public static final String NUMBER = "number";

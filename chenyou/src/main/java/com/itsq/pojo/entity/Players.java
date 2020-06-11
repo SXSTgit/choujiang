@@ -83,6 +83,11 @@ public class Players implements Serializable {
     private List<ArmsVo> armsLists;
     @TableField(exist = false)
     private Integer  totalPages;
+    @TableField(exist = false)
+    private Integer  boxCount;
+    @TableField(exist = false)
+    private Integer  upCount;
+
 
     public static final String ID = "id";
 

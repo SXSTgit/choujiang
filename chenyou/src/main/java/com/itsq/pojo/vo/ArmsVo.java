@@ -51,6 +51,15 @@ public class ArmsVo implements Serializable {
 
     private Integer isStatus;
 
+    private Date creDate;
+
+    private String pname;
+
+
+    private String image;
+
+
+    private String number;
 
 
 
