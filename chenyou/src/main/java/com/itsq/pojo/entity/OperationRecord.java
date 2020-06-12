@@ -46,6 +46,10 @@ public class OperationRecord implements Serializable {
     @TableField("concats")
     private String concats;
 
+    @ApiModelProperty(value = "内容")
+    @TableField("concat")
+    private String concat;
+
     @ApiModelProperty(value = "节点")
     @TableField("node")
     private String node;
@@ -73,14 +77,17 @@ public class OperationRecord implements Serializable {
     public static final String OPERATION = "operation";
 
     public static final String CONCATS = "concats";
+    public static final String CONCAT = "concat";
     public static final String NODE =   "node";
     public static final String TYPE = "type";
     public static final String ADDRESS = "address";
 
     public static final String CRE_DATE = "cre_date";
 
+    public OperationRecord() {
+    }
 
-    public OperationRecord( Integer mangerId, String operation, String concats, String node, Integer type,String address) {
+    public OperationRecord(Integer mangerId, String operation, String concats, String node, Integer type, String address) {
         this.mangerId = mangerId;
         this.operation = operation;
         this.concats = concats;

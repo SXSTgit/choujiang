@@ -65,11 +65,11 @@ public class OperationRecordServiceImpl extends ServiceImpl<OperationRecordMappe
 
     @Override
     public int addOperationRecord(OperationRecord operationRecord) {
-      if (operationRecord.getMangerId() == 0) {
+      if (operationRecord.getType() == 0) {
             Optional<Manager> managerById = managerService.findManagerById(operationRecord.getMangerId());
             operationRecord.setMangerName(managerById.get().getUserName());
         }
-        if (operationRecord.getMangerId() == 1) {
+        if (operationRecord.getType() == 1) {
             Players players = playersService.selectPlayersById(operationRecord.getMangerId());
             operationRecord.setMangerName(players.getName());
         }

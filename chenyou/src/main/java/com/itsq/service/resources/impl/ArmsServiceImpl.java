@@ -1,6 +1,7 @@
 package com.itsq.service.resources.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.itsq.common.bean.ErrorEnum;
 import com.itsq.common.constant.APIException;
 import com.itsq.pojo.entity.Arms;
@@ -47,10 +48,14 @@ public class ArmsServiceImpl extends ServiceImpl<ArmsMapper, Arms> implements Ar
     }
 
     @Override
+    public Page selectArmsPage(Integer pageIndex, Integer pageSize) {
+        Page page=new Page(pageIndex,pageSize);
+
+        return null;
+    }
+
+    @Override
     public List<Arms>  allPrice(Integer pid) {
-
-
-
 
         return null;
     }

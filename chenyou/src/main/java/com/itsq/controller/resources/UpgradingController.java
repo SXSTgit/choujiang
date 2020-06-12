@@ -2,6 +2,7 @@ package com.itsq.controller.resources;
 
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.itsq.common.base.BaseController;
 import com.itsq.common.bean.ErrorEnum;
 import com.itsq.common.bean.Response;
@@ -13,6 +14,8 @@ import com.itsq.service.resources.ArmsService;
 import com.itsq.service.resources.OperationRecordService;
 import com.itsq.service.resources.PlayerBoxArmsService;
 import com.itsq.utils.LotteryUtil;
+import com.itsq.utils.PageUtils;
+import com.itsq.utils.PagesUtil;
 import com.itsq.utils.http.Client;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +23,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.thymeleaf.util.NumberUtils;
 
 import javax.servlet.http.HttpServletRequest;
 import java.math.BigDecimal;
@@ -43,12 +47,13 @@ public class UpgradingController  extends BaseController {
     private Client client;
     @PostMapping("buybox")
     @ApiOperation(value = "根据选择的个人武器获取可升级武器", notes = "", httpMethod = "POST")
-    public Response login(@RequestBody String info){
+    public Response<PagesUtil> login(@RequestBody String info){
         JSONObject object = JSONObject.parseObject(info);
         QueryWrapper wrapper=new QueryWrapper();
         JSONObject infoObj = object.getJSONObject("info");
         wrapper.eq("is_status",0);
         BigDecimal total=infoObj.getBigDecimal("price").multiply(new BigDecimal(1.2));
+
 
         wrapper.gt("price",total);
         if(infoObj.getString("fangshi").equals("desc")){
@@ -58,7 +63,15 @@ public class UpgradingController  extends BaseController {
 
         }
         List<Arms> list=armsService.list(wrapper);
-        return Response.success(list);
+        PageUtils pagesUtil=new PageUtils();
+        List<Arms> list1=pagesUtil.startPage(list,object.getInteger("pageIndex"),object.getInteger("pageSize"));
+
+        PagesUtil pagesUtil1=new PagesUtil();
+
+        pagesUtil1.setList(list1);
+        pagesUtil1.setPageIndex(object.getInteger("pageIndex"));
+        pagesUtil1.setTotalPages(list.size(),object.getInteger("pageSize"));
+        return Response.success(pagesUtil1);
     }
 
     @PostMapping("huoqujl")

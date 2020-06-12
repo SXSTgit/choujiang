@@ -1,5 +1,6 @@
 package com.itsq.service.resources;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.itsq.pojo.entity.Arms;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -19,6 +20,7 @@ public interface ArmsService extends IService<Arms> {
 
     int addListArms(List<Arms> list);
 
+    Page selectArmsPage(Integer pageIndex,Integer pageSize);
 
     List<Arms>  allPrice(Integer pid);
 }
