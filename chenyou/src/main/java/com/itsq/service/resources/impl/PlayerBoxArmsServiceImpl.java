@@ -102,7 +102,6 @@ public class PlayerBoxArmsServiceImpl extends ServiceImpl<PlayerBoxArmsMapper, P
                 playerOrderService.save(playerOrder);
                 int i = super.baseMapper.updateById(playerBoxArms);
                 if(i<=0){
-
                     throw new APIException(ErrorEnum.YICHUSHOU_YUE);
                 }
             }else{
