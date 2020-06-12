@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>开箱记录</title>
+    <title>取回记录</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta http-equiv="Access-Control-Allow-Origin" content="*">
@@ -167,14 +167,11 @@
             <th>头像</th>
             <th>昵称</th>
             <th>邮箱</th>
-            <th>箱子主图</th>
-            <th>箱子名称</th>
-            <th>箱子价格</th>
-            <th>类型</th>
             <th>饰品类型</th>
             <th>饰品主图</th>
             <th>饰品价值</th>
-            <th>开箱时间</th>
+            <th>状态</th>
+            <th>操作时间</th>
             <th>操作</th>
         </tr>
         </thead>
@@ -194,20 +191,20 @@
 
     function page(size){
 
-        var data={"pageNum":size,"pageSize":"10","type":"0","orderByField":"1"};
+        var data={"pageIndex":size,"pageSize":"10"};
     $.ajax({
-        url:"/playerBoxArms/selectRechargeRecordDtoPage",
+        url:"/playerOrder/selectPagePlayerOrder",
         data:JSON.stringify(data),
         type:"POST",
         dataType:"json",
         contentType: "application/json;charset=UTF-8",
         success:function(res){
             var html= "";
-            var d = res.body.list;
-            var total = res.body.totalPages;
+            var d = res.body.records;
+            var total = res.body.total;
             for(var i = 0;i<d.length;i++){
                 html+="<tr>\n" +
-                    "            <th>"+d[i].players.id+"</th>\n" +
+                    "            <th>"+d[i].id+"</th>\n" +
                     "            <th><img src=\""+d[i].players.image+"\"></th>\n" +
                     "            <th>"+d[i].players.name+"</th>\n" +
                     "            <th>"+d[i].players.number+"</th>\n" +
@@ -245,7 +242,7 @@
                     " <a class=\"page2\" style='background-image: url(\"img/yema_bg.png\")'><img src=\"img/icon_you1.png\" style='margin-top: 10px'></a> \n " ;
                 en = (total);
             }else{
-                en = (size*6);
+                en = (size*10);
                 page+= "    <a class=\"page2\" href='javascript:page("+(parseInt(size)+1)+")' style='background-image: url(\"img/yema_bg2.png\") '><img src=\"img/icon_you2.png\" style='margin-top: 10px'></a>\n"+
                     " <a class=\"page2\" href='javascript:page("+len+")' style='background-image: url(\"img/yema_bg2.png\")'><img src=\"img/icon_you1.png\" style='margin-top: 10px'></a> \n " ;
             }

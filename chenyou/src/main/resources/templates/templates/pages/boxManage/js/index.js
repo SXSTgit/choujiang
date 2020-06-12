@@ -159,6 +159,13 @@ layui.config({
         });
     });
 
+    $('[lay-filter="zfb"]').on("click", function (obj) {
+        $.post(baseURL + "zfb/pagePay",{"amount":"1","playerId":"1"},function (res) {
+            console.log(res.body)
+            $(".tzzfb").html(res.body)
+        },"json")
+    });
+
     $('[lay-filter="gouBox"]').on("click",function (obj) {
         findAjax("playersArms/buybox", {
             "boxId": 2,
