@@ -19,6 +19,7 @@ import com.itsq.common.bean.Response;
 import com.itsq.config.AlipayConfig;
 import com.itsq.pojo.entity.RechargeRecord;
 import com.itsq.service.resources.RechargeRecordService;
+import com.itsq.utils.RandomUtil;
 import com.itsq.utils.StringUtils;
 import com.itsq.utils.alipay.AlipayUtils;
 import com.itsq.utils.http.MoneyChangeUtils;
@@ -50,7 +51,7 @@ import java.util.Map;
  */
 @Slf4j
 @RestController
-@RequestMapping("/zfb")
+//@RequestMapping("/zfb")
 @AllArgsConstructor
 @CrossOrigin
 @Api(tags = "支付宝模块")
@@ -64,7 +65,7 @@ public class ZfbController extends BaseController {
     private MoneyChangeUtils moneyChangeUtils;
 
     @RequestMapping("huidiao")
-    public String toHuidiao(HttpServletRequest request){
+    public void  toHuidiao(HttpServletRequest request,HttpServletResponse response) throws IOException {
         System.out.println("=========================================>");
         try {
             // 获取支付宝POST过来反馈信息
@@ -99,7 +100,8 @@ public class ZfbController extends BaseController {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return "failure";
+
+        response.sendRedirect("/csgo/index.html");
         }
 
 
@@ -108,8 +110,8 @@ public class ZfbController extends BaseController {
     public Response pagePay(Model model, Integer amount,Integer playerId) throws Exception {
         AlipayClient alipayClient = new DefaultAlipayClient(AlipayUtils.gatewayUrl,AlipayUtils.app_id,AlipayUtils.private_key,"json",AlipayUtils.input_charset,AlipayUtils.alipay_public_key,"RSA2");
         AlipayTradePagePayRequest request = new AlipayTradePagePayRequest();
-        request.setNotifyUrl("  http://yuanqiwl.natapp1.cc/zfb/huidiao");
-        String outTradeNo = StringUtils.getOutTradeNo();
+        request.setNotifyUrl("http://121.36.199.219:8080/zfb/huidiao");
+        String outTradeNo = RandomUtil.getRandom(32);
 
         BigDecimal bd = new BigDecimal(amount*Double.valueOf(moneyChangeUtils.getRequest3()));
         bd = bd.setScale(2,BigDecimal.ROUND_HALF_UP);

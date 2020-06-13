@@ -163,6 +163,10 @@ super.baseMapper.updateById(playerBoxArms1);
             PlayerBoxArms playerBoxArms = playerBoxArmsService.selectPlayerBoxArmsById(pbaIdInteger);
             Arms arms=armsService.selectArmsById(playerBoxArms.getArmsId());
             bigDecimal=  bigDecimal.add(arms.getPrice());
+            PlayerBoxArmsDtoUpd playerBoxArmsDtoUpd=new PlayerBoxArmsDtoUpd();
+            playerBoxArmsDtoUpd.setId(pbaIdInteger);
+            playerBoxArmsDtoUpd.setIsStatus(1);
+            playerBoxArmsService.updatePlayerBoxArms(playerBoxArmsDtoUpd);
         }
         //查询用户余额
         Players players  = playersService.selectPlayersById(playersSellDto.getId());
