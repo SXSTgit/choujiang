@@ -139,6 +139,32 @@ layui.config({
 							}
 						}
 					},
+                    {
+                        field: 'boxCount',
+                        title: '开箱次数',
+                        width: 200,
+                        align: 'center',
+                        templet: function(d) {
+                            if (d.balance == null) {
+                                return "略";
+                            } else {
+                                return d.boxCount;
+                            }
+                        }
+                    },
+                    {
+                        field: 'upCount',
+                        title: '升级次数',
+                        width: 200,
+                        align: 'center',
+                        templet: function(d) {
+                            if (d.balance == null) {
+                                return "略";
+                            } else {
+                                return d.upCount;
+                            }
+                        }
+                    },
 					{
 						field: 'vxCode',
 						title: 'steam交易url',
@@ -152,22 +178,22 @@ layui.config({
 							}
 						}
 					},
-					/*{
-						field: 'dongJie',
+					{
+						field: 'isStatus',
 						title: '状态',
 						align: 'center',
 						templet: function(d) {
-							if (d.dongJie == 0) {
+							if (d.isStatus == 0) {
 								return "<span style='color:green;'>正常</span>";
-							} else if (d.dongJie == 1) {
+							} else if (d.isStatus == 1) {
 								return "<span style='color:red;'>冻结</span>";
 							}
 						}
-					},*/
+					},
 					
 					{
 						field: 'creDate',
-						title: '创建时间',
+						title: '注册时间',
 						width: 200,
 						align: 'center',
 						templet: function(d) {

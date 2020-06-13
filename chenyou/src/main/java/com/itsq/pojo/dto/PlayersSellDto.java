@@ -18,5 +18,7 @@ public class PlayersSellDto implements Serializable {
 
     private Integer  id;
 
+    List<Integer> pbaIdIntegers;
+
 
 }

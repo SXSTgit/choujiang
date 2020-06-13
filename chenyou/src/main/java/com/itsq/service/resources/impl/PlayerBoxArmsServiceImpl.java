@@ -46,6 +46,9 @@ public class PlayerBoxArmsServiceImpl extends ServiceImpl<PlayerBoxArmsMapper, P
     private ArmsService armsService;
     @Autowired
     private PlayerOrderService playerOrderService;
+
+    @Autowired
+    private PlayerBoxArmsService playerBoxArmsService;
     @Autowired
     private Client client;
     @Override
@@ -71,6 +74,7 @@ public class PlayerBoxArmsServiceImpl extends ServiceImpl<PlayerBoxArmsMapper, P
             if (playerBoxArms1.getIsStatus() != null && playerBoxArms1.getIsStatus() == 0) {
                 players.setBalance(players.getBalance().add(arms.getPrice()));
                 //添加余额
+                playerBoxArms1.setIsStatus(1);
                 playersService.updatePlayersBuId(players);
             }else{
                 throw new APIException(ErrorEnum.YICHUSHOU_YUE);
@@ -96,13 +100,13 @@ public class PlayerBoxArmsServiceImpl extends ServiceImpl<PlayerBoxArmsMapper, P
             playerOrder.setArmsId(arms.getId());
             playerOrder.setBuyPrice(new BigDecimal(map1.get("buyPrice")+""));
             if((boolean)map.get("success")){
+                playerBoxArms1.setIsStatus(2);
                 playerOrder.setIsStatus(0);
                 playerOrder.setNumber(map1.get("orderId")+"");
                 playerOrder.setPlayerId(players.getId());
                 playerOrderService.save(playerOrder);
                 int i = super.baseMapper.updateById(playerBoxArms);
                 if(i<=0){
-
                     throw new APIException(ErrorEnum.YICHUSHOU_YUE);
                 }
             }else{
@@ -113,7 +117,7 @@ public class PlayerBoxArmsServiceImpl extends ServiceImpl<PlayerBoxArmsMapper, P
                 return 2;
             }
         }
-
+super.baseMapper.updateById(playerBoxArms1);
 
         return 1;
     }
@@ -153,26 +157,15 @@ public class PlayerBoxArmsServiceImpl extends ServiceImpl<PlayerBoxArmsMapper, P
     @Override
     @Transactional
     public int sellArms(PlayersSellDto playersSellDto) {
-
-
-
-
-
-
-        QueryWrapper queryWrapper=new QueryWrapper();
-        queryWrapper.eq("player_id",playersSellDto.getId());
-        queryWrapper.eq("is_status",0);
-
-        List<PlayerBoxArms> list = this.baseMapper.selectList(queryWrapper);
-        //查询用户余额
-        Players players  = playersService.selectPlayersById(playersSellDto.getId());
         BigDecimal bigDecimal=new BigDecimal(0);
 
-        for (PlayerBoxArms o : list) {
-            Arms arms=armsService.selectArmsById(o.getArmsId());
+        for (Integer pbaIdInteger : playersSellDto.getPbaIdIntegers()) {
+            PlayerBoxArms playerBoxArms = playerBoxArmsService.selectPlayerBoxArmsById(pbaIdInteger);
+            Arms arms=armsService.selectArmsById(playerBoxArms.getArmsId());
             bigDecimal=  bigDecimal.add(arms.getPrice());
         }
-
+        //查询用户余额
+        Players players  = playersService.selectPlayersById(playersSellDto.getId());
         players.setBalance(players.getBalance().add(bigDecimal));
         //添加余额
         int i = playersService.updatePlayersBuId(players);

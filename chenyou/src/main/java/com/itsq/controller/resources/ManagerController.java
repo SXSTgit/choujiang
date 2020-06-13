@@ -59,7 +59,7 @@ public class ManagerController extends BaseController {
 
     @PostMapping("pageAdmins")
     @ApiOperation(value = "管理员-分页查询", notes = "", httpMethod = "POST")
-    public Response<Page> login(@RequestBody FindPageManagerParmeters dto){
+    public Response<Page> pageAdmins(@RequestBody FindPageManagerParmeters dto){
         CurrentUser currentUser = currentUser();
         if(currentUser==null){
             return Response.fail(ErrorEnum.SIGN_VERIFI_EXPIRE);
@@ -70,10 +70,10 @@ public class ManagerController extends BaseController {
     @PostMapping("findManagerById")
     @ApiOperation(value = "管理员-查询管理员详细", notes = "", httpMethod = "POST")
     public Response<Optional<Manager>> findManagerById(int id){
-        CurrentUser currentUser = currentUser();
+        /*CurrentUser currentUser = currentUser();
         if(currentUser==null){
             return Response.fail(ErrorEnum.SIGN_VERIFI_EXPIRE);
-        }
+        }*/
         Optional<Manager> managerById = managerService.findManagerById(id);
         return Response.success(managerById);
     }
