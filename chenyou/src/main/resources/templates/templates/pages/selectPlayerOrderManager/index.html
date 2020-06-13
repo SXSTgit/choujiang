@@ -139,6 +139,18 @@
             /*margin-left: 20px;*/
         }
 
+        .bc{
+            display: inline-block;
+            padding: 0 6px;
+            font-size: 12px;
+            text-align: center;
+            background-color: #FF5722;
+            color: #fff;
+            border-radius: 2px;
+            width: 60px;
+            display: block;
+            margin: 0 auto;
+        }
     </style>
 </head>
 <body>
@@ -172,7 +184,7 @@
             <th>饰品价值</th>
             <th>状态</th>
             <th>操作时间</th>
-            <th>操作</th>
+            <!--<th>操作</th>-->
         </tr>
         </thead>
         <tbody>
@@ -208,14 +220,15 @@
                     "            <th><img src=\""+d[i].players.image+"\"></th>\n" +
                     "            <th>"+d[i].players.name+"</th>\n" +
                     "            <th>"+d[i].players.number+"</th>\n" +
-                    "            <th><img src=\""+d[i].box.image+"\"</th>\n" +
-                    "            <th>"+d[i].box.name+"</th>\n" +
-                    "            <th>$"+d[i].box.price+"</th>\n" +
-                    "            <th> <div class=\"layui-input-block\">"+gettype(d[i].box.type)+"</div></th>\n" +
-                    "            <th>"+d[i].arms.type+"</th>\n" +
+                    // "            <th><img src=\""+d[i].box.image+"\"</th>\n" +
+                    // "            <th>"+d[i].box.name+"</th>\n" +
+                    // "            <th>$"+d[i].box.price+"</th>\n" +
+                    // "            <th> <div class=\"layui-input-block\">"+gettype(d[i].box.type)+"</div></th>\n" +
+                    "            <th> <div class='bc'>"+gettype(d[i].arms.type)+"</div></th>\n" +
                     // "            <th>"+d[i].arms.name+"</th>\n" +
                     "            <th><img src=\""+d[i].arms.imageUrl+"\"</th>\n" +
                     "            <th>$"+d[i].arms.price+"</th>\n" +
+                    "            <th>"+quhui(d[i].arms.isStatus)+"</th>\n" +
                     "            <th>"+d[i].creDate+"</th>\n" +
                     // "            <th><button>登录</button></th>\n" +
                     "        </tr>";
@@ -252,21 +265,29 @@
     })
     }
 
+    function quhui(is) {
+        if(is == 0 ){
+            return "成功";
+        }else{
+            return '失败';
+        }
+    }
+
     function gettype(id) {
-        if( id == 0){
-            return "限量";
-        }else if( id == 1) {
-            return "稀有";
+        if( id == 1) {
+            return "消费级";
         }else if( id == 2){
-            return "特殊";
+            return "工业级";
         }else if( id == 3) {
-            return "经典";
+            return "军规级";
         }else if( id == 4){
-            return "YOUTUBE 武器箱";
+            return "受限级";
         }else if( id == 5) {
-            return "仅在 SKINCLUB6>";
+            return "保密级";
         }else if( id == 6){
-            return "收藏";
+            return "隐秘级";
+        }else if(id == 7){
+            return "特殊物品*";
         }
     }
 </script>
