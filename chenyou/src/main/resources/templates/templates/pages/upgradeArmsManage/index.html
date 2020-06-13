@@ -139,6 +139,18 @@
             /*margin-left: 20px;*/
         }
 
+        .bc{
+            display: inline-block;
+            padding: 0 6px;
+            font-size: 12px;
+            text-align: center;
+            background-color: #FF5722;
+            color: #fff;
+            border-radius: 2px;
+            width: 60px;
+            display: block;
+            margin: 0 auto;
+        }
     </style>
 </head>
 <body>
@@ -175,7 +187,7 @@
             <th>是否成功</th>
             <th>盈利</th>
             <th>升级时间</th>
-            <th>操作</th>
+            <!--<th>操作</th>-->
         </tr>
         </thead>
         <tbody>
@@ -211,10 +223,10 @@
                         "            <th><img src=\""+d[i].image+"\"></th>\n" +
                         "            <th>"+d[i].pname+"</th>\n" +
                         "            <th>"+d[i].number+"</th>\n" +
-                        "            <th>"+d[i].type+"</th>\n" +
+                        "            <th ><div class='bc'>"+gettypes(d[i].type)+"</div></th>\n" +
                         "            <th><img src=\""+d[i].imageUrl+"\"></th>\n" +
                         "            <th>$"+d[i].price+"</th>\n" +
-                        "            <th> <div class=\"layui-input-block\">"+gettype(d[i].types)+"</div></th>\n" +
+                        "            <th ><div class='bc'>"+gettype(d[i].types)+"</div></th>\n" +
                         "            <th><img src=\""+d[i].imageUrls+"\"></th>\n" +
                         "            <th>"+isstaus(d[i].isStatus)+"</th>\n" +
                         // "            <th><img src=\""+d[i].arms.imageUrl+"\"</th>\n" +
@@ -288,6 +300,24 @@
             return "仅在 SKINCLUB6>";
         }else if( id == 6){
             return "收藏";
+        }
+    }
+
+    function gettypes(id) {
+        if( id == 1) {
+            return "消费级";
+        }else if( id == 2){
+            return "工业级";
+        }else if( id == 3) {
+            return "军规级";
+        }else if( id == 4){
+            return "受限级";
+        }else if( id == 5) {
+            return "保密级";
+        }else if( id == 6){
+            return "隐秘级";
+        }else if(id == 7){
+            return "特殊物品*";
         }
     }
 </script>

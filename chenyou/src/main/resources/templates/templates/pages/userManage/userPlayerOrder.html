@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta charset="UTF-8">
-    <title>后台操作记录</title>
+    <title>开箱记录</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta http-equiv="Access-Control-Allow-Origin" content="*">
@@ -11,13 +10,121 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="format-detection" content="telephone=no">
-    <link href="lib/layui-v2.5.4/css/layui.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="css/layuimini.css" media="all">
-    <link rel="stylesheet" href="css/public.css" media="all">
-    <link rel="stylesheet" href="lib/font-awesome-4.7.0/css/font-awesome.min.css" media="all">
-    <link rel="stylesheet" href="lib/layui-v2.5.4/lay/my_modules/treeTable/treeTable.css"/>
+    <link href="../../lib/layui-v2.5.4/css/layui.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../../css/layuimini.css" media="all">
+    <link rel="stylesheet" href="../../css/public.css" media="all">
+    <link rel="stylesheet" href="../../lib/font-awesome-4.7.0/css/font-awesome.min.css" media="all">
+    <link rel="stylesheet" href="../../lib/layui-v2.5.4/lay/my_modules/treeTable/treeTable.css"/>
     <script src="../../lib/jquery-3.4.1/jquery-3.4.1.min.js"></script>
     <style>
+        .searchLeft {
+            float: left;
+        }
+
+        .searchTable {
+            text-align: right;
+            margin-right: 10px;
+        }
+
+        .searchTable .layui-form-select {
+            width: 174px;
+            display: inline-block;
+            text-align: left;
+        }
+
+        .layui-input-block {
+            margin-left: 0px;
+            border-width: 1px;
+            border-style: solid;
+            border-color: rgb(230, 230, 230);
+            border-image: initial;
+        }
+
+        .layuimini-container {
+            border-width: 0px;
+        }
+
+        .ew-tree-table {
+            margin: -15px 0 10px 0;
+            position: relative;
+        }
+
+        h4 {
+            font-size: 18px;
+            font-family: "Microsoft YaHei", "Simsun", Arial;
+            font-weight: normal;
+            line-height: 1;
+            padding: 0;
+            margin: 0;
+        }
+
+        .icons li {
+            margin: 5px 0;
+            text-align: center;
+            height: 120px;
+            cursor: pointer;
+        }
+
+        .icons li i {
+            display: block;
+            font-size: 35px;
+            margin: 10px 0;
+            line-height: 60px;
+            height: 60px;
+        }
+
+        .icons li:hover {
+            background: #2f4056;
+            border-radius: 5px;
+            color: #fff;
+        }
+
+        .icons li:hover i {
+            font-size: 50px;
+        }
+
+        .section {
+            padding: 20px;
+        }
+
+        .section h4 span {
+            color: #0084e9;
+        }
+
+        .fa {
+            font-size: 50px !important;
+        }
+
+        .fa:hover {
+            font-size: 50px !important;
+        }
+
+        .layuimini-container {
+            min-width: 710px;
+        }
+
+        @media screen and (min-width: 1500px) {
+            .choosebox {
+                padding: 0 57px;
+                border-style: none;
+                position: fixed;
+                top: 100px;
+                left: 770px;
+                right: 0;
+                /*left: 770px;*/
+            }
+        }
+
+        @media screen and (max-width: 1920px) {
+            .choosebox {
+                padding: 0 57px;
+                border-style: none;
+                position: fixed;
+                top: 100px;
+                right: 0;
+                left: 525px;
+            }
+        }
         .page1{
             width: 35px;
             height: 35px;
@@ -31,6 +138,20 @@
             display: inline-block;
             /*margin-left: 20px;*/
         }
+
+        .bc{
+            display: inline-block;
+            padding: 0 6px;
+            font-size: 12px;
+            text-align: center;
+            background-color: #FF5722;
+            color: #fff;
+            border-radius: 2px;
+            width: 60px;
+            display: block;
+            margin: 0 auto;
+        }
+
     </style>
 </head>
 <body>
