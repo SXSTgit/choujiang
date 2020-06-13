@@ -86,7 +86,7 @@ public class BoxController extends BaseController {
         }
         queryWrapper.orderByDesc("id");
         queryWrapper.gt("out_time",new Date());
-        List<Box> list= (List<Box>) boxService.page(setOrderPage(pageInfo),queryWrapper);
+        List<Box> list= boxService.list(queryWrapper);
         List list1=new ArrayList();
         for(Box box1:list){
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");

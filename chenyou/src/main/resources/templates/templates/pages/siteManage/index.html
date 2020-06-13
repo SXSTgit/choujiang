@@ -19,8 +19,12 @@
     <script src="../../lib/jquery-3.4.1/jquery-3.4.1.min.js"></script
 </head>
 <body>
-<script type="text/html" id="formDialog">
-    <form  id="dataForm" lay-filter="dataForm" class="layui-form model-form" action="">
+    <div class="layuimini-container">
+        <fieldset class="layui-elem-field layui-field-title" style="margin-bottom: 0px;">
+            <legend><!--当前账号是否为超级管理员:-->站点设置<b></b></legend>
+        </fieldset>
+
+    <form  id="dataForm" lay-filter="dataForm" style="margin-top: 20px;width: 30%;" class="layui-form model-form" action="">
         <div class="layui-form-item">
         <label class="layui-form-label">网站名称</label>
         <div class="layui-input-block">
@@ -36,37 +40,50 @@
         <div class="layui-form-item">
         <label class="layui-form-label">关键词</label>
         <div class="layui-input-block">
-        <input type="key" name="key" required  lay-verify="required" placeholder="请输入关键词" autocomplete="off" class="layui-input">
+        <input type="keyword" name="keyword" required  lay-verify="required" placeholder="请输入关键词" autocomplete="off" class="layui-input">
         </div>
         </div>
         <div class="layui-form-item">
         <label class="layui-form-label">网站描述</label>
         <div class="layui-input-block">
-        <input type="key" name="key" required  lay-verify="required" placeholder="请输入网站描述" autocomplete="off" class="layui-input">
+        <input type="description" name="description" required  lay-verify="required" placeholder="请输入网站描述" autocomplete="off" class="layui-input">
         </div>
         </div>
         <div class="layui-form-item">
         <label class="layui-form-label">版权信息</label>
         <div class="layui-input-block">
-        <input type="key" name="key" required  lay-verify="required" placeholder="请输入版权信息" autocomplete="off" class="layui-input">
+        <input type="copyright" name="copyright" required  lay-verify="required" placeholder="请输入版权信息" autocomplete="off" class="layui-input">
         </div>
         </div>
         <div class="layui-form-item">
         <label class="layui-form-label">浏览器ico图标</label>
         <div class="layui-input-block">
-        <input type="key" name="key" required  lay-verify="required" placeholder="请输入网站描述" autocomplete="off" class="layui-input">
+            <button type="button" class="layui-btn" id="test1">
+                <i class="layui-icon">&#xe67c;</i>上传图片
+            </button>
+            <div class="layui-upload-list">
+                <img width="100px" height="100px" class="layui-upload-img" name="ico" id="ico">
+                <p id="demoText"></p>
+            </div>
         </div>
         </div>
         <div class="layui-form-item">
         <label class="layui-form-label">站点LOGO</label>
         <div class="layui-input-block">
+            <button type="button" class="layui-btn" id="test2">
+                <i class="layui-icon">&#xe67c;</i>上传图片
+            </button>
+            <div class="layui-upload-list">
+                <img width="100px" height="100px" class="layui-upload-img" name="imageUrl" id="Logo">
+                <p id="ogo"></p>
+            </div>
         <!--<input type="key" name="key" required  lay-verify="required" placeholder="请输入网站描述" autocomplete="off" class="layui-input">-->
         </div>
         </div>
         <div class="layui-form-item">
         <label class="layui-form-label">站点开关</label>
         <div class="layui-input-block">
-        <input type="checkbox" checked="" name="open" lay-skin="switch" lay-filter="switchTest" lay-text="ON|OFF">
+        <input type="checkbox" checked="" name="switchs" lay-skin="switch" lay-filter="switchTest" lay-text="ON|OFF">
         </div>
         </div>
         <div class="layui-form-item">
@@ -78,12 +95,15 @@
         <div class="layui-form-item">
         <label class="layui-form-label">后台管理路径</label>
         <div class="layui-input-block">
-        <input type="route" name="route" required  lay-verify="required" placeholder="请输入后台管理路径" autocomplete="off" class="layui-input">
+        <input type="path" name="path" required  lay-verify="required" placeholder="请输入后台管理路径" autocomplete="off" class="layui-input">
         </div>
+        </div>
+        <div class="layui-form-item" style="text-align: center;">
+            <button type="commit" class="layui-btn layui-btn-primary" id="commit">保存</button>
         </div>
         </form>
-</script>
-<script>
+    </div>
+        <script>
     // layui.use{['layer','form','table','util','laydate','tableX','admin'] ,function () {
     //     var $ = layui.jquery;
     //     var layer = layui.layer;
@@ -97,7 +117,10 @@
     //
     // }}
 </script>
-    <script src="../../lib/jquery-3.4.1/cookie.js"></script>
+    <script src="../../lib/layui-v2.5.4/layui.js"></script>
 
+    <script src="../../lib/jquery-3.4.1/cookie.js"></script>
+    <script src="../../js/common.js"></script>
+    <script src="js/index.js?v=0613"></script>
 </body>
 </html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <title>记录信息</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link href="../lib/layui-v2.5.4/css/layui.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../css/layuimini.css" media="all">
+    <link rel="stylesheet" href="../css/public.css" media="all">
+    <link rel="stylesheet" href="../lib/font-awesome-4.7.0/css/font-awesome.min.css" media="all">
+    <link rel="stylesheet" href="../lib/layui-v2.5.4/lay/my_modules/treeTable/treeTable.css"/>
+    <script src="../lib/jquery-3.4.1/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+<div class="layuimini-container">
+    <table class="layui-table">
+        <colgroup>
+            <col width="200">
+            <col width="260">
+            <col width="260">
+            <col width="200">
+            <col width="260">
+            <col width="260">
+        </colgroup>
+        <tbody>
+
+        </tbody>
+    </table>
+</div>
+</body>
+<script type="text/javascript">
+    $.ajax({
+        type:"post",
+        url:"/number/findAll",
+        success:function (res) {
+            var html= "";
+            var d = res.body;
+            if(d != null){
+html+=" <tr>\n" +
+    "            <td>今日注册</td>\n" +
+    "            <td>"+d.todayzhuce+"</td>\n" +
+    "            <td>今日开箱记录</td>\n" +
+    "            <td>"+d.box+"</td>\n" +
+    "            <td>今日充值记录</td>\n" +
+    "            <td>"+d.allmoney+"</td>\n" +
+    "        </tr>\n" +
+    "        <tr>\n" +
+    "            <td>昨日注册</td>\n" +
+    "            <td>"+d.tomorrowzhuce+"</td>\n" +
+    "            <td>今日升级记录</td>\n" +
+    "            <td>"+d.upArms+"</td>\n" +
+    "            <td>今日消费记录</td>\n" +
+    "            <td>"+d.allRechargeRecord+"</td>\n" +
+    "        </tr>";
+            }
+            $("tbody").html(html);
+        }
+    })
+</script>
+</html>

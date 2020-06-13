@@ -57,7 +57,7 @@ public class Site implements Serializable {
     private String ico;
 
     @ApiModelProperty(value = "站点LOGO")
-    @TableField("Logo")
+    @TableField("logo")
     private String Logo;
 
     @ApiModelProperty(value = "站点开关")
