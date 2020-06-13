@@ -84,9 +84,9 @@ public class PlayersController extends BaseController {
     @ApiOperation(value = "获取验证码", notes = "", httpMethod = "POST")
     public Response getCode(@RequestBody PlayersDto playersDto) {
         String code = RandomUtil.getRandom(6);
-        String myEmailAccount = "1085432162@qq.com";
-        String myEmailPassword = "";
-        String myEmailSMTPHost = "smtp.qq.com";
+        String myEmailAccount = "register@boxgo.cc";
+        String myEmailPassword = "duobao@2020";
+        String myEmailSMTPHost = "smtpout.asia.secureserver.net";
         String[] toMailAccountList = new String[]{playersDto.getNumber()};
         SQSendMailUtil.sendMail(myEmailAccount, myEmailPassword, "", toMailAccountList, "注册", myEmailSMTPHost, "注册验证码", "亲爱的用户：您的本次操作的验证码为：" + code + "为了您帐号的安全，千万不要告诉别人哦!");
 

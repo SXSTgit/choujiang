@@ -224,7 +224,7 @@ public class SteamLoginUtil2 extends BaseController {
     @ResponseBody
     public Response loginSteam(){
         try {
-            String url=getUrl("http://121.36.199.219/steam/huidiao");
+            String url=getUrl("http://boxgo.cc/steam/huidiao");
             return Response.success(url);
         }catch (Exception e){
             e.printStackTrace();
@@ -324,8 +324,8 @@ public class SteamLoginUtil2 extends BaseController {
             String authToken = new AuthToken(players1.getId(),players1.getName()).token();
             //return  "Response.success(new LoginRespDto<>(players1,authToken, EnumTokenType.BEARER.getCode()));
         }
-        response1.sendRedirect("/csgo/index.html");
-        return "redirect:http://121.36.199.219/csgo/index.html";
+//        response1.sendRedirect("/csgo/index.html");
+        return "redirect:http://boxgo.cc/csgo/index.html";
     }
   /*  @RequestMapping(value = "huidiao")
     public Response isShouQuan( HttpServletRequest request2) throws ClientProtocolException,IOException {

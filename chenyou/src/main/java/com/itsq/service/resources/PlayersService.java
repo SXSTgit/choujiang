@@ -64,4 +64,7 @@ public interface PlayersService extends IService<Players> {
 
 
     int updateMoneyById(PlayersDto playersDto);
+
+
+    Players loginBySteam(String steamId);
 }

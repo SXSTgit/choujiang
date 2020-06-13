@@ -66,7 +66,7 @@ public class ZfbController extends BaseController {
     private MoneyChangeUtils moneyChangeUtils;
 
     @RequestMapping("huidiao")
-    public String  toHuidiao(HttpServletRequest request,HttpServletResponse response) throws IOException {
+    public String  toHuidiao(HttpServletRequest request) throws IOException {
         System.out.println("=========================================>");
         try {
             // 获取支付宝POST过来反馈信息
@@ -102,17 +102,17 @@ public class ZfbController extends BaseController {
             e.printStackTrace();
         }
 
-        return "redirect:/csgo/index.html";
+        return "redirect:http://boxgo.cc/csgo/index.html";
         }
 
 
     @PostMapping(value = "/pagePay")
-    @ResponseBody
     @ApiOperation(value = "统一支付", notes = "", httpMethod = "POST")
+    @ResponseBody
     public Response pagePay(Model model, Integer amount,Integer playerId) throws Exception {
         AlipayClient alipayClient = new DefaultAlipayClient(AlipayUtils.gatewayUrl,AlipayUtils.app_id,AlipayUtils.private_key,"json",AlipayUtils.input_charset,AlipayUtils.alipay_public_key,"RSA2");
         AlipayTradePagePayRequest request = new AlipayTradePagePayRequest();
-        request.setNotifyUrl("http://121.36.199.219:8080/huidiao");
+        request.setNotifyUrl("http://boxgo.cc/huidiao");
         String outTradeNo = RandomUtil.getRandom(32);
 
         BigDecimal bd = new BigDecimal(amount*Double.valueOf(moneyChangeUtils.getRequest3()));

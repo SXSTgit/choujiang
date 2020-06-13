@@ -167,5 +167,10 @@ if(playersDto.getUsStatus()==1){
         return super.baseMapper.updateById(p);
     }
 
+    @Override
+    public Players loginBySteam(String steamId) {
+        return null;
+    }
+
 
 }
