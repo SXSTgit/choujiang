@@ -59,7 +59,7 @@ public class BoxController extends BaseController {
     private Client client;
     @RequestMapping(value = "getAllBox",method = RequestMethod.POST)
     @ApiOperation(value = "获取全部箱子", notes = "", httpMethod = "POST")
-    public Response getAllBox(@RequestBody Box box, PageInfo pageInfo, HttpServletRequest request) throws ParseException {
+    public Response getAllBox(@RequestBody Box box, HttpServletRequest request) throws ParseException {
 
 
 
@@ -86,7 +86,7 @@ public class BoxController extends BaseController {
         }
         queryWrapper.orderByDesc("id");
         queryWrapper.gt("out_time",new Date());
-        List<Box> list= boxService.list(queryWrapper);
+        List<Box> list= (List<Box>) boxService.page(setOrderPage(pageInfo),queryWrapper);
         List list1=new ArrayList();
         for(Box box1:list){
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");

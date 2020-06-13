@@ -28,13 +28,13 @@ public abstract class BaseController{
 
 
 
-    @NotNull
-    public static Page setOrderPage(PageInfo pageInfo) {
-        Page page = new Page();
-        page.setSize(pageInfo.getLimit());
-        page.setCurrent(pageInfo.getPage());
-        return page;
-    }
+//    @NotNull
+//    public static Page setOrderPage(PageInfo pageInfo) {
+//        Page page = new Page();
+//        page.setSize(pageInfo.getLimit());
+//        page.setCurrent(pageInfo.getPage());
+//        return page;
+//    }
     protected CurrentUser currentUser() {
         Optional<CurrentUser> optional = OperatorAware.getCurrentUser();
         CurrentUser currentUser = optional.orElse(null);

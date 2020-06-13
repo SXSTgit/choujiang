@@ -80,13 +80,13 @@ public class PlayerBoxArmsController extends BaseController {
     }
 
     @PostMapping("sellArms")
-    @ApiOperation(value = "用户-售出所有武器", notes = "", httpMethod = "POST")
+    @ApiOperation(value = "用户-售出多个武器", notes = "", httpMethod = "POST")
     public Response sellArms(@RequestBody PlayersSellDto playersSellDto,  HttpServletRequest request){
        /* CurrentUser currentUser = currentUser();
         if(currentUser==null){
             return Response.fail(ErrorEnum.SIGN_VERIFI_EXPIRE);
         }*/
-        operationRecordService.addOperationRecord(new OperationRecord(playersSellDto.getId(),"出售武器","出售所有武器","/playerBoxArms/sellArms",1,client.getAddress(request.getRemoteAddr())));
+        operationRecordService.addOperationRecord(new OperationRecord(playersSellDto.getId(),"出售武器","出售多个武器","/playerBoxArms/sellArms",1,client.getAddress(request.getRemoteAddr())));
 
         int i = playerBoxArmsService.sellArms(playersSellDto);
 
