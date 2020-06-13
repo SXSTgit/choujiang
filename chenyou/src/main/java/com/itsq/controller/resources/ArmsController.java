@@ -91,7 +91,7 @@ public class ArmsController extends BaseController {
             return Response.fail(ErrorEnum.SIGN_VERIFI_EXPIRE);
         }
 
-        operationRecordService.addOperationRecord(new OperationRecord(dto.getMangerId(),"修改武器",dto.getName()+"的武器","/arms/updateById",0,client.getAddress(request.getRemoteAddr())));
+       // operationRecordService.addOperationRecord(new OperationRecord(dto.getMangerId(),"修改武器",dto.getName()+"的武器","/arms/updateById",0,client.getAddress(request.getRemoteAddr())));
 
         Arms arms = BeanUtils.copyProperties(dto, Arms.class);
         if (!armsService.updateById(arms)) {
