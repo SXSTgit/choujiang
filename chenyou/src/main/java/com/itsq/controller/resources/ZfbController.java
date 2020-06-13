@@ -31,6 +31,7 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
@@ -50,7 +51,7 @@ import java.util.Map;
  * @date 2019/11/17 - 15:18
  */
 @Slf4j
-@RestController
+@Controller
 //@RequestMapping("/zfb")
 @AllArgsConstructor
 @CrossOrigin
@@ -65,7 +66,7 @@ public class ZfbController extends BaseController {
     private MoneyChangeUtils moneyChangeUtils;
 
     @RequestMapping("huidiao")
-    public void  toHuidiao(HttpServletRequest request,HttpServletResponse response) throws IOException {
+    public String  toHuidiao(HttpServletRequest request,HttpServletResponse response) throws IOException {
         System.out.println("=========================================>");
         try {
             // 获取支付宝POST过来反馈信息
@@ -101,16 +102,17 @@ public class ZfbController extends BaseController {
             e.printStackTrace();
         }
 
-        response.sendRedirect("/csgo/index.html");
+        return "redirect:/csgo/index.html";
         }
 
 
     @PostMapping(value = "/pagePay")
+    @ResponseBody
     @ApiOperation(value = "统一支付", notes = "", httpMethod = "POST")
     public Response pagePay(Model model, Integer amount,Integer playerId) throws Exception {
         AlipayClient alipayClient = new DefaultAlipayClient(AlipayUtils.gatewayUrl,AlipayUtils.app_id,AlipayUtils.private_key,"json",AlipayUtils.input_charset,AlipayUtils.alipay_public_key,"RSA2");
         AlipayTradePagePayRequest request = new AlipayTradePagePayRequest();
-        request.setNotifyUrl("http://121.36.199.219:8080/zfb/huidiao");
+        request.setNotifyUrl("http://121.36.199.219:8080/huidiao");
         String outTradeNo = RandomUtil.getRandom(32);
 
         BigDecimal bd = new BigDecimal(amount*Double.valueOf(moneyChangeUtils.getRequest3()));
