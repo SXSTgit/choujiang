@@ -144,6 +144,54 @@
 			</table>
 			<div id="page" style="text-align: right;margin-right: 20px;"></div>
 		</div>
+		<script type="text/html"  id="addzjgl">
+			<!--<div class="layerOpen">-->
+				<div class="layui-form">
+					<div class="layui-form-item xiugai" style="width: 100%;margin-top: 20px;">
+						<label class="layui-form-label" style="width: 100px; color: #000000;background-color: #ffffff;">资金信息</label>
+						<div class="layui-input-block" >
+								<input type="text" name="kyye" required lay-verify="required" placeholder="可用余额" readonly
+									   class="layui-input" value="可用余额">
+						</div>
+					</div>
+					<!--<div class="layui-form-item" style="width:100%; margin-left: 100px;">-->
+						<!--<div class="layui-input-block" >-->
+							<!--<input type="text" name="djye" required lay-verify="required" placeholder="冻结余额" readonly-->
+								   <!--class="layui-input" value="冻结余额: 0.000元">-->
+						<!--</div>-->
+					<!--</div>-->
+					<div class="layui-form-item" style="width: 100%" >
+						<label class="layui-form-label" style="width: 100px; color: #000000;background-color: #ffffff;">操作类型</label>
+						<div class="layui-input-block" style="margin-top: 10px;border-style: none;">
+							<input type="radio" style="display: inline-block;" name="money" value="1" title="加钱" >加钱
+							<input type="radio" style="display: inline-block;margin-left: 20px;" name="money" value=0 title="扣钱">扣钱
+							<!--<input type="radio" style="display: inline-block;margin-left: 20px;" name="money" value="-1" title="解冻" >解冻-->
+							<!--<input type="radio" style="display: inline-block;margin-left: 20px;" name="money" value="-2" title="冻结" >冻结-->
+						</div>
+					</div>
+					<div class="layui-form-item xiugai" style="width: 100%;">
+						<label class="layui-form-label" style="width: 100px; color: #000000;background-color: #ffffff;">操作金额<span style="color: red">*</span></label>
+						<div class="layui-input-block" >
+							<input type="text" name="czye" required lay-verify="required" placeholder="请输入操作金额"
+								   class="layui-input">
+						</div>
+					</div>
+					<!--<div class="layui-form-item layui-form-text" style="width: 100%">-->
+						<!--<label class="layui-form-label" style="width: 100px; color: #000000;background-color: #ffffff;">普通文本域</label>-->
+						<!--<div class="layui-input-block">-->
+							<!--<textarea placeholder="请输入内容" class="layui-textarea"></textarea>-->
+						<!--</div>-->
+					<!--</div>-->
+					<div class="layui-form-item" style="width: 100%;">
+						<div class="layui-input-block" style="border-style: none; margin-left: 150px;">
+							<button type="submit" id="tijiao" class="layui-btn" lay-submit="" lay-filter="demo1">执行操作</button>
+							<button type="button" class="layui-btn layui-btn-danger" id="qxtj">取消</button>
+						</div>
+					</div>
+                </div>
+				<!--</div>-->
+			</div>
+		</script>
 
 		<script src="../../lib/layui-v2.5.4/layui.js"></script>
 		<script src="../../lib/jquery-3.4.1/jquery-3.4.1.min.js"></script>

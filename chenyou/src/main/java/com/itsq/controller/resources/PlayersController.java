@@ -150,7 +150,7 @@ public class PlayersController extends BaseController {
         this.playersService.updateMoneyById(playersDto);
         if(playersDto.getUsStatus()==1){
             operationRecordService.addOperationRecord(new OperationRecord(playersDto.getManagrId(), "添加余额", "为用户"+playersDto.getId()+"加余额"+playersDto.getAmount(), "/players/updateMoneyById", 0, client.getAddress(request.getRemoteAddr())));
-        }else{
+        }else if(playersDto.getUsStatus()==0){
             operationRecordService.addOperationRecord(new OperationRecord(playersDto.getManagrId(), "减余额", "为用户"+playersDto.getId()+"减余额"+playersDto.getAmount(), "/players/updateMoneyById", 0, client.getAddress(request.getRemoteAddr())));
 
         }
