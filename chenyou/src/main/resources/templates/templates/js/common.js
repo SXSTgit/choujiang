@@ -1,5 +1,5 @@
-var baseURL = "http://boxgo.cc/";//本地
-
+// var baseURL = "http://121.36.199.219:8080/";//本地
+var baseURL = "http://localhost:8080/";//本地
 var C = {
     setCache: setCache,
     getCache: getCache,
