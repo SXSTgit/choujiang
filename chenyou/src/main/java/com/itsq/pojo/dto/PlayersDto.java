@@ -41,4 +41,6 @@ public class PlayersDto implements Serializable {
 
 
     private Integer managrId;
+
+    private String steamId;
 }

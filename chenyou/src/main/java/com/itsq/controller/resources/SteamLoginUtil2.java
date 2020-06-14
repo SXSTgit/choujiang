@@ -325,7 +325,7 @@ public class SteamLoginUtil2 extends BaseController {
             //return  "Response.success(new LoginRespDto<>(players1,authToken, EnumTokenType.BEARER.getCode()));
         }
 //        response1.sendRedirect("/csgo/index.html");
-        return "redirect:http://boxgo.cc/csgo/index.html";
+        return "redirect:http://boxgo.cc/csgo/index.html?steamId="+json.getString("steamid");
     }
   /*  @RequestMapping(value = "huidiao")
     public Response isShouQuan( HttpServletRequest request2) throws ClientProtocolException,IOException {

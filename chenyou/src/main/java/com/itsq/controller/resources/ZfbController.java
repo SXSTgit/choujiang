@@ -113,6 +113,7 @@ public class ZfbController extends BaseController {
         AlipayClient alipayClient = new DefaultAlipayClient(AlipayUtils.gatewayUrl,AlipayUtils.app_id,AlipayUtils.private_key,"json",AlipayUtils.input_charset,AlipayUtils.alipay_public_key,"RSA2");
         AlipayTradePagePayRequest request = new AlipayTradePagePayRequest();
         request.setNotifyUrl("http://boxgo.cc/huidiao");
+        request.setReturnUrl(AlipayUtils.return_url);
         String outTradeNo = RandomUtil.getRandom(32);
 
         BigDecimal bd = new BigDecimal(amount*Double.valueOf(moneyChangeUtils.getRequest3()));

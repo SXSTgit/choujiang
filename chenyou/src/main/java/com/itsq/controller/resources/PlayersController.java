@@ -53,29 +53,26 @@ public class PlayersController extends BaseController {
     private RedisUtils redisUtil;
     @Autowired
     private Client client;
+
+
     @PostMapping("login")
     @ApiOperation(value = "用户-登录", notes = "", httpMethod = "POST")
     public Response<LoginRespDto<Players>> login(@RequestBody PlayersDto playersDto, HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
-/*
-        try{  //把sessionId记录在浏览器
-            Cookie c = new Cookie("JSESSIONID", URLEncoder.encode(httpServletRequest.getSession().getId(), "utf-8"));
-            c.setPath("/");
-            //先设置cookie有效期为2天，不用担心，session不会保存2天
-            c.setMaxAge( 48*60 * 60);
-            httpServletResponse.addCookie(c);
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-        HttpSession session = httpServletRequest.getSession();
-        Object count=session.getServletContext().getAttribute("count");
 
-        if(count==null){
-            count=0;
-        }*/
         Players u = this.playersService.login(playersDto.getNumber(), playersDto.getPwd());
 
         operationRecordService.addOperationRecord(new OperationRecord(u.getId(),"用户登录","登陆成功","/players/login",1,client.getAddress(httpServletRequest.getRemoteAddr())));
 
+        String authToken = new AuthToken(u.getId(), u.getName()).token();
+        return Response.success(new LoginRespDto<>(u, authToken, EnumTokenType.BEARER.getCode()));
+    }
+
+    @PostMapping("steamLogin")
+    @ApiOperation(value = "用户-steam登录", notes = "", httpMethod = "POST")
+    public Response<LoginRespDto<Players>> loginBySteam(@RequestBody PlayersDto playersDto, HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
+
+        Players u = this.playersService.loginBySteam(playersDto);
+        operationRecordService.addOperationRecord(new OperationRecord(u.getId(),"用户steam登录","登陆成功","/players/steamLogin",1,client.getAddress(httpServletRequest.getRemoteAddr())));
         String authToken = new AuthToken(u.getId(), u.getName()).token();
         return Response.success(new LoginRespDto<>(u, authToken, EnumTokenType.BEARER.getCode()));
     }
