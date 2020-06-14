@@ -36,8 +36,7 @@ public class  Client {
       /* Map<String,String> param=new HashMap<>();
         String s = httpGetWithJSon("https://app.zbt.com/open/product/v1/search", param);
       Object succesResponse = JSON.parse(s);    //先转换成Object
- param.put("app-key",appKey);
-        param.put("language",language);
+
         Map map = (Map)succesResponse;         //Object强转换为Map
         Object succesResponse1 = JSON.parse(map.get("data")+"");
         Map map1 = (Map)succesResponse1;
