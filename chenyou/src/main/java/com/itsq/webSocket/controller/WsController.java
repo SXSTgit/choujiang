@@ -77,9 +77,10 @@ public class WsController extends BaseController {
         pageParametersDto.setPageNum(1);
         pageParametersDto.setPageSize(20);
         pageParametersDto.setOrderByField("1");
+        pageParametersDto.setType(0);
         PagesUtil<PlayerBoxArms> playerBoxArmsPagesUtil = playerBoxArmsService.selectPlayerBoxArmsPage(pageParametersDto);
-        pageParametersDto.setPageNum(1);
 
+        pageParametersDto.setPageNum(1);
         pageParametersDto.setPageSize(1);
         pageParametersDto.setOrderByField("2");
         PagesUtil<PlayerBoxArms> playerBoxArmsPagesUtil1 = playerBoxArmsService.selectPlayerBoxArmsPage(pageParametersDto);

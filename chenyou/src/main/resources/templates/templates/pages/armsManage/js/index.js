@@ -45,17 +45,19 @@ layui.config({
         });
     };
 
-
+// initTable();
     // 渲染表格
     function initTable(data) {
         //console.log(data);
         var insTb = treeTable.render({
             elem: '#demoTb1',
             data: data,  // 数据
+            // url:baseURL+"arms/getAll",
             /*tree: {
                 iconIndex: 1, // 折叠图标显示在第几列
                 idName: 'menuId',  // 自定义id字段的名称
             },*/
+            page:true,
             cols: [
                {
                     field: 'id',
@@ -95,7 +97,7 @@ layui.config({
                             '    background-repeat: no-repeat;\n' +
                             '    background-size: contain;\n' +
                             '    width: 100px;\n' +
-                            '    height: 100px;"><img ] src="'+d.imageUrl+'" width="50"height="50"/></span>'
+                            '    height: 100px;"><img  src="'+d.imageUrl+'" width="50"height="50"/></span>'
                         return htmlInfo;
                     }
                 }, {
@@ -127,6 +129,7 @@ layui.config({
                     align: 'center',
                     templet: function (d) {
                         return "<button class='layui-btn layui-btn-xs layui-btn-normal' lay-event='updatenavi'>编辑</button>" +
+                            "<button class='layui-btn layui-btn-xs layui-btn-normal' lay-event='updateid'>修改</button>"+
                             "<button class='layui-btn layui-btn-xs layui-btn-warm' lay-event='delnavi'>删除</button>";
                     }
                 }
@@ -136,9 +139,6 @@ layui.config({
     }
 
 
-    function changeList(list) {
-        initTable(list);
-    }
 
 
     function show() {
@@ -148,15 +148,13 @@ layui.config({
             for (var i = 0; i < datas.length; i++) {
                 list = list.concat(datas[i]);
             }
-            changeList(list);
+            initTable(list);
 
         });
     }
 
 
     show();
-
-
     $('[lay-filter="addSysmenu"]').on('click', function (obj) {
         layer.open({
             type: 1,
@@ -329,6 +327,96 @@ layui.config({
                             }
                         })
                     });
+        }else if(layEvent === "updateid"){
+            layer.open({
+                type:1,
+                title:"修改",
+                id:"alert",
+                area:['500px','500px'],
+                content: $("#addArms").html(),
+                success: function (layero, index) {
+                    // alert(obj);
+                    layui.use(['form', 'upload'], function () {
+                        var $ = layui.jquery, upload = layui.upload;
+                        //普通图片上传
+                        var uploadInst = upload.render({
+                            elem: '#test1'
+                            , url: baseURL + 'api/file/upload' //改成您自己的上传接口
+                            , before: function (obj) {
+                                //预读本地文件示例，不支持ie8
+                                obj.preview(function (index, file, result) {
+                                    $('#imgUrl').attr('src', result); //图片链接（base64）
+                                });
+                            }
+                            , done: function (res) {
+                                //如果上传失败
+                                if (res.code > 0) {
+                                    return layer.msg('上传失败');
+                                }
+                                //上传成功
+                                $('#imageUrl').attr('src', baseURL + res.body.filePathURL);
+                            }
+                            , error: function () {
+                                //演示失败状态，并实现重传
+                                var demoText = $('#demoText');
+                                demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-xs demo-reload">重试</a>');
+                                demoText.find('.demo-reload').on('click', function () {
+                                    uploadInst.upload();
+                                });
+                            }
+                        });
+                    });
+                    $("[name='name']").val(obj.data.name);
+                    $("[name='price']").val(obj.data.price);
+                    $("[name='isStatus']").val(obj.data.isStatus);
+                    $("[name='count']").val(obj.data.count);
+
+                    $("[name='productId']").val(obj.data.productId);
+                    $("[name='type']").val(obj.data.type);
+                    $("#imageUrl").attr("src", obj.data.imageUrl)
+                    var objId=obj.data.id;
+                    form.render('select');
+                    $("#commit").on('click', function (obj) {
+                        var name = $(" [name='name']").val();
+                        var image = $(" #imageUrl").attr("src");
+                        var price = $(" [name='price']").val();
+                        var count = $(" [name='count']").val();
+                        var isStatus = $(" [name='isStatus']").val();
+                        var type = $("[name='type']").val();
+                        var productId=$("[name='productId']").val();
+                        findAjax("arms/updateById", {
+                            "id": objId,
+                            "name": name,
+                            "imageUrl": image,
+                            "price": price,
+                            "count": count,
+                            "isStatus": isStatus,
+                            "productId": productId,
+                            "type": type
+                        }, function (res) {
+                            if (res.message == 'success') {
+                                layer.msg("修改成功", function () {
+                                    setTimeout($.ajax({
+                                        type: "POST",
+                                        url: baseURL + "box/getAllBox",
+                                        data: {
+                                            adminId: user.id
+                                        },
+                                        dataType: "json",
+                                        success: function () {
+                                        }
+                                    }), 100);
+
+                                    layer.close(index);
+                                    show();
+                                });
+                            }
+                        });
+                    });
+
+                }
+            })
+
         }
     });
 

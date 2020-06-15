@@ -19,6 +19,7 @@ import com.itsq.common.bean.Response;
 import com.itsq.config.AlipayConfig;
 import com.itsq.pojo.entity.RechargeRecord;
 import com.itsq.service.resources.RechargeRecordService;
+import com.itsq.utils.RandomUtil;
 import com.itsq.utils.StringUtils;
 import com.itsq.utils.alipay.AlipayUtils;
 import com.itsq.utils.http.MoneyChangeUtils;
@@ -30,6 +31,7 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
@@ -49,8 +51,8 @@ import java.util.Map;
  * @date 2019/11/17 - 15:18
  */
 @Slf4j
-@RestController
-@RequestMapping("/zfb")
+@Controller
+//@RequestMapping("/zfb")
 @AllArgsConstructor
 @CrossOrigin
 @Api(tags = "支付宝模块")
@@ -64,7 +66,7 @@ public class ZfbController extends BaseController {
     private MoneyChangeUtils moneyChangeUtils;
 
     @RequestMapping("huidiao")
-    public String toHuidiao(HttpServletRequest request){
+    public String  toHuidiao(HttpServletRequest request) throws IOException {
         System.out.println("=========================================>");
         try {
             // 获取支付宝POST过来反馈信息
@@ -99,17 +101,20 @@ public class ZfbController extends BaseController {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return "failure";
+
+        return "redirect:http://boxgo.cc/csgo/index.html";
         }
 
 
     @PostMapping(value = "/pagePay")
     @ApiOperation(value = "统一支付", notes = "", httpMethod = "POST")
+    @ResponseBody
     public Response pagePay(Model model, Integer amount,Integer playerId) throws Exception {
         AlipayClient alipayClient = new DefaultAlipayClient(AlipayUtils.gatewayUrl,AlipayUtils.app_id,AlipayUtils.private_key,"json",AlipayUtils.input_charset,AlipayUtils.alipay_public_key,"RSA2");
         AlipayTradePagePayRequest request = new AlipayTradePagePayRequest();
-        request.setNotifyUrl("  http://yuanqiwl.natapp1.cc/zfb/huidiao");
-        String outTradeNo = StringUtils.getOutTradeNo();
+        request.setNotifyUrl("http://boxgo.cc/huidiao");
+        request.setReturnUrl(AlipayUtils.return_url);
+        String outTradeNo = RandomUtil.getRandom(32);
 
         BigDecimal bd = new BigDecimal(amount*Double.valueOf(moneyChangeUtils.getRequest3()));
         bd = bd.setScale(2,BigDecimal.ROUND_HALF_UP);

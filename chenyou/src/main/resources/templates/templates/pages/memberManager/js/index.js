@@ -199,7 +199,7 @@ layui.config({
 						templet: function(d) {
 							return d.creDate;
 						}
-					}/*
+					},/*
 					{
 						field: 'updDate',
 						title: '修改时间',
@@ -213,20 +213,20 @@ layui.config({
 							}
 						}
 					},*/
-					/*{
+					{
 						field: 'dongJie',
 						title: '操作',
-						width: 280,
-						fixed: 'right',
+						width: 200,
+						// fixed: 'right',
 						align: 'center',
 						templet: function(d) {
-								return "<button class='layui-btn layui-btn-xs layui-btn-normal' lay-event='updateinfo'>编辑</button>"
-								      	"<button class='layui-btn layui-btn-xs layui-btn-normal' lay-event='xiangqing'>查看详情</button>"+
-								       "<button class='layui-btn layui-btn-xs layui-btn-warm' lay-event='chushi'>恢复初始密码</button>";
-							
+								// return "<button class='layui-btn layui-btn-xs layui-btn-normal' lay-event='updateinfo'>编辑</button>"
+								//       	"<button class='layui-btn layui-btn-xs layui-btn-normal' lay-event='xiangqing'>查看详情</button>"+
+								//        "<button class='layui-btn layui-btn-xs layui-btn-warm' lay-event='chushi'>恢复初始密码</button>";
+                            return "<button class='layui-btn layui-btn-xs layui-btn-normal' lay-event='zjgl'>资金管理</button>";
 							
 						}
-					}*/
+					}
 					
 				]
 			]
@@ -362,10 +362,53 @@ layui.config({
             });
         }else if(layEvent === 'updateinfo'){
             layuimini.goPage("pages/memberManager/update.html?userId=" + data.id, "修改信息");
-        }
+        }else if(layEvent === 'zjgl'){
+            layer.open({
+                type: 1,
+                title: "资金管理",
+                id: "alert",
+                area: ['500px', '300px'],
+                content: $("#addzjgl").html(),
+                success: function (layero, index) {
+
+                	$('[name="kyye"]').val("可用余额: "+obj.data.balance+"");
+                    // alert(obj);
+                    var id = obj.data.id;
+                    $("#qxtj").on('click',function (obj) {
+                        layer.close(index);
+                    })
+                    $("#tijiao").on('click', function (obj) {
+                        var money = $('[name="money"]:checked').val();
+                        var czye = $('[name="czye"]').val();
+                        var managrId = user.id;
+                        findAjax( 'players/updateMoneyById', {
+                            "managrId": managrId,
+                            "id": id,
+                            "usStatus": money,
+                            "amount": czye
+                        }, function(res) {
+                            if (res.message == 'success') {
+                               alert("修改成功！");
+                                // $("#addzjgl").hide();
+                                layer.close(index);
+                                show(userName,phone,user.id,pageIndex,10);
+                            }
+                        });
+					})
+                    // alert(money+czye);
+
+                    // findAjax('players/updateMoneyById',{
+                    //
+                    // })
+                }
+            })
+		}
 
 
     });
+
+
+
 
 	$('[lay-filter="addAdmin"]').on('click', function (obj) {
 		location.replace("add.html");

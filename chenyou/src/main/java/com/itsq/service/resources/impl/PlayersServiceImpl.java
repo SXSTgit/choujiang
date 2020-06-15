@@ -167,5 +167,15 @@ if(playersDto.getUsStatus()==1){
         return super.baseMapper.updateById(p);
     }
 
+    @Override
+    public Players loginBySteam(PlayersDto playersDto) {
+
+        QueryWrapper queryWrapper=new QueryWrapper();
+
+        queryWrapper.eq("steam_id",playersDto.getSteamId());
+        Players players = super.baseMapper.selectOne(queryWrapper);
+        return players;
+    }
+
 
 }

@@ -91,7 +91,7 @@ public class ArmsController extends BaseController {
             return Response.fail(ErrorEnum.SIGN_VERIFI_EXPIRE);
         }
 
-        operationRecordService.addOperationRecord(new OperationRecord(dto.getMangerId(),"修改武器",dto.getName()+"的武器","/arms/updateById",0,client.getAddress(request.getRemoteAddr())));
+       // operationRecordService.addOperationRecord(new OperationRecord(dto.getMangerId(),"修改武器",dto.getName()+"的武器","/arms/updateById",0,client.getAddress(request.getRemoteAddr())));
 
         Arms arms = BeanUtils.copyProperties(dto, Arms.class);
         if (!armsService.updateById(arms)) {
@@ -127,6 +127,8 @@ public class ArmsController extends BaseController {
         }*/
         System.out.println("=======");
         Map<String, String> param = new HashMap<>();
+        param.put("app-key","0b791fef5d1cc463edda79924704e8a7");
+        param.put("language","zh_CN");
         String json = client.httpGetWithJSon("https://app.zbt.com/open/product/v1/search", param);
         System.out.println("=======");
         Object succesResponse = JSON.parse(json);

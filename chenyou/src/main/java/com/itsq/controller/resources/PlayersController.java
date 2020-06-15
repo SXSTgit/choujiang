@@ -53,25 +53,12 @@ public class PlayersController extends BaseController {
     private RedisUtils redisUtil;
     @Autowired
     private Client client;
+
+
     @PostMapping("login")
     @ApiOperation(value = "用户-登录", notes = "", httpMethod = "POST")
     public Response<LoginRespDto<Players>> login(@RequestBody PlayersDto playersDto, HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
-/*
-        try{  //把sessionId记录在浏览器
-            Cookie c = new Cookie("JSESSIONID", URLEncoder.encode(httpServletRequest.getSession().getId(), "utf-8"));
-            c.setPath("/");
-            //先设置cookie有效期为2天，不用担心，session不会保存2天
-            c.setMaxAge( 48*60 * 60);
-            httpServletResponse.addCookie(c);
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-        HttpSession session = httpServletRequest.getSession();
-        Object count=session.getServletContext().getAttribute("count");
 
-        if(count==null){
-            count=0;
-        }*/
         Players u = this.playersService.login(playersDto.getNumber(), playersDto.getPwd());
 
         operationRecordService.addOperationRecord(new OperationRecord(u.getId(),"用户登录","登陆成功","/players/login",1,client.getAddress(httpServletRequest.getRemoteAddr())));
@@ -80,13 +67,23 @@ public class PlayersController extends BaseController {
         return Response.success(new LoginRespDto<>(u, authToken, EnumTokenType.BEARER.getCode()));
     }
 
+    @PostMapping("steamLogin")
+    @ApiOperation(value = "用户-steam登录", notes = "", httpMethod = "POST")
+    public Response<LoginRespDto<Players>> loginBySteam(@RequestBody PlayersDto playersDto, HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
+
+        Players u = this.playersService.loginBySteam(playersDto);
+        operationRecordService.addOperationRecord(new OperationRecord(u.getId(),"用户steam登录","登陆成功","/players/steamLogin",1,client.getAddress(httpServletRequest.getRemoteAddr())));
+        String authToken = new AuthToken(u.getId(), u.getName()).token();
+        return Response.success(new LoginRespDto<>(u, authToken, EnumTokenType.BEARER.getCode()));
+    }
+
     @PostMapping("getCode")
     @ApiOperation(value = "获取验证码", notes = "", httpMethod = "POST")
     public Response getCode(@RequestBody PlayersDto playersDto) {
         String code = RandomUtil.getRandom(6);
-        String myEmailAccount = "1085432162@qq.com";
-        String myEmailPassword = "";
-        String myEmailSMTPHost = "smtp.qq.com";
+        String myEmailAccount = "register@boxgo.cc";
+        String myEmailPassword = "duobao@2020";
+        String myEmailSMTPHost = "smtpout.asia.secureserver.net";
         String[] toMailAccountList = new String[]{playersDto.getNumber()};
         SQSendMailUtil.sendMail(myEmailAccount, myEmailPassword, "", toMailAccountList, "注册", myEmailSMTPHost, "注册验证码", "亲爱的用户：您的本次操作的验证码为：" + code + "为了您帐号的安全，千万不要告诉别人哦!");
 
@@ -150,7 +147,7 @@ public class PlayersController extends BaseController {
         this.playersService.updateMoneyById(playersDto);
         if(playersDto.getUsStatus()==1){
             operationRecordService.addOperationRecord(new OperationRecord(playersDto.getManagrId(), "添加余额", "为用户"+playersDto.getId()+"加余额"+playersDto.getAmount(), "/players/updateMoneyById", 0, client.getAddress(request.getRemoteAddr())));
-        }else{
+        }else if(playersDto.getUsStatus()==0){
             operationRecordService.addOperationRecord(new OperationRecord(playersDto.getManagrId(), "减余额", "为用户"+playersDto.getId()+"减余额"+playersDto.getAmount(), "/players/updateMoneyById", 0, client.getAddress(request.getRemoteAddr())));
 
         }
