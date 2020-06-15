@@ -86,9 +86,9 @@ public class PlayerBoxArmsServiceImpl extends ServiceImpl<PlayerBoxArmsMapper, P
             Map<String,Object> param=new HashMap<>();
             String number=RandomUtil.getRandom(32);
             jsonObject.put("outTradeNo",number);
-            jsonObject.put("tradeUrl","https://steamcommunity.com/tradeoffer/new/?partner=484669140&token=WEhy_ZWD");
-            jsonObject.put("itemId",553467984);//arms.getProductId()
-            jsonObject.put("maxPrice",0.1);//可接受价格 arms.getPrice()
+            jsonObject.put("tradeUrl",players.getSteamUrl());
+            jsonObject.put("itemId",arms.getProductId());//arms.getProductId()
+            jsonObject.put("maxPrice",arms.getPrice());//可接受价格 arms.getPrice()
             jsonObject.put("delivery",2);//自动发货
             String json = client.httpPostWithJSON("https://app.zbt.com/open/trade/v2/quick-buy?app-key=0b791fef5d1cc463edda79924704e8a7&language=zh_CN", jsonObject);
             System.out.println(json);

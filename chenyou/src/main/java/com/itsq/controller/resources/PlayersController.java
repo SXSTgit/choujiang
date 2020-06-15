@@ -85,7 +85,8 @@ public class PlayersController extends BaseController {
         String myEmailPassword = "duobao@2020";
         String myEmailSMTPHost = "smtpout.asia.secureserver.net";
         String[] toMailAccountList = new String[]{playersDto.getNumber()};
-        SQSendMailUtil.sendMail(myEmailAccount, myEmailPassword, "", toMailAccountList, "注册", myEmailSMTPHost, "注册验证码", "亲爱的用户：您的本次操作的验证码为：" + code + "为了您帐号的安全，千万不要告诉别人哦!");
+        String smtpPort="465";
+        SQSendMailUtil.sendMail(myEmailAccount, myEmailPassword, "", toMailAccountList, "注册", myEmailSMTPHost, "注册验证码", "亲爱的用户：您的本次操作的验证码为：" + code + "为了您帐号的安全，千万不要告诉别人哦!",smtpPort);
 
 
         redisUtil.set(playersDto.getNumber(), 60, code);
