@@ -58,7 +58,7 @@ public class ArmsController extends BaseController {
         if (currentUser == null) {
             return Response.fail(ErrorEnum.SIGN_VERIFI_EXPIRE);
         }
-        operationRecordService.addOperationRecord(new OperationRecord(dto.getMangerId(),"添加武器",dto.getName()+"武器","/arms/addInfo",0,client.getAddress(request.getRemoteAddr())));
+      //  operationRecordService.addOperationRecord(new OperationRecord(dto.getMangerId(),"添加武器",dto.getName()+"武器","/arms/addInfo",0,client.getAddress(request.getRemoteAddr())));
         dto.setCreDate(new Date());
         Arms arms = BeanUtils.copyProperties(dto, Arms.class);
         if (!armsService.save(arms)) {
@@ -74,7 +74,7 @@ public class ArmsController extends BaseController {
         if (currentUser == null) {
             return Response.fail(ErrorEnum.SIGN_VERIFI_EXPIRE);
         }
-        operationRecordService.addOperationRecord(new OperationRecord(1,"删除武器","删除id为"+id+"的武器","/arms/romveArms",0,client.getAddress(request.getRemoteAddr())));
+   //     operationRecordService.addOperationRecord(new OperationRecord(1,"删除武器","删除id为"+id+"的武器","/arms/romveArms",0,client.getAddress(request.getRemoteAddr())));
 
         JSONObject jsonObject = JSONObject.parseObject(id);
         if (!armsService.removeById(Long.parseLong(jsonObject.getString("id")))) {

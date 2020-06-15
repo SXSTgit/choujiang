@@ -107,7 +107,7 @@ public class BoxController extends BaseController {
         if(currentUser==null){
             return Response.fail(ErrorEnum.SIGN_VERIFI_EXPIRE);
         }
-        operationRecordService.addOperationRecord(new OperationRecord(1,"删除箱子","删除id为"+id+"的箱子","/box/romveBox",0,client.getAddress(request.getRemoteAddr())));
+     //   operationRecordService.addOperationRecord(new OperationRecord(1,"删除箱子","删除id为"+id+"的箱子","/box/romveBox",0,client.getAddress(request.getRemoteAddr())));
 
         JSONObject jsonObject=JSONObject.parseObject(id);
         if(!boxService.removeById(Long.parseLong(jsonObject.getString("id")))){
@@ -123,7 +123,7 @@ public class BoxController extends BaseController {
         if(currentUser==null){
             return Response.fail(ErrorEnum.SIGN_VERIFI_EXPIRE);
         }
-        operationRecordService.addOperationRecord(new OperationRecord(dto.getManagerId(),"添加箱子",dto.getName()+"箱子","/arms/addInfo",0,client.getAddress(request.getRemoteAddr())));
+   //     operationRecordService.addOperationRecord(new OperationRecord(dto.getManagerId(),"添加箱子",dto.getName()+"箱子","/arms/addInfo",0,client.getAddress(request.getRemoteAddr())));
 
         dto.setCrDate(new Date());
         Box box= BeanUtils.copyProperties(dto, Box.class);
@@ -153,7 +153,7 @@ public class BoxController extends BaseController {
         if(currentUser==null){
             return Response.fail(ErrorEnum.SIGN_VERIFI_EXPIRE);
         }
-        operationRecordService.addOperationRecord(new OperationRecord(dto.getManagerId(),"修改箱子",dto.getName()+"箱子","/arms/updateById",0,client.getAddress(request.getRemoteAddr())));
+     //   operationRecordService.addOperationRecord(new OperationRecord(dto.getManagerId(),"修改箱子",dto.getName()+"箱子","/arms/updateById",0,client.getAddress(request.getRemoteAddr())));
 
         Box box=BeanUtils.copyProperties(dto, Box.class);
         if(!boxService.updateById(box)){
