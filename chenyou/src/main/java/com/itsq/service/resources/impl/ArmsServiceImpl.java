@@ -69,8 +69,8 @@ public class ArmsServiceImpl extends ServiceImpl<ArmsMapper, Arms> implements Ar
             queryWrapper.eq("type", boxArmsSeachDto.getType());
         }
 
-        if(boxArmsSeachDto.getName()!=null&&boxArmsSeachDto.getName().equals("")){
-            queryWrapper.eq("name",boxArmsSeachDto.getName());
+        if(boxArmsSeachDto.getName()!=null&&!boxArmsSeachDto.getName().equals("")){
+            queryWrapper.like("name",boxArmsSeachDto.getName());
         }
 
         return super.baseMapper.selectList(queryWrapper);
