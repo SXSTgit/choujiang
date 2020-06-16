@@ -59,10 +59,10 @@ public class WsController extends BaseController {
         return new ResponseMessage("welcome," + message.getName() + " !");
     }
 
-    @Scheduled(fixedRate = 1000*60*2)
+    @Scheduled(fixedRate = 1000*60*1)
     public void getCount() {
         Integer i=Integer.valueOf(redisUtil.get("count")+"");
-        if(i>0){
+        if(i>2){
             redisUtil.set("count",i-1+"");
         }
     };
@@ -77,9 +77,10 @@ public class WsController extends BaseController {
         pageParametersDto.setPageNum(1);
         pageParametersDto.setPageSize(20);
         pageParametersDto.setOrderByField("1");
+        pageParametersDto.setType(0);
         PagesUtil<PlayerBoxArms> playerBoxArmsPagesUtil = playerBoxArmsService.selectPlayerBoxArmsPage(pageParametersDto);
-        pageParametersDto.setPageNum(1);
 
+        pageParametersDto.setPageNum(1);
         pageParametersDto.setPageSize(1);
         pageParametersDto.setOrderByField("2");
         PagesUtil<PlayerBoxArms> playerBoxArmsPagesUtil1 = playerBoxArmsService.selectPlayerBoxArmsPage(pageParametersDto);

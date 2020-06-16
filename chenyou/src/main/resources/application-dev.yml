@@ -1,10 +1,15 @@
 server:
-  port: 8080
+  port: 80
+ # ssl:
+  #  key-store: classpath:keystore.pfx
+   # key-store-password: duobao@2020
+   # key-store-type: pkcs12
+   # key-alias: tomcat
 spring:
   datasource:
     username: root
-    password: 1234
-    url: jdbc:mysql://121.36.199.219:3306/choujiang?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8
+    password: duobao@2020
+    url: jdbc:mysql://127.0.0.1:3306/choujiang?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8
     driver-class-name: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
     #Spring Boot 默认是不注入这些属性值的，需要自己绑定
@@ -30,7 +35,7 @@ spring:
   #redis配置
   redis.host: 127.0.0.1
   redis.port: 6379
- # redis.password: 123456
+  redis.password: duobao@2020
   #模板引擎配置
   thymeleaf:
     prefix: classpath:/templates/**

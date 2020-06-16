@@ -13,7 +13,7 @@ import javax.servlet.ServletResponse;
 import java.util.HashMap;
 import java.util.Map;
 //测试
-
+//123456
 public class LogAopUtil {
 
 	public static StringBuffer getNameAndArgs(Class<?> cls, String clazzName, String methodName, Object[] args)

@@ -110,7 +110,7 @@ public class ManagerController extends BaseController {
         if(currentUser==null){
             return Response.fail(ErrorEnum.SIGN_VERIFI_EXPIRE);
         }
-        operationRecordService.addOperationRecord(new OperationRecord(addManagerReqDto.getMangerId(),"新增管理员","新增管理员:"+addManagerReqDto.getUserName(),"/manager/saveManagerInfo",0,client.getAddress(request.getRemoteAddr())));
+    //    operationRecordService.addOperationRecord(new OperationRecord(addManagerReqDto.getMangerId(),"新增管理员","新增管理员:"+addManagerReqDto.getUserName(),"/manager/saveManagerInfo",0,client.getAddress(request.getRemoteAddr())));
 
         managerService.saveManagerInfo(addManagerReqDto);
         return Response.success();

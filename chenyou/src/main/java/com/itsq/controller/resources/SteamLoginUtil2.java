@@ -42,6 +42,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 @Controller
 @RequestMapping("/steam")
@@ -223,7 +224,7 @@ public class SteamLoginUtil2 extends BaseController {
     @ResponseBody
     public Response loginSteam(){
         try {
-            String url=getUrl("http://yuanqiwl.natapp1.cc/steam/huidiao");
+            String url=getUrl("http://boxgo.cc/steam/huidiao");
             return Response.success(url);
         }catch (Exception e){
             e.printStackTrace();
@@ -232,7 +233,7 @@ public class SteamLoginUtil2 extends BaseController {
     }
 
     @RequestMapping(value = "huidiao")
-    public String isShouQuan( HttpServletRequest request2)  throws ClientProtocolException, IOException{
+    public String isShouQuan(HttpServletRequest request2, HttpServletResponse response1)  throws ClientProtocolException, IOException{
         String identity=request2.getParameter("openid.identity");
         String response_nonce=request2.getParameter("openid.response_nonce");
         String assoc_handle=request2.getParameter("openid.assoc_handle");
@@ -323,7 +324,8 @@ public class SteamLoginUtil2 extends BaseController {
             String authToken = new AuthToken(players1.getId(),players1.getName()).token();
             //return  "Response.success(new LoginRespDto<>(players1,authToken, EnumTokenType.BEARER.getCode()));
         }
-        return "index";
+//        response1.sendRedirect("/csgo/index.html");
+        return "redirect:http://boxgo.cc/csgo/index.html?steamId="+json.getString("steamid");
     }
   /*  @RequestMapping(value = "huidiao")
     public Response isShouQuan( HttpServletRequest request2) throws ClientProtocolException,IOException {

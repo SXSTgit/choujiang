@@ -26,6 +26,7 @@ public class IndexController {
         }
 
         HttpSession session = httpServletRequest.getSession();
+        session.setMaxInactiveInterval(5);
         Object count=session.getServletContext().getAttribute("count");
         return "count : "+count;
     }

@@ -35,9 +35,10 @@ public class SQSendMailUtil {
         // 网易163邮箱的 SMTP 服务器地址为: smtp.163.com
 //        String myEmailSMTPHost = "smtpout.asia.secureserver.net";
         String myEmailSMTPHost = "smtpout.asia.secureserver.net";
+        String smtpPort="465";
         // 收件人邮箱（替换为自己知道的有效邮箱）
-        String[] toMailAccountList = new String[]{"734654628@qq.com"};
-        SQSendMailUtil.sendMail(myEmailAccount, myEmailPassword, "", toMailAccountList, "", myEmailSMTPHost, "测试发送邮件", "测试发送邮件");
+        String[] toMailAccountList = new String[]{"1085432162@qq.com"};
+        SQSendMailUtil.sendMail(myEmailAccount, myEmailPassword, "", toMailAccountList, "", myEmailSMTPHost, "测试发送邮件", "测试发送邮件",smtpPort);
 
     }
 
@@ -55,9 +56,9 @@ public class SQSendMailUtil {
      * @author Administrator
      * @date 2017年12月13日 下午1:51:38
      */
-    public static void sendMail(String sendMail, String sendMailPwd, String sendMailName, String[] receiveMail, String receiveMailName, String sendSMTPHost, String title, String content) {
+    public static void sendMail(String sendMail, String sendMailPwd, String sendMailName, String[] receiveMail, String receiveMailName, String sendSMTPHost, String title, String content,String smtpPort) {
 
-        Session session = createSession(sendSMTPHost);
+        Session session = createSession(sendSMTPHost,smtpPort);
         // 3. 创建一封邮件
         MimeMessage message;
         try {
@@ -179,7 +180,7 @@ public class SQSendMailUtil {
      * @author lidoudou
      * @date 2019/2/16 14:59
      */
-    private static Session createSession(String sendSMTPHost) {
+    private static Session createSession(String sendSMTPHost,String smtpPort) {
         // 1. 创建参数配置, 用于连接邮件服务器的参数配置
         Properties props = new Properties(); // 参数配置
         props.setProperty("mail.transport.protocol", "smtp"); // 使用的协议（JavaMail规范要求）
@@ -188,14 +189,12 @@ public class SQSendMailUtil {
         // PS: 某些邮箱服务器要求 SMTP 连接需要使用 SSL 安全认证 (为了提高安全性, 邮箱支持SSL连接, 也可以自己开启),
         // 如果无法连接邮件服务器, 仔细查看控制台打印的 log, 如果有有类似 “连接失败, 要求 SSL 安全连接” 等错误,
         // 打开下面 /* ... */ 之间的注释代码, 开启 SSL 安全连接。
-        /*
-         * // SMTP 服务器的端口 (非 SSL 连接的端口一般默认为 25, 可以不添加, 如果开启了 SSL 连接, // 需要改为对应邮箱的 SMTP 服务器的端口,
-         * 具体可查看对应邮箱服务的帮助, // QQ邮箱的SMTP(SLL)端口为465或587, 其他邮箱自行去查看) final String smtpPort = "465";
-         * props.setProperty("mail.smtp.port", smtpPort);
-         * props.setProperty("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
-         * props.setProperty("mail.smtp.socketFactory.fallback", "false");
-         * props.setProperty("mail.smtp.socketFactory.port", smtpPort);
-         */
+          // SMTP 服务器的端口 (非 SSL 连接的端口一般默认为 25, 可以不添加, 如果开启了 SSL 连接, // 需要改为对应邮箱的 SMTP 服务器的端口,
+         // 具体可查看对应邮箱服务的帮助, // QQ邮箱的SMTP(SLL)端口为465或587, 其他邮箱自行去查看) final String smtpPort = "465";
+         props.setProperty("mail.smtp.port", smtpPort);
+         props.setProperty("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+          props.setProperty("mail.smtp.socketFactory.fallback", "false");
+         props.setProperty("mail.smtp.socketFactory.port", smtpPort);
         // 2. 根据配置创建会话对象, 用于和邮件服务器交互
         Session session = Session.getInstance(props);
         session.setDebug(true); // 设置为debug模式, 可以查看详细的发送 log

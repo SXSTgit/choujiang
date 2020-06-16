@@ -62,7 +62,7 @@ public class Arms implements Serializable {
     private Integer isStatus;
 
     @TableField(value = "cre_date",fill = FieldFill.INSERT)
-    private Date crDate;
+    private Date creDate;
 
 
     @ApiModelProperty(value = "关联开箱记录")

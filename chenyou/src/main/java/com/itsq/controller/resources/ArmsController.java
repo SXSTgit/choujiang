@@ -58,7 +58,7 @@ public class ArmsController extends BaseController {
         if (currentUser == null) {
             return Response.fail(ErrorEnum.SIGN_VERIFI_EXPIRE);
         }
-        operationRecordService.addOperationRecord(new OperationRecord(dto.getMangerId(),"添加武器",dto.getName()+"武器","/arms/addInfo",0,client.getAddress(request.getRemoteAddr())));
+      //  operationRecordService.addOperationRecord(new OperationRecord(dto.getMangerId(),"添加武器",dto.getName()+"武器","/arms/addInfo",0,client.getAddress(request.getRemoteAddr())));
         dto.setCreDate(new Date());
         Arms arms = BeanUtils.copyProperties(dto, Arms.class);
         if (!armsService.save(arms)) {
@@ -74,7 +74,7 @@ public class ArmsController extends BaseController {
         if (currentUser == null) {
             return Response.fail(ErrorEnum.SIGN_VERIFI_EXPIRE);
         }
-        operationRecordService.addOperationRecord(new OperationRecord(1,"删除武器","删除id为"+id+"的武器","/arms/romveArms",0,client.getAddress(request.getRemoteAddr())));
+   //     operationRecordService.addOperationRecord(new OperationRecord(1,"删除武器","删除id为"+id+"的武器","/arms/romveArms",0,client.getAddress(request.getRemoteAddr())));
 
         JSONObject jsonObject = JSONObject.parseObject(id);
         if (!armsService.removeById(Long.parseLong(jsonObject.getString("id")))) {
@@ -127,6 +127,9 @@ public class ArmsController extends BaseController {
         }*/
         System.out.println("=======");
         Map<String, String> param = new HashMap<>();
+        param.put("app-key","0b791fef5d1cc463edda79924704e8a7");
+        param.put("language","zh_CN");
+        param.put("appId","730");
         String json = client.httpGetWithJSon("https://app.zbt.com/open/product/v1/search", param);
         System.out.println("=======");
         Object succesResponse = JSON.parse(json);
@@ -140,6 +143,29 @@ public class ArmsController extends BaseController {
         for (Object o : list) {
             Map map2 = (Map) o;
             Arms arms = new Arms();
+            if(map2.get("rarityName")!=null&&map2.get("rarityName").equals("消费级")){
+                arms.setType("1");
+            }
+
+            if(map2.get("rarityName")!=null&&map2.get("rarityName").equals("工业级")){
+                arms.setType("2");
+            }
+
+            if(map2.get("rarityName")!=null&&map2.get("rarityName").equals("军规级")){
+                arms.setType("3");
+            }
+            if(map2.get("rarityName")!=null&&map2.get("rarityName").equals("受限")){
+                arms.setType("4");
+            }
+            if(map2.get("rarityName")!=null&&map2.get("rarityName").equals("保密")){
+                arms.setType("5");
+            }
+            if(map2.get("rarityName")!=null&&map2.get("rarityName").equals("隐秘")){
+                arms.setType("6");
+            }
+            if(map2.get("rarityName")!=null&&map2.get("rarityName").equals("大师")){
+                arms.setType("7");
+            }
             arms.setCount((Integer) map2.get("quantity"));
             arms.setImageUrl(map2.get("imageUrl") + "");
             arms.setName(map2.get("itemName") + "");
@@ -147,6 +173,7 @@ public class ArmsController extends BaseController {
             arms.setProductId((Integer) map2.get("itemId"));
             amList.add(arms);
         }
+
         armsService.addListArms(amList);
         return Response.success(amList);
     }

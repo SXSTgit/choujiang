@@ -28,7 +28,8 @@ public enum ErrorEnum {
     NO_WUQI(700002,"您没有相关武器！"),
     YICHUSHOU_YUE(100017,"物品已出售失败!"),
     DARUWUQI_SHB(100018,"导入武器失败!"),
-    MEI_WUQI(100019,"暂未获取到武器请稍后再试")
+    MEI_WUQI(100019,"暂未获取到武器请稍后再试"),
+    STEAM_FALI(100020,"绑定steam失败")
     ;
 
 

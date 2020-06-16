@@ -203,7 +203,7 @@ layui.config({
         success: function (layero, index) {
             laydate.render({
                 elem: 'input[name="outTime"]',
-                type: 'date',
+                type: 'datetime',
                 trigger: 'click'
             });
 
