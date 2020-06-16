@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.itsq.common.bean.ErrorEnum;
 import com.itsq.common.constant.APIException;
+import com.itsq.pojo.dto.BoxArmsSeachDto;
 import com.itsq.pojo.entity.Arms;
 import com.itsq.mapper.ArmsMapper;
 import com.itsq.service.resources.ArmsService;
@@ -58,5 +59,20 @@ public class ArmsServiceImpl extends ServiceImpl<ArmsMapper, Arms> implements Ar
     public List<Arms>  allPrice(Integer pid) {
 
         return null;
+    }
+
+    @Override
+    public List<Arms> selectArms(BoxArmsSeachDto boxArmsSeachDto) {
+        QueryWrapper queryWrapper=new QueryWrapper();
+
+        if(boxArmsSeachDto.getType()!=null) {
+            queryWrapper.eq("type", boxArmsSeachDto.getType());
+        }
+
+        if(boxArmsSeachDto.getName()!=null&&boxArmsSeachDto.getName().equals("")){
+            queryWrapper.eq("name",boxArmsSeachDto.getName());
+        }
+
+        return super.baseMapper.selectList(queryWrapper);
     }
 }
