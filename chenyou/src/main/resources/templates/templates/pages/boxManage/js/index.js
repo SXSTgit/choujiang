@@ -589,6 +589,8 @@ window.addWuqi = function (res) {
         content: $("#addArms").html(),
         success: function (layero, index) {
 
+            form.render('select');
+
             findAjax("arms/getAll",{}, function (res) {
                 if (res.message == 'success') {
                     var htmlInfo = "";
@@ -598,17 +600,17 @@ window.addWuqi = function (res) {
                             map.set(info.id + "", info);
                             htmlInfo += "<div class=\"layui-form-item\" style=\"display: inline-block;\">\n" +
                                 "                    <div class=\"layui-input-block\" style=\"border-style: none;display: inline-block;\">\n" +
-                                "                        <div class=\"layui-inline\" style=\"width: 100px;\">\n" +
-                                "                            <img src=\"" + info.imageUrl + "\" width=\"80\" height=\"80\" style=\"display: block;margin-bottom: 5px\"/>\n" +
-                                "                            <p style='text-align: center;width: 80px;overflow: hidden;white-space: nowrap;text-overflow:ellipsis;'>" + info.name + "</p>\n" +
-                                "                            <p style='text-align: center;width:80px;'>" + info.price + "</p>\n" +
+                                "                        <div class=\"layui-inline\" style=\"width: 150px;\">\n" +
+                                "                            <img src=\"" + info.imageUrl + "\" width=\"130\" height=\"130\" style=\"display: block;margin-bottom: 5px\"/>\n" +
+                                "                            <p style='text-align: center;width: 130px;overflow: hidden;white-space: nowrap;text-overflow:ellipsis;'>" + info.name + "</p>\n" +
+                                "                            <p style='text-align: center;width:130px;'>" + info.price + "</p>\n" +
                                 "                            <input type=\"checkbox\" value='" + info.id + "' name=\"armsInfo\" title=\"选择\" class=\"layui-form-checkbox\" lay-skin=\"primary\">\n" +
                                 "                        </div>\n" +
                                 "                    </div>\n" +
                                 "                </div>";
                         }
                     }
-                    $("#wqxzDiv").html(htmlInfo);
+                    $("#wqxzDiv").append(htmlInfo);
                 }
                 form.render('checkbox');
             });
