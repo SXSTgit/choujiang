@@ -17,8 +17,8 @@ import java.util.concurrent.CopyOnWriteArraySet;
  * @describle 统计在线人数的demo
  */
  
-@Component
-@ServerEndpoint("/websocket")  //该注解表示该类被声明为一个webSocket终端
+//@Component
+//@ServerEndpoint("/websocket")  //该注解表示该类被声明为一个webSocket终端
 public class MySocket {
     //初始在线人数
     private static int online_num = 0;
@@ -26,14 +26,12 @@ public class MySocket {
     private static CopyOnWriteArraySet<MySocket> webSocketSet = new CopyOnWriteArraySet<MySocket>();
     //会话
     private Session session;
-    @Resource
-    private RedisUtils redisUtil;
+
     @OnOpen
     public void onOpen(Session session){
         this.session = session;
         webSocketSet.add(this);
         addOnlineCount();
-        redisUtil.set("count","13");
         System.out.println("有链接加入，当前人数为:"+getOnline_num());
     }
  
@@ -41,7 +39,6 @@ public class MySocket {
     public void onClose(){
         webSocketSet.remove(this);
         subOnlineCount();
-        redisUtil.set("count1","13");
         System.out.println("有链接关闭,当前人数为:"+getOnline_num());
     }
  

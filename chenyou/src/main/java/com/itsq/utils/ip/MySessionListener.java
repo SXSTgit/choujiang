@@ -8,7 +8,7 @@ import javax.servlet.http.*;
 import java.util.List;
 import java.util.Map;
 
-@WebListener()
+//@WebListener()
 public class MySessionListener implements HttpSessionListener{
 
     private ServletContext sc;

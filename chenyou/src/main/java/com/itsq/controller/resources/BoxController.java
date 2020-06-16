@@ -61,21 +61,6 @@ public class BoxController extends BaseController {
     @ApiOperation(value = "获取全部箱子", notes = "", httpMethod = "POST")
     public Response getAllBox(@RequestBody Box box, HttpServletRequest request) throws ParseException {
 
-
-
-      if(!redisUtil.exist( request.getRemoteAddr())){
-          redisUtil.set( request.getRemoteAddr(),60*10,"1");
-
-                  if(!redisUtil.exist("count")){
-                      redisUtil.set("count","0");
-                  }
-          Integer count = Integer.valueOf(redisUtil.get("count") + "");
-          redisUtil.set("count",count+1+"");
-      }
-
-
-
-
         QueryWrapper queryWrapper=new QueryWrapper();
 
         if(box.getName()!=null&&box.getName().length()>0){

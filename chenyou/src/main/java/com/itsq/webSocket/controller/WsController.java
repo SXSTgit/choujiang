@@ -59,13 +59,6 @@ public class WsController extends BaseController {
         return new ResponseMessage("welcome," + message.getName() + " !");
     }
 
-    @Scheduled(fixedRate = 1000*60*1)
-    public void getCount() {
-        Integer i=Integer.valueOf(redisUtil.get("count")+"");
-        if(i>2){
-            redisUtil.set("count",i-1+"");
-        }
-    };
 
     /**
      * 定时推送消息
@@ -87,6 +80,10 @@ public class WsController extends BaseController {
         int playerCount = playersService.selectPlayerCount();
         int boxCount =   playerBoxArmsService.selectUpCount(0);
         int uPCount =    playerBoxArmsService.selectUpCount(1);
+
+        if(!redisUtil.exist("count")){
+            redisUtil.set("count","0");
+        }
 
         JSONObject jsonObject=new JSONObject();
         jsonObject.put("login", redisUtil.get("count"));

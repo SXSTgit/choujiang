@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-@WebListener()
+//@WebListener()
 public class MyRequestListener implements ServletRequestListener{
 
     private HttpServletRequest sr;
