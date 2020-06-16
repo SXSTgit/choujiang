@@ -8,6 +8,7 @@ import com.itsq.common.base.BaseController;
 import com.itsq.common.bean.ErrorEnum;
 import com.itsq.common.bean.Response;
 import com.itsq.pojo.dto.AddArmsDto;
+import com.itsq.pojo.dto.BoxArmsSeachDto;
 import com.itsq.pojo.entity.Arms;
 import com.itsq.pojo.entity.OperationRecord;
 import com.itsq.service.resources.ArmsService;
@@ -48,6 +49,14 @@ public class ArmsController extends BaseController {
         }
         queryWrapper.orderByDesc("id");
         List<Arms> list = armsService.list(queryWrapper);
+        return Response.success(list);
+    }
+
+    @RequestMapping(value = "selectArms", method = RequestMethod.POST)
+    @ApiOperation(value = "根据条件获取武器", notes = "", httpMethod = "POST")
+    public Response selectArms(@RequestBody BoxArmsSeachDto boxArmsSeachDto) {
+
+        List<Arms> list = armsService.selectArms(boxArmsSeachDto);
         return Response.success(list);
     }
 
