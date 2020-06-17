@@ -47,7 +47,7 @@ public class ArmsController extends BaseController {
         if (arms.getName() != null && arms.getName().length() > 0) {
             queryWrapper.like("name", arms.getName());
         }
-        if(arms.getType()!=null) {
+        if(arms.getType()!=null && !arms.getType().equals("")) {
             queryWrapper.eq("type", arms.getType());
         }
         queryWrapper.orderByDesc("id");
