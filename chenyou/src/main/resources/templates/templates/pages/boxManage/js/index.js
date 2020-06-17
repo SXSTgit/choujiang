@@ -580,6 +580,8 @@ window.xzwqCheck = function (res) {
 }
 
 
+
+
 window.addWuqi = function (res) {
     layer.open({
         type: 1,
@@ -590,35 +592,67 @@ window.addWuqi = function (res) {
         success: function (layero, index) {
 
             form.render('select');
-
-            findAjax("arms/getAll",{}, function (res) {
-                if (res.message == 'success') {
-                    var htmlInfo = "";
-                    for (var i = 0; i < res.body.length; i++) {
-                        var info = res.body[i];
-                        if (info.isStatus == 0) {
-                            map.set(info.id + "", info);
-                            htmlInfo += "<div class=\"layui-form-item\" style=\"display: inline-block;\">\n" +
-                                "                    <div class=\"layui-input-block\" style=\"border-style: none;display: inline-block;\">\n" +
-                                "                        <div class=\"layui-inline\" style=\"width: 150px;\">\n" +
-                                "                            <img src=\"" + info.imageUrl + "\" width=\"130\" height=\"130\" style=\"display: block;margin-bottom: 5px\"/>\n" +
-                                "                            <p style='text-align: center;width: 130px;overflow: hidden;white-space: nowrap;text-overflow:ellipsis;'>" + info.name + "</p>\n" +
-                                "                            <p style='text-align: center;width:130px;'>" + info.price + "</p>\n" +
-                                "                            <input type=\"checkbox\" value='" + info.id + "' name=\"armsInfo\" title=\"选择\" class=\"layui-form-checkbox\" lay-skin=\"primary\">\n" +
-                                "                        </div>\n" +
-                                "                    </div>\n" +
-                                "                </div>";
-                        }
-                    }
-                    $("#wqxzDiv").append(htmlInfo);
-                }
-                form.render('checkbox');
-            });
-
+            xin();
             $("#cancle2").on('click', function (obj) {
                 layer.close(index);
             });
         }
+    });
+}
+
+    window.sousuo=function (res) {
+        xin();
+    }
+
+function xin() {
+    var name = $("input[name='title']").val();
+    var city = $("select[name='city']").val();
+    // alert(city+""+name);
+    findAjax("arms/getAll",{"name":name,"type":city}, function (res) {
+        if (res.message == 'success') {
+            var htmlInfo = " <div class=\"layui-form-item\">\n" +
+                "                    <label class=\"layui-form-label\">名称：</label>\n" +
+                "                    <div class=\"layui-input-inline\">\n" +
+                "                        <input type=\"text\" name=\"title\" required  lay-verify=\"required\" placeholder=\"请输入武器名称\" autocomplete=\"off\" class=\"layui-input\">\n" +
+                "                    </div>\n" +
+                "\n" +
+                "                    <label class=\"layui-form-label\">\n" +
+                "                        选择级别\n" +
+                "                    </label>\n" +
+                "                    <div class=\"layui-input-inline\">\n" +
+                "                        <select name=\"city\" lay-verify=\"required\">\n" +
+                "                            <option value=\"\">请选择武器级别</option>\n" +
+                "                            <option value=\"1\">消费级</option>\n" +
+                "                            <option value=\"2\">工业级</option>\n" +
+                "                            <option value=\"3\">军规级</option>\n" +
+                "                            <option value=\"4\">受限级</option>\n" +
+                "                            <option value=\"5\">保密级</option>\n" +
+                "                            <option value=\"6\">隐秘级</option>\n" +
+                "                            <option value=\"7\">特殊物品*</option>\n" +
+                "                        </select>\n" +
+                "                    </div>\n" +
+                "                    <button type=\"button\" class=\"layui-btn\" onclick=\"sousuo()\" id=\"btnss\">搜索</button>\n" +
+                "                </div>";
+            for (var i = 0; i < res.body.length; i++) {
+                var info = res.body[i];
+                if (info.isStatus == 0) {
+                    map.set(info.id + "", info);
+                    htmlInfo += "<div class=\"layui-form-item\" style=\"display: inline-block;\">\n" +
+                        "                    <div class=\"layui-input-block\" style=\"border-style: none;display: inline-block;\">\n" +
+                        "                        <div class=\"layui-inline\" style=\"width: 150px;\">\n" +
+                        "                            <img src=\"" + info.imageUrl + "\" width=\"130\" height=\"130\" style=\"display: block;margin-bottom: 5px\"/>\n" +
+                        "                            <p style='text-align: center;width: 130px;overflow: hidden;white-space: nowrap;text-overflow:ellipsis;'>" + info.name + "</p>\n" +
+                        "                            <p style='text-align: center;width:130px;'>" + info.price + "</p>\n" +
+                        "                            <input type=\"checkbox\" value='" + info.id + "' name=\"armsInfo\" title=\"选择\" class=\"layui-form-checkbox\" lay-skin=\"primary\">\n" +
+                        "                        </div>\n" +
+                        "                    </div>\n" +
+                        "                </div>";
+                }
+            }
+            $("#wqxzDiv").html(htmlInfo);
+            form.render("select");
+        }
+        form.render('checkbox');
     });
 }
 
