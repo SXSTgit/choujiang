@@ -68,7 +68,8 @@ layui.config({
                     field: 'name',
                     title: '饰品名称',
                     edit: 'text',
-                    align: 'center'
+                    align: 'center',
+                    width:400
                 },
                 {   field: 'type',
                     title: '饰品品质',
@@ -138,12 +139,15 @@ layui.config({
 
     }
 
-
-
+    window.sousuo=function (res) {
+        show();
+    }
 
     function show() {
+        var name = $("input[name='title']").val();
+        var city = $("select[name='city']").val();
         var list = [];
-        findAjax("arms/getAll", {}, function (res) {
+        findAjax("arms/getAll", {"name":name,"type":city}, function (res) {
             var datas = res.body;
             for (var i = 0; i < datas.length; i++) {
                 list = list.concat(datas[i]);
