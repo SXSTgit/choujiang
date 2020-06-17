@@ -113,13 +113,15 @@ public class UpgradingController  extends BaseController {
                 return Response.fail(ErrorEnum.NO_WUQI);
             }
             PlayerBoxArms arms=list1.get(0);
+            arms.setMuId(boxArms.getNewArms());
             if (index == 0) {
                 //true;
-                arms.setIsStatus(3);
+                arms.setIsStatus(4);
                 playerBoxArmsService.updateById(arms);
 
+
             } else {
-                arms.setIsStatus(4);
+                arms.setIsStatus(3);
                 playerBoxArmsService.updateById(arms);
 
             }
@@ -132,7 +134,7 @@ public class UpgradingController  extends BaseController {
             boxArms1.setArmsId(boxArms.getNewArms());
             boxArms1.setCreDate(new Date());
 
-            boxArms1.setMuId( Integer.valueOf(boxArms.getOldArms()[0]));
+
             playerBoxArmsService.save(boxArms1);
             Arms arms=armsService.selectArmsById(boxArms1.getArmsId());
             arms.setPbaId(boxArms1.getId());
