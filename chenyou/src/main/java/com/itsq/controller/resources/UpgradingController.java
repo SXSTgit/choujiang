@@ -131,6 +131,8 @@ public class UpgradingController  extends BaseController {
             boxArms1.setPlayerId(boxArms.getPlayerId());
             boxArms1.setArmsId(boxArms.getNewArms());
             boxArms1.setCreDate(new Date());
+
+            boxArms1.setMuId( Integer.valueOf(boxArms.getOldArms()[0]));
             playerBoxArmsService.save(boxArms1);
             Arms arms=armsService.selectArmsById(boxArms1.getArmsId());
             arms.setPbaId(boxArms1.getId());
