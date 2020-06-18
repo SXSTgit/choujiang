@@ -94,11 +94,17 @@ public class PlayerBoxArmsServiceImpl extends ServiceImpl<PlayerBoxArmsMapper, P
             System.out.println(json);
             Object succesResponse = JSON.parse(json);
             Map map = (Map)succesResponse;
+
+            if(!(Boolean) map.get("success")&&map.get("data")==null){
+                return 0;
+            }
             Object succesResponse1 = JSON.parse(map.get("data")+"");
             Map map1 = (Map)succesResponse1;
             PlayerOrder playerOrder=new PlayerOrder();
             playerOrder.setArmsId(arms.getId());
             playerOrder.setBuyPrice(new BigDecimal(map1.get("buyPrice")+""));
+
+
             if((boolean)map.get("success")){
                 playerBoxArms1.setIsStatus(2);
                 playerOrder.setIsStatus(0);

@@ -56,6 +56,10 @@ public class PlayerBoxArms implements Serializable {
     @TableField("type")
     private Integer type;
 
+    @ApiModelProperty(value = "0.开箱1.升级")
+    @TableField("mu_id")
+    private Integer muId;
+
 
     @TableField(exist = false)
     private Box box;
@@ -70,6 +74,7 @@ public class PlayerBoxArms implements Serializable {
     public static final String PLAYER_ID = "player_id";
 
     public static final String BOX_ID = "box_id";
+    public static final String MU_ID = "mu_id";
 
     public static final String ARMS_ID = "arms_id";
 
