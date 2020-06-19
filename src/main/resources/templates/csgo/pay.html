@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>支付</title>
+</head>
+<body>
+<div id="pay-zfb"></div>
+<script src="statics/js/jquery-1.11.0.min.js"></script>
+<script src="statics/js/axios.min.js"></script>
+<script>
+   $(function () {
+       var http = axios.create({
+           transformRequest: function (data) {
+               var ret = ''
+               for (var it in data) {
+                   ret += encodeURIComponent(it) + '=' + encodeURIComponent(data[it]) + '&'
+               }
+               ret = ret.substring(0, ret.lastIndexOf('&'));
+               return ret
+           },
+       })
+       http.post("http://121.36.199.219:8080/pagePay",{"amount": getQueryVariable('amount'),"playerId": getQueryVariable('playerId')}).then(function (response) {
+           $('#pay-zfb').html(response.data.body);
+       }).catch(function (error) {
+           alert(error);
+       })
+
+       function getQueryVariable(variable) {
+           let href = window.location.href
+           let query = href.substring(href.indexOf('?')+1);
+           let vars = query.split("&");
+           for (var i = 0; i < vars.length; i++) {
+               let pair = vars[i].split("=");
+               if (pair[0] == variable) {
+                   return pair[1];
+               }
+           }
+           return (false);
+       }
+   })
+</script>
+</body>
+</html>

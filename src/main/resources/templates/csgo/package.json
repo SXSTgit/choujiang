@@ -1,0 +1,24 @@
+{
+  "name": "roadcqc_big_screen",
+  "version": "1.0.0",
+  "description": "big_screen",
+  "main": "index.js",
+  "scripts": {
+    "online": "sed -i 's#_baseUrl#cqc-lqbs.jsti-smart.cn/api#g' ./src/js/global.js && sed -i 's/_password/jstriadmin1970/g' ./src/js/global.js",
+    "test": "sed -i 's/_baseUrl/139.219.1.156:8808/g' ./src/js/global.js && sed -i 's/_password/admin/g' ./src/js/global.js",
+    "uat": "sed -i 's#_baseUrl#t.cqc-lqbs.jsti-smart.cn/api#g' ./src/js/global.js && sed -i 's/_password/jstriadmin1979/g' ./src/js/global.js",
+    "standard": "sed -i 's/_baseUrl/218.2.153.238:8082/g' ./src/js/global.js && sed -i 's/_password/jstriadmin1979/g' ./src/js/global.js"
+  },
+  "author": "yemast",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "bower": "^1.8.4",
+    "http-proxy-middleware": "^0.19.1"
+  },
+  "directories": {
+    "lq/doc": "doc"
+  }
+}
