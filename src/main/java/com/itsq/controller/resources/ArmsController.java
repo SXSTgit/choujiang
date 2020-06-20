@@ -132,7 +132,7 @@ public class ArmsController extends BaseController {
 
     @RequestMapping(value = "addListArms", method = RequestMethod.POST)
     @ApiOperation(value = "导入武器", notes = "", httpMethod = "POST")
-    public Response addListArms(Double percentage) {
+    public Response addListArms(Double percentage ,Integer page) {
         /*CurrentUser currentUser = currentUser();
         if(currentUser==null){
             return Response.fail(ErrorEnum.SIGN_VERIFI_EXPIRE);
@@ -142,7 +142,9 @@ public class ArmsController extends BaseController {
         param.put("app-key","0b791fef5d1cc463edda79924704e8a7");
         param.put("language","zh_CN");
         param.put("appId","730");
-        String json = client.httpGetWithJSon("https://app.zbt.com/open/product/v1/search", param);
+        param.put("limit","1000");
+        param.put("page",page+"");
+        String json = client.httpGetWithJSon("https://app.zbt.com/open/product/v2/search", param);
         System.out.println("=======");
         Object succesResponse = JSON.parse(json);
         System.out.println("=======");//先转换成Object
@@ -181,8 +183,19 @@ public class ArmsController extends BaseController {
             arms.setCount((Integer) map2.get("quantity"));
             arms.setImageUrl(map2.get("imageUrl") + "");
             arms.setName(map2.get("itemName") + "");
-            arms.setPrice(new BigDecimal(map2.get("price") + "").multiply(new BigDecimal(1 + percentage)));
-            arms.setProductId((Integer) map2.get("itemId"));
+
+            BigDecimal bigDecimal=new BigDecimal(1 );
+            bigDecimal=bigDecimal.add(new BigDecimal(percentage));
+            Object succesResponse2 = JSON.parse(map2.get("priceInfo") + "");
+            Map map3 = (Map) succesResponse2;
+            if(map2.get("priceInfo")!=null){
+                if(map3.get("price")!=null){
+                    arms.setPrice(new BigDecimal(map3.get("price") + "").multiply(bigDecimal));
+                    arms.setCount(Integer.valueOf(map3.get("autoDeliverQuantity")+""));
+                }
+            }
+            arms.setProductId(Integer.valueOf(map2.get("itemId")+""));
+
             amList.add(arms);
         }
 
