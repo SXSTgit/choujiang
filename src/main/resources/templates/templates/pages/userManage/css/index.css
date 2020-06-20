@@ -1,0 +1,81 @@
+.searchLeft {
+	float: left;
+}
+
+.searchTable {
+	text-align: right;
+	margin-right: 10px;
+}
+
+.searchTable .layui-form-select {
+	width: 174px;
+	display: inline-block;
+	text-align: left;
+}
+
+.layui-input-block {
+	margin-left: 0px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: rgb(230, 230, 230);
+	border-image: initial;
+	width: 61%;
+}
+
+.layui-form-label{
+	letter-spacing: 0.1em;
+}
+
+
+/*.laytable-cell-1-0-1,.laytable-cell-1-0-9  {
+			    width: 150px;
+			    height: 100px;
+			    line-height: 100px;
+			}*/
+
+.layui-table img {
+	max-width: 100%;
+	height: 100%;
+}
+
+.layui-table-cell {
+	height: 50px;
+	line-height: 50px;
+}
+
+.layuimini-container {
+	border-width: 0px;
+}
+
+.layui-form-label {
+	float: left;
+	display: block;
+	padding: 9px 0px;
+	width: 135px;
+	font-weight: 400;
+	line-height: 20px;
+	text-align: right;
+	background: inset 0 0 10px #1aa09457;
+	text-align: center;
+	background-color: #009688a6;
+	color: #fff;
+}
+
+input:hover {
+	box-shadow: 0 0 10px 2px #1aa09445;
+	;
+}
+
+.layui-form-item {
+	margin-bottom: 15px;
+	width: 24%;
+	display: inline-flex;
+}
+
+.search1 {
+	padding-left: 2em;
+	padding-top: 1em;
+}
+input{
+	border-style: none;
+}

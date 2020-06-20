@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itsq.mapper.ManagerMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.itsq.pojo.entity.Manager">
+        <id column="id" property="id" />
+        <result column="phone" property="phone" />
+        <result column="password" property="password" />
+        <result column="user_name" property="userName" />
+        <result column="cre_date" property="creDate" />
+        <result column="upd_date" property="updDate" />
+        <result column="is_status" property="isStatus" />
+        <result column="sex" property="sex" />
+        <result column="head_image" property="headImage" />
+        <result column="state" property="state" />
+        <result column="is_admin" property="isAdmin" />
+        <result column="address" property="address" />
+        <result column="identity" property="identity" />
+        <result column="vx_code" property="vxCode" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, phone, password, user_name, cre_date, upd_date, is_status, sex, head_image, state, is_admin, address, identity, vx_code
+    </sql>
+
+</mapper>

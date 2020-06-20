@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			b{
+				display: block;
+			    margin: 10% auto;
+			    width: 50%;
+			    text-align: center;
+			    font-size: 70px;
+			}
+			.first{
+				position: relative;
+			}
+			.first .fa{
+				position: absolute;
+				bottom: 0;
+				left: 0;
+			}
+			.first .fb{
+				position: absolute;
+				top: 0;
+				right: 0;
+			}
+			.first:before{
+				content: "";
+				position: absolute;
+				width: 1px;
+				height:114px;/*这里需要自己调整，根据td的宽度和高度*/
+				top:0;
+				left:0;
+				background-color: black;
+				display: block;
+				transform: rotate(-79deg);/*这里需要自己调整，根据线的位置*/
+				transform-origin: top;
+			}
+			.first span{
+				font-size: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<!--<img src="img/q.jpg" style="width:100%;height: 100%;"  />-->
+		
+		<b>后台管理</b>
+		
+		
+		
+	</body>
+</html>

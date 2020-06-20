@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itsq.mapper.SiteMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.itsq.pojo.entity.Site">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="title" property="title" />
+        <result column="keyword" property="keyword" />
+        <result column="description" property="description" />
+        <result column="copyright" property="copyright" />
+        <result column="ico" property="ico" />
+        <result column="Logo" property="Logo" />
+        <result column="switch" property="switch" />
+        <result column="Tips" property="Tips" />
+        <result column="path" property="path" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, name, title, keyword, description, copyright, ico, Logo, switch, Tips, path
+    </sql>
+
+</mapper>

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itsq.mapper.PlayerBoxArmsMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.itsq.pojo.entity.PlayerBoxArms">
+        <id column="id" property="id"/>
+        <result column="player_id" property="playerId"/>
+        <result column="box_id" property="boxId"/>
+        <result column="arms_id" property="armsId"/>
+        <result column="cre_date" property="creDate"/>
+        <result column="is_status" property="isStatus"/>
+        <result column="type" property="type"/>
+        <association property="box" javaType="Box">
+            <id column="bid" property="id"/>
+            <result column="baname" property="name"/>
+            <result column="bimage" property="image"/>
+            <result column="bprice" property="price"/>
+            <result column="btype" property="type"/>
+        </association>
+        <association property="arms" javaType="Arms">
+            <id column="aid" property="id"/>
+            <result column="aname" property="name"/>
+            <result column="imageUrl" property="imageUrl"/>
+            <result column="aprice" property="price"/>
+            <result column="aprice" property="price"/>
+            <result column="atype" property="type"/>
+        </association>
+        <association property="players" javaType="Players">
+            <id column="pid" property="id"/>
+            <result column="pname" property="name"/>
+            <result column="pimage" property="image"/>
+            <result column="pnumber" property="number"/>
+
+        </association>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, player_id, box_id, arms_id, cr_date
+    </sql>
+
+
+
+    <select id="selectPlayerBoxArms" resultMap="BaseResultMap">
+        select
+        pba.*,
+        b.`id`as bid,
+        b.`image` as bimage,
+        b.`name` as baname,
+        b.`price` bprice,
+        b.`type` as btype,
+        a.`id` as aid,
+        a.`name` as aname,
+        a.`type` as atype,
+        a.`imageUrl`,
+        a.`price` as aprice,
+        p.`name` as pname,
+        p.`image` as pimage,
+        p.`id` as pid,
+        p.`number` as pnumber
+        from
+        `player_box_arms` pba
+        left join `box` b
+        on pba.`box_id` = b.`id`
+        left join `arms` a
+        on pba.`arms_id` = a.`id`
+        left join `players` p
+        on pba.`player_id` = p.`id`
+        where 1 = 1
+        <if test="playerId!=null and playerId>0">
+            and p.`id`=#{playerId}
+        </if>
+
+        <if test="sort!= null and 1>=sort">
+            order by pba.`cre_date` desc
+        </if>
+
+        <if test="sort!= null and sort>=2">
+            order by a.`price` desc
+        </if>
+        limit #{pageIndex},#{pageSize}
+    </select>
+
+
+    <select id="selectPlayerBoxArmsCount" resultType="int">
+
+
+select
+  count(1)
+from
+  `player_box_arms` pba
+  left join `box` b
+    on pba.`box_id` = b.`id`
+  left join `arms` a
+    on pba.`arms_id` = a.`id`
+  left join `players` p
+    on pba.`player_id` = p.`id`
+where 1 = 1
+
+    </select>
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap2" type="com.itsq.pojo.vo.ArmsVo">
+        <id column="pid" property="id" />
+            <result column="aname" property="name" />
+            <result column="aimageUrl" property="imageUrl" />
+            <result column="aprice" property="price" />
+            <result column="atype" property="type" />
+            <result column="arname" property="names" />
+            <result column="arimageUrl" property="imageUrls" />
+            <result column="arprice" property="prices" />
+            <result column="artype" property="types" />
+            <result column="is_status" property="isStatus" />
+        <result column="creDate" property="creDate" />
+        <result column="pname" property="pname" />
+        <result column="image" property="image" />
+        <result column="number" property="number" />
+
+    </resultMap>
+
+    <select id="selectUpStatus" resultMap="BaseResultMap2">
+        SELECT
+        pba.id as pid,
+        p.`name` as pname,
+        p.`image` as image,
+        p.`number` as `number`,
+a.`name` as aname,
+a.`imageUrl` as aimageUrl,
+a.`price` as aprice,
+ar.`name` as arname,
+ar.`type` as atype,
+ar.`imageUrl` as arimageUrl,
+ar.`price` as arprice,
+ar.`type` as artype,
+pba.`is_status` as is_status,
+        pba.cre_date as creDate
+
+FROM
+`players` p
+LEFT JOIN `player_box_arms` pba
+ON p.`id`=pba.`player_id`
+LEFT JOIN `arms` a
+ON a.`id`=pba.`arms_id`
+ JOIN `arms` ar
+ON ar.`id` =pba.`mu_id`
+WHERE
+        1=1
+        <if test="playerId!=null and playerId>0">
+            and p.`id`=#{playerId}
+        </if>
+ order by pba.`cre_date` desc
+   limit #{pageIndex},#{pageSize}
+    </select>
+
+    <select id="selectUpStatusCount" resultType="int">
+        SELECT
+count(1)
+
+FROM
+
+`players` p
+
+LEFT JOIN `player_box_arms` pba
+ON p.`id`=pba.`player_id`
+LEFT JOIN `arms` a
+ON a.`id`=pba.`arms_id`
+ JOIN `arms` ar
+ON ar.`id` =pba.`mu_id`
+WHERE
+p.`id`=#{playerId}
+
+    </select>
+
+
+
+    <select id="getTodayAllPrice" resultType="BigDecimal">
+
+SELECT SUM(b.`price`) as allPrice
+FROM
+`players` p
+LEFT JOIN `player_box_arms` pba
+ON p.`id`=pba.`player_id`
+LEFT JOIN `box` b
+ON b.id=pba.`box_id`
+WHERE
+        1=1
+    AND pba.`cre_date` LIKE concat("%",#{creDate},"%")
+    </select>
+</mapper>
