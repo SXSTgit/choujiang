@@ -205,34 +205,45 @@
                             <div class="hype-drop__tagline" v-else>太好了</div>
                         </div>
                         <div class="hype-drop__hover-block">
-                            <a :href="generateLink(bestRecord.players.id,bestRecord.box.id,bestRecord.arms.id)"
-                               :class="generateBestDropClass(bestRecord.arms.colorId)">
+                            <a v-if="bestRecord.box" :href="generateLink(bestRecord.players.id,bestRecord.box.id,bestRecord.arms.id)"
+                               :class="generateBestDropClass(bestRecord.arms.type)">
                                 <img :src="bestRecord.arms.imageUrl" alt="">
+                            </a>
+                            <a v-else  :class="generateBestDropClass(bestRecord.arms.type)">
+                                <img :src="bestRecord.arms.imageUrl" alt="">
+                                <!--<img v-if="bestRecord.type==1" src="./statics/image/paid-off.png" alt="" style="width:100%;height: 100%;position: absolute;top: 0px;z-index: 100;">-->
+                                <!--<div v-if="bestRecord.type==1" style="color: #FE72A1;position: absolute;left: 10px;top: 60%;z-index: 100;">升级</div>-->
                             </a>
                             <div class="hype-drop-info">
                                 <div class="hype-drop-info__user">
                                     <div class="user-avatar-wrap hype-drop-avatar">
-                                        <a :href="generateLink(bestRecord.players.id,bestRecord.box.id,bestRecord.arms.id)"
+                                        <a v-if="bestRecord.box" :href="generateLink(bestRecord.players.id,bestRecord.box.id,bestRecord.arms.id)"
                                            class="user-avatar ava-size-s">
-                                                    <span class="user-avatar__img-wrap">
-                                                        <span class="user-avatar__img-second-wrap">
-                                                            <img :src="bestRecord.players.image" alt="">
-                                                        </span>
+                                                <span class="user-avatar__img-wrap">
+                                                    <span class="user-avatar__img-second-wrap">
+                                                        <img :src="bestRecord.players.image" alt="">
                                                     </span>
+                                                </span>
+                                        </a>
+                                        <a v-else  class="user-avatar ava-size-s">
+                                                <span class="user-avatar__img-wrap">
+                                                    <span class="user-avatar__img-second-wrap">
+                                                        <img :src="bestRecord.players.image" alt="">
+                                                    </span>
+                                                </span>
                                         </a>
                                     </div>
                                     <p class="hype-drop-info__user-name ell">{{bestRecord.players.name}}</p>
                                 </div>
                                 <div class="hype-drop-info__case">
 
-                                    <img :src="bestRecord.box.image" alt="">
-                                    <a :href="generateBoxUrl(bestRecord.box.id)" class="button button-special">仔细检查 </a>
+                                    <img v-if="bestRecord.box" :src="bestRecord.box.image" alt="">
+                                    <i v-else class="icon icon-upgrade" style="font-size: 70px; color: #7A59C5; position: absolute; top: 10px; left: 5px;"></i>
+                                    <a v-if="bestRecord.box" :href="generateBoxUrl(bestRecord.box.id)" class="button button-special">仔细检查
+                                    </a>
 
-                                    <!--<% if(drop.type === 'upgrade') { %>
-                                    <i class="icon icon-upgrade"></i>
-                                    <a href="/zh-cn/upgrade" class="button button-special">
-                                        仔细检查                        </a>
-                                    <% } %>-->
+                                    <a v-else href="upgrade.html" class="button button-special" style="position: absolute; bottom: 60px; display:block; top: 80px;">
+                                        仔细检查 </a>
 
                                     <p class="text-2 ell">{{bestRecord.arms.name}}</p>
                                 </div>
@@ -250,30 +261,43 @@
                 <div class="live-drop" style="position: relative;width: 100%;">
                     <div v-for="(item,idx) in openBoxRecord" :class="generate(item.arms.type)" :data-id="item.arms.id"
                          style="position: absolute;top: 10px;z-index: 1000;" :style="{left: (idx + 1)*95 + 'px'}">
-                        <a :href="generateLink(item.players.id,item.box.id,item.arms.id)" class="live-item__img">
+                        <a v-if="item.box && item.arms && item.players" :href="generateLink(item.players.id,item.box.id,item.arms.id)" class="live-item__img ">
                             <img :src="item.arms.imageUrl" alt="">
+                        </a>
+                        <a v-else  class="live-item__img ">
+                            <img :src="item.arms.imageUrl" alt="">
+                            <img v-if="item.type==1" src="./statics/image/paid-off.png" alt="" style="width:100%;height: 100%;position: absolute;top: 30px;z-index: 100;">
+                            <div v-if="item.type==1" style="color: #FE72A1;position: absolute;left: 10px;top: 60%;z-index: 100;">升级</div>
                         </a>
                         <!--<div class="live-item__paid-off"></div>-->
 
                         <div class="live-item-info">
 
-                            <div class="live-item-info__img" v-if="item.box.id==1">
+                            <div class="live-item-info__img" v-if="item.box && item.box.id==1">
                                 <img src="./statics/image/main-banner-logo.png" alt=""
                                      style="width: 105px;padding-top: 30px;">
                             </div>
 
-                            <div class="live-item-info__img">
-                                <img :src="item.box.image" alt="">
+                            <div class="live-item-info__img" style="position: relative;">
+                                <img v-if="item.box" :src="item.box.image" alt="">
+                                <i v-else  class="icon icon-upgrade" style="font-size: 80px; color: #7A59C5; position: relative;top: 30px;"></i>
                             </div>
 
                             <div class="user-avatar-wrap live-drop-avatar">
-                                <a :href="generateLink(item.players.id,item.box.id,item.arms.id)"
+                                <a v-if="item.box && item.arms && item.players" :href="generateLink(item.players.id,item.box.id,item.arms.id)"
                                    class="user-avatar ava-size-s">
-                                            <span class="user-avatar__img-wrap">
-                                                <span class="user-avatar__img-second-wrap">
-                                                    <img :src="item.players.image" alt="">
-                                                </span>
+                                        <span class="user-avatar__img-wrap">
+                                            <span class="user-avatar__img-second-wrap">
+                                                <img :src="item.players.image" alt="">
                                             </span>
+                                        </span>
+                                </a>
+                                <a v-else class="user-avatar ava-size-s">
+                                        <span class="user-avatar__img-wrap">
+                                            <span class="user-avatar__img-second-wrap">
+                                                <img :src="item.players.image" alt="">
+                                            </span>
+                                        </span>
                                 </a>
                             </div>
                             <div class="live-item-info__name-1 ell">{{item.arms.name}}</div>
@@ -281,12 +305,13 @@
                             <p class="live-item-info__price">￥{{item.arms.price}}</p>
                             <div class="live-item-info__button-wrap">
 
-                                <a href="youparty.html" class="button button-special" v-if="item.box.catId==1">
+                                <a href="youparty.html" class="button button-special" v-if="item.box && item.box.catId==1">
                                     查看 </a>
 
-                                <a :href="generateBoxUrl(item.box.id)" class="button button-special" v-else>
+                                <a v-if="item.box" :href="generateBoxUrl(item.box.id)" class="button button-special" v-else>
                                     查看 </a>
-
+                                <a v-if="item.type==1" href="upgrade.html" class="button button-special">
+                                    仔细检查 </a>
                             </div>
                         </div>
                     </div>
@@ -754,7 +779,7 @@
                         <a href="javascript:;" class="upg__how-to-work">
                             工作原理？ </a>
                     </div>
-                    <div class="case_win_wrap" :class="['win_block_c' + winItem.data.colorSuffix]"
+                    <div class="case_win_wrap" :class="'win_block_c' + winItem.data.type"
                          :style="winItem.show ? this.opacity.visible : this.opacity.hidden">
                         <div class="winner-case-bg">
                             <div class="subject-img">
@@ -1016,7 +1041,7 @@
 <script src="statics/js/stomp.js"></script>
 <script>
     if (JSON.parse(window.sessionStorage.getItem('user'))) {
-        axios.post('http://121.36.199.219:8080/players/selectPlayerArms', {id: JSON.parse(window.sessionStorage.getItem('user')).id, pageIndex: 1,
+        axios.post('http://boxgo.cc/players/selectPlayerArms', {id: JSON.parse(window.sessionStorage.getItem('user')).id, pageIndex: 1,
             pageSize: 10}).then(function (response) {
             var oldUser = JSON.parse(window.sessionStorage.getItem('user'));
             oldUser.balance = response.data.body.balance;
@@ -1037,7 +1062,7 @@
         },
         mounted: function () {
             //查询开箱记录
-            axios.post('http://121.36.199.219:8080/playerBoxArms/selectRechargeRecordDtoPage', {
+            axios.post('http://boxgo.cc/playerBoxArms/selectRechargeRecordDtoPage', {
                 pageNum: 1,
                 pageSize: 20,
                 orderByField: "1"
@@ -1050,10 +1075,7 @@
         },
         methods:{
             aniHandel(list) {
-                let data = list.filter(function(item){
-                    return item.box != null;
-                })
-                this.openBoxRecord = data
+                this.openBoxRecord = list
             },
             generate: function (arg) {
                 return "live-item viewn_" + arg;
@@ -1068,7 +1090,7 @@
                 return "hype-drop__img viewn-" + 7;
             },
             all: function () {
-                axios.post('http://121.36.199.219:8080/playerBoxArms/selectRechargeRecordDtoPage', {
+                axios.post('http://boxgo.cc/playerBoxArms/selectRechargeRecordDtoPage', {
                     pageNum: 1,
                     pageSize: 20,
                     orderByField: "1"
@@ -1082,7 +1104,7 @@
                 });
             },
             best: function () {
-                axios.post('http://121.36.199.219:8080/playerBoxArms/selectRechargeRecordDtoPage', {
+                axios.post('http://boxgo.cc/playerBoxArms/selectRechargeRecordDtoPage', {
                     pageNum: 1,
                     pageSize: 20,
                     orderByField: "2"
@@ -1180,11 +1202,12 @@ function getQueryVariable(variable) {
     bodyLoad();
 
     function connect() {
-        var socket = new SockJS('http://121.36.199.219:8080/simple');
+        var socket = new SockJS('http://boxgo.cc/simple');
         stompClient = Stomp.over(socket);
         stompClient.connect({}, function (frame) {
             stompClient.subscribe('/topic/callback', function (response) {
                 let data = JSON.parse(response.body);
+//                console.log(data.login);
                 document.getElementById('online_users').innerText = data.login;
                 document.getElementById('registered_users').innerText = data.playerCount;
                 document.getElementById('opened_cases').innerText = data.boxCount;
@@ -1197,6 +1220,15 @@ function getQueryVariable(variable) {
     }
 
     connect();
+	
+	function onlineNumber() {
+		axios.get('http://boxgo.cc/count',{}).then(function (response) {
+            console.log(response.data.split(":")[1]);
+		}).catch(function (reason) {
+		    console.log(reason);
+		});
+	}
+    onlineNumber();
     if (window.sessionStorage.getItem('user')) {
         viewData.general.user.isGuest = false;
     }

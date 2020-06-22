@@ -411,7 +411,7 @@ window.addEventListener('load', function () {
         },
         mounted: function mounted() {
             var user = JSON.parse(window.sessionStorage.getItem('user'));
-            axios.post('http://121.36.199.219:8080/players/selectPlayerArms', {
+            axios.post('http://boxgo.cc/players/selectPlayerArms', {
                 id: user.id,
                 isStatus: 0,
                 pageIndex: 1,
@@ -438,7 +438,7 @@ window.addEventListener('load', function () {
                 var _this = this
                 return {
                     upgradeBySkins: function upgradeBySkins(jilv, oldArms, newArms, playerId) {
-                        return axios.post('http://121.36.199.219:8080/upgrading/shengji', {
+                        return axios.post('http://boxgo.cc/upgrading/shengji', {
                             jilv: jilv,
                             oldArms: oldArms,
                             newArms: newArms,
@@ -456,7 +456,7 @@ window.addEventListener('load', function () {
                         });
                     },
                     getFilteredItems: function getFilteredItems(data) {
-                        return axios.post('http://121.36.199.219:8080/upgrading/buybox', {
+                        return axios.post('http://boxgo.cc/upgrading/buybox', {
                             // offset: data.offset,
                             //   order_price: data['order_price'],
                             //   price_max: data['price_max'],
@@ -485,13 +485,13 @@ window.addEventListener('load', function () {
                         // });
                     },
                     sellDrop: function sellDrop(dropId) {
-                        axios.post('http://121.36.199.219:8080/playerBoxArms/updatePlayerBoxArms', {
+                        axios.post('http://boxgo.cc/playerBoxArms/updatePlayerBoxArms', {
                             "id": dropId,
                             "isStatus": 1
                         }).then(function (response) {
                             if (response.data.message == "success") {
                                 var oldUser = JSON.parse(window.sessionStorage.getItem('user'));
-                                axios.post('http://121.36.199.219:8080/players/selectPlayerArms', {id: oldUser, pageIndex: 1,
+                                axios.post('http://boxgo.cc/players/selectPlayerArms', {id: oldUser, pageIndex: 1,
                                     pageSize: 10}).then(function (response) {
                                     oldUser.balance = response.data.body.balance;
                                     window.sessionStorage.setItem('user', JSON.stringify(oldUser));
@@ -975,7 +975,9 @@ window.addEventListener('load', function () {
                 };
             },
             defaultCursor: function defaultCursor() {
-                this.$refs.circleCursor.style.transform = 'rotate(0deg)';
+                if (this.$refs.circleCursor) {
+                    this.$refs.circleCursor.style.transform = 'rotate(0deg)';
+                }
             },
             animateCursor: function animateCursor(randomVal, isWin, callbackOnComplete) {
                 var _self = this;
@@ -994,6 +996,8 @@ window.addEventListener('load', function () {
                         randomVal += 1.1;
                     }
                 }
+                console.log('在这里打印的+++++++++++++++++++++++++++++');
+                console.log(randomVal);
 
                 var portion = randomVal / 100;
 
@@ -1002,6 +1006,8 @@ window.addEventListener('load', function () {
                 }
 
                 var angle = 360 * getRandomInt(8, 10) + 360 * portion;
+                console.log('在这里打印的+++++++++++++++++++++++++++++');
+                console.log(angle);
                 var resetStep = 0;
                 this.animateCenter = true;
                 this.defaultCursor(); // Setting default state to prevent bugs
@@ -1011,6 +1017,7 @@ window.addEventListener('load', function () {
                     easing: 'easeOutCubic',
                     step: function step(now) {
                         if (_self.soundType === 'tick') {
+                            console.log(now);
                             var step = Math.floor(Math.abs(now / 44));
 
                             if (step - resetStep >= 1) {

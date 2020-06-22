@@ -20,7 +20,7 @@
                return ret
            },
        })
-       http.post("http://121.36.199.219:8080/pagePay",{"amount": getQueryVariable('amount'),"playerId": getQueryVariable('playerId')}).then(function (response) {
+       http.post("http://boxgo.cc/pagePay",{"amount": getQueryVariable('amount'),"playerId": getQueryVariable('playerId')}).then(function (response) {
            $('#pay-zfb').html(response.data.body);
        }).catch(function (error) {
            alert(error);
