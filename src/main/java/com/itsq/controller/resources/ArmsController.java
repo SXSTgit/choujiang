@@ -138,71 +138,169 @@ public class ArmsController extends BaseController {
             return Response.fail(ErrorEnum.SIGN_VERIFI_EXPIRE);
         }*/
         System.out.println("=======");
-        Map<String, String> param = new HashMap<>();
-        param.put("app-key","0b791fef5d1cc463edda79924704e8a7");
-        param.put("language","zh_CN");
-        param.put("appId","730");
-        param.put("limit","1000");
-        param.put("page",page+"");
-        String json = client.httpGetWithJSon("https://app.zbt.com/open/product/v2/search", param);
+        Map<String, String> param1 = new HashMap<>();
+        param1.put("app-key","0b791fef5d1cc463edda79924704e8a7");
+        param1.put("language","zh_CN");
+        param1.put("appId","730");
+        param1.put("limit","100");
+        param1.put("page",1+"");
+        String json1 = client.httpGetWithJSon("https://app.zbt.com/open/product/v2/search", param1);
         System.out.println("=======");
-        Object succesResponse = JSON.parse(json);
+        Object succesResponse3 = JSON.parse(json1);
         System.out.println("=======");//先转换成Object
-        System.out.println(json);
-        Map map = (Map) succesResponse;         //Object强转换为Map
-        Object succesResponse1 = JSON.parse(map.get("data") + "");
-        Map map1 = (Map) succesResponse1;
-        List amList = new ArrayList();
-        List list = (List) map1.get("list");
-        for (Object o : list) {
-            Map map2 = (Map) o;
-            Arms arms = new Arms();
-            if(map2.get("rarityName")!=null&&map2.get("rarityName").equals("消费级")){
-                arms.setType("1");
-            }
+        System.out.println(json1);
+        Map map5 = (Map) succesResponse3;         //Object强转换为Map
+        if(!(boolean) map5.get("success")){
+            return Response.fail(map5.get("errorMsg")+"");
+        }
+        Object succesResponse4 = JSON.parse(map5.get("data") + "");
+        Map map6 = (Map) succesResponse4;
+        int j=(int) map6.get("pages");
 
-            if(map2.get("rarityName")!=null&&map2.get("rarityName").equals("工业级")){
-                arms.setType("2");
-            }
+        for (int i = 0; i <j ; i++) {
+            System.out.println("=======");
+            Map<String, String> param = new HashMap<>();
+            param.put("app-key","0b791fef5d1cc463edda79924704e8a7");
+            param.put("language","zh_CN");
+            param.put("appId","730");
+            param.put("limit","100");
+            param.put("page",i+1+"");
+            String json = client.httpGetWithJSon("https://app.zbt.com/open/product/v2/search", param);
 
-            if(map2.get("rarityName")!=null&&map2.get("rarityName").equals("军规级")){
-                arms.setType("3");
-            }
-            if(map2.get("rarityName")!=null&&map2.get("rarityName").equals("受限")){
-                arms.setType("4");
-            }
-            if(map2.get("rarityName")!=null&&map2.get("rarityName").equals("保密")){
-                arms.setType("5");
-            }
-            if(map2.get("rarityName")!=null&&map2.get("rarityName").equals("隐秘")){
-                arms.setType("6");
-            }
-            if(map2.get("rarityName")!=null&&map2.get("rarityName").equals("大师")){
-                arms.setType("7");
-            }
-            arms.setCount((Integer) map2.get("quantity"));
-            arms.setImageUrl(map2.get("imageUrl") + "");
-            arms.setName(map2.get("itemName") + "");
+            System.out.println("=======");
+            Object succesResponse = JSON.parse(json);
+            System.out.println("=======");//先转换成Object
+            System.out.println(json);
+            Map map = (Map) succesResponse;//Object强转换为Map
 
-            BigDecimal bigDecimal=new BigDecimal(1 );
-            bigDecimal=bigDecimal.add(new BigDecimal(percentage));
-            Object succesResponse2 = JSON.parse(map2.get("priceInfo") + "");
-            Map map3 = (Map) succesResponse2;
-            if(map2.get("priceInfo")!=null){
-                if(map3.get("price")!=null){
-                    arms.setPrice(new BigDecimal(map3.get("price") + "").multiply(bigDecimal));
-                    arms.setCount(Integer.valueOf(map3.get("autoDeliverQuantity")+""));
+            if(!(boolean) map.get("success")){
+                return Response.fail(map.get("errorMsg")+"");
+            }
+            Object succesResponse1 = JSON.parse(map.get("data") + "");
+            Map map1 = (Map) succesResponse1;
+            List amList = new ArrayList();
+            List list = (List) map1.get("list");
+            for (Object o : list) {
+                Map map2 = (Map) o;
+                Arms arms = new Arms();
+                if(map2.get("rarityName")!=null&&map2.get("rarityName").equals("消费级")){
+                    arms.setType("1");
                 }
-            }
-            arms.setProductId(Integer.valueOf(map2.get("itemId")+""));
 
-            amList.add(arms);
+                if(map2.get("rarityName")!=null&&map2.get("rarityName").equals("工业级")){
+                    arms.setType("2");
+                }
+
+                if(map2.get("rarityName")!=null&&map2.get("rarityName").equals("军规级")){
+                    arms.setType("3");
+                }
+                if(map2.get("rarityName")!=null&&map2.get("rarityName").equals("受限")){
+                    arms.setType("4");
+                }
+                if(map2.get("rarityName")!=null&&map2.get("rarityName").equals("保密")){
+                    arms.setType("5");
+                }
+                if(map2.get("rarityName")!=null&&map2.get("rarityName").equals("隐秘")){
+                    arms.setType("6");
+                }
+                if(map2.get("rarityName")!=null&&map2.get("rarityName").equals("大师")){
+                    arms.setType("7");
+                }
+                arms.setCount((Integer) map2.get("quantity"));
+                arms.setImageUrl(map2.get("imageUrl") + "");
+                arms.setName(map2.get("itemName") + "");
+
+                BigDecimal bigDecimal=new BigDecimal(1 );
+                bigDecimal=bigDecimal.add(new BigDecimal(percentage));
+                Object succesResponse2 = JSON.parse(map2.get("priceInfo") + "");
+                Map map3 = (Map) succesResponse2;
+                if(map2.get("priceInfo")!=null){
+                    if(map3.get("price")!=null){
+                        arms.setPrice(new BigDecimal(map3.get("price") + "").multiply(bigDecimal));
+                        arms.setCount(Integer.valueOf(map3.get("autoDeliverQuantity")+""));
+                    }
+                }
+                arms.setProductId(Integer.valueOf(map2.get("itemId")+""));
+
+                amList.add(arms);
+            }
+            armsService.addListArms(amList);
         }
 
-        armsService.addListArms(amList);
-        return Response.success(amList);
+        return Response.success();
     }
 
+
+    @RequestMapping(value = "updateListArms", method = RequestMethod.POST)
+    @ApiOperation(value = "更新价格", notes = "", httpMethod = "POST")
+    public Response updateListArms(Double percentage ,Integer page) {
+
+        System.out.println("=======");
+        Map<String, String> param1 = new HashMap<>();
+        param1.put("app-key","0b791fef5d1cc463edda79924704e8a7");
+        param1.put("language","zh_CN");
+        param1.put("appId","730");
+        param1.put("limit","100");
+        param1.put("page",1+"");
+        String json1 = client.httpGetWithJSon("https://app.zbt.com/open/product/v2/search", param1);
+        System.out.println("=======");
+        Object succesResponse3 = JSON.parse(json1);
+        System.out.println("=======");//先转换成Object
+        System.out.println(json1);
+        Map map5 = (Map) succesResponse3;         //Object强转换为Map
+        if(!(boolean) map5.get("success")){
+            return Response.fail(map5.get("errorMsg")+"");
+        }
+        Object succesResponse4 = JSON.parse(map5.get("data") + "");
+        Map map6 = (Map) succesResponse4;
+        int j=(int) map6.get("pages");
+
+        for (int i = 0; i <j; i++) {
+            System.out.println("=======");
+            Map<String, String> param = new HashMap<>();
+            param.put("app-key","0b791fef5d1cc463edda79924704e8a7");
+            param.put("language","zh_CN");
+            param.put("appId","730");
+            param.put("limit","100");
+            param.put("page",i+1+"");
+            String json = client.httpGetWithJSon("https://app.zbt.com/open/product/v2/search", param);
+            System.out.println("=======");
+            Object succesResponse = JSON.parse(json);
+            System.out.println("=======");//先转换成Object
+            System.out.println(json);
+            Map map = (Map) succesResponse;         //Object强转换为Map
+            if(!(boolean) map.get("success")){
+                return Response.fail(map.get("errorMsg")+"");
+            }
+            Object succesResponse1 = JSON.parse(map.get("data") + "");
+            Map map1 = (Map) succesResponse1;
+
+            List amList = new ArrayList();
+            List list = (List) map1.get("list");
+            for (Object o : list) {
+                Map map2 = (Map) o;
+                Arms arms = new Arms();
+                BigDecimal bigDecimal=new BigDecimal(1 );
+                bigDecimal=bigDecimal.add(new BigDecimal(percentage));
+                Object succesResponse2 = JSON.parse(map2.get("priceInfo") + "");
+                Map map3 = (Map) succesResponse2;
+                if(map2.get("priceInfo")!=null){
+                    if(map3.get("price")!=null){
+                        arms.setPrice(new BigDecimal(map3.get("price") + "").multiply(bigDecimal));
+                    }
+                }
+                arms.setProductId(Integer.valueOf(map2.get("itemId")+""));
+
+                amList.add(arms);
+            }
+            armsService.updateArms(amList);
+        }
+
+
+
+
+        return Response.success();
+    }
 
 }
 
