@@ -26,4 +26,7 @@ public interface ArmsService extends IService<Arms> {
     List<Arms>  allPrice(Integer pid);
 
     List<Arms> selectArms(BoxArmsSeachDto boxArmsSeachDto);
+
+
+    int updateArms(List<Arms> list);
 }

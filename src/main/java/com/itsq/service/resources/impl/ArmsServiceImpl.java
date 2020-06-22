@@ -75,4 +75,14 @@ public class ArmsServiceImpl extends ServiceImpl<ArmsMapper, Arms> implements Ar
 
         return super.baseMapper.selectList(queryWrapper);
     }
+
+    @Override
+    public int updateArms(List<Arms> list) {
+        for (Arms arms : list) {
+            QueryWrapper queryWrapper=new QueryWrapper();
+            queryWrapper.eq("product_id",arms.getProductId());
+            super.baseMapper.update(arms,queryWrapper);
+        }
+        return 0;
+    }
 }
