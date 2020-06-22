@@ -130,8 +130,8 @@ public class ArmsController extends BaseController {
     }
 
 
-    @RequestMapping(value = "addListArms", method = RequestMethod.POST)
-    @ApiOperation(value = "导入武器", notes = "", httpMethod = "POST")
+    @RequestMapping(value = "addListArms", method = RequestMethod.GET)
+    @ApiOperation(value = "导入武器", notes = "", httpMethod = "GET")
     public Response addListArms(Double percentage ,Integer page) {
         /*CurrentUser currentUser = currentUser();
         if(currentUser==null){
@@ -231,8 +231,8 @@ public class ArmsController extends BaseController {
     }
 
 
-    @RequestMapping(value = "updateListArms", method = RequestMethod.POST)
-    @ApiOperation(value = "更新价格", notes = "", httpMethod = "POST")
+    @RequestMapping(value = "updateListArms", method = RequestMethod.GET)
+    @ApiOperation(value = "更新价格", notes = "", httpMethod = "GET")
     public Response updateListArms(Double percentage ,Integer page) {
 
         System.out.println("=======");
