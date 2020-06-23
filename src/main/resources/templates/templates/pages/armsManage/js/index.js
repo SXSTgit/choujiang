@@ -143,17 +143,49 @@ layui.config({
         show();
     }
 
-    function show() {
+    window.toFenye = function (idx) {
+        show(idx)
+    }
+    function show(size) {
+        if(size == 0 || size == null){
+            size = 1;
+        }
         var name = $("input[name='title']").val();
         var city = $("select[name='city']").val();
         var list = [];
-        findAjax("arms/getAll", {"name":name,"type":city}, function (res) {
-            var datas = res.body;
+        findAjax("arms/getAll", {"name":name,"type":city,"pageIndex":size,"pageSize":"20"}, function (res) {
+            var datas = res.body.records;
             for (var i = 0; i < datas.length; i++) {
                 list = list.concat(datas[i]);
             }
             initTable(list);
-
+            var page;
+            var total = res.body.total;
+            var inx=0;
+            var  en = 0;
+            var len = total % 20 == 0 ? total / 20: parseInt((total / 20) + 1);
+            page = "<a class=\"page1\" href='javascript:void(0);' onclick='toFenye(1)' style='background-image: url(\"img/yema_bg2.png\")'><img src=\"img/icon_zuo1.png\" height='16px' style='margin-top: 10px'></a> \n" +
+                "<a class=\"page1\" href='javascript:void(0);' onclick='toFenye("+(parseInt(size)-1)+")' style='background-image: url(\"img/yema_bg2.png\")'><img src=\"img/icon_zuo2.png\" height='16px' style='margin-top: 10px'></a>\n" ;
+            if(size == 1){
+                page=" <a class=\"page1\" style='background-image: url(\"img/yema_bg.png\")'><img src=\"img/icon_zuo1.png\" style='margin-top: 10px' height='16px'></a> \n " +
+                    " <a class=\"page1\"  style='background-image: url(\"img/yema_bg.png\")'><img src=\"img/icon_zuo2.png\" style='margin-top: 10px' height='16px'></a>\n" ;
+                inx = 1;
+            }else {
+                inx = ((size-1) * 20+1);
+            }
+            page+="<label style='display: inline-block;width: 35px;text-align: center; '>第</label><input type='text' value='"+size+"' readonly='readonly' style='display: inline-block;height:20px; width:50px;padding-left: 15px; background-color: #D3D3D3 ;margin-right: 5px; padding-top: 5px;' ><label>页</label>,<label>共"+len+"页</label>"
+            // icon_you1.png
+            if(size == len){
+                page+= "    <a class=\"page2\" style='background-image: url(\"img/yema_bg.png\")'><img src=\"img/icon_you2.png\" style='height: 15px; margin-top: 10px'></a>\n"+
+                    " <a class=\"page2\" style='background-image: url(\"img/yema_bg.png\")'><img src=\"img/icon_you1.png\" style='margin-top: 10px'></a> \n " ;
+                en = (total);
+            }else{
+                en = (size*20);
+                page+= "    <a class=\"page2\" href='javascript:void(0)' onclick='toFenye("+(parseInt(size)+1)+")' style='background-image: url(\"img/yema_bg2.png\") '><img src=\"img/icon_you2.png\" style='margin-top: 10px'></a>\n"+
+                    " <a class=\"page2\" href='javascript:void(0);' onclick='toFenye("+len+")' style='background-image: url(\"img/yema_bg2.png\")'><img src=\"img/icon_you1.png\" style='margin-top: 10px'></a> \n " ;
+            }
+            page+="<label style='display: inline-block;margin-left: 10px;'>显示"+inx+"-"+en+"条,共<span style='color: #1597EE;' '>"+total+"</span>条</label>";
+            $(".page").html(page);
         });
     }
 

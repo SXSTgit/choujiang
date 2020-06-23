@@ -592,7 +592,7 @@ window.addWuqi = function (res) {
         success: function (layero, index) {
 
             form.render('select');
-            xin();
+            xin(1);
             $("#cancle2").on('click', function (obj) {
                 layer.close(index);
             });
@@ -601,14 +601,21 @@ window.addWuqi = function (res) {
 }
 
     window.sousuo=function (res) {
-        xin();
+        xin(1);
     }
 
-function xin() {
+    window.toFenye = function (idx) {
+        xin(idx)
+    }
+
+function xin(size) {
+    if( size == 0 || size == null){
+        size = 1;
+    }
     var name = $("input[name='title']").val();
     var city = $("select[name='city']").val();
     // alert(city+""+name);
-    findAjax("arms/getAll",{"name":name,"type":city}, function (res) {
+    findAjax("arms/getAll",{"name":name,"type":city,"pageIndex":size,"pageSize":"36"}, function (res) {
         if (res.message == 'success') {
             var htmlInfo = " <div class=\"layui-form-item\">\n" +
                 "                    <label class=\"layui-form-label\">名称：</label>\n" +
@@ -633,8 +640,8 @@ function xin() {
                 "                    </div>\n" +
                 "                    <button type=\"button\" class=\"layui-btn\" onclick=\"sousuo()\" id=\"btnss\">搜索</button>\n" +
                 "                </div>";
-            for (var i = 0; i < res.body.length; i++) {
-                var info = res.body[i];
+            for (var i = 0; i < res.body.records.length; i++) {
+                var info = res.body.records[i];
                 if (info.isStatus == 0) {
                     map.set(info.id + "", info);
                     htmlInfo += "<div class=\"layui-form-item\" style=\"display: inline-block;\">\n" +
@@ -649,6 +656,33 @@ function xin() {
                         "                </div>";
                 }
             }
+            var page;
+            var total = res.body.total;
+            var inx=0;
+            var  en = 0;
+            var len = total % 36 == 0 ? total / 36: parseInt((total / 36) + 1);
+            page = "<a class=\"page1\" href='javascript:void(0);' onclick='toFenye(1)' style='background-image: url(\"img/yema_bg2.png\")'><img src=\"img/icon_zuo1.png\" height='16px' style='margin-top: 10px'></a> \n" +
+                "<a class=\"page1\" href='javascript:void(0);' onclick='toFenye("+(parseInt(size)-1)+")' style='background-image: url(\"img/yema_bg2.png\")'><img src=\"img/icon_zuo2.png\" height='16px' style='margin-top: 10px'></a>\n" ;
+            if(size == 1){
+                page=" <a class=\"page1\" style='background-image: url(\"img/yema_bg.png\")'><img src=\"img/icon_zuo1.png\" style='margin-top: 10px' height='16px'></a> \n " +
+                    " <a class=\"page1\"  style='background-image: url(\"img/yema_bg.png\")'><img src=\"img/icon_zuo2.png\" style='margin-top: 10px' height='16px'></a>\n" ;
+                inx = 1;
+            }else {
+                inx = ((size-1) * 36+1);
+            }
+            page+="<label style='display: inline-block;width: 35px;text-align: center; '>第</label><input type='text' value='"+size+"' readonly='readonly' style='display: inline-block;height:20px; width:50px;padding-left: 15px; background-color: #D3D3D3 ;margin-right: 5px; padding-top: 5px;' ><label>页</label>,<label>共"+len+"页</label>"
+            // icon_you1.png
+            if(size == len){
+                page+= "    <a class=\"page2\" style='background-image: url(\"img/yema_bg.png\")'><img src=\"img/icon_you2.png\" style='height: 15px; margin-top: 10px'></a>\n"+
+                    " <a class=\"page2\" style='background-image: url(\"img/yema_bg.png\")'><img src=\"img/icon_you1.png\" style='margin-top: 10px'></a> \n " ;
+                en = (total);
+            }else{
+                en = (size*36);
+                page+= "    <a class=\"page2\" href='javascript:void(0)' onclick='toFenye("+(parseInt(size)+1)+")' style='background-image: url(\"img/yema_bg2.png\") '><img src=\"img/icon_you2.png\" style='margin-top: 10px'></a>\n"+
+                    " <a class=\"page2\" href='javascript:void(0);' onclick='toFenye("+len+")' style='background-image: url(\"img/yema_bg2.png\")'><img src=\"img/icon_you1.png\" style='margin-top: 10px'></a> \n " ;
+            }
+            page+="<label style='display: inline-block;margin-left: 10px;'>显示"+inx+"-"+en+"条,共<span style='color: #1597EE;' '>"+total+"</span>条</label>";
+            htmlInfo+=page;
             $("#wqxzDiv").html(htmlInfo);
             form.render("select");
         }
