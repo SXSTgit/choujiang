@@ -4,6 +4,7 @@ package com.itsq.controller.resources;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.itsq.common.base.BaseController;
 import com.itsq.common.bean.ErrorEnum;
 import com.itsq.common.bean.Response;
@@ -43,6 +44,8 @@ public class ArmsController extends BaseController {
     @RequestMapping(value = "getAll", method = RequestMethod.POST)
     @ApiOperation(value = "获取全部武器", notes = "", httpMethod = "POST")
     public Response getAllArms(@RequestBody Arms arms) {
+        Page<Arms> page=new Page(arms.getPageIndex(),arms.getPageSize());
+
         QueryWrapper queryWrapper = new QueryWrapper();
         if (arms.getName() != null && arms.getName().length() > 0) {
             queryWrapper.like("name", arms.getName());
@@ -51,8 +54,8 @@ public class ArmsController extends BaseController {
             queryWrapper.eq("type", arms.getType());
         }
         queryWrapper.orderByDesc("id");
-        List<Arms> list = armsService.list(queryWrapper);
-        return Response.success(list);
+        Page<Arms> page1 = armsService.page(page,queryWrapper);
+        return Response.success(page1);
     }
 
     @RequestMapping(value = "selectArms", method = RequestMethod.POST)
