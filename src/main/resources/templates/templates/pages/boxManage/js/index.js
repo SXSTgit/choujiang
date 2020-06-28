@@ -115,7 +115,7 @@ layui.config({
                     align: 'center',
                     templet: function (d) {
                         return "<button class='layui-btn layui-btn-xs layui-btn-normal' lay-event='updatenavi'>编辑</button>" +
-                            "<button class='layui-btn layui-btn-xs layui-btn-normal' iflag='" + d.id + "' lay-event='chakan'>查看</button>" +
+                            // "<button class='layui-btn layui-btn-xs layui-btn-normal' iflag='" + d.id + "' lay-event='chakan'>查看</button>" +
                             "<button class='layui-btn layui-btn-xs layui-btn-normal' iflag='" + d.id + "' lay-event='updateInfo'>修改信息</button>" +
                             "<button class='layui-btn layui-btn-xs layui-btn-warm' lay-event='delnavi'>删除</button>";
                     }
@@ -346,7 +346,7 @@ treeTable.on('tool(demoTb1)', function (obj) {
     var data = obj.data;  // 获得当前行数据
     var layEvent = obj.event; // 获得lay-event对应的值
     if (layEvent === 'delnavi') {
-
+    alert(data.id);
         layer.confirm("确认删除此箱子吗?", function () {
             findAjax("box/romveBox", {"id": data.id}, function (res) {
                 if (res.message == 'success') {
@@ -431,6 +431,13 @@ treeTable.on('tool(demoTb1)', function (obj) {
             content: $("#addBox").html(),
             success: function (layero, index) {
                 layui.use(['form', 'upload'], function () {
+                    laydate.render({
+                        elem: "[name='outTime']",
+                        format:"yyyy-MM-dd",
+                        trigger: 'click',
+                        type:"date"
+                    });
+
                     var $ = layui.jquery, upload = layui.upload;
                     //普通图片上传
                     var uploadInst = upload.render({
@@ -464,7 +471,7 @@ treeTable.on('tool(demoTb1)', function (obj) {
                 $("[name='price']").val(obj.data.price);
                 $("[name='isStatus']").val(obj.data.isStatus);
                 $("[name='count']").val(obj.data.count);
-                $("#image").attr("src", obj.data.image)
+                $("#image").attr("src", obj.data.image);
                 findAjax("boxArms/getAll", {
                     "boxId": obj.data.id,
                 }, function (res) {
@@ -568,7 +575,9 @@ window.xzwqCheck = function (res) {
         infoHtml += " <div class=\"layui-input-block\" style=\"border-style: none;display: inline-block;\">\n" +
             "                        <div class=\"layui-inline\" >\n" +
             "                            <input type='hidden' name='glArmsId' value='" + obj.id + "'>" +
-            "                            <img src=\"" + obj.imageUrl + "\" width=\"68\" height=\"68\" style=\"display: block;margin-bottom: 5px\"/>\n" +
+            "                            <img src=\"" + obj.imageUrl + "\" width=\"68\" height=\"68\" style=\"display: block;margin-bottom: 5px;background-image: url('img/"+obj.type+".png');background-size: 100% 100%;background-repeat: no-repeat;\"/>\n" +
+            "                            <p style='text-align: center;width: 130px;overflow: hidden;text-overflow:ellipsis;'>" + obj.name + "</p>\n" +
+            "                            <p style='text-align: center;width:130px;'>$" + obj.price + "</p>\n" +
             "                            <input type=\"text\" style=\"width: 28px;\" onkeyup='jisuangJl(this)' name=\"chance\" placeholder=\"几率\" />\n" +
             "                            <input type=\"text\" style=\"width: 28px;\" name=\"count\" placeholder=\"库存\" />\n" +
             "                            <div style=\"text-align: center;\"><a onclick=\"delWq(this)\" href=\"javascript:void(0);\">删除</a></div>\n" +
@@ -605,7 +614,7 @@ window.addWuqi = function (res) {
     }
 
     window.toFenye = function (idx) {
-        xin(idx)
+        // xin(idx)
     }
 
 function xin(size) {
@@ -615,7 +624,7 @@ function xin(size) {
     var name = $("input[name='title']").val();
     var city = $("select[name='city']").val();
     // alert(city+""+name);
-    findAjax("arms/getAll",{"name":name,"type":city,"pageIndex":size,"pageSize":"36"}, function (res) {
+    findAjax("arms/getAll",{"name":name,"type":city,"pageIndex":size,"pageSize":"20000"}, function (res) {
         if (res.message == 'success') {
             var htmlInfo = " <div class=\"layui-form-item\">\n" +
                 "                    <label class=\"layui-form-label\">名称：</label>\n" +
@@ -647,7 +656,7 @@ function xin(size) {
                     htmlInfo += "<div class=\"layui-form-item\" style=\"display: inline-block;\">\n" +
                         "                    <div class=\"layui-input-block\" style=\"border-style: none;display: inline-block;\">\n" +
                         "                        <div class=\"layui-inline\" style=\"width: 150px;\">\n" +
-                        "                            <img src=\"" + info.imageUrl + "\" width=\"130\" height=\"130\" style=\"display: block;margin-bottom: 5px\"/>\n" +
+                        "                            <img src=\"" + info.imageUrl + "\" width=\"130\" height=\"130\" style=\"display: block;margin-bottom: 5px;background-image: url('img/"+info.type+".png'); background-size:  100% 100%; background-repeat: no-repeat;\"/>\n" +
                         "                            <p style='text-align: center;width: 130px;overflow: hidden;text-overflow:ellipsis;'>" + info.name + "</p>\n" +
                         "                            <p style='text-align: center;width:130px;'>" + info.price + "</p>\n" +
                         "                            <input type=\"checkbox\" value='" + info.id + "' name=\"armsInfo\" title=\"选择\" class=\"layui-form-checkbox\" lay-skin=\"primary\">\n" +
@@ -682,7 +691,7 @@ function xin(size) {
                     " <a class=\"page2\" href='javascript:void(0);' onclick='toFenye("+len+")' style='background-image: url(\"img/yema_bg2.png\")'><img src=\"img/icon_you1.png\" style='margin-top: 10px'></a> \n " ;
             }
             page+="<label style='display: inline-block;margin-left: 10px;'>显示"+inx+"-"+en+"条,共<span style='color: #1597EE;' '>"+total+"</span>条</label>";
-            htmlInfo+=page;
+            // htmlInfo+=page;
             $("#wqxzDiv").html(htmlInfo);
             form.render("select");
         }

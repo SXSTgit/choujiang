@@ -1,4 +1,4 @@
- //var baseURL = "http://127.0.0.1:8081/";//本地
+ //var baseURL = "http://127.0.0.1:8080/";//本地
 var baseURL = "http://boxgo.cc/";//本地
 
 var C = {
