@@ -29,7 +29,7 @@ public class SteamLoginUtil {
 	final static String STEAM_LOGIN = "https://steamcommunity.com/openid/login";
 
 	public static void main(String[] args) throws UnsupportedEncodingException {
-		String url = getUrl("http://121.36.199.219/yundian-templates/login.html");
+		String url = getUrl("http://121.36.199.219/templates/login.html");
 		System.out.println(url);
 	}
 

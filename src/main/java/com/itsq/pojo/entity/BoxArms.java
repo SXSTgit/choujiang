@@ -41,7 +41,7 @@ public class BoxArms implements Serializable {
 
     @ApiModelProperty(value = "中奖几率")
     @TableField("chance")
-    private Integer chance;
+    private Double chance;
 
     @ApiModelProperty(value = "库存")
     @TableField("count")

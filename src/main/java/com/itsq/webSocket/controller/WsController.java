@@ -63,7 +63,7 @@ public class WsController extends BaseController {
     /**
      * 定时推送消息
      */
-    //@Scheduled(fixedRate = 1000)
+    @Scheduled(fixedRate = 1000)
     public void callback() {
 
         PageParametersDto pageParametersDto = new PageParametersDto();

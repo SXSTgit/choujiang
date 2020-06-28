@@ -32,16 +32,19 @@ public class ScheduleJobTask {
     }
 
     @Scheduled(cron = "0 0 0 * * ? ")
-  //  @Scheduled(cron = "0 0/1 * * * ? ")
+ //  @Scheduled(cron = "0 0/1 * * * ? ")
     public void updateBoxDato(){
         List<Box> boxes = boxService.selectListBox();
         SimpleDateFormat dateFormat = new SimpleDateFormat(" yyyy-MM-dd ");
 
         Date date = new Date();
         for (Box box : boxes) {
-            if(  date.after(box.getOutTime())){
-                box.setIsStatus(1);
-                boxService.updateBoxUpdateById(box);
+
+            if(box.getOutTime()!=null){
+                if(date.after(box.getOutTime())){
+                    box.setIsStatus(1);
+                    boxService.updateBoxUpdateById(box);
+                }
             }
         }
     }

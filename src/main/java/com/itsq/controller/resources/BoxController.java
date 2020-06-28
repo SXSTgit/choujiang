@@ -70,13 +70,18 @@ public class BoxController extends BaseController {
             queryWrapper.eq("type",box.getType());
         }
         queryWrapper.orderByDesc("id");
-        queryWrapper.gt("out_time",new Date());
+
+
+       // queryWrapper.lt("out_time",new Date());
         List<Box> list=  boxService.list(queryWrapper);
         List list1=new ArrayList();
         for(Box box1:list){
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
             long startDateTime = dateFormat.parse(dateFormat.format(new Date())).getTime();
-            long endDateTime = dateFormat.parse(dateFormat.format(box1.getOutTime())).getTime();
+            long endDateTime = 0;
+            if(box1.getOutTime() != null ) {
+                 endDateTime = dateFormat.parse(dateFormat.format(box1.getOutTime())).getTime();
+            }
             Integer day= (int) ((endDateTime - startDateTime) / (1000 * 3600 * 24));
             AddBoxDto dto=BeanUtils.copyProperties(box1,AddBoxDto.class);
             dto.setDays(day);
@@ -87,15 +92,15 @@ public class BoxController extends BaseController {
 
     @RequestMapping(value = "romveBox",method = RequestMethod.POST)
     @ApiOperation(value = "删除箱子", notes = "", httpMethod = "POST")
-    public Response romveBox(@RequestBody String id,  HttpServletRequest request){
+    public Response romveBox( @RequestBody Box box){
         CurrentUser currentUser = currentUser();
         if(currentUser==null){
             return Response.fail(ErrorEnum.SIGN_VERIFI_EXPIRE);
         }
      //   operationRecordService.addOperationRecord(new OperationRecord(1,"删除箱子","删除id为"+id+"的箱子","/box/romveBox",0,client.getAddress(request.getRemoteAddr())));
 
-        JSONObject jsonObject=JSONObject.parseObject(id);
-        if(!boxService.removeById(Long.parseLong(jsonObject.getString("id")))){
+       // JSONObject jsonObject=JSONObject.parseObject();
+        if(!boxService.removeById(box.getId())){
             return Response.fail(ErrorEnum.ERROR_SERVER);
         }
         return Response.success();
@@ -121,7 +126,7 @@ public class BoxController extends BaseController {
             System.out.println(object);
             BoxArms boxArms=new BoxArms();
             boxArms.setCrDate(new Date());
-            boxArms.setChance(object.getInteger("chance"));
+            boxArms.setChance(object.getDouble("chance"));
             boxArms.setCount(object.getInteger("count"));
             boxArms.setArmsId(object.getInteger("id"));
             boxArms.setIsStatus(0);
@@ -154,7 +159,7 @@ public class BoxController extends BaseController {
             System.out.println(object);
             BoxArms boxArms=new BoxArms();
             boxArms.setCrDate(new Date());
-            boxArms.setChance(object.getInteger("chance"));
+            boxArms.setChance(object.getDouble("chance"));
             boxArms.setCount(object.getInteger("count"));
             boxArms.setArmsId(object.getInteger("id"));
             boxArms.setIsStatus(0);
