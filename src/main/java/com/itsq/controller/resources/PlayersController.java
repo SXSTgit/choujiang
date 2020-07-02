@@ -95,12 +95,11 @@ public class PlayersController extends BaseController {
 
     @PostMapping("register")
     @ApiOperation(value = "用户-注册", notes = "", httpMethod = "POST")
-    public Response<Players> register(@RequestBody PlayersDto playersDto) {
+    public Response<Players> register(@RequestBody PlayersDto playersDto,HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
 
         if (playersDto.getCode() == null) {
             return Response.fail("请输入验证码!");
         }
-
 
         String code2 = (String) redisUtil.get(playersDto.getNumber());
         if (!playersDto.getCode().equals(code2)) {
@@ -108,11 +107,8 @@ public class PlayersController extends BaseController {
         }
 
         Players players = BeanUtils.copyProperties(playersDto, Players.class);
-
-
         Players players1 = this.playersService.addPlayers(players);
-        operationRecordService.addOperationRecord(new OperationRecord(players1.getId(),"用户注册","注册成功","/players/register",1,client.getAddress(request.getRemoteAddr())));
-
+        operationRecordService.addOperationRecord(new OperationRecord(players1.getId(),"用户注册","注册成功","/players/register",1,client.getAddress(httpServletRequest.getRemoteAddr())));
         return Response.success(players1);
     }
 

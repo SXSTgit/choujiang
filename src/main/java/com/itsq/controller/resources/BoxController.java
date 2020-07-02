@@ -138,7 +138,7 @@ public class BoxController extends BaseController {
 
     @RequestMapping(value = "updateById",method = RequestMethod.POST)
     @ApiOperation(value = "修改箱子信息", notes = "", httpMethod = "POST")
-    public Response updateById(@RequestBody AddBoxDto dto,  HttpServletRequest request){
+    public Response updateById(@RequestBody AddBoxDto dto,  HttpServletRequest request) throws ParseException {
         CurrentUser currentUser = currentUser();
         if(currentUser==null){
             return Response.fail(ErrorEnum.SIGN_VERIFI_EXPIRE);
@@ -146,6 +146,9 @@ public class BoxController extends BaseController {
      //   operationRecordService.addOperationRecord(new OperationRecord(dto.getManagerId(),"修改箱子",dto.getName()+"箱子","/arms/updateById",0,client.getAddress(request.getRemoteAddr())));
 
         Box box=BeanUtils.copyProperties(dto, Box.class);
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");//注意月份是MM
+        Date date = simpleDateFormat.parse(dto.getOut());
+        box.setOutTime(date);
         if(!boxService.updateById(box)){
             return Response.fail(ErrorEnum.ERROR_SERVER);
         }
