@@ -11,7 +11,7 @@ public class BoxArmsDto {
     private Integer id;
     private Integer boxId;
     private Integer armsId;
-    private Integer chance;
+    private Double chance;
     private Integer count;
     private Integer isStatus;
     private Date crDate;

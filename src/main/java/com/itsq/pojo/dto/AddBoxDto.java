@@ -18,7 +18,7 @@ public class AddBoxDto {
     private Integer type;
     private Date outTime;
     private Integer days;
-
+    private String out;
     private String glId;
 
 

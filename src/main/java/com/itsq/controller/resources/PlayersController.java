@@ -124,7 +124,7 @@ public class PlayersController extends BaseController {
             return Response.fail("验证码错误!");
         }
         this.playersService.updatePlayers(playersDto.getNumber(), playersDto.getPwd());
-        operationRecordService.addOperationRecord(new OperationRecord(playersDto.getId(),"用户修改密码","修改成功","/players/updatePlayers",1,client.getAddress(request.getRemoteAddr())));
+ //       operationRecordService.addOperationRecord(new OperationRecord(playersDto.getId(),"用户修改密码","修改成功","/players/updatePlayers",1,client.getAddress(request.getRemoteAddr())));
 
         return Response.success();
     }
