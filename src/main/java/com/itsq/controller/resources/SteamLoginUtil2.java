@@ -224,7 +224,7 @@ public class SteamLoginUtil2 extends BaseController {
     @ResponseBody
     public Response loginSteam(){
         try {
-            String url=getUrl("http://boxgo.cc/steam/huidiao");
+            String url=getUrl("http://localhost:8080/steam/huidiao");
             return Response.success(url);
         }catch (Exception e){
             e.printStackTrace();
@@ -315,7 +315,7 @@ public class SteamLoginUtil2 extends BaseController {
         if(list.size()==0){
             players.setSteamId(json.getString("steamid"));
             players.setImage(json.getString("avatar"));
-            players.setName(json.getString("realname"));
+            players.setName(json.getString("personaname"));
             players.setCreDate(new Date());
             playersService.save(players);
         }
