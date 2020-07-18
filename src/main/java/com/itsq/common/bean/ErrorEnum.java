@@ -5,7 +5,7 @@ public enum ErrorEnum {
     FAIL(-1, "error"),
     ERROR_SERVER(50000, "服务异常,请稍后重试"),
     UPLOAD_ERROR(10016, "文件上传失败！"),
-    USER_NOT_EXITES(401000,"用户不存在"),
+    USER_NOT_EXITES(401000,"用户名或密码错误"),
     USER_AUTH_FAILED(401001, "用户授权失败"),
     USER_INFO_ERROR(401004,"用户名或密码错误"),
     SIGN_VERIFI_ERROR(401002,"token解析错误"),
@@ -27,6 +27,7 @@ public enum ErrorEnum {
     WEI_HUODE(700001,"抱歉未获得武器！"),
     NO_WUQI(700002,"您没有相关武器！"),
     YICHUSHOU_YUE(100017,"物品已出售失败!"),
+    YICHUSHOUHUO_YUE(100017,"物品已出售或取回!"),
     DARUWUQI_SHB(100018,"导入武器失败!"),
     MEI_WUQI(100019,"暂未获取到武器请稍后再试"),
     STEAM_FALI(100020,"绑定steam失败")

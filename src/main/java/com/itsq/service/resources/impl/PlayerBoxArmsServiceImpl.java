@@ -64,7 +64,7 @@ public class PlayerBoxArmsServiceImpl extends ServiceImpl<PlayerBoxArmsMapper, P
 
     @Override
     @Transactional
-    public int updatePlayerBoxArms(PlayerBoxArmsDtoUpd playerBoxArmsDtoUpd) {
+    public synchronized int updatePlayerBoxArms(PlayerBoxArmsDtoUpd playerBoxArmsDtoUpd) {
         PlayerBoxArms playerBoxArms = BeanUtils.copyProperties(playerBoxArmsDtoUpd, PlayerBoxArms.class);
         PlayerBoxArms playerBoxArms1 = selectPlayerBoxArmsById(playerBoxArms.getId());
         //查询用户余额
@@ -83,6 +83,10 @@ public class PlayerBoxArmsServiceImpl extends ServiceImpl<PlayerBoxArmsMapper, P
         }
         if (playerBoxArmsDtoUpd.getIsStatus() != null && playerBoxArmsDtoUpd.getIsStatus() == 2) {//取回武器
 
+            if(playerBoxArms1!=null&&playerBoxArms1.getIsStatus() != null && playerBoxArms1.getIsStatus() != 0){
+                throw new APIException(ErrorEnum.YICHUSHOUHUO_YUE);
+            }
+
             JSONObject jsonObject = new JSONObject();
             Map<String, Object> param = new HashMap<>();
             String number = RandomUtil.getRandom(32);
@@ -95,7 +99,6 @@ public class PlayerBoxArmsServiceImpl extends ServiceImpl<PlayerBoxArmsMapper, P
             System.out.println(json);
             Object succesResponse = JSON.parse(json);
             Map map = (Map) succesResponse;
-
             if (!(Boolean) map.get("success") && map.get("data") == null) {
                 return 0;
             }
@@ -104,7 +107,6 @@ public class PlayerBoxArmsServiceImpl extends ServiceImpl<PlayerBoxArmsMapper, P
             PlayerOrder playerOrder = new PlayerOrder();
             playerOrder.setArmsId(arms.getId());
             playerOrder.setBuyPrice(new BigDecimal(map1.get("buyPrice") + ""));
-
 
             if ((boolean) map.get("success")) {
                 playerBoxArms1.setIsStatus(2);
