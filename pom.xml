@@ -25,7 +25,7 @@
         <joda-time.version>2.10.1</joda-time.version>
         <aspectj.version>1.6.11</aspectj.version>
         <poi.version>3.14</poi.version>
-        <fastJson.version>1.2.31</fastJson.version>
+        <fastJson.version>1.2.83</fastJson.version>
         <user-agent-utils.version>1.2.4</user-agent-utils.version>
         <swagger.version>2.7.0</swagger.version>
         <druid.version>1.1.12</druid.version>
