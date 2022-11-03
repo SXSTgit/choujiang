@@ -18,7 +18,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
         <commons-lang.version>3.4</commons-lang.version>
-        <commons-collections.version>4.0</commons-collections.version>
+        <commons-collections.version>4.1</commons-collections.version>
         <commons-dbcp.version>2.1</commons-dbcp.version>
         <commons-codec.version>1.10</commons-codec.version>
         <redis.version>2.7.3</redis.version>
